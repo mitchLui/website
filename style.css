@@ -5,7 +5,7 @@ h1
 
 body
 {
-	font: helvetica;
+	font-family: Helvetica, sans-serif;
 	background-color: black;
 	color: white;
 }
@@ -27,41 +27,56 @@ a
 	  transform: translate(-50%, -50%);
 }
 
-.myimg{
-  width:100px;
-  height:100px;
-  object-fit:cover;
-  border-radius:50%;
+.logo{
+	width:100px;
+	height:100px;
+	object-fit:cover;
+	border-radius:50%;
 }
 
 .fade-in {
-animation: fadeIn ease 4s;
--webkit-animation: fadeIn ease 4s;
--moz-animation: fadeIn ease 4s;
--o-animation: fadeIn ease 4s;
--ms-animation: fadeIn ease 4s;
+	animation: fadeIn ease 4s;
+	-webkit-animation: fadeIn ease 4s;
+	-moz-animation: fadeIn ease 4s;
+	-o-animation: fadeIn ease 4s;
+	-ms-animation: fadeIn ease 4s;
 }
+
 @keyframes fadeIn {
-0% {opacity:0;}
-100% {opacity:1;}
+	0% {opacity:0;}
+	100% {opacity:1;}
 }
 
 @-moz-keyframes fadeIn {
-0% {opacity:0;}
-100% {opacity:1;}
+	0% {opacity:0;}
+	100% {opacity:1;}
 }
 
 @-webkit-keyframes fadeIn {
-0% {opacity:0;}
-100% {opacity:1;}
+	0% {opacity:0;}
+	100% {opacity:1;}
 }
 
 @-o-keyframes fadeIn {
-0% {opacity:0;}
-100% {opacity:1;}
+	0% {opacity:0;}
+	100% {opacity:1;}
 }
 
 @-ms-keyframes fadeIn {
-0% {opacity:0;}
-100% {opacity:1;}
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+
+.topnav {
+	overflow: hidden;
+  }
+  
+.topnav a {
+	float: right;
+	color: #f2f2f2;
+	justify-content: space-between;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
 }
