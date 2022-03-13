@@ -1,0 +1,82 @@
+.navbar {
+    padding: 1.1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+}
+
+/* logo */
+.logo {
+    font-weight: normal;
+}
+.logo-link {
+    color: inherit;
+    text-decoration: none;
+}
+.logo .bold {
+    font-weight: bold;
+}
+
+
+/* desktop navbar */
+nav ul {
+    padding: 0;
+    list-style: none;
+}
+nav ul li {
+    display: inline-block;
+    margin: 1.1rem 1rem;
+}
+nav a {
+    color: inherit;
+    text-decoration: none;
+    opacity: 70%;
+    transition: all 0.2s ease-out;
+}
+nav a:hover {
+    opacity: 100%;
+    transition: all 0.2s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 1.1rem 5% 0 5%;
+        display: flex;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        justify-content: space-between;
+        top: 0;
+    }
+
+    .logo-container{
+        text-align: center;
+    }
+
+    nav ul {
+        text-align: center;
+    }
+}
+
+/* animation -- TBD
+.hover-1 {
+    &:after {
+        content:'';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        bottom: 0;
+        left: 0;
+        background-color: @red;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s;
+    }
+
+    &:hover {
+        &:after {
+            transform-origin: bottom left;
+            transform: scaleX(1);
+        }
+    }
+}
+*/
