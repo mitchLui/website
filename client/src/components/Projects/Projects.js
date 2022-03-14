@@ -6,7 +6,7 @@ import "../Button/button.css"
 export const Projects = () => 
     <section className={"projects-container"}>
         <div className={"project-header"}>
-            <h1><code>Projects</code></h1>
+            <h1><code>projects</code></h1>
             <h2>An archive of what I'm working on and what I've done in the past.</h2>
         </div>
         <div className={"projects-grid"}>
