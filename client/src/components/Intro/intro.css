@@ -11,23 +11,35 @@
 
 .header-item h1{
   font-size: 4rem;
-  padding-bottom: 1rem;
-}
-
-.code {
-  font-family: 'Courier New', Courier, monospace;
-}
-
-.header-item{
-  grid-area: header;
 }
 
 .header-item h2 {
   font-size: 2rem;
 }
 
+.code {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.intro-grid{
+  display: grid;
+  grid-template-areas: 
+   'header header'
+   'item-left item-right';
+  width: 100%;
+}
+
+.header-item{
+  grid-area: header;
+}
+
 .title-item{
   grid-area : title;
+}
+
+.item{
+  font-weight: normal;
+  font-size: 1.3rem;
 }
 
 .left{
@@ -38,19 +50,6 @@
 .right{
   grid-area: item-right;
   padding: 0.5rem 0.5rem;
-}
-
-.item{
-  font-weight: normal;
-  font-size: 1.3rem;
-}
-
-.text-grid{
-  display: grid;
-  grid-template-areas: 
-   'header header'
-   'item-left item-right';
-  width: 100%;
 }
 
 .link {
@@ -103,7 +102,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .text-grid{
+  .intro-grid{
     display: grid;
     grid-template-areas: 
      'header'
