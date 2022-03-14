@@ -4,20 +4,23 @@ import "./intro.css";
 
 export const Intro = () =>
     <section className={"intro-container"}>
-        <div className={"text-grid"}>
+        <div className={"intro-grid"}>
             <div className={"header-item"}>
                 <h1><code>hey, i'm mitch</code></h1>
                 <h2>fullstack software developer</h2>
             </div>
             <div className={"item left"}>
                 Currently working as a Graduate Teacher and 
-                IT Clinic Assistant at the <a className={"link uob"} target={"_blank"} rel={"noreferrer"} href="https://www.bristol.ac.uk">Univeristy of Bristol</a>.
-                Technical Events Officer at <a className={"link css"} target={"_blank"} rel={"noreferrer"} href="https://cssbristol.co.uk">CSS Bristol</a>.
-                Incoming SWE intern at <a className={"link wise"} target={"_blank"} rel={"noreferrer"} href="https://www.wise.com">Wise</a>.
+                IT Clinic Assistant at the <CompanyLink class={"link uob"} url={"https://www.bristol.ac.uk"} text={"Univeristy of Bristol"} />.
+                Technical Events Officer at <CompanyLink class={"link css"} url={"https://cssbristol.co.uk"} text={"CSS Bristol"} />.
+                Incoming SWE intern at <CompanyLink class={"link wise"} url="https://www.wise.com" text={"Wise"} />.
             </div>
             <div className={"item right"}>
-                Previously worked as an intern at <a className={"link asiabots"} target={"_blank"} rel={"noreferrer"} href="https://www.asiabots.com">Asiabots</a> in Hong Kong writing API-first microservices for omni-channel conversational AIs.
+                Previously worked as an intern at <CompanyLink class={"link asiabots"} url={"https://www.asiabots.com"} text={"Asiabots"} /> in Hong Kong writing API-first microservices for omni-channel conversational AIs.
             </div>
         </div>
         <Contact/>
     </section>
+
+const CompanyLink = (props) =>
+    <a className={props.class} target={"_blank"} rel={"noreferrer"} href={props.url}>{props.text}</a>

@@ -9,6 +9,10 @@
     animation: fadein 0.5s;
 }
 
+.code {
+    font-family: 'Courier New', Courier, monospace;
+  }  
+
 .project-header{
     text-align: left;
 }
