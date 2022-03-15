@@ -21,12 +21,12 @@
 
 .left{
   grid-area: item-left;
-  padding: 0.5rem 0.5rem;
+  padding: 0.5rem 1.5rem;
 }
 
 .right{
   grid-area: item-right;
-  padding: 0.5rem 0.5rem;
+  padding: 0.5rem 1.5rem;
 }
 
 .link {
@@ -58,4 +58,13 @@
      'item-right';
     width: 100%;
   }
+
+  .left{
+    padding: 0.5rem;
+  }
+  
+  .right{
+    padding: 0.5rem;
+  }
+  
 }

@@ -3,5 +3,5 @@ import { Copyright } from "../Copyright/Copyright";
 import "./container.css";
 
 export const Container = ({ children }) => 
-    <div><div className="container">{children} </div><Copyright/></div>
+    <div><div className="container">{children}</div></div>
     
