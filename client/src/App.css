@@ -9,6 +9,10 @@ html, body {
   justify-content: center;
 }
 
+.code {
+  font-family: 'Courier New', Courier, monospace;
+}  
+
 /* Light mode */
 @media (prefers-color-scheme: light) {
   body {
