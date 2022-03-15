@@ -14,8 +14,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 1rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding: 0.5rem 2rem;
 }
 
 .project {
