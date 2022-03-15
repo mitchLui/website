@@ -1,6 +1,7 @@
 .container {
     padding-left: 10%;
     padding-right: 10%;
+    padding-bottom: 2.5%;
     height: 100vh;
     -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
     -moz-animation: fadein 0.5s; /* Firefox < 16 */
