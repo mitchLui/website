@@ -1,7 +1,8 @@
 import React from "react";
+import {Button} from "../Button/Button";
 import "./projects.css";
-import {Button} from "../Button/Button"
-import "../Button/button.css"
+import "../Container/container.css";
+import "../Button/button.css";
 
 export const Projects = () => 
     <section className={"projects-container"}>

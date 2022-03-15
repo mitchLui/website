@@ -1,9 +1,10 @@
 import React from 'react';
-import {Contact} from "../Contact/Contact"
+import {Contact} from "../Contact/Contact";
+import "../Container/container.css";
 import "./intro.css";
 
 export const Intro = () =>
-    <section className={"intro-container"}>
+    <section className={"container"}>
         <div className={"intro-grid"}>
             <div className={"header-item"}>
                 <h1><code>hey, i'm mitch</code></h1>
