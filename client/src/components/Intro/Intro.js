@@ -6,7 +6,7 @@ import "./intro.css";
 export const Intro = () =>
     <section className={"container"}>
         <div className={"intro-grid"}>
-            <div className={"header-item"}>
+            <div className={"container-header"}>
                 <h1><code>hey, i'm mitch</code></h1>
                 <h2>fullstack software developer</h2>
             </div>
