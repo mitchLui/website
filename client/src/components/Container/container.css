@@ -10,11 +10,11 @@
 }
 
 .container-header h1{
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 .container-header h2{
-    font-size: 2rem;
+    font-size: 1.75rem;
 }
 
 @keyframes fadein {
