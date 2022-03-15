@@ -7,7 +7,9 @@ import {
 import { NavBar } from "./components/NavBar/NavBar";
 import { Intro } from "./components/Intro/Intro";
 import { Projects } from "./components/Projects/Projects";
-import { NotFound} from "./components/NotFound/NotFound"
+import { NotFound } from "./components/NotFound/NotFound";
+import { Copyright } from "./components/Copyright/Copyright";
+
 
 function App() {
   return (
@@ -21,7 +23,7 @@ function App() {
         </Routes>
       </Router>
     </div>
-
+    
   );
 }
 
