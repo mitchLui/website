@@ -2,6 +2,7 @@
   display: grid;
   grid-template-areas: 
    'header header'
+   'title title'
    'item-left item-right';
   width: 100%;
 }
@@ -54,6 +55,7 @@
     display: grid;
     grid-template-areas: 
      'header'
+     'title'
      'item-left'
      'item-right';
     width: 100%;
