@@ -18,10 +18,10 @@ export const projects = {
         awards: "n/a",
         technologies: "React.js",
         alt: "mitchlui.dev screenshot", 
-        content: `Personal website built on ReactJS 
+        headline: `Personal website built on ReactJS 
         for showcasing frontend skills and projects 
         I've worked on to serve as a digital portfolio.`,
-        content_detailed: [``, ``],
+        content_detailed: [`test1`, `test2`],
         git_url: "https://github.com/mitchLui/website",
     },
     "greenmap": {
@@ -34,9 +34,10 @@ export const projects = {
         awards: "CSS x Boeing Hackathon 2022 - Honourable Mention",
         technologies: "React.js, FastAPI, Docker",
         alt: "greenmap screenshot", 
-        content: `A navigation platform that aggregates data from 3rd party APIs and 
+        headline: `A navigation platform that aggregates data from 3rd party APIs and 
         provides real-time information about nearby shared vehicles. 
         University of Bristol CSS x Boeing Hackathon 2022 Submission.`,
+        content_detailed: [`test1`, `test2`],
         git_url: "https://github.com/mitchLui/greenmap",
     },
     "ai-workflow": {
@@ -49,8 +50,9 @@ export const projects = {
         awards: "n/a",
         technologies: "React.js, FastAPI, Kubernetes, IBM Carbon Design",
         alt: "greenmap screenshot", 
-        content: `An event-triggered automation tool with a web interface for workflow customisation.
+        headline: `An event-triggered automation tool with a web interface for workflow customisation.
         Coursework for Software Engineering Project at University of Bristol.`,
+        content_detailed: [`test1`, `test2`],
         git_url: "https://github.com/mitchLui/ai-workflow",
     },
     "gol": {
@@ -63,8 +65,9 @@ export const projects = {
         awards: "74% (First class)",
         technologies: "Golang, AWS",
         alt: "game of life screenshot", 
-        content: `Parallel and Distributed implementation of Conway's Game of Life using Golang. 
+        headline: `Parallel and Distributed implementation of Conway's Game of Life using Golang. 
         Coursework for Computer Systems A at University of Bristol.`,
+        content_detailed: [`test1`, `test2`],
         git_url: "https://github.com/mitchLui/game_of_life",
     },
     "mask-detector": {
@@ -77,8 +80,9 @@ export const projects = {
         awards: "BEEES Make-a-thon 2021 - Overall best prize / Most verified / Most gamified",
         technologies: "Python, TensorFlow, Arduino",
         alt: "mask detector screenshot", 
-        content: `Real-time face covering detection application to encourage good mask-wearing practises. 
+        headline: `Real-time face covering detection application to encourage good mask-wearing practises. 
         University of Bristol BEEEES Make-a-thon 2021 Submission.`,
+        content_detailed: [`test1`, `test2`],
         git_url: "https://github.com/mitchLui/mask_detector"
     },
     "marine-vessel-tracker": {
@@ -91,9 +95,10 @@ export const projects = {
         awards: "CSS x Boeing Hackathon 2021 - 2nd place in category",
         technologies: "FastAPI, Google Maps API, Docker",
         alt: "marine vessel tracker screenshot", 
-        content: `A real-time marine vessel tracker that shows the position, 
+        headline: `A real-time marine vessel tracker that shows the position, 
         type and cargo of every marine vessel and ports in the world. 
         University of Bristol CSS x Boeing Hackathon 2021 Submission.`,
+        content_detailed: [`test1`, `test2`],
         git_url: "https://github.com/mitchLui/marine_vessel_tracker"
     },
     "scotland-yard": {
@@ -106,10 +111,11 @@ export const projects = {
         awards: "n/a",
         technologies: "Java, Guava",
         alt: "scotland yard screenshot", 
-        content: `Modelled game mechanics of Scotland Yard given a skeleton using Java and wrote an AI 
+        headline: `Modelled game mechanics of Scotland Yard given a skeleton using Java and wrote an AI 
         that uses a backtracking algorithm and scoring method to find the best path for
         Mr X to escape from the detectives.
         Coursework for OOP at University of Bristol.`,
+        content_detailed: [`test1`, `test2`],
         git_url: "https://github.com/mitchLui/scotland_yard"
     },
 }
@@ -121,14 +127,14 @@ export const Projects = () =>
             <h2>an archive of what I'm working on and what I've done in the past.</h2>
             <div className={"projects-grid"}>
                 {
-                    Object.keys(projects).map(function(key, _) {
+                    Object.keys(projects).map(function(key, index) {
                         return (
-                            <article className={"project " + key}>
+                            <article key={index} className={"project " + key}>
                                 <h2>{projects[key].title}</h2>
                                 <picture className={"thumbnail"}>
                                     <img src={projects[key].thumbnail} alt={projects[key].alt} />
                                 </picture>
-                                <div className={"project-content"}>{projects[key].content}</div>
+                                <div className={"project-content"}>{projects[key].headline}</div>
                                 <footer>
                                     <LinkButton to={"/"+key} text={"Learn more"}/>
                                     <Button url={projects[key].git_url} target={"_blank"} text={"GitHub"} alt={"Visit github for " + projects[key].title} />
@@ -153,6 +159,9 @@ export const ProjectModalPage = () => {
                 <picture className={"modal-thumbnail"}>
                     <img src={projects[projectClass].thumbnail} alt={projects[projectClass].alt} />
                 </picture>
+                <div className={"modal-headline"}>
+                    <h2>{projects[projectClass].headline}</h2>
+                </div>
                 <div className={"modal-status"}>
                     <b>Category: </b>{projects[projectClass].category}<br/>
                     <b>Current Status: </b>{projects[projectClass].current_status}<br/>
@@ -162,7 +171,9 @@ export const ProjectModalPage = () => {
                     <b>Technologies used: </b>{projects[projectClass].technologies}<br/>
                 </div>
                 <div className={"modal-text"}>
-                    {projects[projectClass].content}
+                    {projects[projectClass].content_detailed.map((paragraph, index) =>
+                        <p key={index}>{paragraph}</p>
+                    )}
                 </div>
                 <footer className={"modal-footer"}>
                     <Button url={projects[projectClass].git_url} target={"_blank"} text={"GitHub"} alt={"Visit github for " + projects[projectClass].title} />

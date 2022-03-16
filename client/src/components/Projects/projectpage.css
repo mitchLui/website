@@ -17,6 +17,10 @@
     font-size: 3rem;
 }
 
+.modal-headline h2 {
+    font-size: 2rem;
+}
+
 .modal-status{
     font-size: 1.25rem;
     line-height: 1.5;
@@ -43,9 +47,16 @@
     -webkit-text-fill-color: transparent;
 }
 
+.modal-content .gol {
+    background: -webkit-linear-gradient(rgb(235, 235, 235), rgb(69, 69, 69));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .modal-text {
     padding-top: 2rem;
-    font-size: 1.15rem;
+    font-size: 1.25rem;
 }
 
 .modal-footer {
