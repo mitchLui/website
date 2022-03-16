@@ -1,14 +1,11 @@
 .modal-container{
-    position:fixed;
-    padding-top: 1.1rem;
+    position:absolute;
+    background-color: #000000;
     padding-bottom: 2.5%;
-
     z-index: 1;
-
     top:0;
-
     width: 100%;
-    height: 100%;
+    height: 100vh;
 }
 
 .modal-content{
@@ -23,6 +20,37 @@
 .modal-status{
     font-size: 1.25rem;
     line-height: 1.5;
+}
+
+.modal-content .mitchlui-dev {
+    background: -webkit-linear-gradient(rgb(88, 186, 3), rgb(29, 75, 13));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.modal-content .greenmap {
+    background: -webkit-linear-gradient(rgb(88, 186, 3), rgb(73, 186, 35));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.modal-content .ai-workflow {
+    background: -webkit-linear-gradient(rgb(12, 90, 223), rgb(7, 48, 152));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.modal-text {
+    padding-top: 2rem;
+    font-size: 1.15rem;
+}
+
+.modal-footer {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 /* Light mode */
@@ -45,5 +73,6 @@
     .modal-container {
         padding-left: 5%;
         padding-right: 5%;
+        width: inherit;
     }
 }

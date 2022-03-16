@@ -26,3 +26,16 @@
   transform: rotate(-45deg);
 }
 
+/* Light mode */
+@media (prefers-color-scheme: light) {
+  .close:before, .close:after {
+      background-color: #000;
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .close:before, .close:after {
+      background-color: #fff;
+  }
+}

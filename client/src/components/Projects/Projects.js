@@ -11,19 +11,28 @@ export const projects = {
     "mitchlui-dev": {
         title: "mitchlui.dev", 
         thumbnail: "./project_images/mitchlui_dev.svg",
-        current_status: "In Development", 
-        started: "2019-01-01",
+        category: "Personal project",
+        current_status: "In development", 
+        started: "1 March 2022",
         ended: "n/a",
         awards: "n/a",
+        technologies: "React.js",
         alt: "mitchlui.dev screenshot", 
         content: `Personal website built on ReactJS 
         for showcasing frontend skills and projects 
         I've worked on to serve as a digital portfolio.`,
+        content_detailed: [``, ``],
         git_url: "https://github.com/mitchLui/website",
     },
     "greenmap": {
         title: "GreenMap", 
         thumbnail: "./project_images/greenmap.svg", 
+        category: "Hackthon project",
+        current_status: "In development", 
+        started: "26 Feb 2022",
+        ended: "n/a",
+        awards: "CSS x Boeing Hackathon 2022 - Honourable Mention",
+        technologies: "React.js, FastAPI, Docker",
         alt: "greenmap screenshot", 
         content: `A navigation platform that aggregates data from 3rd party APIs and 
         provides real-time information about nearby shared vehicles. 
@@ -33,6 +42,12 @@ export const projects = {
     "ai-workflow": {
         title: "AI Workflow", 
         thumbnail: "./project_images/ai_workflow.svg", 
+        category: "Coursework project",
+        current_status: "In development", 
+        started: "8 October 2021",
+        ended: "n/a",
+        awards: "n/a",
+        technologies: "React.js, FastAPI, Kubernetes, IBM Carbon Design",
         alt: "greenmap screenshot", 
         content: `An event-triggered automation tool with a web interface for workflow customisation.
         Coursework for Software Engineering Project at University of Bristol.`,
@@ -41,14 +56,26 @@ export const projects = {
     "gol": {
         title: "Golang Game of Life", 
         thumbnail: "./project_images/gol.svg", 
+        category: "Coursework project",
+        current_status: "Completed", 
+        started: "1 November 2021",
+        ended: "27 December 2021",
+        awards: "74% (First class)",
+        technologies: "Golang, AWS",
         alt: "game of life screenshot", 
         content: `Parallel and Distributed implementation of Conway's Game of Life using Golang. 
         Coursework for Computer Systems A at University of Bristol.`,
-        git_url: "https://github.com/mitchLui/gol",
+        git_url: "https://github.com/mitchLui/game_of_life",
     },
     "mask-detector": {
         title: "Mask Detector", 
         thumbnail: "./project_images/mask_detector.svg", 
+        category: "Hackathon project",
+        current_status: "Completed", 
+        started: "24 April 2021",
+        ended: "25 April 2021",
+        awards: "BEEES Make-a-thon 2021 - Overall best prize / Most verified / Most gamified",
+        technologies: "Python, TensorFlow, Arduino",
         alt: "mask detector screenshot", 
         content: `Real-time face covering detection application to encourage good mask-wearing practises. 
         University of Bristol BEEEES Make-a-thon 2021 Submission.`,
@@ -57,6 +84,12 @@ export const projects = {
     "marine-vessel-tracker": {
         title: "Marine Vessel Tracker",
         thumbnail: "./project_images/marine_vessel.svg", 
+        category: "Hackathon project",
+        current_status: "Completed", 
+        started: "20 March 2021",
+        ended: "21 March 2021",
+        awards: "CSS x Boeing Hackathon 2021 - 2nd place in category",
+        technologies: "FastAPI, Google Maps API, Docker",
         alt: "marine vessel tracker screenshot", 
         content: `A real-time marine vessel tracker that shows the position, 
         type and cargo of every marine vessel and ports in the world. 
@@ -66,6 +99,12 @@ export const projects = {
     "scotland-yard": {
         title: "Java Scotland Yard",
         thumbnail: "./project_images/scotland_yard.svg", 
+        category: "Coursework project",
+        current_status: "Completed", 
+        started: "1 March 2021",
+        ended: "12 May 2021",
+        awards: "n/a",
+        technologies: "Java, Guava",
         alt: "scotland yard screenshot", 
         content: `Modelled game mechanics of Scotland Yard given a skeleton using Java and wrote an AI 
         that uses a backtracking algorithm and scoring method to find the best path for
@@ -82,7 +121,7 @@ export const Projects = () =>
             <h2>an archive of what I'm working on and what I've done in the past.</h2>
             <div className={"projects-grid"}>
                 {
-                    Object.keys(projects).map(function(key, index) {
+                    Object.keys(projects).map(function(key, _) {
                         return (
                             <article className={"project " + key}>
                                 <h2>{projects[key].title}</h2>
@@ -91,7 +130,6 @@ export const Projects = () =>
                                 </picture>
                                 <div className={"project-content"}>{projects[key].content}</div>
                                 <footer>
-                                    {projects[key].buttons}
                                     <LinkButton to={"/"+key} text={"Learn more"}/>
                                     <Button url={projects[key].git_url} target={"_blank"} text={"GitHub"} alt={"Visit github for " + projects[key].title} />
                                 </footer>
@@ -111,16 +149,24 @@ export const ProjectModalPage = () => {
         <div className={"modal-container"}>
             <ModalCloseButton to={"/projects"}/>
             <div className={"modal-content"}>
-                <h1><code>{projects[projectClass].title}</code></h1>
+                <h1 className={projectClass}>{projects[projectClass].title}</h1>
                 <picture className={"modal-thumbnail"}>
                     <img src={projects[projectClass].thumbnail} alt={projects[projectClass].alt} />
                 </picture>
                 <div className={"modal-status"}>
+                    <b>Category: </b>{projects[projectClass].category}<br/>
                     <b>Current Status: </b>{projects[projectClass].current_status}<br/>
                     <b>Started: </b>{projects[projectClass].started}<br/>
                     <b>Ended: </b>{projects[projectClass].ended}<br/>
                     <b>Awards: </b>{projects[projectClass].awards}<br/>
+                    <b>Technologies used: </b>{projects[projectClass].technologies}<br/>
                 </div>
+                <div className={"modal-text"}>
+                    {projects[projectClass].content}
+                </div>
+                <footer className={"modal-footer"}>
+                    <Button url={projects[projectClass].git_url} target={"_blank"} text={"GitHub"} alt={"Visit github for " + projects[projectClass].title} />
+                </footer>
             </div>
         </div>
     );
