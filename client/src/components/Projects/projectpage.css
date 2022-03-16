@@ -1,0 +1,49 @@
+.modal-container{
+    position:fixed;
+    padding-top: 1.1rem;
+    padding-bottom: 2.5%;
+
+    z-index: 1;
+
+    top:0;
+
+    width: 100%;
+    height: 100%;
+}
+
+.modal-content{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.modal-content h1{
+    font-size: 3rem;
+}
+
+.modal-status{
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+/* Light mode */
+@media (prefers-color-scheme: light) {
+    .modal-container {
+        color: #000000;
+        background-color: #ffffff;
+    }
+  }
+  
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    .modal-container {
+        color: #ffffff;
+        background-color: #000000;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .modal-container {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
