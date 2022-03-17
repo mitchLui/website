@@ -1,0 +1,41 @@
+.close {
+  margin-bottom: 5rem;
+  position: relative;
+  left: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.5;
+  transition: opacity 0.2s ease-in-out;
+}
+.close:hover {
+  opacity: 1;
+}
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: #fff;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
+/* Light mode */
+@media (prefers-color-scheme: light) {
+  .close:before, .close:after {
+      background-color: #000;
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .close:before, .close:after {
+      background-color: #fff;
+  }
+}
