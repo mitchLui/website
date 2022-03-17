@@ -21,7 +21,7 @@ export const projects = {
         headline: `Personal website built on ReactJS 
         for showcasing frontend skills and projects 
         I've worked on to serve as a digital portfolio.`,
-        content_detailed: [`test1`, `test2`],
+        content_detailed: [],
         git_url: "https://github.com/mitchLui/website",
     },
     "greenmap": {
@@ -37,7 +37,7 @@ export const projects = {
         headline: `A navigation platform that aggregates data from 3rd party APIs and 
         provides real-time information about nearby shared vehicles. 
         University of Bristol CSS x Boeing Hackathon 2022 Submission.`,
-        content_detailed: [`test1`, `test2`],
+        content_detailed: [],
         git_url: "https://github.com/mitchLui/greenmap",
     },
     "ai-workflow": {
@@ -52,7 +52,7 @@ export const projects = {
         alt: "greenmap screenshot", 
         headline: `An event-triggered automation tool with a web interface for workflow customisation.
         Coursework for Software Engineering Project at University of Bristol.`,
-        content_detailed: [`test1`, `test2`],
+        content_detailed: [],
         git_url: "https://github.com/mitchLui/ai-workflow",
     },
     "gol": {
@@ -67,7 +67,7 @@ export const projects = {
         alt: "game of life screenshot", 
         headline: `Parallel and Distributed implementation of Conway's Game of Life using Golang. 
         Coursework for Computer Systems A at University of Bristol.`,
-        content_detailed: [`test1`, `test2`],
+        content_detailed: [],
         git_url: "https://github.com/mitchLui/game_of_life",
     },
     "mask-detector": {
@@ -82,7 +82,7 @@ export const projects = {
         alt: "mask detector screenshot", 
         headline: `Real-time face covering detection application to encourage good mask-wearing practises. 
         University of Bristol BEEEES Make-a-thon 2021 Submission.`,
-        content_detailed: [`test1`, `test2`],
+        content_detailed: [],
         git_url: "https://github.com/mitchLui/mask_detector"
     },
     "marine-vessel-tracker": {
@@ -98,7 +98,7 @@ export const projects = {
         headline: `A real-time marine vessel tracker that shows the position, 
         type and cargo of every marine vessel and ports in the world. 
         University of Bristol CSS x Boeing Hackathon 2021 Submission.`,
-        content_detailed: [`test1`, `test2`],
+        content_detailed: [],
         git_url: "https://github.com/mitchLui/marine_vessel_tracker"
     },
     "scotland-yard": {
@@ -115,7 +115,7 @@ export const projects = {
         that uses a backtracking algorithm and scoring method to find the best path for
         Mr X to escape from the detectives.
         Coursework for OOP at University of Bristol.`,
-        content_detailed: [`test1`, `test2`],
+        content_detailed: [],
         git_url: "https://github.com/mitchLui/scotland_yard"
     },
 }

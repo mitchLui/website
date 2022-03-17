@@ -54,6 +54,27 @@
     -webkit-text-fill-color: transparent;
 }
 
+.modal-content .mask-detector {
+    background: -webkit-linear-gradient(rgb(235, 235, 235), rgb(69, 69, 69));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.modal-content .marine-vessel-tracker {
+    background: -webkit-linear-gradient(rgb(211, 211, 211), rgb(23, 143, 135));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.modal-content .scotland-yard {
+    background: -webkit-linear-gradient(rgb(245, 113, 113), rgb(109, 42, 42));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .modal-text {
     padding-top: 2rem;
     font-size: 1.25rem;
