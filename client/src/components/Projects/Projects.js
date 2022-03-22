@@ -41,7 +41,7 @@ export const projects = {
         git_url: "https://github.com/mitchLui/greenmap",
     },
     "ai-workflow": {
-        title: "AI Workflow", 
+        title: "IBM AI Workflow", 
         thumbnail: "ai_workflow.svg", 
         category: "Coursework project",
         current_status: "In development", 
@@ -56,7 +56,7 @@ export const projects = {
         git_url: "https://github.com/mitchLui/ai-workflow",
     },
     "gol": {
-        title: "Golang Game of Life", 
+        title: "Game of Life", 
         thumbnail: "gol.svg", 
         category: "Coursework project",
         current_status: "Completed", 
@@ -68,7 +68,7 @@ export const projects = {
         headline: `Parallel and Distributed implementation of Conway's Game of Life using Golang. 
         Coursework for Computer Systems A at University of Bristol.`,
         content_detailed: [],
-        git_url: "https://github.com/mitchLui/game_of_life",
+        git_url: "https://github.com/mitchLui/game-of-life",
     },
     "mask-detector": {
         title: "Mask Detector", 
@@ -83,7 +83,7 @@ export const projects = {
         headline: `Real-time face covering detection application to encourage good mask-wearing practises. 
         University of Bristol BEEEES Make-a-thon 2021 Submission.`,
         content_detailed: [],
-        git_url: "https://github.com/mitchLui/mask_detector"
+        git_url: "https://github.com/mitchLui/mask-detector"
     },
     "marine-vessel-tracker": {
         title: "Marine Vessel Tracker",
@@ -99,10 +99,10 @@ export const projects = {
         type and cargo of every marine vessel and ports in the world. 
         University of Bristol CSS x Boeing Hackathon 2021 Submission.`,
         content_detailed: [],
-        git_url: "https://github.com/mitchLui/marine_vessel_tracker"
+        git_url: "https://github.com/mitchLui/marine-vessel-tracker"
     },
     "scotland-yard": {
-        title: "Java Scotland Yard",
+        title: "Scotland Yard",
         thumbnail: "scotland_yard.svg", 
         category: "Coursework project",
         current_status: "Completed", 
@@ -116,7 +116,7 @@ export const projects = {
         Mr X to escape from the detectives.
         Coursework for OOP at University of Bristol.`,
         content_detailed: [],
-        git_url: "https://github.com/mitchLui/scotland_yard"
+        git_url: "https://github.com/mitchLui/scotland-yard"
     },
 }
 
