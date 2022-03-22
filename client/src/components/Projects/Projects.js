@@ -10,7 +10,7 @@ import "../Button/button.css";
 export const projects = {
     "mitchlui-dev": {
         title: "mitchlui.dev", 
-        thumbnail: "./project_images/mitchlui_dev.svg",
+        thumbnail: "mitchlui_dev.svg",
         category: "Personal project",
         current_status: "In development", 
         started: "1 March 2022",
@@ -26,7 +26,7 @@ export const projects = {
     },
     "greenmap": {
         title: "GreenMap", 
-        thumbnail: "./project_images/greenmap.svg", 
+        thumbnail: "greenmap.svg", 
         category: "Hackthon project",
         current_status: "In development", 
         started: "26 Feb 2022",
@@ -42,7 +42,7 @@ export const projects = {
     },
     "ai-workflow": {
         title: "AI Workflow", 
-        thumbnail: "./project_images/ai_workflow.svg", 
+        thumbnail: "ai_workflow.svg", 
         category: "Coursework project",
         current_status: "In development", 
         started: "8 October 2021",
@@ -57,7 +57,7 @@ export const projects = {
     },
     "gol": {
         title: "Golang Game of Life", 
-        thumbnail: "./project_images/gol.svg", 
+        thumbnail: "gol.svg", 
         category: "Coursework project",
         current_status: "Completed", 
         started: "1 November 2021",
@@ -72,7 +72,7 @@ export const projects = {
     },
     "mask-detector": {
         title: "Mask Detector", 
-        thumbnail: "./project_images/mask_detector.svg", 
+        thumbnail: "mask_detector.svg", 
         category: "Hackathon project",
         current_status: "Completed", 
         started: "24 April 2021",
@@ -87,7 +87,7 @@ export const projects = {
     },
     "marine-vessel-tracker": {
         title: "Marine Vessel Tracker",
-        thumbnail: "./project_images/marine_vessel.svg", 
+        thumbnail: "marine_vessel.svg", 
         category: "Hackathon project",
         current_status: "Completed", 
         started: "20 March 2021",
@@ -103,7 +103,7 @@ export const projects = {
     },
     "scotland-yard": {
         title: "Java Scotland Yard",
-        thumbnail: "./project_images/scotland_yard.svg", 
+        thumbnail: "scotland_yard.svg", 
         category: "Coursework project",
         current_status: "Completed", 
         started: "1 March 2021",
@@ -132,7 +132,10 @@ export const Projects = () =>
                             <article key={index} className={"project " + key}>
                                 <h2>{projects[key].title}</h2>
                                 <picture className={"thumbnail"}>
-                                    <img src={projects[key].thumbnail} alt={projects[key].alt} />
+                                    <img 
+                                        src={"./project_images/"+projects[key].thumbnail} 
+                                        alt={projects[key].alt} 
+                                    />
                                 </picture>
                                 <div className={"project-content"}>{projects[key].headline}</div>
                                 <footer>
