@@ -18,6 +18,7 @@
 .item{
   font-weight: normal;
   font-size: 1.3rem;
+  line-height: 1.25;
 }
 
 .left{
@@ -31,7 +32,7 @@
 }
 
 .link {
-  text-decoration: none
+  text-decoration: none;
 }
 
 .wise{
@@ -67,6 +68,10 @@
   
   .right{
     padding: 0.5rem;
+  }
+
+  .item{
+    font-size: 1rem;
   }
   
 }
