@@ -16,7 +16,7 @@ export const Intro = () =>
                 Incoming SWE intern at <CompanyLink className={"link wise"} url="https://www.wise.com" text={"Wise"} />.
             </div>
             <div className={"item right"}>
-                Previously worked as an intern at <CompanyLink class={"link asiabots"} url={"https://www.asiabots.com"} text={"Asiabots"} /> in Hong Kong writing API-first microservices for omni-channel conversational AIs.
+                Previously worked as an intern at <CompanyLink className={"link asiabots"} url={"https://www.asiabots.com"} text={"Asiabots"} /> in Hong Kong writing API-first microservices for omni-channel conversational AIs.
             </div>
         </div>
         <Contact/>
