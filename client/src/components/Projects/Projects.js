@@ -5,12 +5,11 @@ import { Container } from "../Container/Container";
 import "./projects.css";
 import "./projectpage.css";
 import "../Container/container.css";
-import "../Button/button.css";
 
 export const projects = {
     "mitchlui-dev": {
         title: "mitchlui.dev", 
-        thumbnail: "./project_images/mitchlui_dev.svg",
+        thumbnail: "mitchlui_dev.svg",
         category: "Personal project",
         current_status: "In development", 
         started: "1 March 2022",
@@ -26,7 +25,7 @@ export const projects = {
     },
     "greenmap": {
         title: "GreenMap", 
-        thumbnail: "./project_images/greenmap.svg", 
+        thumbnail: "greenmap.svg", 
         category: "Hackthon project",
         current_status: "In development", 
         started: "26 Feb 2022",
@@ -41,8 +40,8 @@ export const projects = {
         git_url: "https://github.com/mitchLui/greenmap",
     },
     "ai-workflow": {
-        title: "AI Workflow", 
-        thumbnail: "./project_images/ai_workflow.svg", 
+        title: "IBM AI Workflow", 
+        thumbnail: "ai_workflow.svg", 
         category: "Coursework project",
         current_status: "In development", 
         started: "8 October 2021",
@@ -56,8 +55,8 @@ export const projects = {
         git_url: "https://github.com/mitchLui/ai-workflow",
     },
     "gol": {
-        title: "Golang Game of Life", 
-        thumbnail: "./project_images/gol.svg", 
+        title: "Game of Life", 
+        thumbnail: "gol.svg", 
         category: "Coursework project",
         current_status: "Completed", 
         started: "1 November 2021",
@@ -68,11 +67,11 @@ export const projects = {
         headline: `Parallel and Distributed implementation of Conway's Game of Life using Golang. 
         Coursework for Computer Systems A at University of Bristol.`,
         content_detailed: [],
-        git_url: "https://github.com/mitchLui/game_of_life",
+        git_url: "https://github.com/mitchLui/game-of-life",
     },
     "mask-detector": {
         title: "Mask Detector", 
-        thumbnail: "./project_images/mask_detector.svg", 
+        thumbnail: "mask_detector.svg", 
         category: "Hackathon project",
         current_status: "Completed", 
         started: "24 April 2021",
@@ -83,11 +82,11 @@ export const projects = {
         headline: `Real-time face covering detection application to encourage good mask-wearing practises. 
         University of Bristol BEEEES Make-a-thon 2021 Submission.`,
         content_detailed: [],
-        git_url: "https://github.com/mitchLui/mask_detector"
+        git_url: "https://github.com/mitchLui/mask-detector"
     },
     "marine-vessel-tracker": {
         title: "Marine Vessel Tracker",
-        thumbnail: "./project_images/marine_vessel.svg", 
+        thumbnail: "marine_vessel.svg", 
         category: "Hackathon project",
         current_status: "Completed", 
         started: "20 March 2021",
@@ -99,11 +98,11 @@ export const projects = {
         type and cargo of every marine vessel and ports in the world. 
         University of Bristol CSS x Boeing Hackathon 2021 Submission.`,
         content_detailed: [],
-        git_url: "https://github.com/mitchLui/marine_vessel_tracker"
+        git_url: "https://github.com/mitchLui/marine-vessel-tracker"
     },
     "scotland-yard": {
-        title: "Java Scotland Yard",
-        thumbnail: "./project_images/scotland_yard.svg", 
+        title: "Scotland Yard",
+        thumbnail: "scotland_yard.svg", 
         category: "Coursework project",
         current_status: "Completed", 
         started: "1 March 2021",
@@ -116,7 +115,7 @@ export const projects = {
         Mr X to escape from the detectives.
         Coursework for OOP at University of Bristol.`,
         content_detailed: [],
-        git_url: "https://github.com/mitchLui/scotland_yard"
+        git_url: "https://github.com/mitchLui/scotland-yard"
     },
 }
 
@@ -132,7 +131,10 @@ export const Projects = () =>
                             <article key={index} className={"project " + key}>
                                 <h2>{projects[key].title}</h2>
                                 <picture className={"thumbnail"}>
-                                    <img src={projects[key].thumbnail} alt={projects[key].alt} />
+                                    <img 
+                                        src={"./project_images/"+projects[key].thumbnail} 
+                                        alt={projects[key].alt} 
+                                    />
                                 </picture>
                                 <div className={"project-content"}>{projects[key].headline}</div>
                                 <footer>
@@ -157,7 +159,10 @@ export const ProjectModalPage = () => {
             <div className={"modal-content"}>
                 <h1 className={projectClass}>{projects[projectClass].title}</h1>
                 <picture className={"modal-thumbnail"}>
-                    <img src={projects[projectClass].thumbnail} alt={projects[projectClass].alt} />
+                <img 
+                    src={"./project_images/"+projects[projectClass].thumbnail} 
+                    alt={projects[projectClass].alt} 
+                />
                 </picture>
                 <div className={"modal-headline"}>
                     <h2>{projects[projectClass].headline}</h2>
