@@ -3,11 +3,21 @@ import { Link } from "react-router-dom";
 import { Cross } from "../Cross/Cross";
 import "./button.css";
 
-export const Button = (props) => 
-    <a className={"button"} href={props.url} target={props.target} alt={props.alt}>{props.text}</a>
+export const Button = ({url, target, alt, text}) => 
+    <a className={"button"} href={url} target={target} alt={alt}>{text}</a>
 
-export const LinkButton = (props) =>
-    <Link to={props.to} className={"button"}>{props.text}</Link>
+export const LinkButton = ({to, text}) =>
+    <Link to={to} className={"button"}>{text}</Link>
 
-export const ModalCloseButton = (props) =>
-    <Link to={props.to} className={"modal"}><Cross/></Link>
+export const ModalCloseButton = ({to}) =>
+    <Link to={to} className={"modal"}><Cross/></Link>
+
+export const ContactButton = ({icon, href, alt, text}) =>
+    <a className={"button button-contact contact"} href={href} target={"_blank"} rel={"noreferrer"}>
+        <div className={"contact-icon"}>
+            <img src={icon} alt={alt}/>
+        </div>
+        <div className={"contact-text"}>
+            {text}
+        </div>
+    </a>

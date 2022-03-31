@@ -5,7 +5,6 @@ import { Container } from "../Container/Container";
 import "./projects.css";
 import "./projectpage.css";
 import "../Container/container.css";
-import "../Button/button.css";
 
 export const projects = {
     "mitchlui-dev": {

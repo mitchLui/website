@@ -1,7 +1,11 @@
 import React from "react";
+import { ContactButton } from "../Button/Button";
+import EmailSVG from "./contact_images/email.svg";
+import LinkedInSVG from "./contact_images/linkedin.svg";
+import GitHubSVG from "./contact_images/github.svg";
 import "./contact.css";
 
-export const Contact = () => 
+export const Contact = () =>
     <section className={"contact-container"}>
         <div className={"contact-header-text"}>
             Contact me:
@@ -9,20 +13,30 @@ export const Contact = () =>
         <div className={"contact-links"}>
             <ul>
                 <li>
-                    <a href={"mailto:mitch@mitchlui.dev"}>
-                        <img className={"icon"} src={"./email.svg"} alt="email icon" />
-                    </a>
+                    <ContactButton
+                        icon={EmailSVG} 
+                        href={"mailto:mitch@mitchlui.dev"} 
+                        alt={"email contact icon"} 
+                        text={"Email"}
+                    />
                 </li>
                 <li>
-                    <a href={"https://www.linkedin.com/in/mitchlui/"} target={"_blank"} rel={"noreferrer"}>
-                    <img className={"icon"} src={"./linkedin.svg"} alt="linkedin icon" />
-                    </a>
+                    <ContactButton 
+                        icon={LinkedInSVG} 
+                        href={"https://www.linkedin.com/in/mitchlui/"} 
+                        alt={"linkedin contact icon"} 
+                        text={"Linkedin"}
+                    />
                 </li>
                 <li>
-                    <a href={"https://www.github.com/mitchlui"} target={"_blank"} rel={"noreferrer"}>
-                        <img className={"icon"} src={"./github.svg"} alt="github icon" />
-                    </a>
+                    <ContactButton 
+                        icon={GitHubSVG} 
+                        href={"https://www.github.com/mitchlui"} 
+                        alt={"github contact icon"} 
+                        text={"GitHub"}
+                    />
                 </li>
             </ul>
         </div>
     </section>
+

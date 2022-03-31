@@ -3,10 +3,16 @@
         border:2px solid #000000;
         color:#000000;
     }
-    
+
     .button:hover{
         color:#FFFFFF;
         background-color:#000000;
+    }
+
+    .button:hover .contact-icon{
+        filter: invert(100%);
+        -webkit-filter: invert(100%);
+        transition: ease-in-out 0.2s;
     }
 }
   
@@ -19,6 +25,19 @@
     .button:hover{
         color:#000000;
         background-color:#FFFFFF;
+
+    }
+
+    .contact-icon{
+        grid-column: 1;
+        filter: invert(100%);
+        -webkit-filter: invert(100%);
+    }
+
+    .button:hover .contact-icon{
+        filter: invert(0%);
+        -webkit-filter: invert(0%);
+        transition: ease 0.2s;
     }
 }
 
@@ -31,4 +50,43 @@
     font-weight: normal;
     text-align:center;
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+
+.button-contact{
+    width: 7rem;
+}
+
+.contact{
+    display: grid;
+    grid-template-columns: 0.25fr 1fr;
+}
+
+.contact-icon{
+    grid-column: 1;
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+}
+
+.button:hover .contact-icon{
+    filter: invert(0%);
+    -webkit-filter: invert(0%);
+    transition: ease-in-out 0.2s;
+}
+
+.contact-text{
+    grid-column: 2;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px){
+    .contact-icon{
+        padding-top: 0.15rem;
+    }
+
+    .contact-text{
+        font-size: 1rem;
+    }
 }
