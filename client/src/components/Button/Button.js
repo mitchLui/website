@@ -13,7 +13,7 @@ export const ModalCloseButton = ({to}) =>
     <Link to={to} className={"modal"}><Cross/></Link>
 
 export const ContactButton = ({icon, href, alt, text}) =>
-    <a className={"button button-contact contact"} href={href} target={"_blank"} rel={"noreferrer"}>
+    <a className={"button contact"} href={href} target={"_blank"} rel={"noreferrer"}>
         <div className={"contact-icon"}>
             <img src={icon} alt={alt}/>
         </div>

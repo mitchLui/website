@@ -9,10 +9,21 @@
         background-color:#000000;
     }
 
+    .contact-icon{
+        filter: invert(0%);
+        -webkit-filter: invert(0%);
+    }
+
     .button:hover .contact-icon{
+        filter: invert(0%);
+        -webkit-filter: invert(0%);
+        transition: ease 0.2s;
+    }
+
+    .button:hover .contact-icon{
+        transition: ease-in-out 0.2s;
         filter: invert(100%);
         -webkit-filter: invert(100%);
-        transition: ease-in-out 0.2s;
     }
 }
   
@@ -29,8 +40,7 @@
     }
 
     .contact-icon{
-        grid-column: 1;
-        filter: invert(100%);
+        filter:  invert(100%);
         -webkit-filter: invert(100%);
     }
 
@@ -52,26 +62,15 @@
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
-
-.button-contact{
-    width: 7rem;
-}
-
 .contact{
+    margin-left: auto;
+    width: 7rem;
     display: grid;
     grid-template-columns: 0.25fr 1fr;
 }
 
 .contact-icon{
     grid-column: 1;
-    filter: invert(100%);
-    -webkit-filter: invert(100%);
-}
-
-.button:hover .contact-icon{
-    filter: invert(0%);
-    -webkit-filter: invert(0%);
-    transition: ease-in-out 0.2s;
 }
 
 .contact-text{
