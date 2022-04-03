@@ -28,7 +28,7 @@ Install [npm][4] and run `npm install` in `./client`.
 
 ### 1.2.2. Deployment
 
-You can build the site and deploy it statically to any hosting service you'd like by running `npm run build` in `./client` and.
+You can build the site and deploy it statically to any hosting service you'd like by running `npm run build` in `./client` and serve the files according to the service's documentation.
 
 ## 1.3. Roadmap
 
@@ -38,7 +38,7 @@ There is a `server` directory that is curretly empty. The current plan is to imp
 - Host my own REST APIs for public use (work in progress!)
 - Demo projects
 
-None of these features are set in stone and definitely open to changes. I'm currently cleaning up the code and optimise the site before writing new features.
+None of these features are set in stone and definitely open to changes. I'm currently cleaning up the code and optimising the site before writing new features.
 
 ---
 [1]:https://mitchlui.dev
