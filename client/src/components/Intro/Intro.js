@@ -7,8 +7,8 @@ import "./intro.css";
 export const Intro = () =>
     <Container>
         <div className={"intro-grid"}>
-            <span className={"container-header header-item"}><h1><code>hey, i'm mitch</code></h1></span>
-            <span className={"container-header title-item"}><h2>fullstack software developer</h2></span>
+            <span className={"container-header header-item"}><h1><code>Hello, I'm Mitch</code></h1></span>
+            <span className={"container-header title-item"}><h2>Fullstack software developer</h2></span>
             <div className={"item left"}>
                 Currently working as a Graduate Teacher and 
                 IT Clinic Assistant at the <CompanyLink className={"link uob"} url={"https://www.bristol.ac.uk"} text={"Univeristy of Bristol"} />.

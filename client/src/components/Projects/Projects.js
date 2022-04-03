@@ -122,7 +122,7 @@ export const projects = {
 export const Projects = () =>
     <Container>
         <div className="projects-container">
-            <h1><code>projects</code></h1>
+            <h1><code>Projects</code></h1>
             <h2>an archive of what I'm working on and what I've done in the past.</h2>
             <div className={"projects-grid"}>
                 {
