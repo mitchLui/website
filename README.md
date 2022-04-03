@@ -1,5 +1,7 @@
 # 1. mitchlui.dev
 
+![Deployed](https://github.com/mitchLui/website/actions/workflows/build-and-deploy.yml/badge.svg)
+
 ![website](docs/website.png)
 
 - [1. mitchlui.dev](#1-mitchluidev)
