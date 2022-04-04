@@ -1,8 +1,7 @@
 .close {
   margin-bottom: 5rem;
   position: relative;
-  left: 32px;
-  top: 32px;
+  top: 2rem;
   width: 32px;
   height: 32px;
   opacity: 0.5;
@@ -37,5 +36,11 @@
 @media (prefers-color-scheme: dark) {
   .close:before, .close:after {
       background-color: #fff;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .close{
+    left: 2rem;
   }
 }

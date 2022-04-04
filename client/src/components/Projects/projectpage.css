@@ -25,9 +25,19 @@
     font-size: 2rem;
 }
 
+.modal-thumbnail{
+    width: 100%;
+    height: auto;
+    align-items: center;
+}
+
 .modal-status{
     font-size: 1.25rem;
     line-height: 1.5;
+}
+
+.modal-thumbnail img{
+    width: 100%;
 }
 
 .modal-content .mitchlui-dev {
@@ -110,5 +120,11 @@
         padding-left: 5%;
         padding-right: 5%;
         width: inherit;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .modal-thumbnail img{
+        width: 40%;
     }
 }

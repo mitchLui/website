@@ -80,16 +80,16 @@
 /* Light mode */
 @media (prefers-color-scheme: light) {
     .project {
-        color: #131313;
+        color: #000000;
         background-color: #ffffff;
         box-shadow: 0 0 50px #ccc;
     }
-  }
+}
   
-  /* Dark mode */
-  @media (prefers-color-scheme: dark) {
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
     .project {
         color: #ffffff;
-        background-color: #000000;
+        background-color: #131313;
     }
-  }
+}

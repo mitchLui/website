@@ -16,7 +16,7 @@ html, body {
 /* Light mode */
 @media (prefers-color-scheme: light) {
   body {
-      color: #131313;
+      color: #000000;
       background-color: #ffffff;
   }
 }
@@ -25,6 +25,6 @@ html, body {
 @media (prefers-color-scheme: dark) {
   body {
       color: #ffffff;
-      background-color: #131313;
+      background-color: #000000;
   }
 }
