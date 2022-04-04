@@ -105,6 +105,11 @@
         color: #000000;
         background-color: #ffffff;
     }
+
+    .modal-content {
+        color: #000000;
+        background-color: #ffffff;
+    }
   }
   
 /* Dark mode */
