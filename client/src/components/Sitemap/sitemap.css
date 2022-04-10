@@ -1,0 +1,17 @@
+.sitemap {
+    list-style-type: "- /";
+    font-size: 1.25rem;
+    text-decoration: dotted;
+}
+
+.sitemap ul{
+    padding-left: 1.5rem;
+}
+
+.list {
+    list-style-type: "- /";
+}
+
+.projects{
+    list-style-type: "- /";
+}

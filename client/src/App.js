@@ -10,6 +10,7 @@ import { Intro } from "./components/Intro/Intro";
 import { Projects, ProjectModalPage } from "./components/Projects/Projects";
 import { NotFound } from "./components/NotFound/NotFound";
 import { Copyright } from "./components/Copyright/Copyright";
+import { Sitemap } from "./components/Sitemap/Sitemap";
 
 function App() {
   return (
@@ -17,13 +18,14 @@ function App() {
       <Router>
         <NavBar/>
         <Routes basename={"/"}>   
-          <Route exact path={"/"} element={<Intro />}/>
-          <Route path={"/projects"} element={<Projects />}/>
+          <Route exact path={"/"} element={<Intro/>}/>
+          <Route path={"/projects"} element={<Projects/>}/>
             <Route path={":projectClass"} element={<ProjectModalPage/>}/>
-          <Route path={"*"} element={<NotFound />}/>
+          <Route path={"/sitemap"} element={<Sitemap/>}/>
+          <Route path={"*"} element={<NotFound/>}/>
         </Routes>
+        <Copyright/>
       </Router>
-      <Copyright/>
     </div>
     
   );
