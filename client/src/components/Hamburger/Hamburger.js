@@ -3,18 +3,18 @@ import HamburgerOpenSVG from "./hamburger/hamburgeropen.svg";
 import HamburgerCloseSVG from "./hamburger/hamburgerclose.svg";
 import "./hamburger.css";
 
-export const HamburgerMenu = ({isOpen}) =>
+export const HamburgerMenu = ({onClick, isOpen}) =>
     <>
     {
         !isOpen && 
         <>
-        <img className={"hamburger"} src={HamburgerOpenSVG} alt="open hamburger menu"/>
+        <img onClick={onClick} className={"hamburger"} src={HamburgerOpenSVG} alt="open hamburger menu"/>
         </>
     }
     {
         isOpen &&
         <>
-        <img className={"hamburger"} src={HamburgerCloseSVG} alt="close hamburger menu"/>
+        <img onClick={onClick} className={"hamburger"} src={HamburgerCloseSVG} alt="close hamburger menu"/>
         </>
     }
     </>
