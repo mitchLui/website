@@ -13,21 +13,24 @@
 }
 
 /* logo desktop */
-.logo-text {     
-    float: left;                                         
+.logo-container{
+    float: left;
+}
+.logo {
+    display: flex;                                          
     font-weight: normal;
+    float: left;
 }
 .logo-link {
     color: inherit;
     text-decoration: none;
 }
-.logo-text .bold {
+.logo .bold {
     font-weight: bold;
 }
 .logo-graphic{
+    margin: auto;
     padding-right: 1rem;
-    width: 15%;
-    float: left;
 }
 
 .mobile .logo-container{
