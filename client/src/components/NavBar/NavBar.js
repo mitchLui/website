@@ -38,7 +38,7 @@ export const DesktopNavBar = () =>
 export const MobileNavBar = ({isOpen, setIsOpen}) =>
     <header className="navbar mobile">
         <div>
-            <Link to={"/"} className="logo-link"><Logo /></Link>
+            <Link onClick={()=> setIsOpen(false)} to={"/"} className="logo-link"><Logo /></Link>
             <div className="hamburger-menu-container" onClick={() => setIsOpen(!isOpen)}>
                 <HamburgerMenu isOpen={isOpen}/>
             </div>
