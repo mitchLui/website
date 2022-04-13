@@ -1,5 +1,6 @@
 import { React, useEffect, useState} from 'react';
 import { Link } from "react-router-dom";
+import { HamburgerMenu } from "../Hamburger/Hamburger";
 import "./navbar.css";
 
 const MOBILE = 768;
@@ -47,21 +48,7 @@ export const MobileNavBar = ({isOpen, setIsOpen}) =>
         </div>
     </header>
 
-export const HamburgerMenu = ({isOpen}) =>
-    <>
-    {
-        !isOpen && 
-        <>
-        menu
-        </>
-    }
-    {
-        isOpen &&
-        <>
-        close
-        </>
-    }
-    </>
+
 
 export const NavBarLinks = ({onClick}) =>
     <nav>
