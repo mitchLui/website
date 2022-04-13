@@ -55,7 +55,7 @@ export const NavBarLinks = ({onClick}) =>
         <ul>
             <li onClick={onClick}><Link to={"/"}>home</Link></li>
             <li onClick={onClick}><Link to={"/projects"}>projects</Link></li>
-            <li><Link to={"/cv.pdf"} target={"_blank"} rel={"noreferrer"}>cv</Link></li>
+            <li onClick={onClick}><Link to={"/cv.pdf"} target={"_blank"} rel={"noreferrer"}>cv</Link></li>
         </ul>
     </nav>
 
