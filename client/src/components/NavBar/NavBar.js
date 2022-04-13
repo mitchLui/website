@@ -37,10 +37,10 @@ export const DesktopNavBar = () =>
 
 export const MobileNavBar = ({isOpen, setIsOpen}) =>
     <header className="navbar mobile">
-        <div>
-            <Link onClick={()=> setIsOpen(false)} to={"/"} className="logo-link"><Logo /></Link>
-            <div className="hamburger-menu-container" onClick={() => setIsOpen(!isOpen)}>
-                <HamburgerMenu isOpen={isOpen}/>
+        <div className={"mainnav"}>
+            <Logo setIsOpen={setIsOpen}/>
+            <div className="hamburger-menu-container" >
+                <HamburgerMenu onClick={() => setIsOpen(!isOpen)} isOpen={isOpen}/>
             </div>
         </div>
         <div className={`mobile-menu ${isOpen ? "open" : "close"}`}>
@@ -60,7 +60,10 @@ export const NavBarLinks = ({onClick}) =>
     </nav>
 
         
-export const Logo = () => 
+export const Logo = ({setIsOpen}) => 
     <div className={"logo-container"}>
-        <h1 className={"logo"}>mitch<span className={"bold"}>Lui</span></h1>
+        <Link onClick={()=> setIsOpen(false)} to={"/"} className="logo-link">
+            <img className={"logo-graphic"} src={"./logo192.png"} alt={"logo"}/>
+            <h1 className={"logo-text"}>mitch<span className={"bold"}>Lui</span></h1>
+        </Link>
     </div>
