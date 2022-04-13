@@ -1,4 +1,4 @@
-.close {
+.modal-close {
   margin-bottom: 5rem;
   position: relative;
   top: 2rem;
@@ -7,10 +7,10 @@
   opacity: 0.5;
   transition: opacity 0.2s ease-in-out;
 }
-.close:hover {
+.modal-close:hover {
   opacity: 1;
 }
-.close:before, .close:after {
+.modal-close:before, .modal-close:after {
   position: absolute;
   left: 15px;
   content: ' ';
@@ -18,29 +18,29 @@
   width: 2px;
   background-color: #fff;
 }
-.close:before {
+.modal-close:before {
   transform: rotate(45deg);
 }
-.close:after {
+.modal-close:after {
   transform: rotate(-45deg);
 }
 
 /* Light mode */
 @media (prefers-color-scheme: light) {
-  .close:before, .close:after {
+  .modal-close:before, .modal-close:after {
       background-color: #000;
   }
 }
 
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
-  .close:before, .close:after {
+  .modal-close:before, .modal-close:after {
       background-color: #fff;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .close{
+  .modal-close{
     left: 2rem;
   }
 }
