@@ -26,6 +26,7 @@ export const Sitemap = () =>
                 </ul>
                 <li><Link to={"/cv.pdf"}>cv.pdf</Link></li>
                 <li><Link to={"/sitemap"}>sitemap</Link></li>
+                <li><Link to={"/for-css-vp"}>CSS VP Campaign site</Link></li>
             </ul>
         </ul>
     </Container>
