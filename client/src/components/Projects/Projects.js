@@ -157,7 +157,7 @@ export const ProjectModalPage = () => {
         <div className={"modal-container"}>
             <ModalCloseButton to={"/projects"}/>
             <div className={"modal-content"}>
-                <h1 className={projectClass}>{projects[projectClass].title}</h1>
+                <h1 className={"text"}>{projects[projectClass].title}</h1>
                 <picture className={"modal-thumbnail"}>
                 <img 
                     src={"./project_images/"+projects[projectClass].thumbnail} 

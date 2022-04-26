@@ -40,54 +40,9 @@
     width: 100%;
 }
 
-
-.modal-content .mitchlui-dev {
-    background: -webkit-linear-gradient(rgb(88, 186, 3), rgb(29, 75, 13));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.modal-content .greenmap {
-    background: -webkit-linear-gradient(rgb(88, 186, 3), rgb(73, 186, 35));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.modal-content .ai-workflow {
-    background: -webkit-linear-gradient(rgb(12, 90, 223), rgb(7, 48, 152));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.modal-content .gol {
-    background: -webkit-linear-gradient(rgb(235, 235, 235), rgb(69, 69, 69));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.modal-content .mask-detector {
-    background: -webkit-linear-gradient(rgb(235, 235, 235), rgb(69, 69, 69));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.modal-content .marine-vessel-tracker {
-    background: -webkit-linear-gradient(rgb(211, 211, 211), rgb(23, 143, 135));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.modal-content .scotland-yard {
-    background: -webkit-linear-gradient(rgb(245, 113, 113), rgb(109, 42, 42));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.modal-content .text {
+    color: black;
+    background-color: inherit;
 }
 
 .modal-text {
@@ -120,6 +75,11 @@
         color: #ffffff;
         background-color: #000000;
     }
+
+    .modal-content .text {
+        color: white;
+        background-color: inherit;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -130,7 +90,7 @@
     }
 }
 
-@media screen and (min-width: 1250px) {
+@media screen and (min-width: 1200px) {
     .modal-thumbnail img{
         width: 50%;
     }
