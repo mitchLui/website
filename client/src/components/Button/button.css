@@ -62,15 +62,6 @@
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
-.agm{
-    color: white;
-    border: 2px solid white;
-}
-
-.agm:hover{
-    background: transparent;
-}
-
 .modal{
     z-index: 1;
 }
