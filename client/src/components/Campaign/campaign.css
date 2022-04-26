@@ -1,4 +1,4 @@
-html body #root .App > div > div > div *{
+html body #root .App > div > div > .lol * {
     font-family: "Comic Sans MS", "Comic Sans", "Chalkboard", "ChalkboardSE-Regular", sans-serif !important;
 }
 
@@ -7,6 +7,7 @@ html body #root .App > div > div > div *{
     display: grid;
     grid-template-areas: 
      'header header'
+     'deets deets'
      'headshot tagline'
      'why-me why-me'
      'what what'
@@ -14,15 +15,17 @@ html body #root .App > div > div > div *{
     width: 100%;
     color: white;
     font-weight: bold;
-    font-family: "Comic Sans MS", "Comic Sans", cursive !important;
-    font-size: medium;
 }
 
 .headline{
     grid-area: header;
     font-size: 4.5rem;
-    padding: 2rem;
-    
+    padding: 2rem 2rem 0.5rem 2rem;;
+}
+
+.agm-deets {
+    grid-area: deets;
+    padding: 1rem;
 }
 
 .css-logo{
@@ -46,14 +49,14 @@ html body #root .App > div > div > div *{
 
 .why-me{
     grid-area: why-me;
-    padding-top: 3.5rem;
+    padding-top: 2.5rem;
     padding-left: 2rem;
     font-size: 2rem;
 }
 
 .what-i-want{
     grid-area: what;
-    padding-top: 3.5rem;
+    padding-top: 2.5rem;
     padding-left: 2rem;
     font-size: 2rem;
 }
@@ -78,6 +81,7 @@ html body #root .App > div > div > div *{
     .lol{
         grid-template-areas: 
          'header'
+         'deets'
          'tagline'
          'headshot'
          'why-me'
@@ -89,6 +93,10 @@ html body #root .App > div > div > div *{
     .headline{
         font-size: 2rem;
         padding-bottom: 1rem;
+    }
+
+    .agm-deets{
+        padding: 0 1rem 1rem 1rem;
     }
 
     .css-logo{

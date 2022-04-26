@@ -6,6 +6,9 @@ import "./button.css";
 export const Button = ({url, target, alt, text}) => 
     <a className={"button"} href={url} target={target} alt={alt}>{text}</a>
 
+export const VPButton = ({url, target, alt, text}) => 
+    <a className={"button agm"} href={url} target={target} alt={alt}>{text}</a>
+
 export const LinkButton = ({to, text}) =>
     <Link to={to} className={"button"}>{text}</Link>
 

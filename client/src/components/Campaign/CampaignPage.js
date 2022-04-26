@@ -1,13 +1,17 @@
 import React from "react";
 import { Container } from "../Container/Container";
+import { VPButton } from "../Button/Button";
 import "./campaign.css";
 
 export const CampaignPage = () => 
     <Container>
-        <div className={"lol"}>
+        <section className={"lol"}>
             <div className={"headline"}>
                 Vote Mitch for <br/> 
                 President of <img className={"css-logo"} src="./css-agm/css-logo.png" alt={"css"}/>
+            </div>
+            <div className={"agm-deets"}>
+                <VPButton url={"https://cssbristol.co.uk/events/2022_05_09_agm"} target={"_blank"} alt={"go-to-agm-website"} text={"CSS AGM Details"}/>
             </div>
             <img className={"headshot"} src="./css-agm/headshot.png" alt={"headshot"}/>
             <span className={"tagline"}>
@@ -31,5 +35,5 @@ export const CampaignPage = () =>
                 <span className={"link"}>https://mitchlui.dev/for-css-vp</span>
                 <img className={"poster-logo"} src={"./logo.svg"} alt={"logo"}/>
             </div>
-        </div>   
+        </section>   
     </Container>
