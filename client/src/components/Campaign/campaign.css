@@ -3,18 +3,20 @@ html body #root .App > div > div > .lol * {
 }
 
 .lol{
-    background: rgb(201, 40, 137);
+    background: linear-gradient(-45deg, rgb(81, 4, 135), rgb(201, 40, 137));
     display: grid;
     grid-template-areas: 
-     'header header'
-     'deets deets'
-     'headshot tagline'
-     'why-me why-me'
-     'what what'
-     'footer footer';
+    'header'
+    'deets'
+    'why-me'
+    'what'
+    'tagline'
+    'headshot'
+    'footer';
     width: 100%;
     color: white;
-    font-weight: bold;
+    font-weight: medium;
+    align-items: center;
 }
 
 .headline{
@@ -25,7 +27,8 @@ html body #root .App > div > div > .lol * {
 
 .agm-deets {
     grid-area: deets;
-    padding: 1rem;
+    font-size: 1.2rem;
+    padding: 2rem 1.5rem 0 2rem;
 }
 
 .css-logo{
@@ -34,35 +37,41 @@ html body #root .App > div > div > .lol * {
     -webkit-filter: invert(100%);
 }
 
+
 .tagline{
     grid-area: tagline;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
+    padding-left: 10rem;
     font-weight: bold;
-    text-align: center;
 }
 
 .headshot{
     scale: 1.2;
-    padding-top: 5rem;
+    padding-top: 0.5rem;
     padding-left: 4rem;
+}
+
+.vp-list{
+    list-style-type: square;
 }
 
 .why-me{
     grid-area: why-me;
-    padding-top: 2.5rem;
+    padding-top: 1.5rem;
     padding-left: 2rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .what-i-want{
     grid-area: what;
-    padding-top: 2.5rem;
+    padding-top: 1.5rem;
     padding-left: 2rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .poster-footer{
     grid-area: footer;
+    font-size: 1rem;
     display: flex;
     padding: 2rem 2rem 1rem 2rem;
 }
@@ -73,30 +82,13 @@ html body #root .App > div > div > .lol * {
 
 .poster-logo{
     padding-left: 0.5rem;
-    filter: invert(100%);
-    -webkit-filter: invert(100%);
 }
 
 @media screen and (max-width: 768px){
-    .lol{
-        grid-template-areas: 
-         'header'
-         'deets'
-         'tagline'
-         'headshot'
-         'why-me'
-         'what'
-         'footer';
-        font-size: medium;
-    }
-
     .headline{
         font-size: 2rem;
         padding-bottom: 1rem;
-    }
-
-    .agm-deets{
-        padding: 0 1rem 1rem 1rem;
+        padding-left: 1rem;
     }
 
     .css-logo{
@@ -108,18 +100,28 @@ html body #root .App > div > div > .lol * {
         padding: 0;
     }
 
+    .agm-deets{
+        padding-left: 1rem;
+        padding-top: 0rem;
+    }
+
     .tagline{
         padding-left: 5rem;
         font-size: 1.5rem;
     }
 
     .why-me{
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         padding: 1rem;
     }
 
     .what-i-want{
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         padding: 1rem;
+    }
+
+    .poster-footer{
+        font-size: 0.rem;
+        padding-left: 1rem;
     }
 }
