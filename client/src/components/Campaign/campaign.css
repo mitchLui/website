@@ -1,0 +1,117 @@
+html body #root .App > div > div > div *{
+    font-family: "Comic Sans MS", "Comic Sans", "Chalkboard", "ChalkboardSE-Regular", sans-serif !important;
+}
+
+.lol{
+    background: rgb(201, 40, 137);
+    display: grid;
+    grid-template-areas: 
+     'header header'
+     'headshot tagline'
+     'why-me why-me'
+     'what what'
+     'footer footer';
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    font-family: "Comic Sans MS", "Comic Sans", cursive !important;
+    font-size: medium;
+}
+
+.headline{
+    grid-area: header;
+    font-size: 4.5rem;
+    padding: 2rem;
+    
+}
+
+.css-logo{
+    width: 8.75rem;
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+}
+
+.tagline{
+    grid-area: tagline;
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.headshot{
+    scale: 1.2;
+    padding-top: 5rem;
+    padding-left: 4rem;
+}
+
+.why-me{
+    grid-area: why-me;
+    padding-top: 3.5rem;
+    padding-left: 2rem;
+    font-size: 2rem;
+}
+
+.what-i-want{
+    grid-area: what;
+    padding-top: 3.5rem;
+    padding-left: 2rem;
+    font-size: 2rem;
+}
+
+.poster-footer{
+    grid-area: footer;
+    display: flex;
+    padding: 2rem 2rem 1rem 2rem;
+}
+
+.poster-footer .link{
+    padding-top: 0.15rem;
+}
+
+.poster-logo{
+    padding-left: 0.5rem;
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+}
+
+@media screen and (max-width: 768px){
+    .lol{
+        grid-template-areas: 
+         'header'
+         'tagline'
+         'headshot'
+         'why-me'
+         'what'
+         'footer';
+        font-size: medium;
+    }
+
+    .headline{
+        font-size: 2rem;
+        padding-bottom: 1rem;
+    }
+
+    .css-logo{
+        width: 4.5rem;
+    }
+
+    .headshot{
+        scale: 0.9;
+        padding: 0;
+    }
+
+    .tagline{
+        padding-left: 5rem;
+        font-size: 1.5rem;
+    }
+
+    .why-me{
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+
+    .what-i-want{
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+}
