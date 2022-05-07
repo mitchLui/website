@@ -1,7 +1,4 @@
 import React from 'react';
-import { Container } from '../Container/Container';
-import {Contact} from "../Contact/Contact";
-import "../Container/container.css";
 import "./intro.css";
 
 export const Intro = () =>
