@@ -1,10 +1,8 @@
 import React from "react";
+
 import { Outlet, useParams } from "react-router";
-import { LinkButton, Button, ModalCloseButton } from "../Button/Button";
-import { Container } from "../Container/Container";
+import { LinkButton, Button } from "../Button/Button";
 import "./projects.css";
-import "./projectpage.css";
-import "../Container/container.css";
 
 export const projects = {
     "mitchlui-dev": {
@@ -119,71 +117,44 @@ export const projects = {
     },
 }
 
+export const ProjectCard = ({ index, name, title, thumbnail, alt, headline, git_url }) =>
+    <article key={index} className={"project " + name}>
+        <h2>{title}</h2>
+        <picture className={"thumbnail"}>
+            <img 
+                src={"./project_images/"+thumbnail} 
+                alt={alt} 
+            />
+        </picture>
+        <div className={"project-content"}>{headline}</div>
+        <footer>
+            <LinkButton to={"/"+name} text={"Learn more"}/>
+            <Button url={git_url} target={"_blank"} text={"GitHub"} alt={"Visit github for " + title} />
+        </footer>
+    </article>
+
 export const Projects = () =>
-    <Container>
-        <div className="projects-container">
-            <span className={"container-header"}><h1><code>Projects</code></h1></span>
-            <h2>An archive of what I'm working on and what I've done in the past.</h2>
-            <div className={"projects-grid"}>
-                {
-                    Object.keys(projects).map(function(key, index) {
-                        return (
-                            <article key={index} className={"project " + key}>
-                                <h2>{projects[key].title}</h2>
-                                <picture className={"thumbnail"}>
-                                    <img 
-                                        src={"./project_images/"+projects[key].thumbnail} 
-                                        alt={projects[key].alt} 
-                                    />
-                                </picture>
-                                <div className={"project-content"}>{projects[key].headline}</div>
-                                <footer>
-                                    <LinkButton to={"/"+key} text={"Learn more"}/>
-                                    <Button url={projects[key].git_url} target={"_blank"} text={"GitHub"} alt={"Visit github for " + projects[key].title} />
-                                </footer>
-                            </article>
-                        )
-                    })
-                }
-            </div>
-            <Outlet/>
+    <div className="projects-container">
+        <span className={"container-header"}><h1><code>Projects</code></h1></span>
+        <h2>An archive of what I'm working on and what I've done in the past.</h2>
+        <div className={"projects-grid"}>
+            {
+                Object.keys(projects).map(function(key, index) {
+                    return (
+                        <ProjectCard
+                            key={index}
+                            name={key}
+                            title={projects[key].title}
+                            thumbnail={projects[key].thumbnail}
+                            alt={projects[key].alt}
+                            headline={projects[key].headline}
+                            git_url={projects[key].git_url}
+                        />
+                    )
+                })
+            }
         </div>
-    </Container>
+        <Outlet/>
+    </div>
 
 
-export const ProjectModalPage = () => {
-    const { projectClass } = useParams();
-    return (
-        <div className={"modal-container"}>
-            <ModalCloseButton to={"/projects"}/>
-            <div className={"modal-content"}>
-                <h1 className={"text"}>{projects[projectClass].title}</h1>
-                <picture className={"modal-thumbnail"}>
-                <img 
-                    src={"./project_images/"+projects[projectClass].thumbnail} 
-                    alt={projects[projectClass].alt} 
-                />
-                </picture>
-                <div className={"modal-headline"}>
-                    <h2>{projects[projectClass].headline}</h2>
-                </div>
-                <div className={"modal-status"}>
-                    <b>Category: </b>{projects[projectClass].category}<br/>
-                    <b>Current Status: </b>{projects[projectClass].current_status}<br/>
-                    <b>Started: </b>{projects[projectClass].started}<br/>
-                    <b>Ended: </b>{projects[projectClass].ended}<br/>
-                    <b>Awards: </b>{projects[projectClass].awards}<br/>
-                    <b>Technologies used: </b>{projects[projectClass].technologies}<br/>
-                </div>
-                <div className={"modal-text"}>
-                    {projects[projectClass].content_detailed.map((paragraph, index) =>
-                        <p key={index}>{paragraph}</p>
-                    )}
-                </div>
-                <footer className={"modal-footer"}>
-                    <Button url={projects[projectClass].git_url} target={"_blank"} text={"GitHub"} alt={"Visit github for " + projects[projectClass].title} />
-                </footer>
-            </div>
-        </div>
-    );
-};

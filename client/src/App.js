@@ -7,7 +7,8 @@ import {
 } from "react-router-dom";
 import { NavBar } from "./components/NavBar/NavBar";
 import { HomePage } from "./pages/HomePage/HomePage";
-import { Projects, ProjectModalPage } from "./components/Projects/Projects";
+import { ProjectsPage } from './pages/ProjectPages/ProjectsPage';
+import { ProjectModalPage } from './pages/ProjectPages/ProjectModalPage';
 import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
 import { Copyright } from "./components/Copyright/Copyright";
 import { CampaignPage } from './pages/CampaignPage/CampaignPage';
@@ -20,7 +21,7 @@ function App() {
         <NavBar/>
         <Routes basename={"/"}>   
           <Route exact path={"/"} element={<HomePage/>}/>
-          <Route path={"/projects"} element={<Projects/>}/>
+          <Route path={"/projects"} element={<ProjectsPage/>}/>
             <Route path={":projectClass"} element={<ProjectModalPage/>}/>
           <Route path={"/for-css-vp"} element={<CampaignPage/>}/>
           <Route path={"/sitemap"} element={<SitemapPage/>}/>
