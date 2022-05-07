@@ -1,6 +1,6 @@
 import React from "react";
-import { Container } from "../Container/Container";
-import "./campaign.css";
+import { Container } from "../../components/Container/Container";
+import "./campaignpage.css";
 
 export const CampaignPage = () => 
     <Container>

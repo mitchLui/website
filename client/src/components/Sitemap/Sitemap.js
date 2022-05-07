@@ -1,6 +1,5 @@
 import { React } from 'react';
 import { Link } from 'react-router-dom';
-import { Container } from '../Container/Container';
 import { projects } from "../Projects/Projects";
 import "./sitemap.css";
 
@@ -9,8 +8,8 @@ export const sitemap = {
 }
 
 export const Sitemap = () =>
-    <Container>
-        <span className={"container-header"}><h1><code>Sitemap</code></h1></span>
+    <>
+    <span className={"container-header"}><h1><code>Sitemap</code></h1></span>
         <ul className={"sitemap"}>
             <li><Link to={"/"}>index</Link></li>
             <ul className={"list"}>
@@ -26,7 +25,8 @@ export const Sitemap = () =>
                 </ul>
                 <li><Link to={"/cv.pdf"}>cv.pdf</Link></li>
                 <li><Link to={"/sitemap"}>sitemap</Link></li>
-                <li><Link to={"/for-css-vp"}>CSS VP Campaign site</Link></li>
+                <li><Link to={"/for-css-vp"}>for-css-vp</Link></li>
             </ul>
         </ul>
-    </Container>
+
+    </>

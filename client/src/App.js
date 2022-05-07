@@ -6,12 +6,12 @@ import {
   Route,
 } from "react-router-dom";
 import { NavBar } from "./components/NavBar/NavBar";
-import { Intro } from "./components/Intro/Intro";
+import { HomePage } from "./pages/HomePage/HomePage";
 import { Projects, ProjectModalPage } from "./components/Projects/Projects";
-import { NotFound } from "./components/NotFound/NotFound";
+import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
 import { Copyright } from "./components/Copyright/Copyright";
-import { CampaignPage } from './components/Campaign/CampaignPage';
-import { Sitemap } from "./components/Sitemap/Sitemap";
+import { CampaignPage } from './pages/CampaignPage/CampaignPage';
+import { SitemapPage } from "./pages/SitemapPage/SitemapPage";
 
 function App() {
   return (
@@ -19,12 +19,12 @@ function App() {
       <Router>
         <NavBar/>
         <Routes basename={"/"}>   
-          <Route exact path={"/"} element={<Intro/>}/>
+          <Route exact path={"/"} element={<HomePage/>}/>
           <Route path={"/projects"} element={<Projects/>}/>
             <Route path={":projectClass"} element={<ProjectModalPage/>}/>
           <Route path={"/for-css-vp"} element={<CampaignPage/>}/>
-          <Route path={"/sitemap"} element={<Sitemap/>}/>
-          <Route path={"*"} element={<NotFound/>}/>
+          <Route path={"/sitemap"} element={<SitemapPage/>}/>
+          <Route path={"*"} element={<NotFoundPage/>}/>
         </Routes>
         <Copyright/>
       </Router>
