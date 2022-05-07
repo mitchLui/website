@@ -1,6 +1,5 @@
 import React from "react";
-
-import { Outlet, useParams } from "react-router";
+import { Outlet } from "react-router";
 import { LinkButton, Button } from "../Button/Button";
 import "./projects.css";
 
