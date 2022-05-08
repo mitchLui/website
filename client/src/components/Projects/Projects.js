@@ -28,7 +28,7 @@ export const projects = {
         started: "26 Feb 2022",
         ended: "n/a",
         awards: "CSS x Boeing Hackathon 2022 - Honourable Mention",
-        technologies: "React.js, FastAPI, Docker",
+        technologies: "React.js, FastAPI, Docker, Heroku",
         alt: "greenmap screenshot", 
         headline: `A navigation platform that aggregates data from 3rd party APIs and 
         provides real-time information about nearby shared vehicles. 
@@ -40,12 +40,12 @@ export const projects = {
         title: "IBM AI Workflow", 
         thumbnail: "ai_workflow.svg", 
         category: "Coursework project",
-        current_status: "In development", 
+        current_status: "Complete", 
         started: "8 October 2021",
-        ended: "n/a",
+        ended: "6 May 2022",
         awards: "n/a",
-        technologies: "React.js, FastAPI, Kubernetes, IBM Carbon Design",
-        alt: "greenmap screenshot", 
+        technologies: "React.js, FastAPI, mongoDB, Kubernetes, IBM Carbon Design",
+        alt: "ai-workflow screenshot", 
         headline: `An event-triggered automation tool with a web interface for workflow customisation.
         Coursework for Software Engineering Project at University of Bristol.`,
         content_detailed: [],
