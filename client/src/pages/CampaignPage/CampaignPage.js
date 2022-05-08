@@ -36,7 +36,7 @@ export const CampaignPage = () =>
             </span>
             <div className={"poster-footer"}>
                 <span className={"link"}>https://mitchlui.dev/for-css-vp</span>
-                <img className={"poster-logo"} src={"./logo.svg"} alt={"logo"}/>
+                <a href={"https://www.youtube.com/watch?v=dQw4w9WgXcQ"}><img className={"poster-logo"} src={"./logo.svg"} alt={"logo"}/></a>
             </div>
         </div>   
     </Container>
