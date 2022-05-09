@@ -10,7 +10,7 @@ export const CampaignPage = () =>
                 Vice-President of <img className={"css-logo"} src="./css-agm/css-logo.png" alt={"css"}/>
             </div>
             <div className={"agm-deets"}>
-                9 May 2022, 6pm - Queen's Building 1.6
+                9 May 2022, 6pm - 5.22, Senate House
             </div>
             <div className={"what-i-want"}>
                 <span>What I want to do as vice-president: </span>
