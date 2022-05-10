@@ -10,6 +10,9 @@ export const Contact = () =>
         <div className={"contact-header-text"}>
             Contact me:
         </div>
+        <div className={"current-status"}>
+            I am currently open to new opportunities (full-time or part-time) in the UK.
+        </div>
         <div className={"contact-links"}>
             <ul>
                 <li>
@@ -38,5 +41,9 @@ export const Contact = () =>
                 </li>
             </ul>
         </div>
+        <div>
+            NB: I require visa sponsorship to work full-time in the UK.
+        </div>
     </section>
+
 

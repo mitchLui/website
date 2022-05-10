@@ -10,9 +10,14 @@
     float: left;
 }
 
+.current-status{
+    padding-top: 2.5rem;
+    font-size: 1.25rem;
+    font-weight: medium;
+}
+
 .contact-links{
   padding: 0;
-  margin-top: 3.5rem;
 }
 
 .contact-links ul {
@@ -33,10 +38,12 @@
     border-radius: 50%;
 }
 
-/* Light mode */
-@media (prefers-color-scheme: light) {
-}
+@media screen and (max-width: 768px) {
+    .contact-header-text {
+        font-size: 1.5rem;
+    }
 
-/* Darl mode */
-@media (prefers-color-scheme: dark) {
+    .current-status {
+        font-size: 1rem;
+    }
 }
