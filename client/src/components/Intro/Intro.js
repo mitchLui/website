@@ -12,7 +12,7 @@ export const Intro = () =>
         <div className={"item right"}>
             Currently working as a Graduate Teacher and 
             an IT Clinic Technician at the <CompanyLink className={"link uob"} url={"https://www.bristol.ac.uk"} text={"Univeristy"} />,
-            in addition to being the Technical Events Officer at <CompanyLink className={"link css"} url={"https://cssbristol.co.uk"} text={"CSS Bristol"} />.
+            in addition to being the Vice-President at <CompanyLink className={"link css"} url={"https://cssbristol.co.uk"} text={"CSS Bristol"} />.
             Incoming SWE intern at <CompanyLink className={"link wise"} url="https://www.wise.com" text={"Wise's"} /> Spend Experience
             Team, where I'll be working on improving their Debit Card product.
         </div>

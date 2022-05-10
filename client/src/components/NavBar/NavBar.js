@@ -56,7 +56,6 @@ export const NavBarLinks = ({onClick}) =>
             <li onClick={onClick}><Link to={"/"}>home</Link></li>
             <li onClick={onClick}><Link to={"/projects"}>projects</Link></li>
             <li onClick={onClick}><Link to={"/cv.pdf"} target={"_blank"} rel={"noreferrer"}>cv</Link></li>
-            <li onClick={onClick} className={"vote-me-nav"}><Link to={"/for-css-vp"}><span className={"vote-text"}>Vote Me for VP of CSS!</span></Link></li>
         </ul>
     </nav>
 
