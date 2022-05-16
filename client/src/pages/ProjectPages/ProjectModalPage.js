@@ -36,6 +36,10 @@ export const ProjectModalPage = () => {
                 </div>
                 <footer className={"modal-footer"}>
                     <Button url={projects[projectClass].git_url} target={"_blank"} text={"GitHub"} alt={"Visit github for " + projects[projectClass].title} />
+                    {
+                        projects[projectClass].website &&
+                        <Button url={projects[projectClass].website} target={"_blank"} text={"Demo Website"} alt={"Visit github for " + projects[projectClass].title} />
+                    }
                 </footer>
             </div>
         </div>

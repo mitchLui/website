@@ -19,6 +19,7 @@ export const projects = {
         I've worked on to serve as a digital portfolio.`,
         content_detailed: [],
         git_url: "https://github.com/mitchLui/website",
+        website: "https://mitchlui.dev",
     },
     "greenmap": {
         title: "GreenMap", 
@@ -35,6 +36,7 @@ export const projects = {
         University of Bristol CSS x Boeing Hackathon 2022 Submission.`,
         content_detailed: [],
         git_url: "https://github.com/mitchLui/greenmap",
+        website: "https://greenmap-demo.herokuapp.com"
     },
     "ai-workflow": {
         title: "IBM AI Workflow", 
@@ -50,6 +52,7 @@ export const projects = {
         Coursework for Software Engineering Project at University of Bristol.`,
         content_detailed: [],
         git_url: "https://github.com/mitchLui/ai-workflow",
+        website: "https://ai-workflow.classroom-eu-gb-1-bx2-4x1-d4ceb080620f0ec34cd169ad110144ef-0000.eu-gb.containers.appdomain.cloud/"
     },
     "gol": {
         title: "Game of Life", 
@@ -116,7 +119,7 @@ export const projects = {
     },
 }
 
-export const ProjectCard = ({ index, name, title, thumbnail, alt, headline, git_url }) =>
+export const ProjectCard = ({ index, name, title, thumbnail, alt, headline, git_url, website }) =>
     <article key={index} className={"project " + name}>
         <h2>{title}</h2>
         <picture className={"thumbnail"}>
@@ -129,6 +132,7 @@ export const ProjectCard = ({ index, name, title, thumbnail, alt, headline, git_
         <footer>
             <LinkButton to={"/"+name} text={"Learn more"}/>
             <Button url={git_url} target={"_blank"} text={"GitHub"} alt={"Visit github for " + title} />
+            
         </footer>
     </article>
 
