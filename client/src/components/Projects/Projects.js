@@ -1,6 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router";
 import { LinkButton, Button } from "../Button/Button";
+import { FadeInSection } from "../FadeInSection/FadeInSection";
 import "./projects.css";
 
 export const projects = {
@@ -132,7 +133,6 @@ export const ProjectCard = ({ index, name, title, thumbnail, alt, headline, git_
         <footer>
             <LinkButton to={"/"+name} text={"Learn more"}/>
             <Button url={git_url} target={"_blank"} text={"GitHub"} alt={"Visit github for " + title} />
-            
         </footer>
     </article>
 
@@ -144,15 +144,17 @@ export const Projects = () =>
             {
                 Object.keys(projects).map(function(key, index) {
                     return (
-                        <ProjectCard
-                            key={index}
-                            name={key}
-                            title={projects[key].title}
-                            thumbnail={projects[key].thumbnail}
-                            alt={projects[key].alt}
-                            headline={projects[key].headline}
-                            git_url={projects[key].git_url}
-                        />
+                        <FadeInSection key={index}>
+                            <ProjectCard
+                                key={index}
+                                name={key}
+                                title={projects[key].title}
+                                thumbnail={projects[key].thumbnail}
+                                alt={projects[key].alt}
+                                headline={projects[key].headline}
+                                git_url={projects[key].git_url}
+                            />
+                        </FadeInSection>
                     )
                 })
             }
