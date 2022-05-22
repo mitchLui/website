@@ -1,7 +1,7 @@
 import { React } from "react";
 import { useParams } from "react-router";
 import { Button } from "../../components/Button/Button";
-import { projects } from "../../components/Projects/Projects";
+import { projects } from "../../data/projects";
 import { ModalCloseButton } from "../../components/Button/Button";
 import "./projectmodalpage.css";
 

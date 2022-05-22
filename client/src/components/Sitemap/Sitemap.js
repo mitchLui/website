@@ -1,13 +1,8 @@
 import { React } from 'react';
 import { Link } from 'react-router-dom';
-import { projects } from "../Projects/Projects";
 import "./sitemap.css";
 
-export const sitemap = {
-    "/": "Home",
-}
-
-export const Sitemap = () =>
+export const Sitemap = ({ projects }) =>
     <>
     <span className={"container-header"}><h1><code>Sitemap</code></h1></span>
         <ul className={"sitemap"}>
