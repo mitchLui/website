@@ -77,11 +77,11 @@ nav a:hover {
     padding: 0.75rem;
     border-bottom: 0.1rem solid #777777;
     opacity: 0;
-    -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation: fadein 0.5s; /* Firefox < 16 */
-    -ms-animation: fadein 0.5s; /* Internet Explorer */
-    -o-animation: fadein 0.5s; /* Opera < 12.1 */
-    animation: fadein 0.5s;
+    -webkit-animation: fadein 0.25s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 0.25s; /* Firefox < 16 */
+    -ms-animation: fadein 0.25s; /* Internet Explorer */
+    -o-animation: fadein 0.25s; /* Opera < 12.1 */
+    animation: fadein 0.25s;
     animation-fill-mode: forwards;
 }
 
@@ -90,11 +90,11 @@ nav a:hover {
 }
 
 .mobile nav ul li:nth-child(2) {
-    animation-delay: 0.25s;
+    animation-delay: 0.2s;
 }
 
 .mobile nav ul li:nth-child(3) {
-    animation-delay: 0.5s;
+    animation-delay: 0.4s;
 }
 
 .mainnav{
