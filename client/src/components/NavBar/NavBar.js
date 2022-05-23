@@ -53,9 +53,9 @@ export const MobileNavBar = ({isOpen, setIsOpen}) =>
 export const NavBarLinks = ({onClick}) =>
     <nav>
         <ul>
-            <li onClick={onClick}><Link to={"/"}>Home</Link></li>
-            <li onClick={onClick}><Link to={"/projects"}>Projects</Link></li>
-            <li onClick={onClick}><Link to={"/cv.pdf"} target={"_blank"} rel={"noreferrer"}>CV</Link></li>
+            <Link to={"/"}><li onClick={onClick}>Home</li></Link>
+            <Link to={"/projects"}><li onClick={onClick}>Projects</li></Link>
+            <Link to={"/cv.pdf"} target={"_blank"} rel={"noreferrer"}><li onClick={onClick}>CV</li></Link>
         </ul>
     </nav>
 

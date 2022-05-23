@@ -39,17 +39,18 @@
 }
 
 /* navbar */
-nav a {
+
+nav ul li{
     color: inherit;
     text-decoration: none;
     opacity: 70%;
     transition: all 0.2s ease-out;
 }
-nav a:hover {
+
+nav ul li:hover{
     opacity: 100%;
     transition: all 0.2s ease;
 }
-
 
 /* desktop navbar */
 .desktop nav ul {
@@ -73,9 +74,13 @@ nav a:hover {
 }
 
 .mobile nav ul li {
+    cursor: pointer;
     display: flex;
     padding: 0.75rem;
-    border-bottom: 0.1rem solid #777777;
+    border-bottom: 0.06rem solid #777777;
+}
+
+.mobile nav ul a {
     opacity: 0;
     -webkit-animation: fadein 0.25s; /* Safari, Chrome and Opera > 12.1 */
     -moz-animation: fadein 0.25s; /* Firefox < 16 */
@@ -85,7 +90,7 @@ nav a:hover {
     animation-fill-mode: forwards;
 }
 
-.mobile nav ul li:nth-child(1) {
+.mobile nav ul a:nth-child(1) {
     animation-delay: 0s;
 }
 
