@@ -102,7 +102,7 @@ export const projects = {
         current_status: "Completed", 
         started: "1 March 2021",
         ended: "12 May 2021",
-        awards: "n/a",
+        awards: "72% (First class)",
         technologies: "Java, Guava",
         alt: "scotland yard screenshot", 
         headline: `Modelled game mechanics of Scotland Yard given a skeleton using Java and wrote an AI 
