@@ -43,7 +43,7 @@ export const MobileNavBar = ({isOpen, setIsOpen}) =>
                 <HamburgerMenu onClick={() => setIsOpen(!isOpen)} isOpen={isOpen}/>
             </div>
         </div>
-        <div className={`mobile-menu ${isOpen ? "open" : "close"}`}>
+        <div className={`mobile-menu ${isOpen ? "mobile-nav-open" : "mobile-nav-close"}`}>
             <NavBarLinks onClick={() => setIsOpen(!isOpen)}/>
         </div>
     </header>
