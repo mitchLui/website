@@ -24,8 +24,6 @@ export const ProjectCard = ({ index, name, title, thumbnail, alt, headline, git_
 
 export const Projects = ({ projects }) =>
     <div className="projects-container">
-        <span className={"container-header"}><h1><code>Projects</code></h1></span>
-        <h2>An archive of what I'm working on and what I've done in the past.</h2>
         <div className={"projects-grid"}>
             {
                 Object.keys(projects).map(function(key, index) {
