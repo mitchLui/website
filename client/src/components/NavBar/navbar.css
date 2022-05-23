@@ -80,7 +80,7 @@ nav ul li:hover{
     border-bottom: 0.06rem solid #777777;
 }
 
-.mobile nav ul a {
+.mobile nav ul a li{
     opacity: 0;
     -webkit-animation: fadein 0.25s; /* Safari, Chrome and Opera > 12.1 */
     -moz-animation: fadein 0.25s; /* Firefox < 16 */
@@ -90,15 +90,15 @@ nav ul li:hover{
     animation-fill-mode: forwards;
 }
 
-.mobile nav ul a:nth-child(1) {
+.mobile nav ul a:nth-child(1) li{
     animation-delay: 0s;
 }
 
-.mobile nav ul li:nth-child(2) {
+.mobile nav ul a:nth-child(2) li{
     animation-delay: 0.2s;
 }
 
-.mobile nav ul li:nth-child(3) {
+.mobile nav ul a:nth-child(3) li{
     animation-delay: 0.4s;
 }
 
