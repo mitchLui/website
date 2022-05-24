@@ -40,14 +40,16 @@
 
 /* navbar */
 
-nav ul li{
+.nav-text{
+    width: 100%;
+    text-align: left;
     color: inherit;
     text-decoration: none;
     opacity: 70%;
     transition: all 0.2s ease-out;
 }
 
-nav ul li:hover{
+.nav-text:hover{
     opacity: 100%;
     transition: all 0.2s ease;
 }
