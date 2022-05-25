@@ -1,3 +1,7 @@
+.not-visible{
+    display: none;
+}
+
 .project-header{
     text-align: left;
 }

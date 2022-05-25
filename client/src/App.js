@@ -20,8 +20,9 @@ function App() {
         <NavBar/>
         <Routes basename={"/"}>   
           <Route exact path={"/"} element={<HomePage/>}/>
-          <Route path={"/projects"} element={<ProjectsPage/>}/>
+          <Route path={"/projects"} element={<ProjectsPage/>}>
             <Route path={":projectClass"} element={<ProjectModalPage/>}/>
+          </Route>
           <Route path={"/sitemap"} element={<SitemapPage/>}/>
           <Route path={"*"} element={<NotFoundPage/>}/>
         </Routes>

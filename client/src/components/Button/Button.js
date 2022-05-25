@@ -9,8 +9,11 @@ export const Button = ({url, target, alt, text}) =>
 export const LinkButton = ({to, text}) =>
     <Link to={to} className={"button"}>{text}</Link>
 
-export const ModalCloseButton = ({to}) =>
-    <Link to={to} className={"modal"}><Cross/></Link>
+export const LinkFunctionButton = ({to, text, onClick}) =>
+    <Link onClick={onClick} to={to} className={"button"}>{text}</Link>
+
+export const ModalCloseButton = ({onClick, to}) =>
+    <Link onClick={onClick} to={to} className={"modal"}><Cross/></Link>
 
 export const ContactButton = ({icon, href, alt, text}) =>
     <a className={"button contact"} href={href} target={"_blank"} rel={"noreferrer"}>

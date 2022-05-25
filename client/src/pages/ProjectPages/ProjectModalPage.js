@@ -1,15 +1,22 @@
-import { React } from "react";
+import { React, useEffect } from "react";
 import { useParams } from "react-router";
 import { Button } from "../../components/Button/Button";
 import { projects } from "../../data/projects";
 import { ModalCloseButton } from "../../components/Button/Button";
 import "./projectmodalpage.css";
 
-export const ProjectModalPage = () => {
+export function ProjectModalPage(){
     const { projectClass } = useParams();
+
+    useEffect(() => {
+        document.getElementsByClassName("projects-container")[0].classList.add("not-visible");
+    }, []);
+
     return (
-        <div className={"modal-container"}>
-            <ModalCloseButton to={"/projects"}/>
+        <>
+            <ModalCloseButton onClick={()=>{
+                document.getElementsByClassName("projects-container")[0].classList.remove("not-visible");
+            }} to={"/projects"}/>
             <div className={"modal-content"}>
                 <h1 className={"text"}>{projects[projectClass].title}</h1>
                 <picture className={"modal-thumbnail"}>
@@ -42,6 +49,6 @@ export const ProjectModalPage = () => {
                     }
                 </footer>
             </div>
-        </div>
+        </>
     )
 }
