@@ -24,6 +24,7 @@ function App() {
             <Route path={":projectClass"} element={<ProjectModalPage/>}/>
           </Route>
           <Route path={"/sitemap"} element={<SitemapPage/>}/>
+          <Route path={"/not-found"} element={<NotFoundPage/>}/>
           <Route path={"*"} element={<NotFoundPage/>}/>
         </Routes>
         <Copyright/>

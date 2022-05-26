@@ -1,5 +1,5 @@
 import { React, useEffect } from "react";
-import { useParams } from "react-router";
+import { useParams, Navigate } from "react-router";
 import { Button } from "../../components/Button/Button";
 import { projects } from "../../data/projects";
 import { ModalCloseButton } from "../../components/Button/Button";
@@ -11,6 +11,10 @@ export function ProjectModalPage(){
     useEffect(() => {
         document.getElementsByClassName("projects-container")[0].classList.add("not-visible");
     }, []);
+
+    if (projects[projectClass] === undefined){
+        return <Navigate to={"/not-found"}/>
+    }
 
     return (
         <>
