@@ -75,6 +75,6 @@ export const NavBarLinks = ({onClick}) =>
 export const Logo = ({setIsOpen}) => 
     <div className={"logo-container"}>
         <Link onClick={()=> setIsOpen(false)} to={"/"} className="logo-link">
-            <h1 className={"logo"}><img className={"logo-graphic"} src={"./logo.svg"} alt={"logo"}/>mitch<span className={"bold"}>Lui</span></h1>
+            <h1 className={"logo"}><img className={"logo-graphic"} src={"/logo.svg"} alt={"logo"}/>mitch<span className={"bold"}>Lui</span></h1>
         </Link>
     </div>

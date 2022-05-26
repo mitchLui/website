@@ -21,7 +21,7 @@ export function ProjectModalPage(){
                 <h1 className={"text"}>{projects[projectClass].title}</h1>
                 <picture className={"modal-thumbnail"}>
                 <img 
-                    src={"./project_images/"+projects[projectClass].thumbnail} 
+                    src={"/project_images/"+projects[projectClass].thumbnail} 
                     alt={projects[projectClass].alt} 
                 />
                 </picture>

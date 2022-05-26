@@ -10,7 +10,7 @@ export const ProjectCard = ({ index, name, title, thumbnail, alt, headline, git_
         <h2>{title}</h2>
         <picture className={"thumbnail"}>
             <img 
-                src={"./project_images/"+thumbnail} 
+                src={"/project_images/"+thumbnail} 
                 alt={alt} 
             />
         </picture>
