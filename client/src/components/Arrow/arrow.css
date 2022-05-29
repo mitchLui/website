@@ -22,6 +22,7 @@
   margin: auto;
   width: 50%;
   font-size: 1.5rem;
+  padding-left: 0.25rem;
 }
   
 @media (prefers-color-scheme: dark) {
@@ -41,5 +42,14 @@
 @media screen and (max-width: 768px) {
   .goback-container{
     padding: 1rem 0 0 1rem;
+  }
+
+  .arrow{
+    width: 12px;
+    height: 12px;
+  }
+
+  .arrow-text{
+    font-size: 1.2rem;
   }
 }
