@@ -17,7 +17,7 @@ export const ModalCloseButton = ({onClick, to}) =>
     <Link onClick={onClick} to={to} className={"modal"}><Cross/></Link>
 
 export const GoBackButton = ({onClick, to}) =>
-    <Link onClick={onClick} to={to} className={"modal"}><Arrow/></Link>
+    <Link onClick={onClick} to={to} className={"modal"}><Arrow text={"Projects"}/></Link>
 
 export const ContactButton = ({icon, href, alt, text}) =>
     <a className={"button contact"} href={href} target={"_blank"} rel={"noreferrer"}>

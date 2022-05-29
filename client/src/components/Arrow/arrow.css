@@ -3,14 +3,25 @@
   border-width: 0 2px 2px 0;
   display: inline-block;
   transform: rotate(135deg);
+
+  width: 16px;
+  height: 16px;
+
+}
+
+.goback-container{
   opacity: 0.5;
-  width: 24px;
-  height: 24px;
   transition: opacity 0.2s ease-in-out;
 }
 
-.arrow:hover{
+.goback-container:hover{
   opacity: 1;
+}
+
+.arrow-text{
+  margin: auto;
+  width: 50%;
+  font-size: 1.5rem;
 }
   
 @media (prefers-color-scheme: dark) {
