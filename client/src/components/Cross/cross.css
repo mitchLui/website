@@ -1,46 +1,46 @@
 .modal-close {
-  margin-bottom: 5rem;
-  position: relative;
-  top: 2rem;
-  width: 32px;
-  height: 32px;
-  opacity: 0.5;
-  transition: opacity 0.2s ease-in-out;
-}
-.modal-close:hover {
-  opacity: 1;
-}
-.modal-close:before, .modal-close:after {
-  position: absolute;
-  left: 15px;
-  content: ' ';
-  height: 33px;
-  width: 2px;
-  background-color: #fff;
-}
-.modal-close:before {
-  transform: rotate(45deg);
-}
-.modal-close:after {
-  transform: rotate(-45deg);
-}
-
-/* Light mode */
-@media (prefers-color-scheme: light) {
+    margin-bottom: 5rem;
+    position: relative;
+    top: 2rem;
+    width: 32px;
+    height: 32px;
+    opacity: 0.5;
+    transition: opacity 0.2s ease-in-out;
+  }
+  .modal-close:hover {
+    opacity: 1;
+  }
   .modal-close:before, .modal-close:after {
-      background-color: #000;
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #fff;
   }
-}
-
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-  .modal-close:before, .modal-close:after {
-      background-color: #fff;
+  .modal-close:before {
+    transform: rotate(45deg);
   }
-}
-
-@media screen and (min-width: 768px) {
-  .modal-close{
-    left: 2rem;
+  .modal-close:after {
+    transform: rotate(-45deg);
   }
-}
+  
+  /* Light mode */
+  @media (prefers-color-scheme: light) {
+    .modal-close:before, .modal-close:after {
+        background-color: #000;
+    }
+  }
+  
+  /* Dark mode */
+  @media (prefers-color-scheme: dark) {
+    .modal-close:before, .modal-close:after {
+        background-color: #fff;
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    .modal-close{
+      left: 2rem;
+    }
+  }

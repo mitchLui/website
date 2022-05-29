@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Arrow } from "../Arrow/Arrow";
 import { Cross } from "../Cross/Cross";
 import "./button.css";
 
@@ -14,6 +15,9 @@ export const LinkFunctionButton = ({to, text, onClick}) =>
 
 export const ModalCloseButton = ({onClick, to}) =>
     <Link onClick={onClick} to={to} className={"modal"}><Cross/></Link>
+
+export const GoBackButton = ({onClick, to}) =>
+    <Link onClick={onClick} to={to} className={"modal"}><Arrow/></Link>
 
 export const ContactButton = ({icon, href, alt, text}) =>
     <a className={"button contact"} href={href} target={"_blank"} rel={"noreferrer"}>

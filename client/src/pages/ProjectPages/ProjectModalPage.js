@@ -1,8 +1,7 @@
 import { React, useEffect } from "react";
 import { useParams, Navigate } from "react-router";
-import { Button } from "../../components/Button/Button";
+import { Button, GoBackButton } from "../../components/Button/Button";
 import { projects } from "../../data/projects";
-import { ModalCloseButton } from "../../components/Button/Button";
 import "./projectmodalpage.css";
 
 export function ProjectModalPage(){
@@ -18,7 +17,7 @@ export function ProjectModalPage(){
 
     return (
         <>
-            <ModalCloseButton onClick={()=>{
+            <GoBackButton onClick={()=>{
                 document.getElementsByClassName("projects-container")[0].classList.remove("not-visible");
             }} to={"/projects"}/>
             <div className={"modal-content"}>
