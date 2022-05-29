@@ -1,11 +1,11 @@
 .arrow{
   border: solid white;
-  border-width: 0 3px 3px 0;
+  border-width: 0 2px 2px 0;
   display: inline-block;
   transform: rotate(135deg);
   opacity: 0.5;
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
   transition: opacity 0.2s ease-in-out;
 }
 
@@ -16,14 +16,14 @@
 @media (prefers-color-scheme: dark) {
   .arrow{
     border: solid white;
-    border-width: 0 3px 3px 0;
+    border-width: 0 2px 2px 0;
   }
 }
 
 @media (prefers-color-scheme: light) {
   .arrow{
     border: solid black;
-    border-width: 0 3px 3px 0;
+    border-width: 0 2px 2px 0;
   }
 }
 
