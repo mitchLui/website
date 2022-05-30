@@ -1,7 +1,7 @@
 import { React, useEffect, useState} from 'react';
 import { Link } from "react-router-dom";
 import { HamburgerMenu } from "../Hamburger/Hamburger";
-import "./navbar.css";
+import "./navbar.scss";
 
 const MOBILE = 768;
 
