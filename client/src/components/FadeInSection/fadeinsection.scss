@@ -5,10 +5,10 @@
     visibility: hidden;
     transition: opacity 0.4s ease-out, transform 0.8s ease-out;
     will-change: opacity, visibility;
-  }
 
-.fade-in-section.is-visible {
-  opacity: 1;
-  transform: none;
-  visibility: visible;
+    &.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
 }
