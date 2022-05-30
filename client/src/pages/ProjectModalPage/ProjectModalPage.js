@@ -2,7 +2,7 @@ import { React, useEffect } from "react";
 import { useParams, Navigate } from "react-router";
 import { Button, GoBackButton } from "../../components/Button/Button";
 import { projects } from "../../data/projects";
-import "./projectmodalpage.css";
+import "./projectmodalpage.scss";
 
 export function ProjectModalPage(){
     const { projectClass } = useParams();

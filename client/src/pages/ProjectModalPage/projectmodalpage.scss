@@ -15,34 +15,34 @@
     padding-left: 10%;
     padding-right: 10%;
     padding-bottom: 2.5%;
-}
 
-.modal-content h1{
-    font-size: 3rem;
-}
+    h1{
+        font-size: 3rem;
+    }
 
-.modal-headline h2 {
-    font-size: 2rem;
+    h2 {
+        font-size: 2rem;
+    }
+
+    .text {
+        color: black;
+        background-color: inherit;
+    }
 }
 
 .modal-thumbnail{
     width: 100%;
     height: auto;
     align-items: center;
+
+    img{
+        width: 100%;
+    }
 }
 
 .modal-status{
     font-size: 1.25rem;
     line-height: 1.5;
-}
-
-.modal-thumbnail img{
-    width: 100%;
-}
-
-.modal-content .text {
-    color: black;
-    background-color: inherit;
 }
 
 .modal-text {
