@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Arrow } from "../Arrow/Arrow";
 import { Cross } from "../Cross/Cross";
-import "./button.css";
+import "./button.scss";
 
 export const Button = ({url, target, alt, text}) => 
     <a className={"button"} href={url} target={target} alt={alt}>{text}</a>

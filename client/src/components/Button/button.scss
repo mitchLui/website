@@ -2,11 +2,11 @@
     .button{
         border:2px solid #000000;
         color:#000000;
-    }
 
-    .button:hover{
-        color:#FFFFFF;
-        background-color:#000000;
+        &:hover{
+            color:#FFFFFF;
+            background-color:#000000;
+        }
     }
 
     .contact-icon{
@@ -31,12 +31,11 @@
     .button{
         border:2px solid #FFFFFF;
         color:#FFFFFF;
-    }
-    
-    .button:hover{
-        color:#000000;
-        background-color:#FFFFFF;
 
+        &:hover{
+            color:#000000;
+            background-color:#FFFFFF;
+        }
     }
 
     .contact-icon{
@@ -60,17 +59,17 @@
     font-weight: normal;
     text-align:center;
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+    &.contact {
+        margin-left: auto;
+        width: 7rem;
+        display: grid;
+        grid-template-columns: 0.25fr 1fr;
+    }
 }
 
 .modal{
     z-index: 1;
-}
-
-.contact{
-    margin-left: auto;
-    width: 7rem;
-    display: grid;
-    grid-template-columns: 0.25fr 1fr;
 }
 
 .contact-icon{
