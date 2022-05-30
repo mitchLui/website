@@ -20,6 +20,20 @@
     flex-direction: column;
     border-radius: 15px;
     padding: 1.25rem;
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    footer {
+        min-height: 30px;
+        justify-content: center;
+        text-align: center;
+        padding-top: 1rem;
+    }
 }
 
 .thumbnail{
@@ -36,21 +50,6 @@
     -webkit-box-flex: 1;
     -ms-flex: 1;
     flex: 1;
-}
-
-.project h2 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-
-.project footer {
-    min-height: 30px;
-    justify-content: center;
-    text-align: center;
-    padding-top: 1rem;
 }
 
 .mitchlui-dev {

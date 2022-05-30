@@ -1,9 +1,7 @@
 import React from "react";
 import { LinkFunctionButton, Button } from "../Button/Button";
 import { FadeInSection } from "../FadeInSection/FadeInSection";
-import "./projects.css";
-
-
+import "./projects.scss";
 
 export const ProjectCard = ({ index, name, title, thumbnail, alt, headline, git_url }) =>
     <article key={index} className={"project " + name}>
