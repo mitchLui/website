@@ -1,3 +1,13 @@
+.arrow-container{
+  opacity: 0.5;
+  transition: opacity 0.2s ease-in-out;
+
+  &:hover{
+    opacity: 1;
+  }
+
+}
+
 .arrow{
   border: solid white;
   border-width: 0 2px 2px 0;
@@ -7,15 +17,6 @@
   width: 16px;
   height: 16px;
 
-}
-
-.goback-container{
-  opacity: 0.5;
-  transition: opacity 0.2s ease-in-out;
-}
-
-.goback-container:hover{
-  opacity: 1;
 }
 
 .arrow-text{
