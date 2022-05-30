@@ -1,7 +1,7 @@
 import React from "react";
 import HamburgerOpenSVG from "./hamburger/hamburgeropen.svg";
 import HamburgerCloseSVG from "./hamburger/hamburgerclose.svg";
-import "./hamburger.css";
+import "./hamburger.scss";
 
 export const HamburgerMenu = ({onClick, isOpen}) =>
     <>
