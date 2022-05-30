@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "../../components/Container/Container";
 import { LinkButton} from "../../components/Button/Button";
-import "./notfoundpage.css";
+import "./notfound.scss";
 
 export const NotFoundPage = () =>
     <Container>
