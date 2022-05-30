@@ -1,6 +1,8 @@
 import React from "react";
 import { Container } from "../Container/Container";
 import { LinkButton} from "../Button/Button";
+import "./notfound.scss";
+
 
 export const NotFound = () =>
     <Container>
