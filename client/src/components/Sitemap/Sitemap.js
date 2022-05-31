@@ -20,7 +20,8 @@ export const Sitemap = ({ projects }) =>
                 </ul>
                 <li><Link to={"/cv.pdf"}>cv.pdf</Link></li>
                 <li><Link to={"/sitemap"}>sitemap</Link></li>
-                <li><Link to={"/for-css-vp"}>for-css-vp</Link></li>
+                <li><Link to={"/linkedin"}>linkedin</Link></li>
+                <li><Link to={"/github"}>github</Link></li>
             </ul>
         </ul>
 
