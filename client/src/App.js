@@ -12,6 +12,7 @@ import { ProjectModalPage } from './pages/ProjectModalPage/ProjectModalPage';
 import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
 import { Copyright } from "./components/Copyright/Copyright";
 import { SitemapPage } from "./pages/SitemapPage/SitemapPage";
+import { RedirectPage } from './pages/RedirectPage/RedirectPage';
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
           </Route>
           <Route path={"/sitemap"} element={<SitemapPage/>}/>
           <Route path={"/not-found"} element={<NotFoundPage/>}/>
+          <Route path={"/linkedin"} element={<RedirectPage redirect={"https://linkedin.com/in/mitchlui"}/>}/>
+          <Route path={"/github"} element={<RedirectPage redirect={"https://github.com/mitchlui"}/>}/>
           <Route path={"*"} element={<NotFoundPage/>}/>
         </Routes>
         <Copyright/>
