@@ -1,5 +1,5 @@
 import React from "react";
-import { LinkFunctionButton, Button } from "../Button/Button";
+import { Button, LinkButton } from "../Button/Button";
 import { FadeInSection } from "../FadeInSection/FadeInSection";
 import "./projects.scss";
 
@@ -14,10 +14,7 @@ export const ProjectCard = ({ index, name, title, thumbnail, alt, headline, git_
         </picture>
         <div className={"project-content"}>{headline}</div>
         <footer>
-            <LinkFunctionButton onClick={()=>{
-                window.scrollTo(0, 0);
-                document.getElementsByClassName("projects-container")[0].classList.add("not-visible");
-            }} to={"/projects/"+name} text={"Learn more"}/>
+            <LinkButton to={"/projects/"+name} text={"Learn more"}/>
             <Button url={git_url} target={"_blank"} text={"GitHub"} alt={"Visit github for " + title} />
         </footer>
     </article>

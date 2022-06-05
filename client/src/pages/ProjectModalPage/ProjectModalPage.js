@@ -1,5 +1,6 @@
-import { React, useEffect } from "react";
+import { React } from "react";
 import { useParams, Navigate } from "react-router";
+import { Container } from "../../components/Container/Container";
 import { Button, GoBackButton } from "../../components/Button/Button";
 import { projects } from "../../data/projects";
 import "./projectmodalpage.scss";
@@ -7,27 +8,13 @@ import "./projectmodalpage.scss";
 export function ProjectModalPage(){
     const { projectClass } = useParams();
 
-    useEffect(() => {
-        document.getElementsByClassName("projects-container")[0].classList.add("not-visible");
-    }, []);
-
-    useEffect(() => {
-        window.onpopstate = () => {
-            document.getElementsByClassName("projects-container")[0].classList.remove("not-visible");
-        };
-    }, []);
-
-
-
     if (projects[projectClass] === undefined){
         return <Navigate to={"/not-found"}/>
     }
 
     return (
-        <>
-            <GoBackButton onClick={()=>{
-                document.getElementsByClassName("projects-container")[0].classList.remove("not-visible");
-            }} to={"/projects"}/>
+        <Container>
+            <GoBackButton to={"/projects"}/>
             <div className={"modal-content"}>
                 <h1 className={"text"}>{projects[projectClass].title}</h1>
                 <picture className={"modal-thumbnail"}>
@@ -60,6 +47,6 @@ export function ProjectModalPage(){
                     }
                 </footer>
             </div>
-        </>
+        </Container>
     )
 }

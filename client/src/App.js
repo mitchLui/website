@@ -21,9 +21,8 @@ function App() {
         <NavBar/>
         <Routes basename={"/"}>   
           <Route exact path={"/"} element={<HomePage/>}/>
-          <Route path={"/projects"} element={<ProjectsPage/>}>
-            <Route path={":projectClass"} element={<ProjectModalPage/>}/>
-          </Route>
+          <Route path={"/projects"} element={<ProjectsPage/>}/>
+          <Route path={"/projects/:projectClass"} element={<ProjectModalPage/>}/>
           <Route path={"/sitemap"} element={<SitemapPage/>}/>
           <Route path={"/not-found"} element={<NotFoundPage/>}/>
           <Route path={"/linkedin"} element={<RedirectPage redirect={"https://linkedin.com/in/mitchlui"}/>}/>
