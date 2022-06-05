@@ -58,7 +58,7 @@ export const NavBarLinks = ({onClick}) =>
                     <span className={"nav-text"}>Home</span>
                 </li>
             </Link>
-            <Link onClick={() => {document.getElementsByClassName("projects-container")[0].classList.remove("not-visible");}} to={"/projects"}>
+            <Link to={"/projects"}>
                 <li onClick={onClick}>
                     <span className={"nav-text"}>Projects</span>
                 </li>
