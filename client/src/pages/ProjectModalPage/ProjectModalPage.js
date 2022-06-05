@@ -11,6 +11,12 @@ export function ProjectModalPage(){
         document.getElementsByClassName("projects-container")[0].classList.add("not-visible");
     }, []);
 
+    useEffect(() => {
+        window.onpopstate = () => {
+            document.getElementsByClassName("projects-container")[0].classList.remove("not-visible");
+        };
+    }, []);
+
     if (projects[projectClass] === undefined){
         return <Navigate to={"/not-found"}/>
     }
