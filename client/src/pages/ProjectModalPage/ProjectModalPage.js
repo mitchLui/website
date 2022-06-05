@@ -17,6 +17,8 @@ export function ProjectModalPage(){
         };
     }, []);
 
+
+
     if (projects[projectClass] === undefined){
         return <Navigate to={"/not-found"}/>
     }

@@ -17,8 +17,6 @@ export const ProjectCard = ({ index, name, title, thumbnail, alt, headline, git_
             <LinkFunctionButton onClick={()=>{
                 window.scrollTo(0, 0);
                 document.getElementsByClassName("projects-container")[0].classList.add("not-visible");
-                // scroll to top
-                
             }} to={"/projects/"+name} text={"Learn more"}/>
             <Button url={git_url} target={"_blank"} text={"GitHub"} alt={"Visit github for " + title} />
         </footer>

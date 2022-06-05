@@ -18,7 +18,7 @@ export const NavBar = () => {
                 setIsOpen(false);
             }
         };
-        window.addEventListener("resize", handleResize);
+        window.onresize = handleResize;
     });
 
     return (
@@ -58,7 +58,7 @@ export const NavBarLinks = ({onClick}) =>
                     <span className={"nav-text"}>Home</span>
                 </li>
             </Link>
-            <Link to={"/projects"}>
+            <Link onClick={() => {document.getElementsByClassName("projects-container")[0].classList.remove("not-visible");}} to={"/projects"}>
                 <li onClick={onClick}>
                     <span className={"nav-text"}>Projects</span>
                 </li>
