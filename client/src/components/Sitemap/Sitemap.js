@@ -1,9 +1,19 @@
 import { React } from 'react';
 import { Link } from 'react-router-dom';
+import DocumentMeta from 'react-document-meta';
 import "./sitemap.scss";
 
+const meta = {
+    title: 'Sitemap',
+    description: 'Sitemap',
+    canonical: 'https://www.mitchlui.dev/sitemap',
+    meta: {
+        charset: 'utf-8',
+    }
+};
+
 export const Sitemap = ({ projects }) =>
-    <>
+    <DocumentMeta {...meta}>
     <span className={"container-header"}><h1><code>Sitemap</code></h1></span>
         <ul className={"sitemap"}>
             <li><Link to={"/"}>index</Link></li>
@@ -24,5 +34,4 @@ export const Sitemap = ({ projects }) =>
                 <li><Link to={"/github"}>github</Link></li>
             </ul>
         </ul>
-
-    </>
+    </DocumentMeta>
