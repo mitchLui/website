@@ -15,3 +15,13 @@ export const setDescription = desc => {
     });
 }
 
+export const setOgProperties = props => {
+    Object.keys(props).forEach(key => {
+        setElemAttribute({
+            element: `meta[property="og:${key}"]`,
+            attribute: 'content',
+            value: props[key],
+        });
+    });
+}
+
