@@ -18,7 +18,7 @@ export function ProjectModalPage(){
               description: projects[projectClass],    
             })
         }
-      }, [projects, projectClass]);
+      }, [projectClass]);
 
     useEffect(() => {
         window.scrollTo(0, 0);
