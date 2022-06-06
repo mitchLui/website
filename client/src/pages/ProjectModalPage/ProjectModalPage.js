@@ -30,6 +30,13 @@ export function ProjectModalPage(){
                 <div className={"modal-headline"}>
                     <h2>{projects[projectClass].headline}</h2>
                 </div>
+                <div className={"modal-buttons"}>
+                    <Button url={projects[projectClass].git_url} target={"_blank"} text={"GitHub"} alt={"Visit github for " + projects[projectClass].title} />
+                    {
+                        projects[projectClass].website &&
+                        <Button url={projects[projectClass].website} target={"_blank"} text={"Demo Website"} alt={"Visit github for " + projects[projectClass].title} />
+                    }
+                </div>
                 <div className={"modal-status"}>
                     <b>Category: </b>{projects[projectClass].category}<br/>
                     <b>Current Status: </b>{projects[projectClass].current_status}<br/>
@@ -43,13 +50,7 @@ export function ProjectModalPage(){
                         <p key={index}>{paragraph}</p>
                     )}
                 </div>
-                <footer className={"modal-footer"}>
-                    <Button url={projects[projectClass].git_url} target={"_blank"} text={"GitHub"} alt={"Visit github for " + projects[projectClass].title} />
-                    {
-                        projects[projectClass].website &&
-                        <Button url={projects[projectClass].website} target={"_blank"} text={"Demo Website"} alt={"Visit github for " + projects[projectClass].title} />
-                    }
-                </footer>
+
             </div>
         </Container>
     )
