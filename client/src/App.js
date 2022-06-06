@@ -16,23 +16,22 @@ import { RedirectPage } from './pages/RedirectPage/RedirectPage';
 
 function App() {
   return (
-    <div className={"App"}>
-      <Router>
-        <NavBar/>
-        <Routes basename={"/"}>   
-          <Route exact path={"/"} element={<HomePage/>}/>
-          <Route path={"/projects"} element={<ProjectsPage/>}/>
-          <Route path={"/projects/:projectClass"} element={<ProjectModalPage/>}/>
-          <Route path={"/sitemap"} element={<SitemapPage/>}/>
-          <Route path={"/not-found"} element={<NotFoundPage/>}/>
-          <Route path={"/linkedin"} element={<RedirectPage redirect={"https://linkedin.com/in/mitchlui"}/>}/>
-          <Route path={"/github"} element={<RedirectPage redirect={"https://github.com/mitchlui"}/>}/>
-          <Route path={"*"} element={<NotFoundPage/>}/>
-        </Routes>
-        <Copyright/>
-      </Router>
-    </div>
-    
+      <div className={"App"}>
+        <Router>
+          <NavBar/>
+          <Routes basename={"/"}>   
+            <Route exact path={"/"} element={<HomePage/>}/>
+            <Route path={"/projects"} element={<ProjectsPage/>}/>
+            <Route path={"/projects/:projectClass"} element={<ProjectModalPage/>}/>
+            <Route path={"/sitemap"} element={<SitemapPage/>}/>
+            <Route path={"/not-found"} element={<NotFoundPage/>}/>
+            <Route path={"/linkedin"} element={<RedirectPage redirect={"https://linkedin.com/in/mitchlui"}/>}/>
+            <Route path={"/github"} element={<RedirectPage redirect={"https://github.com/mitchlui"}/>}/>
+            <Route path={"*"} element={<NotFoundPage/>}/>
+          </Routes>
+          <Copyright/>
+        </Router>
+      </div>
   );
 }
 
