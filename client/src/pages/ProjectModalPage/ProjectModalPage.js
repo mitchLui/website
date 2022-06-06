@@ -3,10 +3,22 @@ import { useParams, Navigate } from "react-router";
 import { Container } from "../../components/Container/Container";
 import { Button, GoBackButton } from "../../components/Button/Button";
 import { projects } from "../../data/projects";
+import { setTitle, setDescription, setOgProperties } from "../../meta/meta";
 import "./projectmodalpage.scss";
 
 export function ProjectModalPage(){
     const { projectClass } = useParams();
+
+    useEffect(() => {
+        if (projects[projectClass] !== undefined){
+            setTitle(projects[projectClass].title + " | Mitch Lui");
+            setDescription(projects[projectClass]);
+            setOgProperties({
+              title: projects[projectClass] + " | Mitch Lui",
+              description: projects[projectClass],    
+            })
+        }
+      }, [projects, projectClass]);
 
     useEffect(() => {
         window.scrollTo(0, 0);

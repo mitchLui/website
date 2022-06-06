@@ -1,4 +1,4 @@
-import { React, useEffect } from 'react';
+import { React } from 'react';
 import "./App.scss";
 import {
   BrowserRouter as Router,
@@ -13,19 +13,8 @@ import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
 import { Copyright } from "./components/Copyright/Copyright";
 import { SitemapPage } from "./pages/SitemapPage/SitemapPage";
 import { RedirectPage } from './pages/RedirectPage/RedirectPage';
-import { setTitle, setDescription, setOgProperties } from './meta/meta';
 
 function App() {
-
-  useEffect(() => {
-    setTitle("Mitch Lui | Full Stack Developer");
-    setDescription("mitchlui.dev");
-    setOgProperties({
-      title: "Mitch Lui | Full Stack Developer",
-      description: "mitchlui.dev",    
-    })
-  }, []);
-
   return (
       <div className={"App"}>
         <Router>

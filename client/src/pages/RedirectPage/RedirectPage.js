@@ -1,11 +1,21 @@
 import React, { useEffect } from "react";
 import { Container } from "../../components/Container/Container";
+import { setTitle, setDescription, setOgProperties } from "../../meta/meta";
 
 export function RedirectPage({ redirect }){
     
     useEffect(() => {
         window.location.assign(redirect);
     }, [redirect]);
+
+    useEffect(() => {
+        setTitle("Redirecting... | Mitch Lui");
+        setDescription("Redirecting...");
+        setOgProperties({
+            title: "Redirecting... | Mitch Lui",
+            description: "Redirecting...",
+        })
+    }, []);
 
     return (
         <Container>
