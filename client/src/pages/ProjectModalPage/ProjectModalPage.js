@@ -1,4 +1,4 @@
-import { React } from "react";
+import { React, useEffect } from "react";
 import { useParams, Navigate } from "react-router";
 import { Container } from "../../components/Container/Container";
 import { Button, GoBackButton } from "../../components/Button/Button";
@@ -7,6 +7,10 @@ import "./projectmodalpage.scss";
 
 export function ProjectModalPage(){
     const { projectClass } = useParams();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     if (projects[projectClass] === undefined){
         return <Navigate to={"/not-found"}/>
