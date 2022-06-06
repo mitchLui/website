@@ -1,19 +1,7 @@
-.modal-container{
-    position:fixed;
-    background-color: #000000;
-    z-index: 1;
-    top:0;
-    bottom: 0;
-    min-height: 100%;
-    width: 100vw;
-    overflow-x: hidden;
-    overflow-y: auto;
-}
-
 .modal-content{
     background-color: #000000;
-    padding-left: 7.5%;
-    padding-right: 7.5%;
+    padding-left: 5%;
+    padding-right: 5%;
     padding-bottom: 2.5%;
 
     h1{
