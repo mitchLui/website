@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import { NavBar } from "./components/NavBar/NavBar";
 import { HomePage } from "./pages/HomePage/HomePage";
-import { ProjectsPage } from './pages/ProjectPages/ProjectsPage';
+import { ProjectsPage } from './pages/ProjectPage/ProjectsPage';
 import { ProjectModalPage } from './pages/ProjectModalPage/ProjectModalPage';
 import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
 import { Copyright } from "./components/Copyright/Copyright";
