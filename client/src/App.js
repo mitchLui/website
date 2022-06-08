@@ -14,6 +14,8 @@ import { Copyright } from "./components/Copyright/Copyright";
 import { SitemapPage } from "./pages/SitemapPage/SitemapPage";
 import { RedirectPage } from './pages/RedirectPage/RedirectPage';
 
+import {MitchLuiDevPage} from './pages/Projects/mitchlui-dev/mitchluidevpage';
+
 function App() {
   return (
       <div className={"App"}>
@@ -22,6 +24,7 @@ function App() {
           <Routes basename={"/"}>   
             <Route exact path={"/"} element={<HomePage/>}/>
             <Route path={"/projects"} element={<ProjectsPage/>}/>
+            <Route path={"/projects/mitchluidevtest"} element={<MitchLuiDevPage/>}/>
             <Route path={"/projects/:projectClass"} element={<ProjectModalPage/>}/>
             <Route path={"/sitemap"} element={<SitemapPage/>}/>
             <Route path={"/not-found"} element={<NotFoundPage/>}/>
