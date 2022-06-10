@@ -1,7 +1,7 @@
 export const projects = {
     "mitchlui-dev": {
         title: "mitchlui.dev", 
-        thumbnail: "mitchlui_dev.svg",
+        thumbnail: "mitchlui_dev.png",
         category: "Personal project",
         current_status: "In development", 
         started: "1 March 2022",
@@ -18,7 +18,7 @@ export const projects = {
     },
     "greenmap": {
         title: "GreenMap", 
-        thumbnail: "greenmap.svg", 
+        thumbnail: "greenmap.png", 
         category: "Hackthon project",
         current_status: "In development", 
         started: "26 Feb 2022",
@@ -35,7 +35,7 @@ export const projects = {
     },
     "ai-workflow": {
         title: "IBM AI Workflow", 
-        thumbnail: "ai_workflow.svg", 
+        thumbnail: "ai_workflow.png", 
         category: "Coursework project",
         current_status: "Complete", 
         started: "8 October 2021",
@@ -51,7 +51,7 @@ export const projects = {
     },
     "gol": {
         title: "Game of Life", 
-        thumbnail: "gol.svg", 
+        thumbnail: "gol.png", 
         category: "Coursework project",
         current_status: "Completed", 
         started: "1 November 2021",
@@ -66,7 +66,7 @@ export const projects = {
     },
     "mask-detector": {
         title: "Mask Detector", 
-        thumbnail: "mask_detector.svg", 
+        thumbnail: "mask_detector.png", 
         category: "Hackathon project",
         current_status: "Completed", 
         started: "24 April 2021",
@@ -81,7 +81,7 @@ export const projects = {
     },
     "marine-vessel-tracker": {
         title: "Marine Vessel Tracker",
-        thumbnail: "marine_vessel.svg", 
+        thumbnail: "marine_vessel.png", 
         category: "Hackathon project",
         current_status: "Completed", 
         started: "20 March 2021",
@@ -97,7 +97,7 @@ export const projects = {
     },
     "scotland-yard": {
         title: "Scotland Yard",
-        thumbnail: "scotland_yard.svg", 
+        thumbnail: "scotland_yard.png", 
         category: "Coursework project",
         current_status: "Completed", 
         started: "1 March 2021",
