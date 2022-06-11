@@ -16,7 +16,10 @@ export const ProjectCard = ({ index, name, title, thumbnail, alt, headline, git_
         <div className={"project-content"}>{headline}</div>
         <footer>
             <LinkButton to={"/projects/"+name} text={"Learn more"}/>
-            <Button url={git_url} target={"_blank"} text={"GitHub"} alt={"Visit github for " + title} />
+            {
+                git_url &&
+                <Button url={git_url} target={"_blank"} text={"GitHub"} alt={"Visit github for " + title} />
+            }
         </footer>
     </article>
 
@@ -51,6 +54,7 @@ export function Projects({ projects }){
                         {
                             "Categories": [
                                 { value: "none", text: "None" },
+                                { value: "Work experience", text: "Work experience" },
                                 { value: "Personal project", text: "Personal projects" },
                                 { value: "Hackathon project", text: "Hackathon projects" },
                                 { value: "Coursework project", text: "Coursework" }
