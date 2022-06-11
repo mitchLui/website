@@ -1,0 +1,51 @@
+.modal-close {
+    margin-bottom: 5rem;
+    position: relative;
+    top: 2rem;
+    width: 32px;
+    height: 32px;
+    opacity: 0.5;
+    transition: opacity 0.2s ease-in-out;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &:before, &:after {
+        position: absolute;
+        left: 15px;
+        content: ' ';
+        height: 33px;
+        width: 2px;
+        background-color: #fff;
+    }
+
+    &:before {
+        transform: rotate(45deg);
+    }
+
+    &:after {
+        transform: rotate(-45deg);
+    }
+
+  }
+  
+  /* Light mode */
+  @media (prefers-color-scheme: light) {
+    .modal-close:before, .modal-close:after {
+        background-color: #000;
+    }
+  }
+  
+  /* Dark mode */
+  @media (prefers-color-scheme: dark) {
+    .modal-close:before, .modal-close:after {
+        background-color: #fff;
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    .modal-close{
+      left: 2rem;
+    }
+  }

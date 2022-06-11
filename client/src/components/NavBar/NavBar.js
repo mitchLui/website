@@ -1,7 +1,7 @@
 import { React, useEffect, useState} from 'react';
 import { Link } from "react-router-dom";
 import { HamburgerMenu } from "../Hamburger/Hamburger";
-import "./navbar.css";
+import "./navbar.scss";
 
 const MOBILE = 768;
 
@@ -18,7 +18,7 @@ export const NavBar = () => {
                 setIsOpen(false);
             }
         };
-        window.addEventListener("resize", handleResize);
+        window.onresize = handleResize;
     });
 
     return (
@@ -43,7 +43,7 @@ export const MobileNavBar = ({isOpen, setIsOpen}) =>
                 <HamburgerMenu onClick={() => setIsOpen(!isOpen)} isOpen={isOpen}/>
             </div>
         </div>
-        <div className={`mobile-menu ${isOpen ? "open" : "close"}`}>
+        <div className={`mobile-menu ${isOpen ? "mobile-nav-open" : "mobile-nav-close"}`}>
             <NavBarLinks onClick={() => setIsOpen(!isOpen)}/>
         </div>
     </header>
@@ -53,9 +53,21 @@ export const MobileNavBar = ({isOpen, setIsOpen}) =>
 export const NavBarLinks = ({onClick}) =>
     <nav>
         <ul>
-            <li onClick={onClick}><Link to={"/"}>home</Link></li>
-            <li onClick={onClick}><Link to={"/projects"}>projects</Link></li>
-            <li onClick={onClick}><Link to={"/cv.pdf"} target={"_blank"} rel={"noreferrer"}>cv</Link></li>
+            <Link to={"/"}>
+                <li onClick={onClick}>
+                    <span className={"nav-text"}>Home</span>
+                </li>
+            </Link>
+            <Link to={"/projects"}>
+                <li onClick={onClick}>
+                    <span className={"nav-text"}>Projects</span>
+                </li>
+            </Link>
+            <Link to={"/cv.pdf"} target={"_blank"} rel={"noreferrer"}>
+                <li onClick={onClick}>
+                    <span className={"nav-text"}>CV</span>
+                </li>
+            </Link>
         </ul>
     </nav>
 
@@ -63,6 +75,6 @@ export const NavBarLinks = ({onClick}) =>
 export const Logo = ({setIsOpen}) => 
     <div className={"logo-container"}>
         <Link onClick={()=> setIsOpen(false)} to={"/"} className="logo-link">
-            <h1 className={"logo"}><img className={"logo-graphic"} src={"./logo.svg"} alt={"logo"}/>mitch<span className={"bold"}>Lui</span></h1>
+            <h1 className={"logo"}><img className={"logo-graphic"} src={"/logo.svg"} alt={"logo"}/>mitch<span className={"bold"}>Lui</span></h1>
         </Link>
     </div>

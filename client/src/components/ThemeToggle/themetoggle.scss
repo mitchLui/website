@@ -1,0 +1,41 @@
+.theme-toggle-container{
+    display: flex;
+    float: right;
+    padding: 0 2rem 2rem 2rem;
+}
+
+.theme-toggle-form{
+    border: 2px solid white;
+    border-radius: 2em;
+    padding: .25rem;
+}
+
+.option {
+    display: inline-block;
+    padding: 0 0.3rem 0 0.3rem;
+    font-size: 0.9rem;
+
+    .radio{
+        visibility: hidden;
+        width: 0;    
+    }
+
+    input:checked + .label{
+        background-color: white;
+        color: black;
+        border-radius: 1em;
+        padding: 0 0.2rem 0 0.2rem;
+    }
+
+    .label:hover{
+        cursor: pointer;
+    }
+
+}
+
+@media (prefers-color-scheme: dark) {
+    .option{
+        background-color: #000000;
+        color: #ffffff;
+    }
+}

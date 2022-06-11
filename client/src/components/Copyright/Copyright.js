@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./copyright.css";
+import "./copyright.scss";
 
 function getCurrentYear() {
     return new Date().getFullYear();

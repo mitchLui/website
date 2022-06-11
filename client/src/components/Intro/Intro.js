@@ -1,5 +1,5 @@
 import React from 'react';
-import "./intro.css";
+import "./intro.scss";
 
 export const Intro = () =>
     <div className={"intro-grid"}>
