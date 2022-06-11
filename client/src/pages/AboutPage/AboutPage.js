@@ -21,16 +21,6 @@ export function AboutPage() {
         <Container>
             <span className={"container-header"}><h1><code>About</code></h1></span>
             <h2>placeholder text (something about choosing a year to learn more)</h2>
-            {
-                Object.keys(timeline).map((year) => {
-                    return (
-                        <FunctionButton key={year} onClick={() => {
-                            console.log(year)
-                        }}
-                        text={year} />
-                    );
-                }) 
-            }
             <div className={"timeline-grid"}>
                 <Map className={"map"} userLng={114.20902924258836} userLat={22.428316182904794} />
                 <section className={"event"}>
