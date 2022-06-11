@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { LinkButton } from "../../components/Button/Button";
 import { Contact } from "../../components/Contact/Contact";
 import { Container } from "../../components/Container/Container";
 import { Intro } from "../../components/Intro/Intro";
@@ -19,6 +20,9 @@ export function HomePage(){
         <Container>
         <div className={"fade-in"}>
             <Intro/>
+            <div style={{textAlign: "center"}}>
+              <LinkButton to={"/about"} text={"More about me"}/>
+            </div>
             <Contact/>
         </div>
     </Container>

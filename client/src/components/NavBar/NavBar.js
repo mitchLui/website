@@ -58,6 +58,11 @@ export const NavBarLinks = ({onClick}) =>
                     <span className={"nav-text"}>Home</span>
                 </li>
             </Link>
+            <Link to={"/about"}>
+                <li onClick={onClick}>
+                    <span className={"nav-text"}>About</span>
+                </li>
+            </Link>
             <Link to={"/projects"}>
                 <li onClick={onClick}>
                     <span className={"nav-text"}>Projects</span>
