@@ -24,7 +24,7 @@ export const ProjectCard = ({ index, name, title, thumbnail, alt, headline, git_
     </article>
 
 export function Projects({ projects }){
-    const [sort, setSort] = useState("none");
+    const [filter, setFilter] = useState("none");
 
     function getFilteredProjects(){
         Object.filter = (obj, predicate) => 
@@ -32,11 +32,11 @@ export function Projects({ projects }){
             .filter( key => predicate(obj[key]) )
             .reduce( (res, key) => Object.assign(res, { [key]: obj[key] }), {});
 
-        switch(sort){
+        switch(filter){
             case "none":
                 return projects;
             default:
-                return Object.filter(projects, (project) => project.category === sort);
+                return Object.filter(projects, (project) => project.category === filter);
         }
     }
         
@@ -48,8 +48,8 @@ export function Projects({ projects }){
                 <h2>An archive of what I'm working on and what I've done in the past.</h2>
                 <Dropdown 
                     className={"project-sort"} 
-                    onChange={setSort}
-                    label={"Sort by:"} 
+                    onChange={setFilter}
+                    label={"Filter by:"} 
                     options={
                         {
                             "Categories": [

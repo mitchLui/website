@@ -126,6 +126,5 @@ export const projects = {
         for omni-channel conversational AIs in Python.`,
         content_detailed: [],
         git_url: null,
-
     }
 }
