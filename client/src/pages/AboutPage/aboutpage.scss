@@ -1,0 +1,11 @@
+.timeline-grid{    
+    display: grid;
+    grid-gap: 1rem;
+    padding: 0.5rem 0.5rem;
+
+    .event{
+        height: 50vh;
+        overflow-y: scroll;
+    }
+}
+
