@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, LinkButton } from "../Button/Button";
+import { Dropdown } from "../Dropdown/Dropdown";
 import { FadeInSection } from "../FadeInSection/FadeInSection";
 import "./projects.scss";
 
@@ -20,17 +21,47 @@ export const ProjectCard = ({ index, name, title, thumbnail, alt, headline, git_
     </article>
 
 export function Projects({ projects }){
+    const [sort, setSort] = useState("none");
 
+    function getFilteredProjects(){
+        Object.filter = (obj, predicate) => 
+            Object.keys(obj)
+            .filter( key => predicate(obj[key]) )
+            .reduce( (res, key) => Object.assign(res, { [key]: obj[key] }), {});
+
+        switch(sort){
+            case "none":
+                return projects;
+            default:
+                return Object.filter(projects, (project) => project.category === sort);
+        }
+    }
+        
     return (
         <>
         <div className="projects-container">
-            <div className={"fade-in"}>
+            <div>
                 <span className={"container-header"}><h1><code>Projects</code></h1></span>
                 <h2>An archive of what I'm working on and what I've done in the past.</h2>
+                <Dropdown 
+                    className={"project-sort"} 
+                    onChange={setSort}
+                    label={"Sort by:"} 
+                    options={
+                        {
+                            "Categories": [
+                                { value: "none", text: "None" },
+                                { value: "Personal project", text: "Personal projects" },
+                                { value: "Hackathon project", text: "Hackathon projects" },
+                                { value: "Coursework project", text: "Coursework" }
+                            ]
+                        }    
+                    } />
+
             </div> 
             <div className={"projects-grid"}>
                 {
-                    Object.keys(projects).map(function(key, index) {
+                    Object.keys(getFilteredProjects()).map(function(key, index) {
                         return (
                             <FadeInSection key={index}>
                                 <ProjectCard
