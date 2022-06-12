@@ -9,6 +9,7 @@
 .projects-grid{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: center;
     grid-gap: 1rem;
     padding: 0.5rem 0.5rem;
 }
