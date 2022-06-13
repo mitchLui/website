@@ -19,7 +19,7 @@ export const projects = {
     "greenmap": {
         title: "GreenMap", 
         thumbnail: "greenmap.png", 
-        category: "Hackthon project",
+        category: "Hackathon project",
         current_status: "In development", 
         started: "26 Feb 2022",
         ended: "n/a",
