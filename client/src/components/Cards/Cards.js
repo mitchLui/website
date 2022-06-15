@@ -3,7 +3,7 @@ import { Button, LinkButton } from "../Button/Button";
 import "./cards.scss";
 
 export const ProjectCard = ({ index, name, title, thumbnail, alt, headline, git_url }) =>
-    <article key={index} className={"project " + name}>
+    <article key={index} className={"card project " + name}>
         <h2>{title}</h2>
         <picture className={"thumbnail"}>
             <img 
@@ -11,7 +11,7 @@ export const ProjectCard = ({ index, name, title, thumbnail, alt, headline, git_
                 alt={alt} 
             />
         </picture>
-        <div className={"project-content"}>{headline}</div>
+        <div className={"card-content"}>{headline}</div>
         <footer>
             <LinkButton to={"/projects/"+name} text={"Learn more"}/>
             {
