@@ -8,7 +8,8 @@
 
 .projects-grid{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 0.5fr));
+    justify-content: center;
     grid-gap: 1rem;
     padding: 0.5rem 0.5rem;
 }
@@ -56,6 +57,11 @@
     flex: 1;
 }
 
+#project-sort{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
 .mitchlui-dev {
     background: #000000;
 }
@@ -82,6 +88,12 @@
 
 .scotland-yard{
     background: #000000;
+}
+
+@media screen and (max-width: 1000px) {
+    .projects-grid{
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
 }
 
 /* Light mode */

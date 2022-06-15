@@ -10,6 +10,9 @@ export const Button = ({url, target, alt, text}) =>
 export const LinkButton = ({to, text}) =>
     <Link to={to} className={"button"}>{text}</Link>
 
+export const FunctionButton = ({ onClick, text }) =>
+    <button className={"button"} onClick={onClick}>{text}</button>
+
 export const LinkFunctionButton = ({to, text, onClick}) =>
     <Link onClick={onClick} to={to} className={"button"}>{text}</Link>
 
