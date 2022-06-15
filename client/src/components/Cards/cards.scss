@@ -1,8 +1,4 @@
-.project-header{
-    text-align: left;
-}
-
-.project {
+.card {
     display: flex;
     position: relative;
     -ms-flex-direction: column;
@@ -33,7 +29,7 @@
     
 }
 
-.project-content {
+.card-content {
     font-size: 1rem;
     display: flex;
     -webkit-box-orient: vertical;
@@ -47,7 +43,7 @@
 
 /* Light mode */
 @media (prefers-color-scheme: light) {
-    .project {
+    .card {
         color: #000000;
         background-color: #ffffff;
         box-shadow: 0 0 50px #ccc;
@@ -56,7 +52,7 @@
   
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
-    .project {
+    .card {
         color: #ffffff;
         background-color: #111111;
     }
