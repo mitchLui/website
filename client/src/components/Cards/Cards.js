@@ -20,3 +20,18 @@ export const ProjectCard = ({ index, name, title, thumbnail, alt, headline, git_
             }
         </footer>
     </article>
+
+export const AboutCard = ({ index, name, title, thumbnail, alt, content }) =>
+    <article key={index} className={"card about " + name}>
+                <h2>{title}</h2>
+        <picture className={"thumbnail"}>
+            <img 
+                src={"/about_images/"+thumbnail} 
+                alt={alt} 
+            />
+        </picture>
+        <div className={"card-content"}>{content}</div>
+        <footer>
+            <LinkButton to={"/about/"+name} text={"Learn more"}/>
+        </footer>
+    </article>

@@ -23,6 +23,7 @@ function App() {
           <Routes basename={"/"}>   
             <Route exact path={"/"} element={<HomePage/>}/>
             <Route path={"/about"} element={<AboutPage/>}/>
+            <Route path={"/about/:page"} element={<AboutPage/>}/>
             <Route path={"/projects"} element={<ProjectsPage/>}/>
             <Route path={"/projects/:projectClass"} element={<ProjectModalPage/>}/>
             <Route path={"/sitemap"} element={<SitemapPage/>}/>
