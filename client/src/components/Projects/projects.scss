@@ -9,7 +9,6 @@
 .projects-grid{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 0.5fr));
-    justify-content: center;
     grid-gap: 1rem;
     padding: 0.5rem 0.5rem;
 }
@@ -19,8 +18,8 @@
     position: relative;
     -ms-flex-direction: column;
     flex-direction: column;
-    border-radius: 15px;
-    padding: 1.25rem;
+    border-radius: 30px;
+    padding: 1rem 1.3rem 1rem 1.3rem;
 
     h2 {
         font-size: 1.5rem;
