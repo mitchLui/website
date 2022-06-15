@@ -30,7 +30,7 @@ export function ProjectModalPage(){
 
     return (
         <Container>
-            <GoBackButton to={"/projects"}/>
+            <GoBackButton to={"/projects"} text={"Back"}/>
             <div className={"modal-content"}>
                 <h1 className={"text"}>{projects[projectClass].title}</h1>
                 <picture className={"modal-thumbnail"}>
