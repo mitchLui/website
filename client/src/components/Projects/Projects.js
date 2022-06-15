@@ -4,6 +4,11 @@ import { Dropdown } from "../Dropdown/Dropdown";
 import { FadeInSection } from "../FadeInSection/FadeInSection";
 import "./projects.scss";
 
+Object.filter = (obj, predicate) => 
+    Object.keys(obj)
+        .filter( key => predicate(obj[key]) )
+        .reduce( (res, key) => Object.assign(res, { [key]: obj[key] }), {});
+
 export const ProjectCard = ({ index, name, title, thumbnail, alt, headline, git_url }) =>
     <article key={index} className={"project " + name}>
         <h2>{title}</h2>
@@ -27,11 +32,6 @@ export function Projects({ projects }){
     const [filter, setFilter] = useState("none");
 
     function getFilteredProjects(){
-        Object.filter = (obj, predicate) => 
-            Object.keys(obj)
-            .filter( key => predicate(obj[key]) )
-            .reduce( (res, key) => Object.assign(res, { [key]: obj[key] }), {});
-
         switch(filter){
             case "none":
                 return projects;

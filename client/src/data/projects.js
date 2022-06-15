@@ -1,4 +1,20 @@
 export const projects = {
+    "wise-internship": {
+        title: "Internship at Wise", 
+        thumbnail: "wise-internship.png",
+        category: "Work experience",
+        current_status: "In progress", 
+        started: "27 June 2022",
+        ended: "n/a",
+        awards: "n/a",
+        technologies: "React.js, Java Spring, Kafka",
+        alt: "wise internship screenshot", 
+        headline: `A 10-week full-time internship working across the full stack to 
+        improve the user experience of the Wise debit card product.`,
+        content_detailed: [],
+        git_url: null,
+        website: "https://wise.com",
+    },
     "mitchlui-dev": {
         title: "mitchlui.dev", 
         thumbnail: "mitchlui_dev.png",
@@ -126,5 +142,6 @@ export const projects = {
         for omni-channel conversational AIs in Python.`,
         content_detailed: [],
         git_url: null,
+        website: "https://www.asiabots.com/"
     }
 }
