@@ -16,12 +16,15 @@ export const ProjectCard = ({ index, name, title, thumbnail, alt, headline, git_
         <div className={"project-content"}>{headline}</div>
         <footer>
             <LinkButton to={"/projects/"+name} text={"Learn more"}/>
-            <Button url={git_url} target={"_blank"} text={"GitHub"} alt={"Visit github for " + title} />
+            {
+                git_url &&
+                <Button url={git_url} target={"_blank"} text={"GitHub"} alt={"Visit github for " + title} />
+            }
         </footer>
     </article>
 
 export function Projects({ projects }){
-    const [sort, setSort] = useState("none");
+    const [filter, setFilter] = useState("none");
 
     function getFilteredProjects(){
         Object.filter = (obj, predicate) => 
@@ -29,11 +32,11 @@ export function Projects({ projects }){
             .filter( key => predicate(obj[key]) )
             .reduce( (res, key) => Object.assign(res, { [key]: obj[key] }), {});
 
-        switch(sort){
+        switch(filter){
             case "none":
                 return projects;
             default:
-                return Object.filter(projects, (project) => project.category === sort);
+                return Object.filter(projects, (project) => project.category === filter);
         }
     }
         
@@ -45,12 +48,13 @@ export function Projects({ projects }){
                 <h2>An archive of what I'm working on and what I've done in the past.</h2>
                 <Dropdown 
                     className={"project-sort"} 
-                    onChange={setSort}
-                    label={"Sort by:"} 
+                    onChange={setFilter}
+                    label={"Filter by:"} 
                     options={
                         {
                             "Categories": [
                                 { value: "none", text: "None" },
+                                { value: "Work experience", text: "Work experience" },
                                 { value: "Personal project", text: "Personal projects" },
                                 { value: "Hackathon project", text: "Hackathon projects" },
                                 { value: "Coursework project", text: "Coursework" }

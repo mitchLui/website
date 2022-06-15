@@ -19,7 +19,7 @@ export const projects = {
     "greenmap": {
         title: "GreenMap", 
         thumbnail: "greenmap.png", 
-        category: "Hackthon project",
+        category: "Hackathon project",
         current_status: "In development", 
         started: "26 Feb 2022",
         ended: "n/a",
@@ -112,4 +112,19 @@ export const projects = {
         content_detailed: [],
         git_url: "https://github.com/mitchLui/scotland-yard"
     },
+    "asiabots": {
+        title: "Internship at Asiabots",
+        thumbnail: "asiabots.png",
+        category: "Work experience",
+        current_status: "Completed",
+        started: "1 June 2020",
+        ended: "21 September 2020",
+        awards: "n/a",
+        technologies: "Python, Docker, AWS, Twilio",
+        alt: "asiabots screenshot",
+        headline: `A 3-month full-time internship writing API-first microservices 
+        for omni-channel conversational AIs in Python.`,
+        content_detailed: [],
+        git_url: null,
+    }
 }
