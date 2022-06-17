@@ -17,17 +17,11 @@
 }
 
 .contact-links{
-  padding: 0;
-}
-
-.contact-links ul {
-    display: inline-block;
-    padding: 0;
-
-    li{
-        list-style: none;
-        float: left;
-    }
+    padding: 1rem 0 1rem 0;
+    width: 100%;
+    float: left;
+    display: grid;
+    grid-template-columns: 12rem 12rem;
 }
 
 
@@ -39,6 +33,10 @@
     border-radius: 50%;
 }
 
+.contact-footer{
+    padding-top: 1rem;
+}
+
 @media screen and (max-width: 768px) {
     .contact-header-text {
         font-size: 1.5rem;
@@ -46,5 +44,9 @@
 
     .current-status {
         font-size: 1rem;
+    }
+
+    .contact-links {
+        grid-template-columns: 100%;
     }
 }
