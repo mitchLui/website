@@ -3,6 +3,7 @@ import { ContactButton } from "../Button/Button";
 import EmailSVG from "./contact_images/email.svg";
 import LinkedInSVG from "./contact_images/linkedin.svg";
 import GitHubSVG from "./contact_images/github.svg";
+import TwitterSVG from "./contact_images/twitter.svg";
 import "./contact.scss";
 
 export const Contact = () =>
@@ -37,6 +38,14 @@ export const Contact = () =>
                         href={"https://www.github.com/mitchlui"} 
                         alt={"github contact icon"} 
                         text={"GitHub"}
+                    />
+                </li>
+                <li>
+                    <ContactButton 
+                        icon={TwitterSVG} 
+                        href={"https://www.twitter.com/mitchluidev"} 
+                        alt={"twitter contact icon"} 
+                        text={"Twitter"}
                     />
                 </li>
             </ul>
