@@ -5,6 +5,7 @@
     flex-direction: column;
     border-radius: 30px;
     padding: 1rem 1.3rem 1rem 1.3rem;
+    transition: transform ease-in-out 0.275s;
 
     h2 {
         font-size: 1.5rem;
@@ -19,6 +20,10 @@
         text-align: center;
         padding-top: 1rem;
     }
+
+    &:hover {
+        transform: translateY(-3px);
+      }
 }
 
 .thumbnail{

@@ -17,18 +17,19 @@
 }
 
 .contact-links{
-  padding: 0;
-}
+    padding: 1rem 0 1rem 0;
+    width: 100%;
+    float: left;
 
-.contact-links ul {
-    display: inline-block;
-    padding: 0;
-
-    li{
+    ul{
+        display: flex;
         list-style: none;
-        float: left;
+        padding: 0;
+        margin: 0;
     }
 }
+
+
 
 
 .contact-button{
@@ -39,6 +40,16 @@
     border-radius: 50%;
 }
 
+.contact-footer{
+    padding-top: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .contact-links{
+        grid-template-columns: 11rem;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .contact-header-text {
         font-size: 1.5rem;
@@ -47,4 +58,11 @@
     .current-status {
         font-size: 1rem;
     }
+
+    .contact-links ul {
+        padding-right: 10rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
 }

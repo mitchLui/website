@@ -3,6 +3,7 @@ import { ContactButton } from "../Button/Button";
 import EmailSVG from "./contact_images/email.svg";
 import LinkedInSVG from "./contact_images/linkedin.svg";
 import GitHubSVG from "./contact_images/github.svg";
+import TwitterSVG from "./contact_images/twitter.svg";
 import "./contact.scss";
 
 export const Contact = () =>
@@ -17,10 +18,10 @@ export const Contact = () =>
             <ul>
                 <li>
                     <ContactButton
-                        icon={EmailSVG} 
-                        href={"mailto:mitch@mitchlui.dev"} 
-                        alt={"email contact icon"} 
-                        text={"Email"}
+                    icon={EmailSVG} 
+                    href={"mailto:mitch@mitchlui.dev"} 
+                    alt={"email contact icon"} 
+                    text={"Email"}
                     />
                 </li>
                 <li>
@@ -39,9 +40,18 @@ export const Contact = () =>
                         text={"GitHub"}
                     />
                 </li>
+                <li>
+                    <ContactButton 
+                        icon={TwitterSVG} 
+                        href={"https://www.twitter.com/mitchluidev"} 
+                        alt={"twitter contact icon"} 
+                        text={"Twitter"}
+                    />
+                </li>
             </ul>
+
         </div>
-        <div>
+        <div className={"contact-footer"}>
             NB: I require visa sponsorship to work full-time in the UK.
         </div>
     </section>
