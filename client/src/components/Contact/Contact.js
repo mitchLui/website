@@ -15,30 +15,41 @@ export const Contact = () =>
             I am currently open to new opportunities (full-time or part-time) in the UK.
         </div>
         <div className={"contact-links"}>
-            <ContactButton
-                icon={EmailSVG} 
-                href={"mailto:mitch@mitchlui.dev"} 
-                alt={"email contact icon"} 
-                text={"Email"}
-            />
-            <ContactButton 
-                icon={LinkedInSVG} 
-                href={"https://www.linkedin.com/in/mitchlui/"} 
-                alt={"linkedin contact icon"} 
-                text={"Linkedin"}
-            />
-            <ContactButton 
-                icon={GitHubSVG} 
-                href={"https://www.github.com/mitchlui"} 
-                alt={"github contact icon"} 
-                text={"GitHub"}
-            />
-            <ContactButton 
-                icon={TwitterSVG} 
-                href={"https://www.twitter.com/mitchluidev"} 
-                alt={"twitter contact icon"} 
-                text={"Twitter"}
-            />
+            <ul>
+                <li>
+                    <ContactButton
+                    icon={EmailSVG} 
+                    href={"mailto:mitch@mitchlui.dev"} 
+                    alt={"email contact icon"} 
+                    text={"Email"}
+                    />
+                </li>
+                <li>
+                    <ContactButton 
+                        icon={LinkedInSVG} 
+                        href={"https://www.linkedin.com/in/mitchlui/"} 
+                        alt={"linkedin contact icon"} 
+                        text={"Linkedin"}
+                    />
+                </li>
+                <li>
+                    <ContactButton 
+                        icon={GitHubSVG} 
+                        href={"https://www.github.com/mitchlui"} 
+                        alt={"github contact icon"} 
+                        text={"GitHub"}
+                    />
+                </li>
+                <li>
+                    <ContactButton 
+                        icon={TwitterSVG} 
+                        href={"https://www.twitter.com/mitchluidev"} 
+                        alt={"twitter contact icon"} 
+                        text={"Twitter"}
+                    />
+                </li>
+            </ul>
+
         </div>
         <div className={"contact-footer"}>
             NB: I require visa sponsorship to work full-time in the UK.
