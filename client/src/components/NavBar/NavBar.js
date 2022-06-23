@@ -60,7 +60,7 @@ export const NavBarLinks = ({onClick}) =>
             </Link>
             <Link to={"/projects"}>
                 <li onClick={onClick}>
-                    <span className={"nav-text"}>Projects</span>
+                    <span className={"nav-text"}>Projects + Work</span>
                 </li>
             </Link>
             <Link to={"/cv.pdf"} target={"_blank"} rel={"noreferrer"}>

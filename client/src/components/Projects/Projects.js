@@ -5,6 +5,11 @@ import { Dropdown } from "../Dropdown/Dropdown";
 import { FadeInSection } from "../FadeInSection/FadeInSection";
 import "./projects.scss";
 
+Object.filter = (obj, predicate) => 
+    Object.keys(obj)
+          .filter( key => predicate(obj[key]) )
+          .reduce( (res, key) => Object.assign(res, { [key]: obj[key] }), {} );
+          
 export function Projects({ projects }){
     const [filter, setFilter] = useState("none");
 
@@ -20,7 +25,7 @@ export function Projects({ projects }){
     return (
         <>
             <div>
-                <span className={"container-header"}><h1><code>Projects</code></h1></span>
+                <span className={"container-header"}><h1><code>Projects + Work</code></h1></span>
                 <h2>An archive of what I'm working on and what I've done in the past.</h2>
                 <Dropdown 
                     className={"project-sort"} 
