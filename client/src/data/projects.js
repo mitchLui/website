@@ -128,6 +128,21 @@ export const projects = {
         content_detailed: [],
         git_url: "https://github.com/mitchLui/scotland-yard"
     },
+    "flat-finder":{
+        title: "Flat Finder",
+        thumbnail: "flat_finder.png", 
+        category: "Personal project",
+        current_status: "Completed", 
+        started: "21 Jan 2021",
+        ended: "10 Feb 2021",
+        awards: "n/a",
+        technologies: "Python, Selenium",
+        alt: "flat finder screenshot", 
+        headline: `A script that searches for flats 
+        on Rightmove and Zoopla based on certain criteria.`,
+        content_detailed: [],
+        git_url: "https://github.com/mitchLui/flat-finder"
+    },
     "asiabots": {
         title: "Internship at Asiabots",
         thumbnail: "asiabots.png",
