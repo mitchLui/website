@@ -33,9 +33,9 @@ export function ProjectModalPage(): JSX.Element{
             <div className={"modal-content"}>
                 <h1 className={"text"}>{projects[projectClass].title}</h1>
                 <picture className={"modal-thumbnail"}>
-                    <source srcSet={"/project_images/webp/"+projects[projectClass].thumbnail+".webp"} type="image/webp" />
+                    <source srcSet={"/project_assets/webp/"+projects[projectClass].thumbnail+".webp"} type="image/webp" />
                     <img 
-                        src={"/project_images/png/"+projects[projectClass].thumbnail+".png"}
+                        src={"/project_assets/png/"+projects[projectClass].thumbnail+".png"}
                         alt={projects[projectClass].alt} 
                     />
                 </picture>
