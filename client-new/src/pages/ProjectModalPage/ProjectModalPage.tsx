@@ -16,7 +16,7 @@ export function ProjectModalPage(): JSX.Element{
                 setDescription(projects[projectClass].title);
                 setOgProperties({
                   title: projects[projectClass] + " | Mitch Lui",
-                  description: projects[projectClass],    
+                  description: projects[projectClass].title,    
                 })
             }
         }

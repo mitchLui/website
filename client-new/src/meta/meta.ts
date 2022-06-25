@@ -24,10 +24,10 @@ export const setDescription = (desc: string) => {
 }
 
 type OgProps = {
-    [id: string]: any
+    [key: string]: string
 }
 
-export const setOgProperties = ({props}: OgProps) => {
+export const setOgProperties = (props: OgProps) => {
     Object.keys(props).forEach(key => {
         setElemAttribute({
             element: `meta[property="og:${key}"]`,
