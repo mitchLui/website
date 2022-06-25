@@ -34,10 +34,11 @@ export function ProjectModalPage(){
             <div className={"modal-content"}>
                 <h1 className={"text"}>{projects[projectClass].title}</h1>
                 <picture className={"modal-thumbnail"}>
-                <img 
-                    src={"/project_images/"+projects[projectClass].thumbnail} 
-                    alt={projects[projectClass].alt} 
-                />
+                    <source srcSet={"/project_images/webp/"+projects[projectClass].thumbnail+".webp"} type="image/webp" />
+                    <img 
+                        src={"/project_images/png/"+projects[projectClass].thumbnail+".png"}
+                        alt={projects[projectClass].alt} 
+                    />
                 </picture>
                 <div className={"modal-headline"}>
                     <h2>{projects[projectClass].headline}</h2>

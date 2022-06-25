@@ -1,7 +1,7 @@
 export const projects = {
     "wise-internship": {
         title: "Internship at Wise", 
-        thumbnail: "wise-internship.png",
+        thumbnail: "wise_internship",
         category: "Work experience",
         current_status: "In progress", 
         started: "27 June 2022",
@@ -17,7 +17,7 @@ export const projects = {
     },
     "mitchlui-dev": {
         title: "mitchlui.dev", 
-        thumbnail: "mitchlui_dev.png",
+        thumbnail: "mitchlui_dev",
         category: "Personal project",
         current_status: "In development", 
         started: "1 March 2022",
@@ -34,7 +34,7 @@ export const projects = {
     },
     "greenmap": {
         title: "GreenMap", 
-        thumbnail: "greenmap.png", 
+        thumbnail: "greenmap", 
         category: "Hackathon project",
         current_status: "In development", 
         started: "26 Feb 2022",
@@ -51,7 +51,7 @@ export const projects = {
     },
     "ai-workflow": {
         title: "IBM AI Workflow", 
-        thumbnail: "ai_workflow.png", 
+        thumbnail: "ai_workflow", 
         category: "Coursework project",
         current_status: "Complete", 
         started: "8 October 2021",
@@ -71,7 +71,7 @@ export const projects = {
     },
     "gol": {
         title: "Game of Life", 
-        thumbnail: "gol.png", 
+        thumbnail: "gol", 
         category: "Coursework project",
         current_status: "Completed", 
         started: "1 November 2021",
@@ -86,7 +86,7 @@ export const projects = {
     },
     "mask-detector": {
         title: "Mask Detector", 
-        thumbnail: "mask_detector.png", 
+        thumbnail: "mask_detector", 
         category: "Hackathon project",
         current_status: "Completed", 
         started: "24 April 2021",
@@ -101,7 +101,7 @@ export const projects = {
     },
     "marine-vessel-tracker": {
         title: "Marine Vessel Tracker",
-        thumbnail: "marine_vessel.png", 
+        thumbnail: "marine_vessel", 
         category: "Hackathon project",
         current_status: "Completed", 
         started: "20 March 2021",
@@ -117,7 +117,7 @@ export const projects = {
     },
     "scotland-yard": {
         title: "Scotland Yard",
-        thumbnail: "scotland_yard.png", 
+        thumbnail: "scotland_yard", 
         category: "Coursework project",
         current_status: "Completed", 
         started: "1 March 2021",
@@ -134,7 +134,7 @@ export const projects = {
     },
     "flat-finder":{
         title: "Flat Finder",
-        thumbnail: "flat_finder.png", 
+        thumbnail: "flat_finder", 
         category: "Personal project",
         current_status: "Completed", 
         started: "21 Jan 2021",
@@ -149,7 +149,7 @@ export const projects = {
     },
     "asiabots": {
         title: "Internship at Asiabots",
-        thumbnail: "asiabots.png",
+        thumbnail: "asiabots",
         category: "Work experience",
         current_status: "Completed",
         started: "1 June 2020",
