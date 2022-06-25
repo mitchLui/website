@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useParams, Navigate } from "react-router";
 import { Container } from "../../components/Container/Container";
 import { Button, GoBackButton } from "../../components/Button/Button";
-import { ProjectProps, projects } from "../../data/projects";
+import { projects } from "../../data/projects";
 import { setTitle, setDescription, setOgProperties } from "../../meta/meta";
 import "./projectmodalpage.scss";
 
