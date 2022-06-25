@@ -11,7 +11,7 @@ export type ProjectProps = {
         headline: string;
         content_detailed: Array<JSX.Element | string | never>;
         git_url: null | string;
-        website?: null | string; 
+        website: null | string; 
 }
 
 export const projects: Record<string, ProjectProps> = {
@@ -39,9 +39,9 @@ export const projects: Record<string, ProjectProps> = {
         started: "1 March 2022",
         ended: "n/a",
         awards: "n/a",
-        technologies: "React.js",
+        technologies: "React, TypeScipt",
         alt: "mitchlui.dev screenshot", 
-        headline: `Personal website built on ReactJS 
+        headline: `Personal website built on React and TypeScript
         for showcasing frontend skills and projects 
         I've worked on to serve as a digital portfolio.`,
         content_detailed: [],
@@ -99,6 +99,7 @@ export const projects: Record<string, ProjectProps> = {
         Coursework for Computer Systems A at University of Bristol.`,
         content_detailed: [],
         git_url: "https://github.com/mitchLui/game-of-life",
+        website: null,
     },
     "mask-detector": {
         title: "Mask Detector", 
@@ -114,6 +115,7 @@ export const projects: Record<string, ProjectProps> = {
         University of Bristol BEEEES Make-a-thon 2021 Submission.`,
         content_detailed: [],
         git_url: "https://github.com/mitchLui/mask-detector",
+        website: null,
     },
     "marine-vessel-tracker": {
         title: "Marine Vessel Tracker",
@@ -129,7 +131,8 @@ export const projects: Record<string, ProjectProps> = {
         type and cargo of every marine vessel and ports in the world. 
         University of Bristol CSS x Boeing Hackathon 2021 Submission.`,
         content_detailed: [],
-        git_url: "https://github.com/mitchLui/marine-vessel-tracker"
+        git_url: "https://github.com/mitchLui/marine-vessel-tracker",
+        website: null,
     },
     "scotland-yard": {
         title: "Scotland Yard",
@@ -146,7 +149,8 @@ export const projects: Record<string, ProjectProps> = {
         Mr X to escape from the detectives.
         Coursework for OOP at University of Bristol.`,
         content_detailed: [],
-        git_url: "https://github.com/mitchLui/scotland-yard"
+        git_url: "https://github.com/mitchLui/scotland-yard",
+        website: null,
     },
     "flat-finder":{
         title: "Flat Finder",
@@ -161,7 +165,8 @@ export const projects: Record<string, ProjectProps> = {
         headline: `A script that searches for flats 
         on Rightmove and Zoopla based on certain criteria.`,
         content_detailed: [],
-        git_url: "https://github.com/mitchLui/flat-finder"
+        git_url: "https://github.com/mitchLui/flat-finder",
+        website: null,
     },
     "asiabots": {
         title: "Internship at Asiabots",

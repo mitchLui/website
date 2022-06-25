@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { ProjectProps } from '../../data/projects';
 import "./sitemap.scss";
 
-export const Sitemap = ({ projects }: Record<string, ProjectProps>): JSX.Element =>
+export const Sitemap = ({ projects }: {projects: Record<string, ProjectProps>}): JSX.Element =>
     <>
         <span className={"container-header"}><h1><code>Sitemap</code></h1></span>
             <ul className={"sitemap"}>

@@ -8,13 +8,18 @@ type Button = {
 }
 
 type ButtonProps = Button & {
-    url: string;
+    url: string | null;
     target: string;
 }
 
-export const Button = ({url, target, text}: ButtonProps): JSX.Element => 
-    <a className={"button"} href={url} target={target}>{text}</a>
-
+export const Button = ({url, target, text}: ButtonProps): JSX.Element =>{
+    if (url) {
+        return (<a className={"button"} href={url} target={target}>{text}</a>);
+    } else {
+        return <></>;
+    }
+}
+    
 type LinkButtonProps = Button & {
     to: string;
 }
