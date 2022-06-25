@@ -61,7 +61,11 @@ export const projects = {
         alt: "ai-workflow screenshot", 
         headline: `An event-triggered automation tool with a web interface for workflow customisation.
         Coursework for Software Engineering Project at University of Bristol.`,
-        content_detailed: [],
+        content_detailed: [
+            `N.B. The website's login is currenting in testing mode -- therefore you will not be able to access the functionality.
+            In addition, this is hosted on the university's Kubernetes cluster therefore it might not function after a certain point. 
+            Plans will be made to host a static version if this occurs.`
+        ],
         git_url: "https://github.com/mitchLui/ai-workflow",
         website: "https://ai-workflow.classroom-eu-gb-1-bx2-4x1-d4ceb080620f0ec34cd169ad110144ef-0000.eu-gb.containers.appdomain.cloud/"
     },
