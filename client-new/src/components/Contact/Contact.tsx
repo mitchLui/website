@@ -1,8 +1,8 @@
 import { ContactButton } from "../Button/Button";
-import EmailSVG from "/contact_images/email.svg";
-import LinkedInSVG from "/contact_images/linkedin.svg";
-import GitHubSVG from "/contact_images/github.svg";
-import TwitterSVG from "/contact_images/twitter.svg";
+import EmailSVG from "./contact_images/email.svg";
+import LinkedInSVG from "./contact_images/linkedin.svg";
+import GitHubSVG from "./contact_images/github.svg";
+import TwitterSVG from "./contact_images/twitter.svg";
 import "./contact.scss";
 
 export const Contact = (): JSX.Element =>
