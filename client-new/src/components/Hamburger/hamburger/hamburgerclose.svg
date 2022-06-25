@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-
-<svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full">
-    <g transform="scale(1.000000,-1.000000) translate(0,-28)">
-        <path d="M 1.000000 3.121320 L 20.091883 22.213204 L 22.213203 20.091883 L 3.121320 1.000000 Z" transform="scale(1.000000,1.000000) translate(2.393398,2.393398)" opacity="1.000000"></path>
-        <path d="M 3.121320 22.213204 L 22.213203 3.121320 L 20.091883 1.000000 L 1.000000 20.091883 Z" transform="scale(1.000000,1.000000) translate(2.393398,2.393398)" opacity="1.000000"></path>
-    </g>
-</svg>
