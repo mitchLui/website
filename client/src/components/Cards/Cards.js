@@ -6,8 +6,9 @@ export const ProjectCard = ({ index, name, title, thumbnail, alt, headline, git_
     <article key={index} className={"card project " + name}>
         <h2>{title}</h2>
         <picture className={"thumbnail"}>
+            <source srcSet={"/project_images/webp/"+thumbnail+".webp"} type="image/webp" />
             <img 
-                src={"/project_images/"+thumbnail} 
+                src={"/project_images/png/"+thumbnail+".png"} 
                 alt={alt} 
             />
         </picture>
