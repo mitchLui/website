@@ -26,7 +26,7 @@ export const projects: Record<string, ProjectProps> = {
         technologies: "React.js, Java Spring, Kafka",
         alt: "wise internship screenshot", 
         headline: `A 10-week full-time internship working across the full stack to 
-        improve the user experience of the Wise debit card product.`,
+        improve the user experience of the Wise Business debit card product.`,
         content_detailed: [],
         git_url: null,
         website: "https://wise.com",
