@@ -34,7 +34,7 @@ There is a `server` directory that is curretly empty. The current plan is to imp
 - Host my own REST APIs for public use (work in progress!)
 - Demo projects
 
-None of these features are set in stone and definitely open to changes. I'm currently cleaning up the code and optimising the site before writing new features.
+None of these features are set in stone and definitely open to changes. I'm currently cleaning up the code and adding TypeScript support so I can learn it.
 
 ---
 [1]:https://mitchlui.dev

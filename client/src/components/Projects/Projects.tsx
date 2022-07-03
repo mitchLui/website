@@ -1,0 +1,75 @@
+import { useState } from "react";
+import { Grid } from "../Grid/Grid";
+import { ProjectCard } from "../Cards/Cards";
+import { Dropdown } from "../Dropdown/Dropdown";
+import { FadeInSection } from "../FadeInSection/FadeInSection";
+import { ProjectProps } from "../../data/projects";
+import "./projects.scss";
+
+type ProjectComponentProps = {
+    projects: Record<string, ProjectProps>;
+}
+
+export function Projects({ projects }: ProjectComponentProps): JSX.Element {
+    const [filter, setFilter] = useState("none");
+
+    function filterProjects({obj, predicate}: {obj: Record<string, ProjectProps>, predicate: Function}): any{
+        return Object.keys(obj)
+              .filter( key => predicate(obj[key]))
+              .reduce( (res, key) => Object.assign(res, { [key]: obj[key] }), {} );
+    }
+
+    function getFilteredProjects(){
+        switch(filter){
+            case "none":
+                return projects;
+            default:
+                return filterProjects({obj: projects, predicate: (project: ProjectProps) => project.category === filter});
+        }
+    }
+        
+    return (
+        <>
+            <div>
+                <span className={"container-header"}><h1><code>Projects + Work</code></h1></span>
+                <h2>An archive of what I'm working on and what I've done in the past.</h2>
+                <Dropdown 
+                    className={"project-sort"} 
+                    onChange={setFilter}
+                    label={"Filter by:"} 
+                    options={
+                        {
+                            "Categories": [
+                                { value: "none", text: "None" },
+                                { value: "Work experience", text: "Work experience" },
+                                { value: "Personal project", text: "Personal projects" },
+                                { value: "Hackathon project", text: "Hackathon projects" },
+                                { value: "Coursework project", text: "Coursework" }
+                            ]
+                        }    
+                    } />
+
+            </div> 
+            <Grid>
+                {
+                    Object.keys(getFilteredProjects()).map(function(key, index) {
+                        return (
+                            <FadeInSection key={index}>
+                                <ProjectCard
+                                    key={index}
+                                    name={key}
+                                    title={projects[key].title}
+                                    thumbnail={projects[key].thumbnail}
+                                    alt={projects[key].alt}
+                                    headline={projects[key].headline}
+                                    git_url={projects[key].git_url}
+                                />
+                            </FadeInSection>
+                        )
+                    })
+                }
+            </Grid>
+        </>
+    )
+}
+
