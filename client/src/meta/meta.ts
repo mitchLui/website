@@ -5,35 +5,34 @@ type setElemAttributeProps = {
 }
 
 const setElemAttribute = ({ element, attribute, value }: setElemAttributeProps) => {
-    const elem = document.querySelector(element);
-    if (elem){
-        elem.setAttribute(attribute, value);
-    }
-}
+  const elem = document.querySelector(element);
+  if (elem) {
+    elem.setAttribute(attribute, value);
+  }
+};
 
 export const setTitle = (title: string) => {
-    document.title = title;
+  document.title = title;
 };
 
 export const setDescription = (desc: string) => {
-    setElemAttribute({
-        element: 'meta[name="description"]',
-        attribute: 'content',
-        value: desc,
-    });
-}
+  setElemAttribute({
+    element: 'meta[name="description"]',
+    attribute: 'content',
+    value: desc
+  });
+};
 
 type OgProps = {
     [key: string]: string
 }
 
 export const setOgProperties = (props: OgProps) => {
-    Object.keys(props).forEach(key => {
-        setElemAttribute({
-            element: `meta[property="og:${key}"]`,
-            attribute: 'content',
-            value: props[key],
-        });
+  Object.keys(props).forEach(key => {
+    setElemAttribute({
+      element: `meta[property="og:${key}"]`,
+      attribute: 'content',
+      value: props[key]
     });
-}
-
+  });
+};
