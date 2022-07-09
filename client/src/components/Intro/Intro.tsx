@@ -3,7 +3,7 @@ import './intro.scss';
 
 export const Intro = (): React.ReactElement =>
     <div className={'intro-grid'}>
-        <span className={'container-header header-item'}><h1><code>Hello, I`&apos`m Mitch</code></h1></span>
+        <span className={'container-header header-item'}><h1><code>Hello, I&apos;m Mitch</code></h1></span>
         <span className={'container-header title-item'}><h2>Fullstack software developer</h2></span>
         <div className={'item left'}>
             I am a trilingual (English, Cantonese and Mandarin) year 2 computer science student from Hong Kong at the <CompanyLink className={'link uob'} url={'https://www.bristol.ac.uk'} text={'University of Bristol'} />.

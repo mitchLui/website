@@ -32,7 +32,7 @@ export function Projects ({ projects }: ProjectComponentProps): React.ReactEleme
         <>
             <div>
                 <span className={'container-header'}><h1><code>Projects + Work</code></h1></span>
-                <h2>An archive of what I`&apos`m working on and what I`&apos`ve done in the past.</h2>
+                <h2>An archive of what I&apos;m working on and what I&apos;ve done in the past.</h2>
                 <Dropdown
                     className={'project-sort'}
                     onChange={setFilter}
