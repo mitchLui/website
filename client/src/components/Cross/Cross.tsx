@@ -1,4 +1,5 @@
-import "./cross.scss";
+import React from 'react';
+import './cross.scss';
 
-export const Cross = (): JSX.Element =>
-    <div className={"modal-close"}/>
+export const Cross = (): React.ReactElement =>
+    <div className={'modal-close'}/>;

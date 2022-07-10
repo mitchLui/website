@@ -1,28 +1,26 @@
-import { useEffect } from "react";
-import { Container } from "../../components/Container/Container";
-import { LinkButton} from "../../components/Button/Button";
-import { setTitle, setDescription, setOgProperties } from "../../meta/meta";
-import "./notfound.scss";
+import React, { useEffect } from 'react';
+import { Container } from '../../components/Container/Container';
+import { LinkButton } from '../../components/Button/Button';
+import { setTitle, setDescription, setOgProperties } from '../../meta/meta';
+import './notfound.scss';
 
-export function NotFoundPage(): JSX.Element {
+export function NotFoundPage (): React.ReactElement {
+  useEffect(() => {
+    setTitle('Not found | Mitch Lui');
+    setDescription('Page not found');
+    setOgProperties({
+      title: 'Not found | Mitch Lui',
+      description: 'Page not found'
+    });
+  }, []);
 
-    useEffect(() => {
-        setTitle("Not found | Mitch Lui");
-        setDescription("Page not found");
-        setOgProperties({
-            title: "Not found | Mitch Lui",
-            description: "Page not found",
-        })
-    }, []);
-
-
-    return (
+  return (
         <Container>
-            <div className={"header-text"}>
+            <div className={'header-text'}>
                 <h1>404 Not Found!</h1>
                 <h2>You might wanna go home...</h2>
-                <LinkButton to={"/"} text={"Go Home"}/>
+                <LinkButton to={'/'} text={'Go Home'}/>
             </div>
         </Container>
-    );
+  );
 }
