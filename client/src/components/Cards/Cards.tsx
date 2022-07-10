@@ -3,7 +3,7 @@ import React from 'react';
 import './cards.scss';
 
 type CardProps = {
-    key: string;
+    key: number | string;
     name: string;
     title: string;
     thumbnail: string;
