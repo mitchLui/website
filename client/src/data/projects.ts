@@ -74,7 +74,7 @@ export const projects: Record<string, ProjectProps> = {
     current_status: 'Complete',
     started: '8 October 2021',
     ended: '6 May 2022',
-    awards: 'n/a',
+    awards: '75% (First class)',
     technologies: 'React.js, FastAPI, mongoDB, Kubernetes, IBM Carbon Design',
     alt: 'ai-workflow screenshot',
     headline: `An event-triggered automation tool with a web interface for workflow customisation.
