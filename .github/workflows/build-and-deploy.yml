@@ -10,10 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
 
-    defaults:
-      run: 
-        working-directory: ./client
-
     strategy:
       matrix:
         node-version: [16.x]
@@ -36,7 +32,7 @@ jobs:
           username: ${{ secrets.DEPLOY_USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.DEPLOY_PORT }}
-          source: "client/build/"
+          source: "build/"
           target: "public_html"
           strip_components: 2
           overwrite: true

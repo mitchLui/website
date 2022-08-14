@@ -8,7 +8,6 @@
   - [1.1. Introduction](#11-introduction)
   - [1.2. Development](#12-development)
   - [1.3. Deployment](#13-deployment)
-  - [1.4. Roadmap](#14-roadmap)
 
 ## 1.1. Introduction
 
@@ -20,21 +19,11 @@ The site is built on [React.js][2] and is currently hosted on [Namecheap][3].
 
 ## 1.2. Development
 
-Install [npm][4] and run `npm install` in `./client`.
+Install [npm][4] and run `npm install`.
 
 ## 1.3. Deployment
 
-You can build the site and deploy it statically to any hosting service you'd like by running `npm run build` in `./client` and serve the files according to the service's documentation.
-
-## 1.4. Roadmap
-
-There is a `server` directory that is curretly empty. The current plan is to implement a backend API on https://api.mitchlui.dev so that I can implement more features, e.g.
-
-- Creating a blog
-- Host my own REST APIs for public use (work in progress!)
-- Demo projects
-
-None of these features are set in stone and definitely open to changes. I'm currently cleaning up the code and adding TypeScript support so I can learn it.
+You can build the site and deploy it statically to any hosting service you'd like by running `npm run build` and serve the files according to the service's documentation.
 
 ---
 [1]:https://mitchlui.dev
