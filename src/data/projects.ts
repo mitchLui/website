@@ -1,19 +1,19 @@
 import React from 'react';
 
 export type ProjectProps = {
-        title: string;
-        thumbnail: string;
-        category: string;
-        current_status: string;
-        started: string;
-        ended: string;
-        awards: string;
-        technologies: string;
-        alt: string;
-        headline: string;
-        content_detailed: Array<React.ReactElement | string | never>;
-        git_url: null | string;
-        website: null | string;
+  title: string;
+  thumbnail: string;
+  category: string;
+  current_status: string;
+  started: string;
+  ended: string;
+  awards: string;
+  technologies: string;
+  alt: string;
+  headline: string;
+  content_detailed: Array<React.ReactElement | string | never>;
+  git_url: null | string;
+  website: null | string;
 }
 
 export const projects: Record<string, ProjectProps> = {
@@ -27,7 +27,7 @@ export const projects: Record<string, ProjectProps> = {
     awards: 'n/a',
     technologies: 'React.js, Java Spring, Kafka',
     alt: 'wise internship screenshot',
-    headline: `A 10-week full-time internship working across the full stack to 
+    headline: `A 12-week full-time internship working across the full stack to 
         improve the user experience of the Wise Business debit card product.`,
     content_detailed: [],
     git_url: null,
