@@ -23,7 +23,7 @@ export const projects: Record<string, ProjectProps> = {
     category: 'Work experience',
     current_status: 'In progress',
     started: '27 June 2022',
-    ended: 'n/a',
+    ended: '16 September 2022',
     awards: 'n/a',
     technologies: 'React.js, Java Spring, Kafka',
     alt: 'wise internship screenshot',
