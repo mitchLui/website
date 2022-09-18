@@ -27,6 +27,9 @@ export function ProjectModalPage (): React.ReactElement {
   }, []);
 
   if (projectClass && projects[projectClass] !== undefined) {
+    const demoUrl = projects[projectClass].website ? projects[projectClass].website : null;
+    const githubUrl = projects[projectClass].git_url ? projects[projectClass].git_url : null;
+
     return (
         <Container>
             <GoBackButton to={'/projects'} text={'Back'}/>
@@ -44,12 +47,12 @@ export function ProjectModalPage (): React.ReactElement {
                 </div>
                 <div className={'modal-buttons'}>
                     {
-                        projects[projectClass].git_url &&
-                        <Button url={projects[projectClass].git_url} target={'_blank'} text={'GitHub'}/>
+                        demoUrl &&
+                        <Button url={demoUrl} target={'_blank'} text={'GitHub'}/>
                     }
                     {
-                        projects[projectClass].website &&
-                        <Button url={projects[projectClass].website} target={'_blank'} text={'Demo Website'}/>
+                        githubUrl &&
+                        <Button url={githubUrl} target={'_blank'} text={'Demo Website'}/>
                     }
                 </div>
                 <div className={'modal-status'}>

@@ -9,7 +9,7 @@ type CardProps = {
     thumbnail: string;
     alt: string;
     headline: string;
-    gitUrl: null | string;
+    gitUrl?: string;
 }
 
 export const ProjectCard = ({ key, name, title, thumbnail, alt, headline, gitUrl }: CardProps): React.ReactElement =>

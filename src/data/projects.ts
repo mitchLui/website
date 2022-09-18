@@ -12,8 +12,8 @@ export type ProjectProps = {
   alt: string;
   headline: string;
   content_detailed: Array<React.ReactElement | string | never>;
-  git_url: null | string;
-  website: null | string;
+  git_url?: string;
+  website?: string;
 }
 
 export const projects: Record<string, ProjectProps> = {
@@ -30,7 +30,6 @@ export const projects: Record<string, ProjectProps> = {
     headline: `A 12-week full-time internship working across the full stack to 
         improve the user experience of the Wise Business debit card product.`,
     content_detailed: [],
-    git_url: null,
     website: 'https://wise.com'
   },
   'mitchlui-dev': {
@@ -101,8 +100,7 @@ export const projects: Record<string, ProjectProps> = {
     headline: `Parallel and Distributed implementation of Conway's Game of Life using Golang. 
         Coursework for Computer Systems A at University of Bristol.`,
     content_detailed: [],
-    git_url: 'https://github.com/mitchLui/game-of-life',
-    website: null
+    git_url: 'https://github.com/mitchLui/game-of-life'
   },
   'mask-detector': {
     title: 'Mask Detector',
@@ -117,8 +115,7 @@ export const projects: Record<string, ProjectProps> = {
     headline: `Real-time face covering detection application to encourage good mask-wearing practises. 
         University of Bristol BEEEES Make-a-thon 2021 Submission.`,
     content_detailed: [],
-    git_url: 'https://github.com/mitchLui/mask-detector',
-    website: null
+    git_url: 'https://github.com/mitchLui/mask-detector'
   },
   'marine-vessel-tracker': {
     title: 'Marine Vessel Tracker',
@@ -134,8 +131,7 @@ export const projects: Record<string, ProjectProps> = {
         type and cargo of every marine vessel and ports in the world. 
         University of Bristol CSS x Boeing Hackathon 2021 Submission.`,
     content_detailed: [],
-    git_url: 'https://github.com/mitchLui/marine-vessel-tracker',
-    website: null
+    git_url: 'https://github.com/mitchLui/marine-vessel-tracker'
   },
   'scotland-yard': {
     title: 'Scotland Yard',
@@ -152,8 +148,7 @@ export const projects: Record<string, ProjectProps> = {
         Mr X to escape from the detectives.
         Coursework for OOP at University of Bristol.`,
     content_detailed: [],
-    git_url: 'https://github.com/mitchLui/scotland-yard',
-    website: null
+    git_url: 'https://github.com/mitchLui/scotland-yard'
   },
   'flat-finder': {
     title: 'Flat Finder',
@@ -168,8 +163,7 @@ export const projects: Record<string, ProjectProps> = {
     headline: `A script that searches for flats 
         on Rightmove and Zoopla based on certain criteria.`,
     content_detailed: [],
-    git_url: 'https://github.com/mitchLui/flat-finder',
-    website: null
+    git_url: 'https://github.com/mitchLui/flat-finder'
   },
   asiabots: {
     title: 'Internship at Asiabots',
@@ -184,7 +178,6 @@ export const projects: Record<string, ProjectProps> = {
     headline: `A 3-month full-time internship writing API-first microservices 
         for omni-channel conversational AIs in Python.`,
     content_detailed: [],
-    git_url: null,
     website: 'https://www.asiabots.com/'
   }
 };
