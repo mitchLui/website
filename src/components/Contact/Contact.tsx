@@ -11,9 +11,7 @@ export const Contact = (): React.ReactElement =>
         <div className={'contact-header-text'}>
             Contact me:
         </div>
-        <div className={'current-status'}>
-            I am currently open to new opportunities (full-time or part-time) in the UK.
-        </div>
+        <div className={'current-status'} />
         <div className={'contact-links'}>
             <ul>
                 <li>
