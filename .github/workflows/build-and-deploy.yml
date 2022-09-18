@@ -38,7 +38,7 @@ jobs:
           port: ${{ secrets.DEPLOY_PORT }}
           source: "build/"
           target: "public_html"
-          strip_components: 2
+          strip_components: 1
           overwrite: true
           
 
