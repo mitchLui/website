@@ -47,12 +47,12 @@ export function ProjectModalPage (): React.ReactElement {
                 </div>
                 <div className={'modal-buttons'}>
                     {
-                        demoUrl &&
-                        <Button url={demoUrl} target={'_blank'} text={'GitHub'}/>
+                        githubUrl &&
+                        <Button url={githubUrl} target={'_blank'} text={'GitHub'}/>
                     }
                     {
-                        githubUrl &&
-                        <Button url={githubUrl} target={'_blank'} text={'Demo Website'}/>
+                        demoUrl &&
+                        <Button url={demoUrl} target={'_blank'} text={'Website'}/>
                     }
                 </div>
                 <div className={'modal-status'}>
