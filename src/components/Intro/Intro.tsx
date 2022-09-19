@@ -11,7 +11,7 @@ export const Intro = (): React.ReactElement =>
         </div>
         <div className={'item right'}>
             Currently a Graduate Teacher and IT Clinic Technician / Supervisor at the <CompanyLink className={'link uob'} url={'https://www.bristol.ac.uk'} text={'University'} /> in addition to being the Vice-President at <CompanyLink className={'link css'} url={'https://cssbristol.co.uk'} text={'CSS Bristol'} />.
-            Will be returning as a Graduate Software Engineer Intern at <CompanyLink className={'link wise'} url="https://www.wise.com" text={'Wise\'s'} /> Spend Business Experience Team.
+            Will be returning as a Graduate Software Engineer at <CompanyLink className={'link wise'} url="https://www.wise.com" text={'Wise\'s'} /> Spend Business Experience Team.
         </div>
     </div>;
 
