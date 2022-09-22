@@ -64,7 +64,7 @@ export const projects: Record<string, ProjectProps> = {
         University of Bristol CSS x Boeing Hackathon 2022 Submission.`,
     content_detailed: [],
     git_url: 'https://github.com/mitchLui/greenmap',
-    website: 'https://greenmap-demo.herokuapp.com'
+    website: 'https://greenmap.mitchlui.dev'
   },
   'ai-workflow': {
     title: 'IBM AI Workflow',
