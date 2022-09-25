@@ -1,33 +1,15 @@
-import Button from '../Button';
+import cardStyles from './Card.module.css';
 import React from 'react';
-import './cards.scss';
 
 type CardProps = {
-    key: number | string;
-    name: string;
-    title: string;
-    thumbnail: string;
-    alt: string;
-    headline: string;
-    gitUrl?: string;
+    key?: number;
+    className?: string;
+    children: React.ReactNode;
 }
 
-export const Card = ({ key, name, title, thumbnail, alt, headline, gitUrl }: CardProps): React.ReactElement =>
-  <article key={key} className={'card project ' + name}>
-    <h2>{title}</h2>
-    <picture className={'thumbnail'}>
-      <source srcSet={'/project_assets/webp/' + thumbnail + '.webp'} type="image/webp" />
-      <img
-        src={'/project_assets/png/' + thumbnail + '.png'}
-        alt={alt}
-      />
-    </picture>
-    <div className={'card-content'}>{headline}</div>
-    <footer>
-      <Button href={'/projects/' + name}>Learn more</Button>
-      {
-        gitUrl &&
-                <Button href={gitUrl} target={'_blank'}>GitHub</Button>
-      }
-    </footer>
+const Card = ({ key, className, children }: CardProps): React.ReactElement =>
+  <article key={key} className={`${cardStyles['card']} ${className}`}>
+    {children}
   </article>;
+
+export default Card;

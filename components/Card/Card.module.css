@@ -1,0 +1,30 @@
+.card {
+  display: flex;
+  position: relative;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-radius: 30px;
+  padding: 1rem 1.3rem 1rem 1.3rem;
+  transition: transform ease-in-out 0.275s;
+}
+
+.card:hover{
+  transform: translateY(-3px);
+}
+
+/* Light mode */
+@media (prefers-color-scheme: light) {
+  .card {
+      color: #000000;
+      background-color: #ffffff;
+      box-shadow: 0 0 50px #ccc;
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .card {
+      color: #ffffff;
+      background-color: #111111;
+  }
+}
