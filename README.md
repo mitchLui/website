@@ -1,6 +1,7 @@
 # 1. mitchlui.dev
 
-![deploy-to-namecheap](https://github.com/mitchLui/website/actions/workflows/build-and-deploy.yml/badge.svg)
+![deploy-to-production](https://github.com/mitchLui/website/actions/workflows/build-and-deploy-prod.yml/badge.svg)
+![deploy-to-staging](https://github.com/mitchLui/website/actions/workflows/build-and-deploy-staging.yml/badge.svg)
 
 ![website](docs/website.png)
 
