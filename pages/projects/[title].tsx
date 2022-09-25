@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 
 const Project: NextPage = () => {
-  return <div>Projects</div>;
+  return <div>Project</div>;
 };
 
 export default Project;
