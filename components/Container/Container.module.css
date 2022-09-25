@@ -1,0 +1,12 @@
+.main {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 2.5%;
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+      padding-left: 5%;
+      padding-right: 5%;
+  }
+}
