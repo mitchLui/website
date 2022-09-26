@@ -1,0 +1,17 @@
+.main{
+  cursor: pointer;
+}
+
+@media (prefers-color-scheme: light) {
+  .main{
+      filter: invert(0%);
+      -webkit-filter: invert(0%);
+  }
+}
+
+@media (prefers-color-scheme: dark){
+  .main{
+      filter:  invert(100%);
+      -webkit-filter: invert(100%);
+  }
+}
