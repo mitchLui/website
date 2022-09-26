@@ -1,0 +1,14 @@
+.main {
+  display: flex;
+  opacity: 0;
+  transform: translateY(5vh);
+  visibility: hidden;
+  transition: opacity 0.4s ease-out, transform 0.8s ease-out;
+  will-change: opacity, visibility;
+}
+
+.main .is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
