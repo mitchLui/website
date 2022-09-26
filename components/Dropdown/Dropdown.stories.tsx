@@ -27,8 +27,8 @@ export const Primary = () =>
       ],
       'Text': [
         {
-          value: 'a',
-          text: 'a'
+          value: 'The value is different',
+          text: 'This is some text'
         },
       ]
     }}
