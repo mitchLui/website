@@ -6,7 +6,10 @@ import navBarStyles from './NavBar.module.css';
 
 const MOBILE: number = 768;
 
-export const NavBar = (): React.ReactElement => {
+const NavBar = (): React.ReactElement => {
+
+  console.log(navBarStyles);
+
   const [isMobileMenu, setIsMobileMenu] = useState(window.innerWidth < MOBILE);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -30,12 +33,14 @@ export const NavBar = (): React.ReactElement => {
   );
 };
 
+export default NavBar;
+
 type NavBarProps = {
     setIsOpen: (isOpen: boolean) => void;
 }
 
 const DesktopNavBar = ({ setIsOpen }: NavBarProps): React.ReactElement =>
-  <header className="navbar desktop">
+  <header className={`${navBarStyles.main} ${navBarStyles.desktop}`}>
     <Logo setIsOpen={setIsOpen}/>
     <NavBarLinks/>
   </header>;
@@ -45,14 +50,14 @@ type MobileNavBarProps = NavBarProps & {
 }
 
 const MobileNavBar = ({ isOpen, setIsOpen }: MobileNavBarProps): React.ReactElement =>
-  <header className="navbar mobile">
-    <div className={'mainnav'}>
+  <header className={`${navBarStyles.main} ${navBarStyles.mobile}`}>
+    <div className={navBarStyles.mainnav}>
       <Logo setIsOpen={setIsOpen}/>
-      <div className="hamburger-menu-container" >
+      <div className={navBarStyles.hamburgerMenuContainer} >
         <HamburgerMenu onClick={() => setIsOpen(!isOpen)} isOpen={isOpen}/>
       </div>
     </div>
-    <div className={`mobile-menu ${isOpen ? 'mobile-nav-open' : 'mobile-nav-close'}`}>
+    <div className={`${navBarStyles.mobileMenu} ${isOpen ? `${navBarStyles.mobileNavOpen}` : `${navBarStyles.mobileNavClose}`}`}>
       <NavBarLinks onClick={() => setIsOpen(!isOpen)}/>
     </div>
   </header>;
@@ -66,25 +71,25 @@ export const NavBarLinks = ({ onClick }: NavBarLinksProps): React.ReactElement =
     <ul>
       <Link href={'/'}>
         <li onClick={onClick}>
-          <span className={'nav-text'}>Home</span>
+          <span className={navBarStyles.navText}>Home</span>
         </li>
       </Link>
       <Link href={'/projects'}>
         <li onClick={onClick}>
-          <span className={'nav-text'}>Projects + Work</span>
+          <span className={navBarStyles.navText}>Projects + Work</span>
         </li>
       </Link>
       <Link href={'/cv.pdf'} target={'_blank'} rel={'noreferrer'}>
         <li onClick={onClick}>
-          <span className={'nav-text'}>CV</span>
+          <span className={navBarStyles.navText}>CV</span>
         </li>
       </Link>
     </ul>
   </nav>;
 
 export const Logo = ({ setIsOpen }: NavBarProps): React.ReactElement =>
-  <div className={'logo-container'}>
-    <Link onClick={() => setIsOpen(false)} href={'/'} className="logo-link">
-      <h1 className={'logo'}><Image className={'logo-graphic'} src={'/logo.svg'} alt={'logo'}/>mitch<span className={'bold'}>Lui</span></h1>
+  <div className={navBarStyles.logoContainer}>
+    <Link onClick={() => setIsOpen(false)} href={'/'} className={navBarStyles.logoLink}>
+      <h1 className={navBarStyles.logo}><Image className={navBarStyles.logoGraphic} src={'/logo.svg'} alt={'logo'} width={28} height={28}/>mitch<span className={navBarStyles.bold}>Lui</span></h1>
     </Link>
   </div>;
