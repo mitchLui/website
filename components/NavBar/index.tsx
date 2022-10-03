@@ -90,6 +90,9 @@ export const NavBarLinks = ({ onClick }: NavBarLinksProps): React.ReactElement =
 export const Logo = ({ setIsOpen }: NavBarProps): React.ReactElement =>
   <div className={navBarStyles.logoContainer}>
     <Link onClick={() => setIsOpen(false)} href={'/'} className={navBarStyles.logoLink}>
-      <h1 className={navBarStyles.logo}><Image className={navBarStyles.logoGraphic} src={'/logo.svg'} alt={'logo'} width={28} height={28}/>mitch<span className={navBarStyles.bold}>Lui</span></h1>
+      <h1 className={navBarStyles.logo}>
+        <div className={navBarStyles.logoGraphic}>
+          <Image  src={'/logo.svg'} alt={'logo'} width={36} height={36}/>
+        </div>mitch<span className={navBarStyles.bold}>Lui</span></h1>
     </Link>
   </div>;
