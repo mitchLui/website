@@ -1,5 +1,5 @@
 import React from 'react';
-import gridStyles from './Grid.module.css';
+import gridStyles from './Grid.module.scss';
 
 type GridProps = {
     children: React.ReactNode;

@@ -1,5 +1,5 @@
 import React from 'react';
-import dropdownStyles from './Dropdown.module.css';
+import dropdownStyles from './Dropdown.module.scss';
 
 type DropdownProps = {
     htmlFor: string;

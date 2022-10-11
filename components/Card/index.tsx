@@ -1,4 +1,4 @@
-import cardStyles from './Card.module.css';
+import cardStyles from './Card.module.scss';
 import React from 'react';
 
 type CardProps = {
@@ -8,7 +8,7 @@ type CardProps = {
 }
 
 const Card = ({ key, className, children }: CardProps): React.ReactElement =>
-  <article key={key} className={`${cardStyles['card']} ${className}`}>
+  <article key={key} className={`${cardStyles.card} ${className}`}>
     {children}
   </article>;
 

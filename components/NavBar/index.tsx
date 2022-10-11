@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import HamburgerMenu from '../Hamburger';
-import navBarStyles from './NavBar.module.css';
+import navBarStyles from './NavBar.module.scss';
 
 const MOBILE: number = 768;
 

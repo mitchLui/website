@@ -2,7 +2,7 @@ import React from 'react';
 import HamburgerOpenSVG from './open.svg';
 import HamburgerCloseSVG from './close.svg';
 import Image from 'next/image';
-import hamburgerStyles from './Hamburger.module.css';
+import hamburgerStyles from './Hamburger.module.scss';
 
 type HamburgerMenuProps = {
     isOpen: boolean;

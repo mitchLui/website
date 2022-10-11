@@ -1,5 +1,5 @@
 import React from 'react';
-import containerStyles from './Container.module.css';
+import containerStyles from './Container.module.scss';
 
 type ContainerProps = {
     children: React.ReactNode;

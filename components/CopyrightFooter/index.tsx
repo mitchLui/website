@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import copyrightFooterStyles from './CopyrightFooter.module.css';
+import copyrightFooterStyles from './CopyrightFooter.module.scss';
 
 const CopyrightFooter = (): React.ReactElement =>
   <section className={copyrightFooterStyles.main}>

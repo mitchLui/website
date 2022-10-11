@@ -1,4 +1,4 @@
-import arrowStyles from './Arrow.module.css';
+import arrowStyles from './Arrow.module.scss';
 import React from 'react';
 
 type ArrowProps = {
