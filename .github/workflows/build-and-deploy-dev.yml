@@ -13,19 +13,15 @@ jobs:
     defaults:
       run: 
         working-directory: ./
-
-    strategy:
-      matrix:
-        node-version: [16.x]
     
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         
-      - name: Build with Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+      - name: Build with Node.js 16
+        uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 16
       - run: yarn build
       - run: yarn build-storybook 
 
