@@ -1,4 +1,4 @@
-.card {
+.main {
   display: flex;
   position: relative;
   -ms-flex-direction: column;
@@ -48,7 +48,7 @@
 
 /* Light mode */
 @media (prefers-color-scheme: light) {
-  .card {
+  .main {
       color: #000000;
       background-color: #ffffff;
       box-shadow: 0 0 50px #ccc;
@@ -57,7 +57,7 @@
 
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
-  .card {
+  .main {
       color: #ffffff;
       background-color: #111111;
   }

@@ -8,7 +8,7 @@ type ButtonProps = HTMLProps<LinkProps> & {
 
 const Button = ({ href = '', onClick, children, icon, target }: ButtonProps): React.ReactElement => {
   return (
-    <div className={buttonStyles.button}>
+    <div className={buttonStyles.primary}>
       <Link onClick={onClick} href={href} target={target}>{children}</Link>
     </div>
   );

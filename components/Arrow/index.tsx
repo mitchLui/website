@@ -6,7 +6,7 @@ type ArrowProps = {
 }
 
 const Arrow = ({ children }: ArrowProps): React.ReactElement => 
-  <div className={arrowStyles.container}>
+  <div className={arrowStyles.main}>
     <div className={arrowStyles.arrow}/>
     <span className={arrowStyles.text}>{children}</span>
   </div>;

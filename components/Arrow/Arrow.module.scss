@@ -1,4 +1,4 @@
-.container{
+.main{
   display: inline-block;
   opacity: 0.5;
   transition: opacity 0.2s ease-in-out;
@@ -6,7 +6,6 @@
   &:hover{
     opacity: 1;
   }
-
 }
 
 .arrow{
@@ -42,7 +41,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .container{
+  .main{
     padding: 1rem 0 0 1rem;
   }
 

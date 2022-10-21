@@ -8,7 +8,7 @@ type CardProps = {
 }
 
 const Card = ({ key, className, children }: CardProps): React.ReactElement =>
-  <article key={key} className={`${cardStyles.card} ${className}`}>
+  <article key={key} className={`${cardStyles.main} ${className}`}>
     {children}
   </article>;
 
