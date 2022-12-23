@@ -50,6 +50,6 @@ export const Contact = (): React.ReactElement =>
 
         </div>
         <div className={'contact-footer'}>
-            NB: I require visa sponsorship to work full-time in the UK.
+            NB: I require visa sponsorship to work full-time in the UK after 2025 when my graduate visa expires.
         </div>
     </section>;
