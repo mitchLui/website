@@ -13,7 +13,7 @@ module.exports = {
     "@storybook/addon-interactions"
   ],
   "styles": [
-    "../styles/globals.css",
+    "../styles/globals.scss",
   ],
   "framework": "@storybook/react",
   "core": {
