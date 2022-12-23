@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Button from '../components/Button';
 import { Container } from '../components/Container';
 import styles from '../styles/Home.module.scss';
 
@@ -26,6 +27,16 @@ type CompanyLinkProps = {
 const CompanyLink = ({ className, url, text }: CompanyLinkProps): React.ReactElement =>
   <a className={className} target={'_blank'} rel={'noreferrer'} href={url}>{text}</a>;
 
+export const Contact = (): React.ReactElement =>
+  <div className={styles["contact-grid"]}>
+    <span className={`${styles["container-header"]} ${styles["title-item"]}`}><h2>Contact</h2></span>
+    <Button href="mailto:mitch@mitchlui.dev">Email</Button>
+    <Button href="https://linkedin.com/in/mitchlui">LinkedIn</Button>
+    <Button href="https://github.com/mitchlui">GitHub</Button>
+    <Button href="https://twitter.com/mitchlui">Twitter</Button>
+    <span></span>
+  </div>;
+
 const Home: NextPage = () => {
   return (
     <div>
@@ -36,6 +47,7 @@ const Home: NextPage = () => {
       </Head>
       <Container>
         <Intro/>
+        <Contact/>
       </Container>
     </div>
   );
