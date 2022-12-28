@@ -8,6 +8,7 @@ import { NavBar } from './components/NavBar/NavBar';
 import { HomePage } from './pages/HomePage/HomePage';
 import { ProjectsPage } from './pages/ProjectPage/ProjectsPage';
 import { ProjectModalPage } from './pages/ProjectModalPage/ProjectModalPage';
+import { Derrianne } from './pages/Derrianne/Derrianne';
 import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
 import { Copyright } from './components/Copyright/Copyright';
 import { SitemapPage } from './pages/SitemapPage/SitemapPage';
@@ -22,6 +23,7 @@ function App (): React.ReactElement {
           <NavBar/>
           <Routes>
             <Route path={'/'} element={<HomePage/>}/>
+            <Route path={'/derrianne'} element={<Derrianne/>}/>
             <Route path={'/projects'} element={<ProjectsPage/>}/>
             <Route path={'/projects/:projectClass'} element={<ProjectModalPage/>}/>
             <Route path={'/sitemap'} element={<SitemapPage/>}/>
