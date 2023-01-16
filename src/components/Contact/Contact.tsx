@@ -50,6 +50,6 @@ export const Contact = (): React.ReactElement =>
 
         </div>
         <div className={'contact-footer'}>
-            NB: I am currently in the process of obtaining a <a className={'contact-footer url'} target={'_blank'} rel={'noreferrer'} href={'https://www.gov.uk/british-national-overseas-bno-visa'}>Hong Kong BN(O)</a> visa and will not require any visa sponsorship to work in the UK;
+            NB: I am currently in the process of obtaining a <a className={'contact-footer url'} target={'_blank'} rel={'noreferrer'} href={'https://www.gov.uk/british-national-overseas-bno-visa'}>Hong Kong BN(O)</a> visa and will not require any visa sponsorship to work in the UK.
         </div>
     </section>;
