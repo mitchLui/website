@@ -51,6 +51,26 @@
   }
 }
 
+@media screen and (prefers-color-scheme: light) {
+  .link {
+    &.wise{
+      color: #163300;
+    }
+    
+    &.uob{
+      color: #d72a3b;
+    }
+    
+    &.css {
+      color: #ff69b4;
+    }
+    
+    &.asiabots{
+      color: #ec253b;
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   .intro-grid{
     display: grid;
