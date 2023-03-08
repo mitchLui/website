@@ -8,6 +8,7 @@
   - [1.1. Introduction](#11-introduction)
   - [1.2. Development](#12-development)
   - [1.3. Deployment](#13-deployment)
+  - [1.4. Design](#14-design)
 
 ## 1.1. Introduction
 
@@ -24,6 +25,12 @@ Install [npm][4] and run `npm install`.
 ## 1.3. Deployment
 
 You can build the site and deploy it statically to any hosting service you'd like by running `npm run build` and serve the files according to the service's documentation.
+
+---
+
+## 1.4. Design
+
+Coming Soon!
 
 ---
 [1]:https://mitchlui.dev
