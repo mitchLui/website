@@ -87,6 +87,32 @@ export const projects: Record<string, ProjectProps> = {
     git_url: 'https://github.com/mitchLui/ai-workflow',
     website: 'https://ai-workflow.classroom-eu-gb-1-bx2-4x1-d4ceb080620f0ec34cd169ad110144ef-0000.eu-gb.containers.appdomain.cloud/'
   },
+  // 'uob-it-clinic': {
+  //   title: 'IT Clinic Technician at University of Bristol',
+  //   thumbnail: 'uob_it_clinic',
+  //   category: 'Work experience',
+  //   current_status: 'In progress',
+  //   started: '20 September 2021',
+  //   ended: '31 January 2023',
+  //   technologies: 'n/a',
+  //   awards: 'n/a',
+  //   alt: 'uob it clinic screenshot',
+  //   headline: 'Diagnosing and repairing software issues for students',
+  //   content_detailed: []
+  // },
+  // 'uob-graduate-teacher': {
+  //   title: 'Graduate Teacher at University of Bristol',
+  //   thumbnail: 'uob_graduate_teacher',
+  //   category: 'Work experience',
+  //   current_status: 'In progress',
+  //   started: '20 September 2021',
+  //   ended: 'n/a',
+  //   technologies: 'C, Haskell, Java, React, Python, ',
+  //   awards: 'n/a',
+  //   alt: 'uob graduate teacher screenshot',
+  //   headline: 'Hosting weekly seminars and giving formative feedback on coursework',
+  //   content_detailed: ['Units: Year 1 Programming Seminars (COMS1XXXX), OOP (COMS10017), Software Engineering Project (COMS20006), Computer Systems A (COMS20008), Overview of Software Engineering (COMSM0110)']
+  // },
   gol: {
     title: 'Game of Life',
     thumbnail: 'gol',
