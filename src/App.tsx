@@ -30,6 +30,7 @@ function App (): React.ReactElement {
             <Route path={'/not-found'} element={<NotFoundPage/>}/>
             <Route path={'/linkedin'} element={<RedirectPage redirect={'https://linkedin.com/in/mitchlui'}/>}/>
             <Route path={'/github'} element={<RedirectPage redirect={'https://github.com/mitchlui'}/>}/>
+            <Route path={'/medium'} element={<RedirectPage redirect={'https://mitchlui.medium.com'}/>}/>
             <Route path={'*'} element={<NotFoundPage/>}/>
           </Routes>
           <Copyright/>
