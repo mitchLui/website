@@ -17,6 +17,20 @@ export type ProjectProps = {
 }
 
 export const projects: Record<string, ProjectProps> = {
+  hpc: {
+    title: 'High Performance Computing Coursework',
+    thumbnail: 'hpc',
+    category: 'Coursework project',
+    current_status: 'Completed',
+    started: '27 February 2023',
+    ended: '5 May 2023',
+    awards: 'n/a',
+    technologies: 'C, OpenMP, MPI',
+    alt: 'hpc screenshot',
+    headline: 'Parallelising a serial program for simulating fluid dyanmics using OpenMP and MPI.',
+    content_detailed: [],
+    git_url: 'https://github.com/mitchLui/hpc-coursework'
+  },
   'wise-internship': {
     title: 'Internship at Wise',
     thumbnail: 'wise_internship',
