@@ -10,15 +10,18 @@
     h2 {
         font-size: 1.5rem;
         font-weight: bold;
-        text-align: center;
+        text-align: left;
         margin-bottom: 1rem;
     }
 
     footer {
         min-height: 30px;
         justify-content: center;
-        text-align: center;
         padding-top: 1rem;
+    }
+
+    footer a:nth-child(1) {
+      margin: 0;
     }
 
     &:hover {
