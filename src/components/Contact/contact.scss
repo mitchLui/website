@@ -29,10 +29,6 @@
     }
 }
 
-
-
-
-
 .contact-button{
     width: 5rem;
     height: 5rem;
@@ -46,13 +42,8 @@
 
     .url {
       text-decoration-line: none;
+      font-weight: bold;
       color: rgb(60, 101, 136);
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .contact-links{
-        grid-template-columns: 11rem;
     }
 }
 
@@ -64,6 +55,10 @@
     .current-status {
         font-size: 1rem;
     }
+
+    .contact-links{
+      grid-template-columns: 11rem;
+  }
 
     .contact-links ul {
         padding-right: 10rem;
