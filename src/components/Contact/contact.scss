@@ -37,16 +37,6 @@
     border-radius: 50%;
 }
 
-.contact-footer{
-    padding-top: 1rem;
-
-    .url {
-      text-decoration-line: none;
-      font-weight: bold;
-      color: rgb(60, 101, 136);
-    }
-}
-
 @media screen and (max-width: 768px) {
     .contact-header-text {
         font-size: 1.5rem;
