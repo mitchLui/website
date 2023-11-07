@@ -24,7 +24,7 @@ jobs:
           version: 8
 
       - name: Tests
-        run: pnpm ci
+        run: pnpm test
         
       - name: Build
         run: pnpm build --if-present
