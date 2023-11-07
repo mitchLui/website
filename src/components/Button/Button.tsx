@@ -26,19 +26,19 @@ type LinkButtonProps = CommonButtonProps & {
 }
 
 export const LinkButton = ({ to, text }: LinkButtonProps): React.ReactElement =>
-    <Link to={to} className={'button'}>{text}</Link>;
+  <Link to={to} className={'button'}>{text}</Link>;
 
 type FunctionButtonProps = CommonButtonProps & {
     onClick: () => void;
 }
 
 export const FunctionButton = ({ onClick, text }: FunctionButtonProps): React.ReactElement =>
-    <button className={'button'} onClick={onClick}>{text}</button>;
+  <button className={'button'} onClick={onClick}>{text}</button>;
 
 type LinkFunctionButtonProps = CommonButtonProps & LinkButtonProps & FunctionButtonProps;
 
 export const LinkFunctionButton = ({ to, text, onClick }: LinkFunctionButtonProps): React.ReactElement =>
-    <Link onClick={onClick} to={to} className={'button'}>{text}</Link>;
+  <Link onClick={onClick} to={to} className={'button'}>{text}</Link>;
 
 type ModalCloseButtonProps = {
     onClick: () => void;
@@ -46,10 +46,10 @@ type ModalCloseButtonProps = {
 }
 
 export const ModalCloseButton = ({ onClick, to }: ModalCloseButtonProps): React.ReactElement =>
-    <Link onClick={onClick} to={to} className={'modal'}><Cross/></Link>;
+  <Link onClick={onClick} to={to} className={'modal'}><Cross/></Link>;
 
 export const GoBackButton = ({ to, text }: LinkButtonProps): React.ReactElement =>
-    <Link to={to} className={'modal'}><Arrow text={text}/></Link>;
+  <Link to={to} className={'modal'}><Arrow text={text}/></Link>;
 
 type ContactButtonProps = CommonButtonProps & {
     icon: string;
@@ -58,11 +58,11 @@ type ContactButtonProps = CommonButtonProps & {
 }
 
 export const ContactButton = ({ icon, href, alt, text }: ContactButtonProps): React.ReactElement =>
-    <a className={'button contact'} href={href} target={'_blank'} rel={'noreferrer'}>
-        <div className={'contact-icon'}>
-            <img src={icon} alt={alt}/>
-        </div>
-        <div className={'contact-text'}>
-            {text}
-        </div>
-    </a>;
+  <a className={'button contact'} href={href} target={'_blank'} rel={'noreferrer'}>
+    <div className={'contact-icon'}>
+      <img src={icon} alt={alt}/>
+    </div>
+    <div className={'contact-text'}>
+      {text}
+    </div>
+  </a>;

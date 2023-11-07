@@ -9,17 +9,17 @@ type HamburgerMenuProps = {
 }
 
 export const HamburgerMenu = ({ onClick, isOpen }: HamburgerMenuProps): React.ReactElement =>
-    <>
+  <>
     {
-        !isOpen &&
+      !isOpen &&
         <>
-        <img onClick={onClick} className={'hamburger'} src={HamburgerOpenSVG} alt="open hamburger menu"/>
+          <img onClick={onClick} className={'hamburger'} src={HamburgerOpenSVG} alt="open hamburger menu"/>
         </>
     }
     {
-        isOpen &&
+      isOpen &&
         <>
-        <img onClick={onClick} className={'hamburger'} src={HamburgerCloseSVG} alt="close hamburger menu"/>
+          <img onClick={onClick} className={'hamburger'} src={HamburgerCloseSVG} alt="close hamburger menu"/>
         </>
     }
-    </>;
+  </>;

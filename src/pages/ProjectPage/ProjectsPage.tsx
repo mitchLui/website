@@ -15,8 +15,8 @@ export function ProjectsPage (): React.ReactElement {
   }, []);
 
   return (
-        <Container>
-            <Projects projects={projects}/>
-        </Container>
+    <Container>
+      <Projects projects={projects}/>
+    </Container>
   );
 }

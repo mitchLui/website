@@ -7,8 +7,8 @@ type GridProps = {
 
 export const Grid = ({ children }: GridProps): React.ReactElement => {
   return (
-        <div className={'grid'}>
-            {children}
-        </div>
+    <div className={'grid'}>
+      {children}
+    </div>
   );
 };

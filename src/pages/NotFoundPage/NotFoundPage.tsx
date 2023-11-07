@@ -15,12 +15,12 @@ export function NotFoundPage (): React.ReactElement {
   }, []);
 
   return (
-        <Container>
-            <div className={'header-text'}>
-                <h1>404 Not Found!</h1>
-                <h2>You might want to go back...</h2>
-                <LinkButton to={'/'} text={'Go Home'}/>
-            </div>
-        </Container>
+    <Container>
+      <div className={'header-text'}>
+        <h1>404 Not Found!</h1>
+        <h2>You might want to go back...</h2>
+        <LinkButton to={'/'} text={'Go Home'}/>
+      </div>
+    </Container>
   );
 }

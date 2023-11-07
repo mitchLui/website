@@ -15,11 +15,11 @@ export function HomePage (): React.ReactElement {
   }, []);
 
   return (
-        <Container>
-        <div className={'fade-in'}>
-            <Intro/>
-            <Contact/>
-        </div>
+    <Container>
+      <div className={'fade-in'}>
+        <Intro/>
+        <Contact/>
+      </div>
     </Container>
   );
 }

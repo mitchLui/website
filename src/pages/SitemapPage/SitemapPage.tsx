@@ -15,8 +15,8 @@ export function SitemapPage (): React.ReactElement {
   }, []);
 
   return (
-        <Container>
-            <Sitemap projects={projects} />
-        </Container>
+    <Container>
+      <Sitemap projects={projects} />
+    </Container>
   );
 }

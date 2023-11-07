@@ -13,10 +13,8 @@ export function Derrianne (): React.ReactElement {
   }, []);
 
   return (
-        <Container>
-        <div className={'fade-in'}>
-            <h1> I love you Derrianne!</h1>
-        </div>
+    <Container>
+      <h1>To my Standing Goose:</h1>
     </Container>
   );
 }

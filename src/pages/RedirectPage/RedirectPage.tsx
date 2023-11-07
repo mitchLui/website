@@ -17,8 +17,8 @@ export function RedirectPage ({ redirect } : {redirect: string}): React.ReactEle
   }, []);
 
   return (
-        <Container>
-            <h1>Redirecting...</h1>
-        </Container>
+    <Container>
+      <h1>Redirecting...</h1>
+    </Container>
   );
 }

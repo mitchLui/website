@@ -7,7 +7,7 @@ function getCurrentYear (): number {
 }
 
 export const Copyright = (): React.ReactElement =>
-    <section className={'copyright'}>
+  <section className={'copyright'}>
         Copyright © {getCurrentYear()} Mitch Lui. All rights reserved.
-        <p><Link to={'/sitemap'}>Sitemap</Link></p>
-    </section>;
+    <p><Link to={'/sitemap'}>Sitemap</Link></p>
+  </section>;
