@@ -22,7 +22,7 @@ function App (): React.ReactElement {
         <NavBar/>
         <Routes>
           <Route path={'/'} element={<HomePage/>}/>
-          <Route path={'/derrianne'} element={<Derrianne/>}/>
+          <Route path={'/standing-goose'} element={<Derrianne/>}/>
           <Route path={'/projects'} element={<ProjectsPage/>}/>
           <Route path={'/projects/:projectClass'} element={<ProjectModalPage/>}/>
           <Route path={'/sitemap'} element={<SitemapPage/>}/>
@@ -30,6 +30,7 @@ function App (): React.ReactElement {
           <Route path={'/linkedin'} element={<RedirectPage redirect={'https://linkedin.com/in/mitchlui'}/>}/>
           <Route path={'/github'} element={<RedirectPage redirect={'https://github.com/mitchlui'}/>}/>
           <Route path={'/medium'} element={<RedirectPage redirect={'https://mitchlui.medium.com'}/>}/>
+          <Route path={'/derrianne'} element={<RedirectPage redirect={'/standing-goose'}/>}/>
           <Route path={'*'} element={<NotFoundPage/>}/>
         </Routes>
       </Router>
