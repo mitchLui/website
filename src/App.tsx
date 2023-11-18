@@ -14,24 +14,32 @@ import { SitemapPage } from './pages/SitemapPage/SitemapPage';
 import { RedirectPage } from './pages/RedirectPage/RedirectPage';
 
 import './App.scss';
+import { Container } from './components/Container/Container';
 
 function App (): React.ReactElement {
+  const routes = {
+    '/': <HomePage/>,
+    '/standing-goose': <Derrianne/>,
+    '/projects': <ProjectsPage/>,
+    '/projects/:projectClass': <ProjectModalPage/>,
+    '/sitemap': <SitemapPage/>,
+    '/not-found': <NotFoundPage/>,
+    '/linkedin': <RedirectPage redirect={'https://linkedin.com/in/mitchlui'}/>,
+    '/github': <RedirectPage redirect={'https://github.com/mitchlui'}/>,
+    '/medium': <RedirectPage redirect={'https://mitchlui.medium.com'}/>,
+    '/derrianne': <RedirectPage redirect={'/standing-goose'}/>,
+    '*': <NotFoundPage/>
+  };
   return (
     <div className={'App'}>
       <Router>
         <NavBar/>
         <Routes>
-          <Route path={'/'} element={<HomePage/>}/>
-          <Route path={'/standing-goose'} element={<Derrianne/>}/>
-          <Route path={'/projects'} element={<ProjectsPage/>}/>
-          <Route path={'/projects/:projectClass'} element={<ProjectModalPage/>}/>
-          <Route path={'/sitemap'} element={<SitemapPage/>}/>
-          <Route path={'/not-found'} element={<NotFoundPage/>}/>
-          <Route path={'/linkedin'} element={<RedirectPage redirect={'https://linkedin.com/in/mitchlui'}/>}/>
-          <Route path={'/github'} element={<RedirectPage redirect={'https://github.com/mitchlui'}/>}/>
-          <Route path={'/medium'} element={<RedirectPage redirect={'https://mitchlui.medium.com'}/>}/>
-          <Route path={'/derrianne'} element={<RedirectPage redirect={'/standing-goose'}/>}/>
-          <Route path={'*'} element={<NotFoundPage/>}/>
+          {
+            Object.entries(routes).map(([path, element]) => (
+              <Route key={path} path={path} element={<Container>{element}</Container>}/>
+            ))
+          }
         </Routes>
       </Router>
     </div>

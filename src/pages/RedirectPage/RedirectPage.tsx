@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Container } from '../../components/Container/Container';
 import { setTitle, setDescription, setOgProperties } from '../../meta/meta';
 
 export function RedirectPage ({ redirect } : {redirect: string}): React.ReactElement {
@@ -16,9 +15,5 @@ export function RedirectPage ({ redirect } : {redirect: string}): React.ReactEle
     });
   }, []);
 
-  return (
-    <Container>
-      <h1>Redirecting...</h1>
-    </Container>
-  );
+  return <h1>Redirecting...</h1>;
 }

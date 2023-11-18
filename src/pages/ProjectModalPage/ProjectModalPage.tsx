@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useParams, Navigate } from 'react-router';
-import { Container } from '../../components/Container/Container';
 import { Button, GoBackButton } from '../../components/Button/Button';
 import { projects } from '../../data/projects';
 import { setTitle, setDescription, setOgProperties } from '../../meta/meta';
@@ -31,7 +30,7 @@ export function ProjectModalPage (): React.ReactElement {
     const githubUrl = projects[projectClass].git_url ? projects[projectClass].git_url : null;
 
     return (
-      <Container>
+      <>
         <GoBackButton to={'/projects'} text={'Back'}/>
         <div className={'modal-content'}>
           <h1 className={'text'}>{projects[projectClass].title}</h1>
@@ -69,7 +68,7 @@ export function ProjectModalPage (): React.ReactElement {
             )}
           </div>
         </div>
-      </Container>
+      </>
     );
   } else {
     return <Navigate to={'/not-found'}/>;

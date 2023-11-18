@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Container } from '../../components/Container/Container';
 import { Sitemap } from '../../components/Sitemap/Sitemap';
 import { projects } from '../../data/projects';
 import { setTitle, setDescription, setOgProperties } from '../../meta/meta';
@@ -14,9 +13,5 @@ export function SitemapPage (): React.ReactElement {
     });
   }, []);
 
-  return (
-    <Container>
-      <Sitemap projects={projects} />
-    </Container>
-  );
+  return <Sitemap projects={projects} />;
 }

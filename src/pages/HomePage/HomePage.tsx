@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { Contact } from '../../components/Contact/Contact';
-import { Container } from '../../components/Container/Container';
 import { Intro } from '../../components/Intro/Intro';
 import { setTitle, setDescription, setOgProperties } from '../../meta/meta';
 
@@ -15,11 +14,9 @@ export function HomePage (): React.ReactElement {
   }, []);
 
   return (
-    <Container>
-      <div className={'fade-in'}>
-        <Intro/>
-        <Contact/>
-      </div>
-    </Container>
+    <div className={'fade-in'}>
+      <Intro/>
+      <Contact/>
+    </div>
   );
 }
