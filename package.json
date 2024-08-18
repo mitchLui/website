@@ -9,7 +9,7 @@
     "test": "react-scripts test --passWithNoTests",
     "eject": "react-scripts eject",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "prepare": "husky || true"
+    "prepare": "husky"
   },
   "homepage": "/",
   "dependencies": {
