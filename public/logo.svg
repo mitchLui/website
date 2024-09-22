@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 
-<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full">
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full">
     <defs>
-        <linearGradient id="1055531241973124473301008" x1="50.000000%" x2="50.000000%" y1="100.000000%" y2="0.000000%">
+        <linearGradient id="1055531649886885252302976" x1="50.000000%" x2="50.000000%" y1="100.000000%" y2="0.000000%">
             <stop offset="0%" style="stop-color:#65910c;stop-opacity:1.000000"></stop>
             <stop offset="100%" style="stop-color:#13a922;stop-opacity:1.000000"></stop>
         </linearGradient>
-        <linearGradient id="1055531242038724473308704" x1="50.000000%" x2="50.000000%" y1="100.000000%" y2="0.000000%">
+        <linearGradient id="1055531649808485251442512" x1="50.000000%" x2="50.000000%" y1="100.000000%" y2="0.000000%">
             <stop offset="0%" style="stop-color:#2c6415;stop-opacity:1.000000"></stop>
             <stop offset="100%" style="stop-color:#21522b;stop-opacity:1.000000"></stop>
         </linearGradient>
     </defs>
-    <g transform="scale(0.039062,-0.039062) translate(0,-1024)">
-        <path d="M 521.844026 517.624602 L 1.000000 1.000000 L 615.318978 1.000000 Z" transform="scale(1.000000,1.000000) translate(318.171363,252.687735)" fill="url(#1055531241973124473301008)" opacity="1.000000"></path>
-        <path d="M 529.156944 517.624602 L 1.000000 1.000000 L 622.525990 1.000000 Z" transform="scale(1.000000,1.000000) translate(89.509659,252.687735)" fill="url(#1055531242038724473308704)" opacity="0.823520"></path>
+    <g transform="scale(0.021319,-0.021319) translate(0,-1501)">
+        <path d="M 1501.000000 751.000000 C 1501.000000 1165.213562 1165.213562 1501.000000 751.000000 1501.000000 C 336.786438 1501.000000 1.000000 1165.213562 1.000000 751.000000 C 1.000000 336.786438 336.786438 1.000000 751.000000 1.000000 C 1165.213562 1.000000 1501.000000 336.786438 1501.000000 751.000000 Z" transform="scale(1.000000,1.000000) translate(-0.000909,-0.999962)" fill="#0b0b0b" opacity="1.000000"></path>
+        <path d="M 626.644150 621.575679 L 1.000000 1.000000 L 738.927394 1.000000 Z" transform="scale(1.000000,1.000000) translate(487.133333,438.712182)" fill="url(#1055531649886885252302976)" opacity="1.000000"></path>
+        <path d="M 635.428494 621.575679 L 1.000000 1.000000 L 747.584519 1.000000 Z" transform="scale(1.000000,1.000000) translate(212.462105,438.712182)" fill="url(#1055531649808485251442512)" opacity="0.823520"></path>
     </g>
 </svg>
