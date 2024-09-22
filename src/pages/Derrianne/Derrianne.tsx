@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import { ReactElement, useEffect } from 'react';
 import { setTitle, setDescription, setOgProperties } from '../../meta/meta';
 
-export function Derrianne (): React.ReactElement {
+export function Derrianne (): ReactElement {
   useEffect(() => {
     setTitle('Mitch Lui | Full Stack Developer');
     setDescription('mitchlui.dev');

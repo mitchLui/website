@@ -1,10 +1,6 @@
-import React from 'react';
 import './container.scss';
 import { Copyright } from '../Copyright/Copyright';
+import { PropsWithChildren, ReactElement } from 'react';
 
-type ContainerProps = {
-    children: React.ReactNode;
-}
-
-export const Container = ({ children }: ContainerProps): React.ReactElement =>
+export const Container = ({ children }: PropsWithChildren): ReactElement =>
   <div className="container">{children}<Copyright/></div>;

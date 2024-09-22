@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { ReactElement, useState } from 'react';
 import { Grid } from '../Grid/Grid';
 import { ProjectCard } from '../Cards/Cards';
 import { Dropdown } from '../Dropdown/Dropdown';
@@ -9,7 +9,7 @@ type ProjectComponentProps = {
     projects: Record<string, ProjectProps>;
 }
 
-export function Projects ({ projects }: ProjectComponentProps): React.ReactElement {
+export function Projects ({ projects }: ProjectComponentProps): ReactElement {
   const [filter, setFilter] = useState('none');
 
   function filterProjects ({ obj, predicate }: {obj: Record<string, ProjectProps>, predicate: Function}): any {

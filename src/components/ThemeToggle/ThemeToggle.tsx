@@ -1,7 +1,7 @@
-import React from 'react';
+import { ReactElement } from 'react';
 import './themetoggle.scss';
 
-export function ThemeToggle (): React.ReactElement {
+export function ThemeToggle (): ReactElement {
   function toggleTheme (theme: string) {
     localStorage.setItem('mitchlui-dev-theme', theme);
     console.log(theme);

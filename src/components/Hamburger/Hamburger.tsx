@@ -1,4 +1,4 @@
-import React from 'react';
+import { ReactElement } from 'react';
 import HamburgerOpenSVG from './hamburger/hamburgeropen.svg';
 import HamburgerCloseSVG from './hamburger/hamburgerclose.svg';
 import './hamburger.scss';
@@ -8,7 +8,7 @@ type HamburgerMenuProps = {
     onClick: () => void;
 }
 
-export const HamburgerMenu = ({ onClick, isOpen }: HamburgerMenuProps): React.ReactElement =>
+export const HamburgerMenu = ({ onClick, isOpen }: HamburgerMenuProps): ReactElement =>
   <>
     {
       !isOpen &&

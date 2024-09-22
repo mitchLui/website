@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import { ReactElement, useEffect } from 'react';
 import { useParams, Navigate } from 'react-router';
 import { Button, GoBackButton } from '../../components/Button/Button';
 import { projects } from '../../data/projects';
 import { setTitle, setDescription, setOgProperties } from '../../meta/meta';
 import './projectmodalpage.scss';
 
-export function ProjectModalPage (): React.ReactElement {
+export function ProjectModalPage (): ReactElement {
   const { projectClass } = useParams();
 
   useEffect(() => {

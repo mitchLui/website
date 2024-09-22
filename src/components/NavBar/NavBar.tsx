@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { HamburgerMenu } from '../Hamburger/Hamburger';
 import './navbar.scss';
 
 const MOBILE: number = 768;
 
-export const NavBar = (): React.ReactElement => {
+export const NavBar = (): ReactElement => {
   const [isMobileMenu, setIsMobileMenu] = useState(window.innerWidth < MOBILE);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -33,7 +33,7 @@ type NavBarProps = {
     setIsOpen: (isOpen: boolean) => void;
 }
 
-const DesktopNavBar = ({ setIsOpen }: NavBarProps): React.ReactElement =>
+const DesktopNavBar = ({ setIsOpen }: NavBarProps): ReactElement =>
   <header className="navbar desktop">
     <Logo setIsOpen={setIsOpen}/>
     <NavBarLinks/>
@@ -43,7 +43,7 @@ type MobileNavBarProps = NavBarProps & {
     isOpen: boolean;
 }
 
-const MobileNavBar = ({ isOpen, setIsOpen }: MobileNavBarProps): React.ReactElement =>
+const MobileNavBar = ({ isOpen, setIsOpen }: MobileNavBarProps): ReactElement =>
   <header className="navbar mobile">
     <div className={'mainnav'}>
       <Logo setIsOpen={setIsOpen}/>
@@ -60,7 +60,7 @@ type NavBarLinksProps = {
     onClick ?: () => void;
 }
 
-export const NavBarLinks = ({ onClick }: NavBarLinksProps): React.ReactElement =>
+export const NavBarLinks = ({ onClick }: NavBarLinksProps): ReactElement =>
   <nav>
     <ul>
       <Link to={'/'}>
@@ -86,7 +86,7 @@ export const NavBarLinks = ({ onClick }: NavBarLinksProps): React.ReactElement =
     </ul>
   </nav>;
 
-export const Logo = ({ setIsOpen }: NavBarProps): React.ReactElement =>
+export const Logo = ({ setIsOpen }: NavBarProps): ReactElement =>
   <div className={'logo-container'}>
     <Link onClick={() => setIsOpen(false)} to={'/'} className="logo-link">
       <h1 className={'logo'}><img className={'logo-graphic'} src={'/logo.svg'} alt={'logo'}/>mitch<span className={'bold'}>Lui</span></h1>

@@ -1,7 +1,7 @@
-import React from 'react';
+import { ReactElement } from 'react';
 import './intro.scss';
 
-export const Intro = (): React.ReactElement =>
+export const Intro = (): ReactElement =>
   <div className={'intro'}>
     <span className={'container-header'}><h1><code>Hello, I&apos;m Mitch</code></h1></span>
     <span className={'container-header'}><h2>Fullstack software engineer</h2></span>
@@ -18,5 +18,5 @@ type CompanyLinkProps = {
     text: string;
 };
 
-const CompanyLink = ({ className, url, text }: CompanyLinkProps): React.ReactElement =>
+const CompanyLink = ({ className, url, text }: CompanyLinkProps): ReactElement =>
   <a className={className} target={'_blank'} rel={'noreferrer'} href={url}>{text}</a>;

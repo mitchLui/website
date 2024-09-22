@@ -1,4 +1,4 @@
-import React from 'react';
+import { ReactElement } from 'react';
 import {
   BrowserRouter as Router,
   Routes,
@@ -16,7 +16,7 @@ import { RedirectPage } from './pages/RedirectPage/RedirectPage';
 import './App.scss';
 import { Container } from './components/Container/Container';
 
-function App (): React.ReactElement {
+function App (): ReactElement {
   const routes = {
     '/': <HomePage/>,
     '/standing-goose': <Derrianne/>,

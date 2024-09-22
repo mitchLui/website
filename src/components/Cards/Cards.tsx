@@ -1,5 +1,5 @@
 import { Button, LinkButton } from '../Button/Button';
-import React from 'react';
+import { ReactElement } from 'react';
 import './cards.scss';
 
 type CardProps = {
@@ -12,7 +12,7 @@ type CardProps = {
     gitUrl?: string;
 }
 
-export const ProjectCard = ({ key, name, title, thumbnail, alt, headline, gitUrl }: CardProps): React.ReactElement =>
+export const ProjectCard = ({ key, name, title, thumbnail, alt, headline, gitUrl }: CardProps): ReactElement =>
   <article key={key} className={'card project ' + name}>
     <picture className={'thumbnail'}>
       <source srcSet={'/project_assets/webp/' + thumbnail + '.webp'} type="image/webp" />

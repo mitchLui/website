@@ -1,4 +1,4 @@
-import React from 'react';
+import { ReactElement } from 'react';
 import './dropdown.scss';
 
 type DropdownProps = {
@@ -11,7 +11,7 @@ type DropdownProps = {
     }>>;
 }
 
-export const Dropdown = ({ className, onChange, label, options }: DropdownProps): React.ReactElement =>
+export const Dropdown = ({ className, onChange, label, options }: DropdownProps): ReactElement =>
   <>
     <label className={'dropdown-label'} htmlFor={className}>{label}</label>
     <select className={'dropdown-menu'} onChange={(e) => onChange(e.target.value)} name={'Sort by:'} id={className} defaultValue={'none'}>

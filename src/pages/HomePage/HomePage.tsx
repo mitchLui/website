@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import { ReactElement, useEffect } from 'react';
 import { Contact } from '../../components/Contact/Contact';
 import { Intro } from '../../components/Intro/Intro';
 import { setTitle, setDescription, setOgProperties } from '../../meta/meta';
 
-export function HomePage (): React.ReactElement {
+export function HomePage (): ReactElement {
   useEffect(() => {
     setTitle('Mitch Lui | Full Stack Developer');
     setDescription('mitchlui.dev');

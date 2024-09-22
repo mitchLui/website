@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import { ReactElement, useEffect } from 'react';
 import { LinkButton } from '../../components/Button/Button';
 import { setTitle, setDescription, setOgProperties } from '../../meta/meta';
 import './notfound.scss';
 
-export function NotFoundPage (): React.ReactElement {
+export function NotFoundPage (): ReactElement {
   useEffect(() => {
     setTitle('Not found | Mitch Lui');
     setDescription('Page not found');
