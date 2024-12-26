@@ -3,8 +3,8 @@ import React from 'react';
 export type ProjectProps = {
   title: string;
   thumbnail: string;
-  category: string;
-  current_status: string;
+  category: 'Work experience' | 'Coursework project' | 'Hackathon project' | 'Personal project';
+  current_status: 'Completed' | 'In development' | 'In progress';
   started: string;
   ended: string;
   awards: string;
@@ -17,6 +17,19 @@ export type ProjectProps = {
 }
 
 export const projects: Record<string, ProjectProps> = {
+  wise: {
+    title: 'Wise - Business Account Management',
+    thumbnail: 'wise',
+    category: 'Work experience',
+    current_status: 'In progress',
+    started: '4 September 2023',
+    ended: 'n/a',
+    awards: 'n/a',
+    technologies: 'Next.js, Java Spring, Kafka',
+    alt: 'wise screenshot',
+    headline: 'Working as a full-stack engineer to improve the Wise Business product.',
+    content_detailed: ['To be added.']
+  },
   hpc: {
     title: 'LBM Optimisation',
     thumbnail: 'hpc',
@@ -46,10 +59,10 @@ export const projects: Record<string, ProjectProps> = {
     git_url: 'https://github.com/mitchLui/rednoise'
   },
   'wise-internship': {
-    title: 'Internship at Wise',
+    title: 'Wise - Spend Business Experience',
     thumbnail: 'wise_internship',
     category: 'Work experience',
-    current_status: 'In progress',
+    current_status: 'Completed',
     started: '27 June 2022',
     ended: '16 September 2022',
     awards: 'n/a',
@@ -98,7 +111,7 @@ export const projects: Record<string, ProjectProps> = {
     title: 'IBM AI Workflow',
     thumbnail: 'ai_workflow',
     category: 'Coursework project',
-    current_status: 'Complete',
+    current_status: 'Completed',
     started: '8 October 2021',
     ended: '6 May 2022',
     awards: '75% (First class)',
