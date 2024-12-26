@@ -26,7 +26,6 @@ function App (): ReactElement {
     '/not-found': <NotFoundPage/>,
     '/linkedin': <RedirectPage redirect={'https://linkedin.com/in/mitchlui'}/>,
     '/github': <RedirectPage redirect={'https://github.com/mitchlui'}/>,
-    '/medium': <RedirectPage redirect={'https://mitchlui.medium.com'}/>,
     '/derrianne': <RedirectPage redirect={'/standing-goose'}/>,
     '*': <NotFoundPage/>
   };
