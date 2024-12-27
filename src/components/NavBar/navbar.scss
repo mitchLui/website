@@ -55,12 +55,17 @@
 
 /* desktop navbar */
 .desktop nav ul {
+    display: flex;
     padding: 0;
     list-style: none;
 
     li{
         display: inline-block;
         margin: 1.1rem 1rem;
+    }
+
+    .contact-icon {
+      margin-top: 8px;
     }
 }
 
@@ -86,19 +91,17 @@
             animation-delay: 0.13s;
         }
 
-        a:nth-child(4) li{
-          animation-delay: 0.17s;
-      }
+        span a img {
+          margin-top: 16px;
+          animation-delay: 0.21s;
+        }
     }
 
-    li{
+    li {
         cursor: pointer;
         display: flex;
         padding: 0.75rem;
         border-bottom: 0.06rem solid #777777;
-    }
-
-    a li {
         opacity: 0;
         -webkit-animation: fadein 0.25s; /* Safari, Chrome and Opera > 12.1 */
         -moz-animation: fadein 0.25s; /* Firefox < 16 */
@@ -107,6 +110,7 @@
         animation: fadein 0.25s;
         animation-fill-mode: forwards;
     }
+
 }
 
 .mainnav{
@@ -143,5 +147,22 @@
     nav ul {
         text-align: center;
     }
+
+    .contact-icon {
+      padding-top: 16px;
+    }
 }
 
+@media (prefers-color-scheme: light) {
+  .contact-icon {
+    filter: invert(0%);
+    -webkit-filter: invert(0%);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .contact-icon {
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+  }
+}

@@ -8,23 +8,6 @@
             background-color:#000000;
         }
     }
-
-    .contact-icon{
-        filter: invert(0%);
-        -webkit-filter: invert(0%);
-    }
-
-    .button:hover .contact-icon{
-        filter: invert(0%);
-        -webkit-filter: invert(0%);
-        transition: ease 0.2s;
-    }
-
-    .button:hover .contact-icon{
-        transition: ease-in-out 0.2s;
-        filter: invert(100%);
-        -webkit-filter: invert(100%);
-    }
 }
   
 @media (prefers-color-scheme: dark) {
@@ -36,18 +19,7 @@
             color:#000000;
             background-color:#FFFFFF;
         }
-    }
-
-    .contact-icon{
-        filter:  invert(100%);
-        -webkit-filter: invert(100%);
-    }
-
-    .button:hover .contact-icon{
-        filter: invert(0%);
-        -webkit-filter: invert(0%);
-        transition: ease 0.2s;
-    }
+      }
 }
 
 .button{
@@ -73,26 +45,9 @@
 .modal{
     z-index: 1;
 }
-
-.contact-icon{
-    grid-column: 1;
-}
-
 .contact-text{
     grid-column: 2;
     margin: auto;
     width: 50%;
     text-align: center;
-}
-
-
-@media screen and (max-width: 768px){
-    .contact-icon{
-        padding-top: 0.15rem;
-    }
-
-    .contact-text{
-        font-size: 1rem;
-    }
-
 }

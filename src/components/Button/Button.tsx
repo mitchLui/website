@@ -50,19 +50,3 @@ export const ModalCloseButton = ({ onClick, to }: ModalCloseButtonProps): ReactE
 
 export const GoBackButton = ({ to, text }: LinkButtonProps): ReactElement =>
   <Link to={to} className={'modal'}><Arrow text={text}/></Link>;
-
-type ContactButtonProps = CommonButtonProps & {
-    icon: string;
-    href: string;
-    alt: string;
-}
-
-export const ContactButton = ({ icon, href, alt, text }: ContactButtonProps): ReactElement =>
-  <a className={'button contact'} href={href} target={'_blank'} rel={'noreferrer'}>
-    <div className={'contact-icon'}>
-      <img src={icon} alt={alt}/>
-    </div>
-    <div className={'contact-text'}>
-      {text}
-    </div>
-  </a>;
