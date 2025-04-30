@@ -177,7 +177,7 @@ export const projects: Record<string, ProjectProps> = {
     technologies: 'Python, TensorFlow, Arduino',
     alt: 'mask detector screenshot',
     headline: `Real-time face covering detection application to encourage good mask-wearing practises. 
-        University of Bristol BEEEES Make-a-thon 2021 Submission.`,
+        University of Bristol BEEES Make-a-thon 2021 Submission.`,
     content_detailed: [],
     git_url: 'https://github.com/mitchLui/mask-detector'
   },
