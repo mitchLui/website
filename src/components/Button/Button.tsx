@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { Arrow } from '../Arrow/Arrow';
-import { Cross } from '../Cross/Cross';
 import { ReactElement } from 'react';
 import './button.scss';
 
@@ -39,14 +38,6 @@ type LinkFunctionButtonProps = CommonButtonProps & LinkButtonProps & FunctionBut
 
 export const LinkFunctionButton = ({ to, text, onClick }: LinkFunctionButtonProps): ReactElement =>
   <Link onClick={onClick} to={to} className={'button'}>{text}</Link>;
-
-type ModalCloseButtonProps = {
-    onClick: () => void;
-    to: string;
-}
-
-export const ModalCloseButton = ({ onClick, to }: ModalCloseButtonProps): ReactElement =>
-  <Link onClick={onClick} to={to} className={'modal'}><Cross/></Link>;
 
 export const GoBackButton = ({ to, text }: LinkButtonProps): ReactElement =>
   <Link to={to} className={'modal'}><Arrow text={text}/></Link>;
