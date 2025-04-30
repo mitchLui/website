@@ -1,8 +1,8 @@
 import { ReactElement, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import EmailSVG from './contact_images/email.svg';
-import LinkedInSVG from './contact_images/linkedin.svg';
-import GitHubSVG from './contact_images/github.svg';
+import { EmailSVG } from './assets/email.svg';
+import LinkedInSVG from './assets/linkedin.svg';
+import GitHubSVG from './assets/github.svg';
 import { HamburgerMenu } from '../Hamburger/Hamburger';
 import './NavBar.scss';
 
