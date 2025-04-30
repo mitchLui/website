@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import { NavBar } from './components/NavBar/NavBar';
 import { HomePage } from './pages/HomePage/HomePage';
-import { ProjectModalPage } from './pages/ProjectModalPage/ProjectModalPage';
+import { ProjectDetailsPage } from './pages/ProjectDetailsPage/ProjectDetailsPage';
 import { StandingGoose } from './pages/StandingGoose/StandingGoose';
 import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
 import { SitemapPage } from './pages/SitemapPage/SitemapPage';
@@ -19,7 +19,7 @@ function App (): ReactElement {
   const routes = {
     '/': <HomePage/>,
     '/standing-goose': <StandingGoose/>,
-    '/projects/:projectClass': <ProjectModalPage/>,
+    '/projects/:projectId': <ProjectDetailsPage/>,
     '/sitemap': <SitemapPage/>,
     '/not-found': <NotFoundPage/>,
     '/linkedin': <RedirectPage redirect={'https://linkedin.com/in/mitchlui'}/>,
