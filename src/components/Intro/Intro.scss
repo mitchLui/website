@@ -1,0 +1,46 @@
+.item{
+  font-weight: normal;
+  font-size: 1.3rem;
+  line-height: 1.25;
+}
+
+.link {
+  font-weight: 600;
+  text-decoration: none;
+
+  &.wise{
+    color: #9FE870;
+  }
+  
+  &.uob{
+    color: #d72a3b;
+  }
+  
+  &.css {
+    color: #ff69b4;
+  }
+  
+  &.asiabots{
+    color: #ec253b;
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  .link {
+    &.wise{
+      color: #163300;
+    }
+    
+    &.uob{
+      color: #d72a3b;
+    }
+    
+    &.css {
+      color: #ff69b4;
+    }
+    
+    &.asiabots{
+      color: #ec253b;
+    }
+  }
+}

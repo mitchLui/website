@@ -1,0 +1,53 @@
+@media (prefers-color-scheme: light) {
+    .button{
+        border:2px solid #000000;
+        color:#000000;
+
+        &:hover{
+            color:#FFFFFF;
+            background-color:#000000;
+        }
+    }
+}
+  
+@media (prefers-color-scheme: dark) {
+    .button{
+        border:2px solid #FFFFFF;
+        color:#FFFFFF;
+
+        &:hover{
+            color:#000000;
+            background-color:#FFFFFF;
+        }
+      }
+}
+
+.button{
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1rem;
+    display:inline-block;
+    padding: 0.35em 1.2em;
+    margin: .25em .5em;
+    border-radius: 2em;
+    font-weight: normal;
+    text-align:center;
+    background-color: transparent;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+    &.contact {
+        width: 7rem;
+        display: grid;
+        grid-template-columns: 0.25fr 1fr;
+    }
+}
+
+.modal{
+    z-index: 1;
+}
+.contact-text{
+    grid-column: 2;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
