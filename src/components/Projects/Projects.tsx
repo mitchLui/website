@@ -1,6 +1,6 @@
 import { ReactElement, useState } from 'react';
-import { Grid } from '../Grid/Grid';
-import { ProjectCard } from '../Cards/Cards';
+import { Grid } from '../../layouts/Grid/Grid';
+import { ProjectCard } from '../ProjectCard/ProjectCard';
 import { Dropdown } from '../Dropdown/Dropdown';
 import { ProjectProps } from '../../data/projects';
 import './projects.scss';

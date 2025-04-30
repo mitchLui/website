@@ -1,5 +1,5 @@
 import './container.scss';
-import { Copyright } from '../Copyright/Copyright';
+import { Copyright } from '../../components/Copyright/Copyright';
 import { PropsWithChildren, ReactElement } from 'react';
 
 export const Container = ({ children }: PropsWithChildren): ReactElement =>

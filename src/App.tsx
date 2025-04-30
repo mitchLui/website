@@ -13,7 +13,7 @@ import { SitemapPage } from './pages/SitemapPage/SitemapPage';
 import { RedirectPage } from './pages/RedirectPage/RedirectPage';
 
 import './App.scss';
-import { Container } from './components/Container/Container';
+import { Container } from './layouts/Container/Container';
 
 function App (): ReactElement {
   const routes = {
