@@ -30,8 +30,8 @@ export function Projects ({ projects }: ProjectComponentProps): ReactElement {
   return (
     <>
       <div>
-        <span className={'container-header'}><h1><code>Projects + Work</code></h1></span>
-        <h2>An archive of what I&apos;m working on and what I&apos;ve done in the past.</h2>
+        <span className={'container-header'}><h2><code>Projects + Work</code></h2></span>
+        <h3>An archive of what I&apos;m working on and what I&apos;ve done in the past.</h3>
         <Dropdown
           className={'project-sort'}
           onChange={setFilter}

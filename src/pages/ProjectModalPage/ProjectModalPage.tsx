@@ -31,7 +31,7 @@ export function ProjectModalPage (): ReactElement {
 
     return (
       <>
-        <GoBackButton to={'/projects'} text={'Back'}/>
+        <GoBackButton to={'/'} text={'Back'}/>
         <div className={'modal-content'}>
           <h1 className={'text'}>{projects[projectClass].title}</h1>
           <picture className={'modal-thumbnail'}>

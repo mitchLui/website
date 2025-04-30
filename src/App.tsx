@@ -6,7 +6,6 @@ import {
 } from 'react-router-dom';
 import { NavBar } from './components/NavBar/NavBar';
 import { HomePage } from './pages/HomePage/HomePage';
-import { ProjectsPage } from './pages/ProjectPage/ProjectsPage';
 import { ProjectModalPage } from './pages/ProjectModalPage/ProjectModalPage';
 import { Derrianne } from './pages/Derrianne/Derrianne';
 import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
@@ -20,7 +19,6 @@ function App (): ReactElement {
   const routes = {
     '/': <HomePage/>,
     '/standing-goose': <Derrianne/>,
-    '/projects': <ProjectsPage/>,
     '/projects/:projectClass': <ProjectModalPage/>,
     '/sitemap': <SitemapPage/>,
     '/not-found': <NotFoundPage/>,
