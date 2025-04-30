@@ -1,7 +1,7 @@
 import { ReactElement, useEffect } from 'react';
 import { setTitle, setDescription, setOgProperties } from '../../meta/meta';
 
-export function Derrianne (): ReactElement {
+export function StandingGoose (): ReactElement {
   useEffect(() => {
     setTitle('Mitch Lui | Full Stack Developer');
     setDescription('mitchlui.dev');

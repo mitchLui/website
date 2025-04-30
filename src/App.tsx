@@ -7,7 +7,7 @@ import {
 import { NavBar } from './components/NavBar/NavBar';
 import { HomePage } from './pages/HomePage/HomePage';
 import { ProjectModalPage } from './pages/ProjectModalPage/ProjectModalPage';
-import { Derrianne } from './pages/Derrianne/Derrianne';
+import { StandingGoose } from './pages/StandingGoose/StandingGoose';
 import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
 import { SitemapPage } from './pages/SitemapPage/SitemapPage';
 import { RedirectPage } from './pages/RedirectPage/RedirectPage';
@@ -18,7 +18,7 @@ import { Container } from './components/Container/Container';
 function App (): ReactElement {
   const routes = {
     '/': <HomePage/>,
-    '/standing-goose': <Derrianne/>,
+    '/standing-goose': <StandingGoose/>,
     '/projects/:projectClass': <ProjectModalPage/>,
     '/sitemap': <SitemapPage/>,
     '/not-found': <NotFoundPage/>,
