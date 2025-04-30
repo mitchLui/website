@@ -1,4 +1,4 @@
-import './container.scss';
+import './Container.scss';
 import { Copyright } from '../../components/Copyright/Copyright';
 import { PropsWithChildren, ReactElement } from 'react';
 

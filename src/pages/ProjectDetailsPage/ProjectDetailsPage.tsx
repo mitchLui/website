@@ -1,11 +1,11 @@
-import { ReactElement, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useParams, Navigate } from 'react-router';
 import { Button, GoBackButton } from '../../components/Button/Button';
 import { projects } from '../../data/projects';
 import { setTitle, setDescription, setOgProperties } from '../../meta/meta';
-import './projectdetailspage.scss';
+import './ProjectDetailsPage.scss';
 
-export function ProjectDetailsPage (): ReactElement {
+export const ProjectDetailsPage = () => {
   const { projectId } = useParams();
   const project = projects[projectId as string];
 
@@ -68,4 +68,4 @@ export function ProjectDetailsPage (): ReactElement {
   } else {
     return <Navigate to={'/not-found'}/>;
   }
-}
+};

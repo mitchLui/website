@@ -1,9 +1,9 @@
-import { ReactElement, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Sitemap } from '../../components/Sitemap/Sitemap';
 import { projects } from '../../data/projects';
 import { setTitle, setDescription, setOgProperties } from '../../meta/meta';
 
-export function SitemapPage (): ReactElement {
+export const SitemapPage = () => {
   useEffect(() => {
     setTitle('Sitemap | Mitch Lui');
     setDescription('Sitemap');
@@ -14,4 +14,4 @@ export function SitemapPage (): ReactElement {
   }, []);
 
   return <Sitemap projects={projects} />;
-}
+};

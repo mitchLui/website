@@ -1,6 +1,6 @@
 import { Button, LinkButton } from '../Button/Button';
 import { ReactElement } from 'react';
-import './projectcard.scss';
+import './ProjectCard.scss';
 
 type ProjectCardProps = {
     key: number | string;

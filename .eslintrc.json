@@ -24,6 +24,7 @@
         "quotes": ["error", "single"],
         "indent": ["error", 2],
         "react/react-in-jsx-scope": "off",
-        "react/jsx-uses-react": "off"
+        "react/jsx-uses-react": "off",
+        "space-before-function-paren": "off"
     }
 }

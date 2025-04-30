@@ -1,4 +1,4 @@
-import './arrow.scss';
+import './Arrow.scss';
 import { ReactElement } from 'react';
 
 type ArrowProps = {

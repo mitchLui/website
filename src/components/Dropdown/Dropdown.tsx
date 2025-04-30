@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import './dropdown.scss';
+import './Dropdown.scss';
 
 type DropdownProps = {
     className: string;

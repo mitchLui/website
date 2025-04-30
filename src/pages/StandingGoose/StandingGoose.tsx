@@ -1,7 +1,7 @@
-import { ReactElement, useEffect } from 'react';
+import { useEffect } from 'react';
 import { setTitle, setDescription, setOgProperties } from '../../meta/meta';
 
-export function StandingGoose (): ReactElement {
+export const StandingGoose = () => {
   useEffect(() => {
     setTitle('Mitch Lui | Full Stack Developer');
     setDescription('mitchlui.dev');
@@ -18,4 +18,4 @@ export function StandingGoose (): ReactElement {
       <img src={'/images/standing-goose.jpeg'} alt={'penguin-plushie-patting-dog-plushie'} width={300}/>
     </>
   );
-}
+};

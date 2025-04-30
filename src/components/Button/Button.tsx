@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Arrow } from '../Arrow/Arrow';
 import { ReactElement } from 'react';
-import './button.scss';
+import './Button.scss';
 
 type CommonButtonProps = {
     text: string;

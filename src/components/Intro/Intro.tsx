@@ -1,5 +1,5 @@
 import { AnchorHTMLAttributes, ReactElement } from 'react';
-import './intro.scss';
+import './Intro.scss';
 
 export const Intro = (): ReactElement =>
   <div className={'intro'}>

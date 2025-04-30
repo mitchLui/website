@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
-import HamburgerOpenSVG from './hamburger/hamburgeropen.svg';
-import HamburgerCloseSVG from './hamburger/hamburgerclose.svg';
-import './hamburger.scss';
+import HamburgerOpenSVG from './assets/hamburgeropen.svg';
+import HamburgerCloseSVG from './assets/hamburgerclose.svg';
+import './Hamburger.scss';
 
 type HamburgerMenuProps = {
     isOpen: boolean;

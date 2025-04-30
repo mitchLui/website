@@ -1,31 +1,31 @@
-import { ReactElement, useState } from 'react';
+import { useState } from 'react';
 import { Grid } from '../../layouts/Grid/Grid';
 import { ProjectCard } from '../ProjectCard/ProjectCard';
 import { Dropdown } from '../Dropdown/Dropdown';
 import { ProjectProps } from '../../data/projects';
-import './projects.scss';
+import './Projects.scss';
 
 type ProjectComponentProps = {
     projects: Record<string, ProjectProps>;
 }
 
-export function Projects ({ projects }: ProjectComponentProps): ReactElement {
+export const Projects = ({ projects }: ProjectComponentProps) => {
   const [filter, setFilter] = useState('none');
 
-  function filterProjects ({ obj, predicate }: {obj: Record<string, ProjectProps>, predicate: Function}): any {
+  const filterProjects = ({ obj, predicate }: {obj: Record<string, ProjectProps>, predicate: Function}): any => {
     return Object.keys(obj)
       .filter(key => predicate(obj[key]))
       .reduce((res, key) => Object.assign(res, { [key]: obj[key] }), {});
-  }
+  };
 
-  function getFilteredProjects () {
+  const getFilteredProjects = () => {
     switch (filter) {
     case 'none':
       return projects;
     default:
       return filterProjects({ obj: projects, predicate: (project: ProjectProps) => project.category === filter });
     }
-  }
+  };
 
   return (
     <>
@@ -68,4 +68,4 @@ export function Projects ({ projects }: ProjectComponentProps): ReactElement {
       </Grid>
     </>
   );
-}
+};

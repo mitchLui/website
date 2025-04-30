@@ -4,7 +4,7 @@ import EmailSVG from './contact_images/email.svg';
 import LinkedInSVG from './contact_images/linkedin.svg';
 import GitHubSVG from './contact_images/github.svg';
 import { HamburgerMenu } from '../Hamburger/Hamburger';
-import './navbar.scss';
+import './NavBar.scss';
 
 const MOBILE: number = 768;
 

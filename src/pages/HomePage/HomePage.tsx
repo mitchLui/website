@@ -1,10 +1,10 @@
-import { ReactElement, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Intro } from '../../components/Intro/Intro';
 import { setTitle, setDescription, setOgProperties } from '../../meta/meta';
 import { Projects } from '../../components/Projects/Projects';
 import { projects } from '../../data/projects';
 
-export function HomePage (): ReactElement {
+export const HomePage = () => {
   useEffect(() => {
     setTitle('Mitch Lui | Full Stack Developer');
     setDescription('mitchlui.dev');
@@ -22,4 +22,4 @@ export function HomePage (): ReactElement {
       </div>
     </div>
   );
-}
+};

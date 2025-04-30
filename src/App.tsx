@@ -1,4 +1,3 @@
-import { ReactElement } from 'react';
 import {
   BrowserRouter as Router,
   Routes,
@@ -15,7 +14,7 @@ import { RedirectPage } from './pages/RedirectPage/RedirectPage';
 import './App.scss';
 import { Container } from './layouts/Container/Container';
 
-function App (): ReactElement {
+export const App = () => {
   const routes = {
     '/': <HomePage/>,
     '/standing-goose': <StandingGoose/>,
@@ -41,6 +40,4 @@ function App (): ReactElement {
       </Router>
     </div>
   );
-}
-
-export default App;
+};

@@ -1,7 +1,7 @@
-import { ReactElement, useEffect } from 'react';
+import { useEffect } from 'react';
 import { setTitle, setDescription, setOgProperties } from '../../meta/meta';
 
-export function RedirectPage ({ redirect } : {redirect: string}): ReactElement {
+export const RedirectPage = ({ redirect } : {redirect: string}) => {
   useEffect(() => {
     window.location.assign(redirect);
   }, [redirect]);
@@ -16,4 +16,4 @@ export function RedirectPage ({ redirect } : {redirect: string}): ReactElement {
   }, []);
 
   return <h1>Redirecting...</h1>;
-}
+};

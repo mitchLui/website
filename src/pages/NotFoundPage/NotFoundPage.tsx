@@ -1,9 +1,9 @@
-import { ReactElement, useEffect } from 'react';
+import { useEffect } from 'react';
 import { LinkButton } from '../../components/Button/Button';
 import { setTitle, setDescription, setOgProperties } from '../../meta/meta';
-import './notfound.scss';
+import './NotFoundPage.scss';
 
-export function NotFoundPage (): ReactElement {
+export const NotFoundPage = () => {
   useEffect(() => {
     setTitle('Not found | Mitch Lui');
     setDescription('Page not found');
@@ -20,4 +20,4 @@ export function NotFoundPage (): ReactElement {
       <LinkButton to={'/'} text={'Go Home'}/>
     </div>
   );
-}
+};

@@ -1,5 +1,5 @@
 import { ReactElement, PropsWithChildren } from 'react';
-import './grid.scss';
+import './Grid.scss';
 
 export const Grid = ({ children }: PropsWithChildren): ReactElement => {
   return (
