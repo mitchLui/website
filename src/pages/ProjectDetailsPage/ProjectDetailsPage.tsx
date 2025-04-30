@@ -10,21 +10,15 @@ export function ProjectDetailsPage (): ReactElement {
   const project = projects[projectId as string];
 
   useEffect(() => {
-    if (projectId) {
-      if (project !== undefined) {
-        setTitle(project.title + ' | Mitch Lui');
-        setDescription(project.title);
-        setOgProperties({
-          title: project + ' | Mitch Lui',
-          description: project.title
-        });
-      }
+    if (projectId && project !== undefined) {
+      setTitle(project.title + ' | Mitch Lui');
+      setDescription(project.title);
+      setOgProperties({
+        title: project + ' | Mitch Lui',
+        description: project.title
+      });
     }
   }, [projectId]);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   if (projectId && project !== undefined) {
     const demoUrl = project.website ? project.website : null;
@@ -36,9 +30,9 @@ export function ProjectDetailsPage (): ReactElement {
         <div className={'project-content'}>
           <h1 className={'text'}>{project.title}</h1>
           <picture className={'project-thumbnail'}>
-            <source srcSet={'/project_assets/webp/' + project.thumbnail + '.webp'} type="image/webp" />
+            <source srcSet={'/project-assets/webp/' + project.thumbnail + '.webp'} type="image/webp" />
             <img
-              src={'/project_assets/png/' + project.thumbnail + '.png'}
+              src={'/project-assets/png/' + project.thumbnail + '.png'}
               alt={project.alt}
             />
           </picture>

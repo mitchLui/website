@@ -15,9 +15,9 @@ type CardProps = {
 export const ProjectCard = ({ key, name, title, thumbnail, alt, headline, gitUrl }: CardProps): ReactElement =>
   <article key={key} className={'card project ' + name}>
     <picture className={'thumbnail'}>
-      <source srcSet={'/project_assets/webp/' + thumbnail + '.webp'} type="image/webp" />
+      <source srcSet={'/project-assets/webp/' + thumbnail + '.webp'} type="image/webp" />
       <img
-        src={'/project_assets/png/' + thumbnail + '.png'}
+        src={'/project-assets/png/' + thumbnail + '.png'}
         alt={alt}
       />
     </picture>
