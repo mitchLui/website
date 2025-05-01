@@ -50,7 +50,6 @@ export const ProjectDetailsPage = () => {
             }
           </div>
           <div className={'project-status'}>
-            <b>Category: </b>{project.category}<br/>
             <b>Current Status: </b>{project.current_status}<br/>
             <b>Started: </b>{project.started}<br/>
             <b>Ended: </b>{project.ended}<br/>

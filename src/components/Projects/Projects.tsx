@@ -40,10 +40,10 @@ export const Projects = ({ projects }: ProjectComponentProps) => {
             {
               Categories: [
                 { value: 'none', text: 'None' },
-                { value: 'Work experience', text: 'Work experience' },
-                { value: 'Personal project', text: 'Personal projects' },
-                { value: 'Hackathon project', text: 'Hackathon projects' },
-                { value: 'Coursework project', text: 'Coursework' }
+                { value: 'professional', text: 'Professional experience' },
+                { value: 'personal', text: 'Personal projects' },
+                { value: 'hackathon', text: 'Hackathon projects' },
+                { value: 'university', text: 'Coursework' }
               ]
             }
           } />
