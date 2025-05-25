@@ -1,3 +1,4 @@
+import { motion } from 'motion/react';
 import { useEffect } from 'react';
 import { Intro } from '../../components/Intro/Intro';
 import { setTitle, setDescription, setOgProperties } from '../../meta/meta';
@@ -17,8 +18,10 @@ export const HomePage = () => {
   return (
     <div className={'fade-in'}>
       <div style={{ marginBottom: '64px' }}>
-        <Intro/>
-        <Projects projects={projects} />
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+          <Intro/>
+          <Projects projects={projects} />
+        </motion.div>
       </div>
     </div>
   );

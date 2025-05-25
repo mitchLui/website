@@ -12,7 +12,7 @@
   },
   "homepage": "/",
   "dependencies": {
-    "framer-motion": "^12.12.2",
+    "motion": "^12.12.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router": "^7.4.0",
