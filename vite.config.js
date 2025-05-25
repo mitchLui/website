@@ -1,10 +1,9 @@
 import react from '@vitejs/plugin-react';
 import eslintPlugin from 'vite-plugin-eslint';
-import svgr from 'vite-plugin-svgr';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  plugins: [react(), eslintPlugin(), svgr()],
+  plugins: [react(), eslintPlugin()],
   build: {
     outDir: 'build'
   },

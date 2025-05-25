@@ -1,6 +1,6 @@
 import { ReactElement, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { EmailSVG } from './assets/email.svg';
+import EmailSVG from './assets/email.svg';
 import LinkedInSVG from './assets/linkedin.svg';
 import GitHubSVG from './assets/github.svg';
 import { HamburgerMenu } from '../Hamburger/Hamburger';
