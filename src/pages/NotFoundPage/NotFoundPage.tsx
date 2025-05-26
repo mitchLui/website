@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import { LinkButton } from '../../components/Button/Button';
 import { setTitle, setDescription, setOgProperties } from '../../meta/meta';
 import './NotFoundPage.scss';
+import { Button } from '../../components/Button/Button';
 
 export const NotFoundPage = () => {
   useEffect(() => {
@@ -17,7 +17,7 @@ export const NotFoundPage = () => {
     <div className={'header-text'}>
       <h1>404 Not Found!</h1>
       <h2>You might want to go back...</h2>
-      <LinkButton to={'/'} text={'Go Home'}/>
+      <Button as="a" style={{ marginBottom: '1rem' }} to={'/'}>Go back</Button>
     </div>
   );
 };

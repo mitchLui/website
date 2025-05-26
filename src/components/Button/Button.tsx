@@ -1,43 +1,29 @@
-import { Link } from 'react-router-dom';
+import { Link, LinkProps } from 'react-router-dom';
 import { Arrow } from '../Arrow/Arrow';
-import { ReactElement } from 'react';
+import { ButtonHTMLAttributes, ReactElement, ReactNode } from 'react';
 import './Button.scss';
+import clsx from 'clsx';
 
-type CommonButtonProps = {
-    text: string;
-}
+type AnchorProps = {
+ as: 'a';
+} & LinkProps;
 
-type ButtonProps = CommonButtonProps & {
-    url: string | null;
-    target: string;
-}
+type ButtonProps = {
+ as: 'button';
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
-export const Button = ({ url, target, text }: ButtonProps): ReactElement => {
-  if (url) {
-    return (<a className={'button'} href={url} target={target}>{text}</a>);
-  } else {
-    return <></>;
+type Props = {
+  className?: string;
+  as?: 'a' | 'button';
+  addonStart?: ReactNode;
+} & (AnchorProps | ButtonProps);
+
+export const Button = ({ as = 'button', className, addonStart, ...props }: Props): ReactElement => {
+  if (as === 'a') {
+    return <Link className={clsx('button', className)} {...(props as AnchorProps)}>{props.children}</Link>;
   }
+  return <button className={clsx('button', className)} {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}>{props.children}</button>;
 };
 
-type LinkButtonProps = CommonButtonProps & {
-    to: string;
-}
-
-export const LinkButton = ({ to, text }: LinkButtonProps): ReactElement =>
-  <Link to={to} className={'button'}>{text}</Link>;
-
-type FunctionButtonProps = CommonButtonProps & {
-    onClick: () => void;
-}
-
-export const FunctionButton = ({ onClick, text }: FunctionButtonProps): ReactElement =>
-  <button className={'button'} onClick={onClick}>{text}</button>;
-
-type LinkFunctionButtonProps = CommonButtonProps & LinkButtonProps & FunctionButtonProps;
-
-export const LinkFunctionButton = ({ to, text, onClick }: LinkFunctionButtonProps): ReactElement =>
-  <Link onClick={onClick} to={to} className={'button'}>{text}</Link>;
-
-export const GoBackButton = ({ to, text }: LinkButtonProps): ReactElement =>
+export const BackButton = ({ to, text }: { to: string, text: string }): ReactElement =>
   <Link to={to} className={'modal'}><Arrow text={text}/></Link>;

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useParams, Navigate } from 'react-router';
-import { Button, GoBackButton } from '../../components/Button/Button';
+import { BackButton, Button } from '../../components/Button/Button';
 import { projects } from '../../data/projects';
 import { setTitle, setDescription, setOgProperties } from '../../meta/meta';
 import './ProjectDetailsPage.scss';
@@ -26,7 +26,7 @@ export const ProjectDetailsPage = () => {
 
     return (
       <>
-        <GoBackButton to={'/'} text={'Back'}/>
+        <BackButton to="/" text="Back" />
         <div className={'project-content'}>
           <h1 className={'text'}>{project.title}</h1>
           <picture className={'project-thumbnail'}>
@@ -42,11 +42,11 @@ export const ProjectDetailsPage = () => {
           <div className={'project-buttons'}>
             {
               githubUrl &&
-                        <Button url={githubUrl} target={'_blank'} text={'GitHub'}/>
+                        <Button as="a" to={githubUrl} target={'_blank'}>GitHub</Button>
             }
             {
               demoUrl &&
-                        <Button url={demoUrl} target={'_blank'} text={'Website'}/>
+                        <Button as="a" to={demoUrl} target={'_blank'}>Website</Button>
             }
           </div>
           <div className={'project-status'}>

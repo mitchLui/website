@@ -1,4 +1,4 @@
-import { Button, LinkButton } from '../Button/Button';
+import { Button } from '../Button/Button';
 import { ReactElement } from 'react';
 import './ProjectCard.scss';
 
@@ -24,10 +24,10 @@ export const ProjectCard = ({ key, name, title, thumbnail, alt, headline, gitUrl
     <h2>{title}</h2>
     <div className={'card-content'}>{headline}</div>
     <footer>
-      <LinkButton to={'/projects/' + name} text={'Learn more'}/>
+      <Button as="a" to={'/projects/' + name}>Learn more</Button>
       {
         gitUrl &&
-                <Button url={gitUrl} target={'_blank'} text={'Code'}/>
+                <Button as="a" to={gitUrl} target={'_blank'}>Code</Button>
       }
     </footer>
   </article>;
