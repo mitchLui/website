@@ -1,4 +1,3 @@
-import { motion } from 'motion/react';
 import { useState } from 'react';
 import { Grid } from '../../layouts/Grid/Grid';
 import { ProjectCard } from '../ProjectCard/ProjectCard';
@@ -54,23 +53,15 @@ export const Projects = ({ projects }: ProjectComponentProps) => {
         {
           Object.keys(getFilteredProjects()).map((key) => {
             return (
-              <motion.div
+              <ProjectCard
                 key={key}
-                className={'project-card'}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 * Object.keys(getFilteredProjects()).indexOf(key) }}
-              >
-                <ProjectCard
-                  key={key}
-                  name={key}
-                  title={projects[key].title}
-                  thumbnail={projects[key].thumbnail}
-                  alt={projects[key].alt}
-                  headline={projects[key].headline}
-                  gitUrl={projects[key].git_url}
-                />
-              </motion.div>
+                name={key}
+                title={projects[key].title}
+                thumbnail={projects[key].thumbnail}
+                alt={projects[key].alt}
+                headline={projects[key].headline}
+                gitUrl={projects[key].git_url}
+              />
             );
           })
         }
