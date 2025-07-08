@@ -1,8 +1,6 @@
 import { ReactElement, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import EmailSVG from './assets/email.svg';
 import LinkedInSVG from './assets/linkedin.svg';
-import GitHubSVG from './assets/github.svg';
 import { HamburgerMenu } from '../Hamburger/Hamburger';
 import './NavBar.scss';
 
@@ -77,14 +75,8 @@ export const NavBarLinks = ({ onClick }: NavBarLinksProps): ReactElement =>
         </li>
       </Link>
       <div style={{ marginLeft: '16px' }}>
-        <a style={{ marginRight: '24px' }} href="mailto:mitch@mitchlui.dev">
-          <img className="contact-icon" src={EmailSVG} alt="email" />
-        </a>
         <a style={{ marginRight: '24px' }} href="/linkedin">
           <img className="contact-icon" src={LinkedInSVG} alt="linkedin" />
-        </a>
-        <a href="/github">
-          <img className="contact-icon" src={GitHubSVG} alt="github" />
         </a>
       </div>
     </ul>
