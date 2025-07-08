@@ -1,7 +1,9 @@
-.item{
-  font-weight: normal;
-  font-size: 1.3rem;
+.intro{
+  padding: 10%;
+  font-weight: 400;
+  font-size: 32px;
   line-height: 1.25;
+  text-align: center;
 }
 
 .link {
@@ -11,14 +13,7 @@
   &.wise{
     color: #9FE870;
   }
-  
-  &.uob{
-    color: #d72a3b;
-  }
-  
-  &.css {
-    color: #ff69b4;
-  }
+
   
   &.asiabots{
     color: #ec253b;
@@ -30,14 +25,7 @@
     &.wise{
       color: #163300;
     }
-    
-    &.uob{
-      color: #d72a3b;
-    }
-    
-    &.css {
-      color: #ff69b4;
-    }
+  
     
     &.asiabots{
       color: #ec253b;
