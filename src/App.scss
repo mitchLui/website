@@ -7,15 +7,8 @@ html, body {
   height: 100%;
   justify-content: center;
 
-  &.light {
-    background-color: #ffffff;
-    color: #000000;
-  }
-
-  &.dark {
-    background-color: #000000;
-    color: #ffffff;
-  }
+  color: #ffffff;
+  background-color: #000000;
 }
 
 a {
@@ -54,20 +47,4 @@ a {
 @-o-keyframes fadein {
   from { opacity: 0; }
   to   { opacity: 1; }
-}
-
-/* Light mode */
-@media (prefers-color-scheme: light) {
-  body {
-      color: #000000;
-      background-color: #ffffff;
-  }
-}
-
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-  body {
-      color: #ffffff;
-      background-color: #000000;
-  }
 }

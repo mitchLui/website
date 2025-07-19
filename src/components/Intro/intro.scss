@@ -20,15 +20,9 @@
   }
 }
 
-@media screen and (prefers-color-scheme: light) {
-  .link {
-    &.wise{
-      color: #163300;
-    }
-  
-    
-    &.asiabots{
-      color: #ec253b;
-    }
+@media screen and (max-width: 768px) {
+  .intro {
+    font-size: 24px;
+    padding: 5%;
   }
 }

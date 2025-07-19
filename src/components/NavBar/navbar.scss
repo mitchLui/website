@@ -150,19 +150,7 @@
 
     .contact-icon {
       padding-top: 16px;
+      filter: invert(100%);
+      -webkit-filter: invert(100%);
     }
-}
-
-@media (prefers-color-scheme: light) {
-  .contact-icon {
-    filter: invert(0%);
-    -webkit-filter: invert(0%);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .contact-icon {
-    filter: invert(100%);
-    -webkit-filter: invert(100%);
-  }
 }
