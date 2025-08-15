@@ -1,0 +1,17 @@
+.card {
+  border-radius: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+  height: 500px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 75%;
+  height: auto;
+  object-fit: contain;
+}
