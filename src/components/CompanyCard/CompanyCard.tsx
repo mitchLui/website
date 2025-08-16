@@ -2,19 +2,21 @@ import { ReactElement } from 'react';
 import { Company } from '../../data/companies';
 
 import styles from './CompanyCard.module.css';
+import { Link } from 'react-router';
 
 interface CompanyCardProps {
-  company: Company;
+  name: string
+  details: Company;
 }
 
-export const CompanyCard = ({ company }: CompanyCardProps): ReactElement => {
+export const CompanyCard = ({ name, details }: CompanyCardProps): ReactElement => {
   return (
-    <div className={styles.card} style={{ backgroundColor: company.backgroundColor }}>
+    <Link className={styles.card} style={{ backgroundColor: details.backgroundColor }} to={'/' + name}>
       <img
         className={styles.logo}
-        src={'/company-logos/' + company.logo}
-        alt={company.name}
+        src={'/company-logos/' + details.logo}
+        alt={details.name}
       />
-    </div>
+    </Link>
   );
 };

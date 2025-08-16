@@ -13,12 +13,14 @@ import { RedirectPage } from './pages/RedirectPage/RedirectPage';
 
 import './App.scss';
 import { Container } from './layouts/Container/Container';
+import { CompanyPage } from './pages/CompanyPage/CompanyPage';
 
 export const App = () => {
   const routes = {
     '/': <HomePage/>,
     '/standing-goose': <StandingGoose/>,
     '/projects/:projectId': <ProjectDetailsPage/>,
+    '/:company': <CompanyPage/>,
     '/sitemap': <SitemapPage/>,
     '/not-found': <NotFoundPage/>,
     '/linkedin': <RedirectPage redirect={'https://linkedin.com/in/mitchlui'}/>,
