@@ -1,9 +1,10 @@
 import React from 'react';
+import { Company } from './companies';
 
 export type ProjectProps = {
   title: string;
   thumbnail: string;
-  category: 'professional' | 'university' | 'hackathon' | 'personal';
+  company: Company;
   current_status: 'Completed' | 'In development' | 'In progress';
   started: string;
   ended: string;
@@ -20,7 +21,7 @@ export const projects: Record<string, ProjectProps> = {
   wise: {
     title: 'Wise - Business Account Management',
     thumbnail: 'wise',
-    category: 'professional',
+    company: Company.Wise,
     current_status: 'In progress',
     started: '4 September 2023',
     ended: 'n/a',
@@ -33,7 +34,7 @@ export const projects: Record<string, ProjectProps> = {
   hpc: {
     title: 'LBM Optimisation',
     thumbnail: 'hpc',
-    category: 'university',
+    company: Company.UniversityOfBristol,
     current_status: 'Completed',
     started: '27 February 2023',
     ended: '5 May 2023',
@@ -47,7 +48,7 @@ export const projects: Record<string, ProjectProps> = {
   'cornell-box': {
     title: 'C++ Graphics Renderer',
     thumbnail: 'cornell_box',
-    category: 'university',
+    company: Company.UniversityOfBristol,
     current_status: 'Completed',
     started: '18 October 2022',
     ended: '16 December 2022',
@@ -61,7 +62,7 @@ export const projects: Record<string, ProjectProps> = {
   'wise-internship': {
     title: 'Wise - Spend Business Experience',
     thumbnail: 'wise_internship',
-    category: 'professional',
+    company: Company.Wise,
     current_status: 'Completed',
     started: '27 June 2022',
     ended: '16 September 2022',
@@ -76,7 +77,7 @@ export const projects: Record<string, ProjectProps> = {
   'mitchlui-dev': {
     title: 'mitchlui.dev',
     thumbnail: 'mitchlui_dev',
-    category: 'personal',
+    company: Company.Me,
     current_status: 'In development',
     started: '1 March 2022',
     ended: 'n/a',
@@ -93,7 +94,7 @@ export const projects: Record<string, ProjectProps> = {
   greenmap: {
     title: 'GreenMap',
     thumbnail: 'greenmap',
-    category: 'hackathon',
+    company: Company.UniversityOfBristol,
     current_status: 'In development',
     started: '26 Feb 2022',
     ended: 'n/a',
@@ -110,7 +111,7 @@ export const projects: Record<string, ProjectProps> = {
   'ai-workflow': {
     title: 'IBM AI Workflow',
     thumbnail: 'ai_workflow',
-    category: 'university',
+    company: Company.UniversityOfBristol,
     current_status: 'Completed',
     started: '8 October 2021',
     ended: '6 May 2022',
@@ -125,36 +126,10 @@ export const projects: Record<string, ProjectProps> = {
     git_url: 'https://github.com/mitchLui/ai-workflow',
     website: 'https://ai-workflow.mitchlui.dev'
   },
-  // 'uob-it-clinic': {
-  //   title: 'IT Clinic Technician at University of Bristol',
-  //   thumbnail: 'uob_it_clinic',
-  //   category: 'professional',
-  //   current_status: 'In progress',
-  //   started: '20 September 2021',
-  //   ended: '31 January 2023',
-  //   technologies: 'n/a',
-  //   awards: 'n/a',
-  //   alt: 'uob it clinic screenshot',
-  //   headline: 'Diagnosing and repairing software issues for students',
-  //   content_detailed: []
-  // },
-  // 'uob-graduate-teacher': {
-  //   title: 'Graduate Teacher at University of Bristol',
-  //   thumbnail: 'uob_graduate_teacher',
-  //   category: 'professional',
-  //   current_status: 'In progress',
-  //   started: '20 September 2021',
-  //   ended: 'n/a',
-  //   technologies: 'C, Haskell, Java, React, Python, ',
-  //   awards: 'n/a',
-  //   alt: 'uob graduate teacher screenshot',
-  //   headline: 'Hosting weekly seminars and giving formative feedback on coursework',
-  //   content_detailed: ['Units: Year 1 Programming Seminars (COMS1XXXX), OOP (COMS10017), Software Engineering Project (COMS20006), Computer Systems A (COMS20008), Overview of Software Engineering (COMSM0110)']
-  // },
   gol: {
     title: 'Game of Life',
     thumbnail: 'gol',
-    category: 'university',
+    company: Company.UniversityOfBristol,
     current_status: 'Completed',
     started: '1 November 2021',
     ended: '27 December 2021',
@@ -169,7 +144,7 @@ export const projects: Record<string, ProjectProps> = {
   'mask-detector': {
     title: 'Mask Detector',
     thumbnail: 'mask_detector',
-    category: 'hackathon',
+    company: Company.UniversityOfBristol,
     current_status: 'Completed',
     started: '24 April 2021',
     ended: '25 April 2021',
@@ -184,7 +159,7 @@ export const projects: Record<string, ProjectProps> = {
   'marine-vessel-tracker': {
     title: 'Marine Vessel Tracker',
     thumbnail: 'marine_vessel',
-    category: 'hackathon',
+    company: Company.UniversityOfBristol,
     current_status: 'Completed',
     started: '20 March 2021',
     ended: '21 March 2021',
@@ -200,7 +175,7 @@ export const projects: Record<string, ProjectProps> = {
   'scotland-yard': {
     title: 'Scotland Yard',
     thumbnail: 'scotland_yard',
-    category: 'university',
+    company: Company.UniversityOfBristol,
     current_status: 'Completed',
     started: '1 March 2021',
     ended: '12 May 2021',
@@ -217,7 +192,7 @@ export const projects: Record<string, ProjectProps> = {
   'flat-finder': {
     title: 'Flat Finder',
     thumbnail: 'flat_finder',
-    category: 'personal',
+    company: Company.Me,
     current_status: 'Completed',
     started: '21 Jan 2021',
     ended: '10 Feb 2021',
@@ -232,7 +207,7 @@ export const projects: Record<string, ProjectProps> = {
   asiabots: {
     title: 'Internship at Asiabots',
     thumbnail: 'asiabots',
-    category: 'professional',
+    company: Company.Asiabots,
     current_status: 'Completed',
     started: '1 June 2020',
     ended: '21 September 2020',

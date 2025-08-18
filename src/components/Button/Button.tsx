@@ -18,7 +18,7 @@ type Props = {
   addonStart?: ReactNode;
 } & (AnchorProps | ButtonProps);
 
-export const Button = ({ as = 'button', className, addonStart, ...props }: Props): ReactElement => {
+export const Button = ({ as = 'button', className, ...props }: Props): ReactElement => {
   if (as === 'a') {
     return <Link className={clsx('button', className)} {...(props as AnchorProps)}>{props.children}</Link>;
   }

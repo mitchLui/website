@@ -1,10 +1,10 @@
-import { Company } from '../../data/companies';
+import { Company, CompanyDetails } from '../../data/companies';
 import { CompanyCard } from '../CompanyCard/CompanyCard';
 
 import styles from './Companies.module.css';
 
 interface CompaniesProps {
-  companies: Record<string, Company>;
+  companies: Record<Company, CompanyDetails>;
 }
 
 export const Companies = ({ companies }: CompaniesProps) => {
