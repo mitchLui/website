@@ -1,13 +1,11 @@
 import { useEffect } from 'react';
 import { Sitemap } from '../../components/Sitemap/Sitemap';
 import { projects } from '../../data/projects';
-import { setTitle, setDescription, setOgProperties } from '../../meta/meta';
+import { setPageProperties } from '../../meta/meta';
 
 export const SitemapPage = () => {
   useEffect(() => {
-    setTitle('Sitemap | Mitch Lui');
-    setDescription('Sitemap');
-    setOgProperties({
+    setPageProperties({
       title: 'Sitemap | Mitch Lui',
       description: 'Sitemap.'
     });

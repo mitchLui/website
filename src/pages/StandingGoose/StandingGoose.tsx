@@ -1,11 +1,9 @@
 import { useEffect } from 'react';
-import { setTitle, setDescription, setOgProperties } from '../../meta/meta';
+import { setPageProperties } from '../../meta/meta';
 
 export const StandingGoose = () => {
   useEffect(() => {
-    setTitle('Mitch Lui | Full Stack Developer');
-    setDescription('mitchlui.dev');
-    setOgProperties({
+    setPageProperties({
       title: 'Mitch Lui | Full Stack Developer',
       description: 'mitchlui.dev'
     });

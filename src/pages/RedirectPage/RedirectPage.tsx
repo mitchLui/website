@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { setTitle, setDescription, setOgProperties } from '../../meta/meta';
+import { setPageProperties } from '../../meta/meta';
 
 export const RedirectPage = ({ redirect } : {redirect: string}) => {
   useEffect(() => {
@@ -7,9 +7,7 @@ export const RedirectPage = ({ redirect } : {redirect: string}) => {
   }, [redirect]);
 
   useEffect(() => {
-    setTitle('Redirecting... | Mitch Lui');
-    setDescription('Redirecting...');
-    setOgProperties({
+    setPageProperties({
       title: 'Redirecting... | Mitch Lui',
       description: 'Redirecting...'
     });

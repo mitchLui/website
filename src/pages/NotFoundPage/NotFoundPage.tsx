@@ -1,13 +1,11 @@
 import { useEffect } from 'react';
-import { setTitle, setDescription, setOgProperties } from '../../meta/meta';
+import { setPageProperties } from '../../meta/meta';
 import './NotFoundPage.scss';
 import { Button } from '../../components/Button/Button';
 
 export const NotFoundPage = () => {
   useEffect(() => {
-    setTitle('Not found | Mitch Lui');
-    setDescription('Page not found');
-    setOgProperties({
+    setPageProperties({
       title: 'Not found | Mitch Lui',
       description: 'Page not found'
     });

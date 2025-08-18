@@ -11,11 +11,11 @@ const setElemAttribute = ({ element, attribute, value }: setElemAttributeProps) 
   }
 };
 
-export const setTitle = (title: string) => {
+const setTitle = (title: string) => {
   document.title = title;
 };
 
-export const setDescription = (desc: string) => {
+const setDescription = (desc: string) => {
   setElemAttribute({
     element: 'meta[name="description"]',
     attribute: 'content',
@@ -27,8 +27,16 @@ type OgProps = {
     [key: string]: string
 }
 
-export const setOgProperties = (props: OgProps) => {
+export const setPageProperties = (props: OgProps) => {
   Object.keys(props).forEach(key => {
+    if (props.title) {
+      setTitle(props.title);
+    }
+
+    if (props.description) {
+      setDescription(props.description);
+    }
+
     setElemAttribute({
       element: `meta[property="og:${key}"]`,
       attribute: 'content',

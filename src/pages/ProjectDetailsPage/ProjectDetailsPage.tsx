@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useParams, Navigate } from 'react-router';
 import { BackButton, Button } from '../../components/Button/Button';
 import { projects } from '../../data/projects';
-import { setTitle, setDescription, setOgProperties } from '../../meta/meta';
+import { setPageProperties } from '../../meta/meta';
 import './ProjectDetailsPage.scss';
 
 export const ProjectDetailsPage = () => {
@@ -11,10 +11,8 @@ export const ProjectDetailsPage = () => {
 
   useEffect(() => {
     if (projectId && project !== undefined) {
-      setTitle(project.title + ' | Mitch Lui');
-      setDescription(project.title);
-      setOgProperties({
-        title: project + ' | Mitch Lui',
+      setPageProperties({
+        title: project.title + ' | Mitch Lui',
         description: project.title
       });
     }
