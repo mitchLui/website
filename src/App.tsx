@@ -6,7 +6,6 @@ import {
 import { NavBar } from './components/NavBar/NavBar';
 import { HomePage } from './pages/HomePage/HomePage';
 import { ProjectDetailsPage } from './pages/ProjectDetailsPage/ProjectDetailsPage';
-import { StandingGoose } from './pages/StandingGoose/StandingGoose';
 import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
 import { SitemapPage } from './pages/SitemapPage/SitemapPage';
 import { RedirectPage } from './pages/RedirectPage/RedirectPage';
@@ -18,9 +17,8 @@ import { CompanyPage } from './pages/CompanyPage/CompanyPage';
 export const App = () => {
   const routes = {
     '/': <HomePage/>,
-    '/standing-goose': <StandingGoose/>,
-    '/projects/:projectId': <ProjectDetailsPage/>,
     '/:company': <CompanyPage/>,
+    '/:commpany/projects/:projectId': <ProjectDetailsPage />,
     '/sitemap': <SitemapPage/>,
     '/not-found': <NotFoundPage/>,
     '/linkedin': <RedirectPage redirect={'https://linkedin.com/in/mitchlui'}/>,
