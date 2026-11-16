@@ -6,7 +6,7 @@
       "dom.iterable",
       "esnext"
     ],
-    "types": ["vite/client"],
+    "types": ["vite/client", "@vitest/browser-playwright"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -15,7 +15,7 @@
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,

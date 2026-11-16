@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { setPageProperties } from '../../meta/meta';
 
-export const RedirectPage = ({ redirect } : {redirect: string}) => {
+export const RedirectPage = ({ redirect } : { redirect: string }) => {
   useEffect(() => {
     window.location.assign(redirect);
   }, [redirect]);

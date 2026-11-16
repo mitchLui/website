@@ -4,9 +4,9 @@ import HamburgerCloseSVG from './assets/hamburgerclose.svg';
 import './Hamburger.scss';
 
 type HamburgerMenuProps = {
-    isOpen: boolean;
-    onClick: () => void;
-}
+  isOpen: boolean;
+  onClick: () => void;
+};
 
 export const HamburgerMenu = ({ onClick, isOpen }: HamburgerMenuProps): ReactElement =>
   <>

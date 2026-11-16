@@ -2,8 +2,8 @@ import './Arrow.scss';
 import { ReactElement } from 'react';
 
 type ArrowProps = {
-    text: string;
-}
+  text: string;
+};
 
 export const Arrow = ({ text }: ArrowProps): ReactElement =>
   <div className={'arrow-container'}>

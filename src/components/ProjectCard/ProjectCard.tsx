@@ -3,14 +3,14 @@ import { ReactElement } from 'react';
 import './ProjectCard.scss';
 
 type ProjectCardProps = {
-    key: number | string;
-    name: string;
-    title: string;
-    thumbnail: string;
-    alt: string;
-    headline: string;
-    gitUrl?: string;
-}
+  key: number | string;
+  name: string;
+  title: string;
+  thumbnail: string;
+  alt: string;
+  headline: string;
+  gitUrl?: string;
+};
 
 export const ProjectCard = ({ key, name, title, thumbnail, alt, headline, gitUrl }: ProjectCardProps): ReactElement =>
   <article key={key} className={'card project ' + name}>

@@ -4,8 +4,8 @@ import { ProjectProps } from '../../data/projects';
 import './Projects.scss';
 
 type ProjectComponentProps = {
-    projects: Record<string, ProjectProps>;
-}
+  projects: Record<string, ProjectProps>;
+};
 
 export const Projects = ({ projects }: ProjectComponentProps) => {
   return (

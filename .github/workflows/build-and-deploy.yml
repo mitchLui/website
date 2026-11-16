@@ -11,24 +11,39 @@ jobs:
     environment: production
 
     defaults:
-      run: 
+      run:
         working-directory: ./
-    
+
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-        
+        uses: actions/checkout@v7
+
       - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v6
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
 
       - name: Install
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Install Playwright Chromium
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Test
+        run: pnpm test
 
       - name: Build
         run: pnpm build
 
       - name: Deploy to NameCheap
-        uses: appleboy/scp-action@master
+        uses: appleboy/scp-action@ff85246acaad7bdce478db94a363cd2bf7c90345 # v1.0.0
         with:
           host: ${{ secrets.DEPLOY_HOST }}
           username: ${{ secrets.DEPLOY_USERNAME }}
@@ -38,7 +53,7 @@ jobs:
           target: "public_html"
           strip_components: 1
           overwrite: true
-          
+
 
 
 

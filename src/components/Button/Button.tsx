@@ -1,15 +1,15 @@
-import { Link, LinkProps } from 'react-router-dom';
+import { Link, LinkProps } from 'react-router';
 import { Arrow } from '../Arrow/Arrow';
 import { ButtonHTMLAttributes, ReactElement, ReactNode } from 'react';
 import './Button.scss';
 import clsx from 'clsx';
 
 type AnchorProps = {
- as: 'a';
+  as: 'a';
 } & LinkProps;
 
 type ButtonProps = {
- as: 'button';
+  as: 'button';
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 type Props = {

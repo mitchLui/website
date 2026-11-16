@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import './Copyright.scss';
 
 function getCurrentYear(): number {
@@ -7,6 +7,6 @@ function getCurrentYear(): number {
 
 export const Copyright = () =>
   <section className={'copyright'}>
-        Copyright © {getCurrentYear()} Mitch Lui. All rights reserved.
+    Copyright © {getCurrentYear()} Mitch Lui. All rights reserved.
     <p><Link to={'/sitemap'}>Sitemap</Link></p>
   </section>;
