@@ -1,8 +1,8 @@
 type setElemAttributeProps = {
-    element: string,
-    attribute: string,
-    value: string
-}
+  element: string,
+  attribute: string,
+  value: string
+};
 
 const setElemAttribute = ({ element, attribute, value }: setElemAttributeProps) => {
   const elem = document.querySelector(element);
@@ -24,8 +24,8 @@ const setDescription = (desc: string) => {
 };
 
 type OgProps = {
-    [key: string]: string
-}
+  [key: string]: string
+};
 
 export const setPageProperties = (props: OgProps) => {
   Object.keys(props).forEach(key => {

@@ -2,14 +2,14 @@ import { ReactElement } from 'react';
 import './Dropdown.scss';
 
 type DropdownProps = {
-    className: string;
-    onChange: (value: string) => void;
-    label: string;
-    options: Record<string, Array<{
-            value: string;
-            text: string
-    }>>;
-}
+  className: string;
+  onChange: (value: string) => void;
+  label: string;
+  options: Record<string, Array<{
+    value: string;
+    text: string
+  }>>;
+};
 
 export const Dropdown = ({ className, onChange, label, options }: DropdownProps): ReactElement =>
   <>

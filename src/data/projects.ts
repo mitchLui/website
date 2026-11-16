@@ -15,7 +15,7 @@ export type ProjectProps = {
   content_detailed: Array<React.ReactElement | string | never>;
   git_url?: string;
   website?: string;
-}
+};
 
 export const projects: Record<string, ProjectProps> = {
   wise: {

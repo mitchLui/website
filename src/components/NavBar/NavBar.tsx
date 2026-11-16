@@ -1,5 +1,5 @@
 import { ReactElement, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { HamburgerMenu } from '../Hamburger/Hamburger';
 import './NavBar.scss';
 
@@ -30,8 +30,8 @@ export const NavBar = (): ReactElement => {
 };
 
 type NavBarProps = {
-    setIsOpen: (isOpen: boolean) => void;
-}
+  setIsOpen: (isOpen: boolean) => void;
+};
 
 const DesktopNavBar = ({ setIsOpen }: NavBarProps): ReactElement =>
   <header className="navbar desktop">
@@ -40,8 +40,8 @@ const DesktopNavBar = ({ setIsOpen }: NavBarProps): ReactElement =>
   </header>;
 
 type MobileNavBarProps = NavBarProps & {
-    isOpen: boolean;
-}
+  isOpen: boolean;
+};
 
 const MobileNavBar = ({ isOpen, setIsOpen }: MobileNavBarProps): ReactElement =>
   <header className="navbar mobile">
@@ -57,8 +57,8 @@ const MobileNavBar = ({ isOpen, setIsOpen }: MobileNavBarProps): ReactElement =>
   </header>;
 
 type NavBarLinksProps = {
-    onClick ?: () => void;
-}
+  onClick ?: () => void;
+};
 
 export const NavBarLinks = ({ onClick }: NavBarLinksProps): ReactElement =>
   <nav>
