@@ -10,10 +10,12 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const waitForFadeIn = (canvasElement: HTMLElement) =>
+  waitFor(() => expect(canvasElement.querySelector<HTMLElement>('[style*="opacity"]')).toHaveStyle({ opacity: '1' }));
+
 export const Default: Story = {
   play: async ({ canvas, canvasElement, step }) => {
-    const fadeIn = canvasElement.querySelector<HTMLElement>('[style*="opacity"]');
-    await waitFor(() => expect(fadeIn).toHaveStyle({ opacity: '1' }));
+    await waitForFadeIn(canvasElement);
     await step('opens with the headline and who I am', async () => {
       await expect(canvas.getByRole('heading', { level: 1, name: 'Building the one account for businesses to thrive everywhere.' })).toBeVisible();
       await expect(canvas.getByText(/^Born and raised in Hong Kong, now based in London\. I'm a Senior Software Engineer on/)).toBeVisible();
@@ -37,7 +39,8 @@ export const Default: Story = {
 
 export const PhoneSpacing: Story = {
   globals: { viewport: { value: 'mobile', isRotated: false } },
-  play: async ({ canvas }) => {
+  play: async ({ canvas, canvasElement }) => {
+    await waitForFadeIn(canvasElement);
     await expect(canvas.getByRole('heading', { level: 1 }).parentElement).toHaveStyle({ paddingTop: '32px' });
     await expect(canvas.getByRole('heading', { level: 1 })).toHaveStyle({ fontSize: '46px' });
   }
