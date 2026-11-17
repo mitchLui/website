@@ -1,18 +1,16 @@
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding: var(--space-4);
   border-radius: var(--radius-xl);
   color: var(--color-text);
   background-color: var(--color-surface);
-  transition:
-    transform var(--duration-slow) var(--ease-enter),
-    box-shadow var(--duration-slow) var(--ease-enter);
+  transition: background-color var(--duration-base) var(--ease-standard);
 }
 
 .card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-overlay);
+  background-color: var(--color-surface-hover);
 }
 
 .card h2 {
@@ -24,21 +22,38 @@
 }
 
 .card footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
   padding: var(--space-4) var(--space-2) var(--space-2);
 }
 
-.card footer a:nth-child(1) {
-  margin: 0;
+.card-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.above-card-link {
+  position: relative;
+  z-index: 1;
 }
 
 .thumbnail {
-  text-align: center;
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius-md);
 }
 
 .thumbnail img {
   display: block;
   width: 100%;
-  border-radius: var(--radius-md);
+  transition: transform var(--duration-slow) var(--ease-enter);
+}
+
+.card:hover .thumbnail img {
+  transform: scale(1.02);
 }
 
 .card-content {
@@ -52,4 +67,8 @@
 .impact {
   padding-left: var(--space-5);
   color: var(--color-text);
+}
+
+.card .card-link:active {
+  transform: none;
 }

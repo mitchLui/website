@@ -31,6 +31,7 @@
 
   --color-bg: light-dark(var(--neutral-50), var(--neutral-950));
   --color-surface: light-dark(var(--neutral-0), var(--neutral-900));
+  --color-surface-hover: light-dark(#F3F8F5, #19231F);
   --color-surface-sunken: light-dark(var(--neutral-100), var(--neutral-850));
   --color-text: light-dark(var(--neutral-ink), var(--neutral-paper));
   --color-text-secondary: light-dark(var(--neutral-600), var(--neutral-mist));
@@ -44,9 +45,10 @@
   --color-on-brand: light-dark(var(--neutral-0), #04140D);
   --color-brand-text: light-dark(var(--green-500), #6CCFA3);
   --color-brand-tint: light-dark(#DDF0E6, #123527);
+  --color-brand-tint-hover: light-dark(var(--green-100), #184536);
   --color-on-brand-tint: light-dark(var(--green-700), #93DDBC);
 
-  --color-tag-green: var(--color-brand-text);
+  --color-tag-green: light-dark(var(--green-600), #6CCFA3);
   --color-tag-olive: light-dark(#4A5A23, #C3CF8C);
   --color-tag-blue: light-dark(#2B5C8A, #8DB8E0);
   --color-tag-orange: light-dark(#9A4A12, #F0A86A);

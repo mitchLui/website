@@ -70,3 +70,15 @@ export const Mobile: Story = {
     await expect(lineCount(canvas.getByText('Jun 2022 – Sep 2022'))).toBe(1);
   }
 };
+
+const linkAt = (element: HTMLElement) => {
+  const { x, y, width, height } = element.getBoundingClientRect();
+  return document.elementFromPoint(x + width / 2, y + height / 2)?.closest('a');
+};
+
+export const WholeCardLinks: Story = {
+  play: async ({ canvas, args }) => {
+    await expect(linkAt(canvas.getByText(args.headline))).toBe(canvas.getByRole('link', { name: 'Learn more' }));
+    await expect(linkAt(canvas.getByRole('img'))).toBe(canvas.getByRole('link', { name: 'Learn more' }));
+  }
+};

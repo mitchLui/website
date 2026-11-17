@@ -17,8 +17,14 @@
   font-weight: var(--font-weight-semibold);
   color: var(--color-brand-text);
   text-decoration-line: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
   text-decoration-thickness: 2px;
   text-underline-offset: 0.15em;
+  transition: text-decoration-color var(--duration-base) var(--ease-standard);
+}
+
+.link:hover {
+  text-decoration-color: currentColor;
 }
 
 @media screen and (max-width: 768px) {

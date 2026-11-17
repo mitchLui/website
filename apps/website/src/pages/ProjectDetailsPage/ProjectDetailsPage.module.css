@@ -38,13 +38,10 @@
 }
 
 .project-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
   padding-bottom: var(--space-4);
-}
-
-@media screen and (max-width: 768px) {
-  .project-buttons {
-    text-align: center;
-  }
 }
 
 @media screen and (min-width: 768px) {

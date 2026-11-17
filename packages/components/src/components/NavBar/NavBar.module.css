@@ -1,29 +1,31 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: color-mix(in srgb, var(--color-bg) 78%, transparent);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--color-border) 60%, transparent);
+}
+
 .navbar {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   max-width: var(--content-max);
   margin-inline: auto;
-  padding-inline: var(--gutter);
-}
-
-.navbar.desktop {
-  padding-block: var(--space-4);
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navbar.mobile {
-  padding-block: var(--space-1);
+  padding: var(--space-3) var(--gutter);
 }
 
 .logo-container {
-  float: left;
+  display: flex;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  margin: var(--space-4) 0;
-  font-size: 1.75rem;
+  margin: 0;
+  font-size: 1.5rem;
   font-weight: var(--font-weight-regular);
   letter-spacing: var(--tracking-title);
 }
@@ -41,116 +43,95 @@
   margin-right: var(--space-3);
 }
 
-.mobile .logo-container {
-  float: left;
-}
-
 .nav-text {
-  width: 100%;
-  text-align: left;
+  position: relative;
+  display: block;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-full);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-secondary);
   text-decoration: none;
-  transition: color var(--duration-base) var(--ease-standard);
+  transition:
+    color var(--duration-base) var(--ease-standard),
+    background-color var(--duration-base) var(--ease-standard);
 }
 
 .nav-text:hover {
   color: var(--color-text);
 }
 
+.nav-text[aria-current='page'] {
+  color: var(--color-text);
+  font-weight: var(--font-weight-semibold);
+}
+
 .desktop nav ul {
   display: flex;
-  padding: 0;
-  list-style: none;
-}
-
-.desktop nav ul li {
-  display: inline-block;
-  margin: 0 var(--space-4);
-}
-
-.desktop nav ul .contact-icon {
-  margin-top: 8px;
-}
-
-.mobile nav {
-  padding: 0;
-  z-index: 1;
-}
-
-.mobile nav ul {
-  padding: 0;
+  gap: var(--space-1);
   margin: 0;
+  padding: 0;
   list-style: none;
 }
 
-.mobile nav li:nth-child(1) {
-  animation-delay: 0s;
+.desktop .nav-text:hover {
+  background-color: var(--color-surface-sunken);
 }
 
-.mobile nav li:nth-child(2) {
-  animation-delay: 0.08s;
+.desktop .nav-text[aria-current='page']::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 4px;
+  height: 4px;
+  margin-left: -2px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-brand);
 }
 
-.mobile nav li:nth-child(3) {
-  animation-delay: 0.13s;
+.sheet {
+  position: absolute;
+  inset: 100% 0 auto;
+  padding: var(--space-2) var(--gutter) var(--space-4);
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-overlay);
+  animation: sheet-in var(--duration-slow) var(--ease-enter);
 }
 
-.mobile nav ul span a img {
-  margin-top: 16px;
-  animation-delay: 0.21s;
-}
-
-.mobile nav li {
-  display: flex;
-  border-bottom: 1px solid var(--color-border);
-  opacity: 0;
-  animation: fadein var(--duration-slow) var(--ease-enter);
-  animation-fill-mode: forwards;
-}
-
-.mobile nav li a {
-  flex: 1;
-  padding: var(--space-3);
-}
-
-.mainnav {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.hamburger-menu-container {
-  margin: auto;
-  width: 100%;
-  float: right;
-  text-align: right;
-}
-
-.mobile-nav-close {
+.sheet-closed {
   display: none;
 }
 
-@media screen and (max-width: 768px) {
-  .navbar {
-    padding-top: var(--space-4);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    top: 0;
-  }
+.sheet ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
-  .logo-container {
-    text-align: center;
-  }
+.sheet li {
+  border-bottom: 1px solid var(--color-border);
+  opacity: 0;
+  animation: fadein var(--duration-slow) var(--ease-enter) forwards;
+}
 
-  nav ul {
-    text-align: center;
-  }
+.sheet li:last-child {
+  border-bottom: 0;
+}
 
-  .contact-icon {
-    padding-top: 16px;
-    filter: invert(100%);
-  }
+.sheet li:nth-child(2) { animation-delay: 40ms; }
+.sheet li:nth-child(3) { animation-delay: 80ms; }
+.sheet li:nth-child(4) { animation-delay: 120ms; }
+
+.sheet .nav-text {
+  padding: var(--space-4) var(--space-2);
+  font-size: var(--font-size-lead);
+  border-radius: 0;
+}
+
+@keyframes sheet-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: none; }
 }
 
 @keyframes fadein {

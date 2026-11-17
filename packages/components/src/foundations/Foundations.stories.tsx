@@ -11,23 +11,25 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const colours = [
-  'bg', 'surface', 'surface-sunken', 'text', 'text-secondary', 'border', 'border-strong',
-  'brand', 'brand-hover', 'brand-pressed', 'on-brand', 'brand-text', 'brand-tint', 'on-brand-tint',
+  'bg', 'surface', 'surface-hover', 'surface-sunken', 'text', 'text-secondary', 'border', 'border-strong',
+  'brand', 'brand-hover', 'brand-pressed', 'on-brand', 'brand-text', 'brand-tint', 'brand-tint-hover', 'on-brand-tint',
   'tag-green', 'tag-olive', 'tag-blue', 'tag-orange'
 ];
 
 type Pair = { text: string; on: string; tint?: boolean; min: number };
 
 const pairs: Pair[] = [
-  ...['bg', 'surface', 'surface-sunken'].flatMap(on => [
+  ...['bg', 'surface', 'surface-hover', 'surface-sunken'].flatMap(on => [
     { text: 'text', on, min: 4.5 },
     { text: 'text-secondary', on, min: 4.5 },
     { text: 'brand-text', on, min: 4.5 }
   ]),
   ...['brand', 'brand-hover', 'brand-pressed'].map(on => ({ text: 'on-brand', on, min: 4.5 })),
   { text: 'on-brand-tint', on: 'brand-tint', min: 4.5 },
+  { text: 'on-brand-tint', on: 'brand-tint-hover', min: 4.5 },
+  { text: 'brand-text', on: 'brand-tint', min: 4.5 },
   { text: 'brand', on: 'bg', min: 3 },
-  ...['tag-green', 'tag-olive', 'tag-blue', 'tag-orange'].map(text => ({ text, on: 'surface', tint: true, min: 4.5 }))
+  ...['tag-green', 'tag-olive', 'tag-blue', 'tag-orange'].flatMap(text => ['bg', 'surface'].map(on => ({ text, on, tint: true, min: 4.5 })))
 ];
 
 type Rgb = [number, number, number];

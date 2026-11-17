@@ -11,7 +11,7 @@ export const HomePage = () => {
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
           <Intro/>
           <section>
-            <ContainerHeader><h2>Recent work</h2></ContainerHeader>
+            <ContainerHeader eyebrow="At Wise"><h2>Recent work</h2></ContainerHeader>
             {featuredProjects.map(([id, project]) => <FeaturedProject key={id} {...toFeaturedProject(id, project)}/>)}
             <Button as="a" to="/work">See all work</Button>
           </section>

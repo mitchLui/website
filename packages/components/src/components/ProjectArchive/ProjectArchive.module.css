@@ -40,17 +40,3 @@
   font-size: var(--font-size-body);
   color: var(--color-text-secondary);
 }
-
-.tag {
-  padding: var(--space-1) var(--space-3);
-  border-radius: var(--radius-full);
-  font-size: var(--font-size-label);
-  font-weight: var(--font-weight-semibold);
-  color: var(--tag-color);
-  background-color: color-mix(in srgb, var(--tag-color) 12%, transparent);
-}
-
-.green { --tag-color: var(--color-tag-green); }
-.olive { --tag-color: var(--color-tag-olive); }
-.blue { --tag-color: var(--color-tag-blue); }
-.orange { --tag-color: var(--color-tag-orange); }

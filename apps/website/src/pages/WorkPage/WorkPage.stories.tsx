@@ -21,6 +21,7 @@ export const Default: Story = {
     });
     await step('lists every other project under Earlier projects', async () => {
       await expect(canvas.getByRole('heading', { name: 'Earlier projects' })).toBeVisible();
+      await expect(canvas.getByText('University, hackathons and personal')).toBeVisible();
       archivedProjects.forEach(([id, project]) =>
         expect(canvas.getByText(project.title, { selector: 'a span' }).closest('a')).toHaveAttribute('href', `/work/${id}`)
       );

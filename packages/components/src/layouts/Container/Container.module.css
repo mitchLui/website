@@ -6,6 +6,23 @@
   padding-bottom: var(--space-12);
 }
 
+.container-header {
+  margin-block: var(--space-12) var(--space-6);
+}
+
+.container-header h1,
+.container-header h2 {
+  margin: 0;
+}
+
+.eyebrow {
+  margin: 0 0 var(--space-2);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-label);
+  color: var(--color-brand-text);
+}
+
 .container-header h1 {
   font-size: var(--font-size-display);
   line-height: var(--line-height-tight);
@@ -18,14 +35,4 @@
   line-height: var(--line-height-tight);
   letter-spacing: var(--tracking-title);
   font-weight: var(--font-weight-bold);
-}
-
-.container-header h2::after {
-  content: '';
-  display: block;
-  width: 2.5rem;
-  height: 4px;
-  margin-top: var(--space-2);
-  border-radius: var(--radius-full);
-  background-color: var(--color-brand);
 }
