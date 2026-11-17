@@ -1,37 +1,33 @@
 .button {
-  text-decoration: none;
-  cursor: pointer;
-  font-size: 1rem;
   display: inline-block;
-  padding: 0.35em 1.2em;
-  margin: .25em .5em;
-  border-radius: 2em;
-  font-weight: normal;
+  margin: var(--space-1) var(--space-2);
+  padding: 0.5em 1.25em;
+  border: 2px solid var(--color-brand);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-snug);
   text-align: center;
-  background-color: var(--color-accent);
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-  border: 2px solid var(--color-accent);
-  color: var(--color-on-accent);
-}
-
-.button.contact {
-  width: 7rem;
-  display: grid;
-  grid-template-columns: 0.25fr 1fr;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  color: var(--color-on-brand);
+  background-color: var(--color-brand);
+  transition:
+    background-color var(--duration-base) var(--ease-standard),
+    color var(--duration-base) var(--ease-standard),
+    transform var(--duration-fast) var(--ease-standard);
 }
 
 .button:hover {
-  color: var(--color-accent);
+  color: var(--color-brand-text);
   background-color: transparent;
+}
+
+.button:active {
+  transform: scale(0.97);
 }
 
 .modal {
   z-index: 1;
-}
-
-.contact-text {
-  grid-column: 2;
-  margin: auto;
-  width: 50%;
-  text-align: center;
 }

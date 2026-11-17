@@ -1,23 +1,28 @@
 .intro {
-  margin: 10%;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 1.25;
+  max-width: 48rem;
+  margin: var(--space-24) auto;
+  font-size: var(--font-size-title-1);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--tracking-title);
   text-align: center;
+  text-wrap: balance;
+}
+
+.intro b {
+  font-weight: var(--font-weight-bold);
 }
 
 .link {
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.link.wise {
-  color: var(--color-wise);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-brand-text);
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.15em;
 }
 
 @media screen and (max-width: 768px) {
   .intro {
-    font-size: 24px;
-    margin: 30% 5%;
+    margin: var(--space-16) 0;
   }
 }

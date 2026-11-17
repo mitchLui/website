@@ -48,9 +48,9 @@ test('describes an archive entry by start month and awards, tagged with its kind
 });
 
 test.each([
-  ['hpc', 'Academic', 'violet'],
+  ['hpc', 'Academic', 'blue'],
   ['greenmap', 'Hackathon', 'orange'],
-  ['flat-finder', 'Personal', 'green']
+  ['flat-finder', 'Personal', 'olive']
 ])('tags the %s archive entry as %s in %s', (id, label, color) => {
   expect(toArchiveEntry(id, projects[id]).tag).toEqual({ label, color });
 });

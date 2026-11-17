@@ -4,10 +4,10 @@ import { rolesFor } from './roles';
 import { formatMonth, formatPeriod } from './dates';
 
 const kindTags: Record<Project['kind'], NonNullable<ArchiveEntry['tag']>> = {
-  professional: { label: 'Professional', color: 'blue' },
-  academic: { label: 'Academic', color: 'violet' },
+  professional: { label: 'Professional', color: 'green' },
+  academic: { label: 'Academic', color: 'blue' },
   hackathon: { label: 'Hackathon', color: 'orange' },
-  personal: { label: 'Personal', color: 'green' }
+  personal: { label: 'Personal', color: 'olive' }
 };
 
 export const imageFor = (project: Project): Image => ({

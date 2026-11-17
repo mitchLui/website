@@ -1,7 +1,8 @@
 .hamburger {
-    cursor: pointer;
-    padding: 0.25rem;
-    border: none;
-    background: none;
-    color: var(--color-text);
+  cursor: pointer;
+  padding: var(--space-1);
+  border: none;
+  border-radius: var(--radius-sm);
+  background: none;
+  color: var(--color-text);
 }

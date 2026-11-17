@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import clsx from 'clsx';
 import styles from './ProjectArchive.module.css';
 
-export type TagColor = 'blue' | 'orange' | 'green' | 'violet';
+export type TagColor = 'green' | 'olive' | 'blue' | 'orange';
 
 export type ArchiveEntry = {
   title: string;

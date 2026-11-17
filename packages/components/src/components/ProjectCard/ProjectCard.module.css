@@ -1,36 +1,34 @@
 .card {
   display: flex;
-  position: relative;
   flex-direction: column;
-  border-radius: var(--radius-lg);
-  padding: 1rem 1.3rem 1rem 1.3rem;
-  transition: transform ease-in-out 0.275s, border-color ease-in-out 0.275s;
+  padding: var(--space-4);
+  border-radius: var(--radius-xl);
   color: var(--color-text);
   background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
-  box-shadow: 0 8px 24px var(--color-shadow);
-}
-
-.card h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-align: left;
-  margin-bottom: 1rem;
-}
-
-.card footer {
-  min-height: 30px;
-  justify-content: center;
-  padding-top: 1rem;
-}
-
-.card footer a:nth-child(1) {
-  margin: 0;
+  transition:
+    transform var(--duration-slow) var(--ease-enter),
+    box-shadow var(--duration-slow) var(--ease-enter);
 }
 
 .card:hover {
   transform: translateY(-3px);
-  border-color: var(--color-accent);
+  box-shadow: var(--shadow-overlay);
+}
+
+.card h2 {
+  margin: var(--space-5) var(--space-2) var(--space-3);
+  font-size: var(--font-size-title-2);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--tracking-title);
+  font-weight: var(--font-weight-bold);
+}
+
+.card footer {
+  padding: var(--space-4) var(--space-2) var(--space-2);
+}
+
+.card footer a:nth-child(1) {
+  margin: 0;
 }
 
 .thumbnail {
@@ -38,18 +36,20 @@
 }
 
 .thumbnail img {
+  display: block;
   width: 100%;
   border-radius: var(--radius-md);
 }
 
 .card-content {
-  font-size: 1rem;
   display: flex;
   flex-direction: column;
   flex: 1;
+  padding-inline: var(--space-2);
+  color: var(--color-text-secondary);
 }
 
 .impact {
-  padding-left: 1.2rem;
-  line-height: 1.4;
+  padding-left: var(--space-5);
+  color: var(--color-text);
 }

@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, waitFor } from 'storybook/test';
 import { FeaturedProject } from './FeaturedProject';
+import { Container } from '../../layouts/Container/Container';
 import { tallImage, wideImage } from '../../fixtures';
 
 const meta = {
@@ -50,5 +51,22 @@ export const TallImage: Story = {
   args: { image: tallImage },
   play: async ({ canvas }) => {
     await expectSixteenByTen(canvas.getByRole('img'));
+  }
+};
+
+const lineCount = (element: HTMLElement) => {
+  const range = document.createRange();
+  range.selectNodeContents(element);
+  return new Set([...range.getClientRects()].map(rect => Math.round(rect.top))).size;
+};
+
+export const Mobile: Story = {
+  globals: { viewport: { value: 'mobile', isRotated: false } },
+  parameters: { layout: 'fullscreen' },
+  decorators: [Story => <Container><Story/></Container>],
+  args: { period: 'Jun 2022 – Sep 2022' },
+  play: async ({ canvas }) => {
+    await expect(lineCount(canvas.getByRole('link', { name: 'Learn more' }))).toBe(1);
+    await expect(lineCount(canvas.getByText('Jun 2022 – Sep 2022'))).toBe(1);
   }
 };

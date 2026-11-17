@@ -1,15 +1,18 @@
 .navbar {
   display: flex;
-  top: 0;
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
 }
 
 .navbar.desktop {
-  padding: 1.1rem 5%;
+  padding-block: var(--space-4);
   justify-content: space-between;
+  align-items: center;
 }
 
 .navbar.mobile {
-  padding: 0.1rem 5%;
+  padding-block: var(--space-1);
 }
 
 .logo-container {
@@ -18,13 +21,15 @@
 
 .logo {
   display: flex;
-  font-weight: normal;
-  float: left;
-  font-size: 1.85rem;
+  align-items: center;
+  margin: var(--space-4) 0;
+  font-size: 1.75rem;
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--tracking-title);
 }
 
 .logo .bold {
-  font-weight: bold;
+  font-weight: var(--font-weight-heavy);
 }
 
 .logo-link {
@@ -33,7 +38,7 @@
 }
 
 .logo-graphic {
-  margin: auto 0.6rem auto 0;
+  margin-right: var(--space-3);
 }
 
 .mobile .logo-container {
@@ -43,13 +48,14 @@
 .nav-text {
   width: 100%;
   text-align: left;
-  color: var(--color-muted);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
   text-decoration: none;
-  transition: color 0.2s ease-out;
+  transition: color var(--duration-base) var(--ease-standard);
 }
 
 .nav-text:hover {
-  color: var(--color-accent);
+  color: var(--color-text);
 }
 
 .desktop nav ul {
@@ -60,7 +66,7 @@
 
 .desktop nav ul li {
   display: inline-block;
-  margin: 1.1rem 1rem;
+  margin: 0 var(--space-4);
 }
 
 .desktop nav ul .contact-icon {
@@ -97,15 +103,15 @@
 
 .mobile nav li {
   display: flex;
-  border-bottom: 0.06rem solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
   opacity: 0;
-  animation: fadein 0.25s;
+  animation: fadein var(--duration-slow) var(--ease-enter);
   animation-fill-mode: forwards;
 }
 
 .mobile nav li a {
   flex: 1;
-  padding: 0.75rem;
+  padding: var(--space-3);
 }
 
 .mainnav {
@@ -126,7 +132,7 @@
 
 @media screen and (max-width: 768px) {
   .navbar {
-    padding: 1.1rem 5% 0 5%;
+    padding-top: var(--space-4);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
