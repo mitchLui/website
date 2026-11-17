@@ -12,11 +12,7 @@
 }
 
 .link.wise {
-  color: #9FE870;
-}
-
-.link.asiabots {
-  color: #ec253b;
+  color: var(--color-wise);
 }
 
 @media screen and (max-width: 768px) {

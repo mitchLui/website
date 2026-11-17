@@ -38,10 +38,19 @@ test('gives professional project cards the current role impact and others none',
   expect(toProjectCard('hpc', projects.hpc).highlights).toBeUndefined();
 });
 
-test('describes an archive entry by kind, start month and awards', () => {
+test('describes an archive entry by start month and awards, tagged with its kind', () => {
   expect(toArchiveEntry('mask-detector', projects['mask-detector'])).toEqual({
     title: 'Mask Detector',
     href: '/work/mask-detector',
-    meta: 'Hackathon · Apr 2021 · Overall best prize · Most verified · Most gamified'
+    meta: 'Apr 2021 · Overall best prize · Most verified · Most gamified',
+    tag: { label: 'Hackathon', color: 'orange' }
   });
+});
+
+test.each([
+  ['hpc', 'Academic', 'violet'],
+  ['greenmap', 'Hackathon', 'orange'],
+  ['flat-finder', 'Personal', 'green']
+])('tags the %s archive entry as %s in %s', (id, label, color) => {
+  expect(toArchiveEntry(id, projects[id]).tag).toEqual({ label, color });
 });

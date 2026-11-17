@@ -22,7 +22,11 @@ export default defineConfig({
           enabled: true,
           headless: true,
           provider: playwright(),
-          instances: [{ browser: 'chromium' }]
+          instances: (['light', 'dark'] as const).map(colorScheme => ({
+            browser: 'chromium',
+            name: colorScheme,
+            provider: playwright({ contextOptions: { colorScheme } })
+          }))
         }
       }
     }]

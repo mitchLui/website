@@ -13,6 +13,16 @@
     font-size: 1.75rem;
 }
 
+.container-header h2::after{
+    content: '';
+    display: block;
+    width: 2.5rem;
+    height: 4px;
+    margin-top: 0.5rem;
+    border-radius: 2px;
+    background-color: var(--color-accent);
+}
+
 @media screen and (max-width: 768px) {
     .container {
         padding-left: 5%;
