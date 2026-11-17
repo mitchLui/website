@@ -10,6 +10,15 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const lineColour = (token: string) => {
+  const probe = document.createElement('span');
+  probe.style.backgroundColor = `var(--color-line-${token})`;
+  document.body.append(probe);
+  const colour = getComputedStyle(probe).backgroundColor;
+  probe.remove();
+  return colour;
+};
+
 const waitForFadeIn = (canvasElement: HTMLElement) =>
   Promise.all(canvasElement.ownerDocument.getAnimations().map(animation => animation.finished));
 
@@ -27,6 +36,11 @@ export const Default: Story = {
         'Senior Software Engineer', 'Software Engineer', 'Graduate Software Engineer', 'University of Bristol', 'Intern · Wise', 'Intern · Asiabots', 'Hong Kong'
       ]);
       await expect(canvas.getAllByRole('listitem')[0]).toHaveAttribute('aria-current', 'step');
+    });
+    await step('changes line colour at stations, not between them', async () => {
+      const internship = canvas.getByRole('link', { name: 'Intern · Wise' }).closest('li')!.querySelectorAll<HTMLElement>('[aria-hidden] > span');
+      await expect(internship[0]).toHaveStyle({ backgroundColor: lineColour('education') });
+      await expect(internship[1]).toHaveStyle({ backgroundColor: lineColour('early') });
     });
     await step('links to the Wise story, the highlighted projects, all projects and each internship', async () => {
       await expect(canvas.getByRole('link', { name: 'Read more' })).toHaveAttribute('href', '/work/wise');
