@@ -13,11 +13,13 @@ type ProjectBase = {
   content_detailed: Array<React.ReactElement | string>;
   git_url?: string;
   website?: string;
+  highlight?: boolean;
 };
 
 export type ProfessionalProject = ProjectBase & {
   kind: 'professional';
   company: Company;
+  team?: string;
   featured?: boolean;
 };
 
@@ -43,6 +45,7 @@ export const projects: Record<string, Project> = {
     title: 'Wise – Business Account Management',
     thumbnail: 'wise',
     company: Company.Wise,
+    team: 'Business Account Management',
     featured: true,
     started: '2023-09',
     technologies: ['Next.js', 'Java Spring', 'Kafka'],
@@ -52,6 +55,7 @@ export const projects: Record<string, Project> = {
   },
   hpc: {
     kind: 'academic',
+    highlight: true,
     title: 'LBM Optimisation',
     thumbnail: 'hpc',
     started: '2023-02',
@@ -80,6 +84,7 @@ export const projects: Record<string, Project> = {
     title: 'Wise – Spend Business Experience',
     thumbnail: 'wise_internship',
     company: Company.Wise,
+    team: 'Spend Business Experience',
     featured: true,
     started: '2022-06',
     ended: '2022-09',
@@ -105,6 +110,7 @@ export const projects: Record<string, Project> = {
   },
   greenmap: {
     kind: 'hackathon',
+    highlight: true,
     title: 'GreenMap',
     thumbnail: 'greenmap',
     event: 'CSS x Boeing Hackathon 2022',
@@ -152,6 +158,7 @@ export const projects: Record<string, Project> = {
   },
   'mask-detector': {
     kind: 'hackathon',
+    highlight: true,
     title: 'Mask Detector',
     thumbnail: 'mask_detector',
     event: 'BEEES Make-a-thon 2021',

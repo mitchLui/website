@@ -45,8 +45,9 @@
 .hero {
   display: block;
   overflow: hidden;
-  border-radius: var(--radius-lg);
-  background-color: var(--color-surface);
+  border: 2px solid var(--color-text);
+  border-radius: var(--radius-md);
+  background-color: var(--neutral-0);
 }
 
 .hero img {
@@ -97,12 +98,14 @@
 
 .section {
   display: grid;
-  gap: var(--space-4);
-  max-width: 42rem;
+  gap: var(--space-6);
+  max-width: 52rem;
 }
 
 .section h2 {
   margin: 0;
+  padding-top: var(--space-4);
+  border-top: 3px solid var(--color-text);
   font-size: var(--font-size-title-1);
   line-height: var(--line-height-tight);
   letter-spacing: var(--tracking-title);
@@ -111,8 +114,7 @@
 
 .role {
   display: grid;
-  gap: var(--space-1);
-  padding-top: var(--space-4);
+  gap: var(--space-2);
 }
 
 .role h3 {
@@ -124,14 +126,31 @@
 
 .role-period {
   margin: 0;
+  font-size: var(--font-size-small);
+  font-variant-numeric: tabular-nums;
   color: var(--color-text-secondary);
 }
 
 .impact {
+  list-style: disc;
   display: grid;
   gap: var(--space-2);
   margin: var(--space-3) 0 0;
   padding-left: var(--space-5);
+}
+
+.marker {
+  width: 32px;
+  height: 10px;
+  border-radius: var(--radius-full);
+}
+
+.marker[data-line='wise'] { background-color: var(--color-line-wise); }
+.marker[data-line='education'] { background-color: var(--color-line-education); }
+.marker[data-line='early'] { background-color: var(--color-line-early); }
+
+.previously {
+  max-width: 52rem;
 }
 
 .paragraph {

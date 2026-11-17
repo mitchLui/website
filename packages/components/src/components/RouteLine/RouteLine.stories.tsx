@@ -73,3 +73,16 @@ export const StationRings: Story = {
     await expect(current).toHaveStyle({ backgroundColor: resolved('backgroundColor', 'var(--color-station-fill)') });
   }
 };
+
+export const EndsAtLastStation: Story = {
+  render: () =>
+    <RouteLine>
+      <Station line="wise" kind="current"><h3>Senior Software Engineer</h3></Station>
+      <Station line="wise"><h3>Graduate Software Engineer</h3></Station>
+    </RouteLine>,
+  play: async ({ canvas }) => {
+    const last = canvas.getAllByRole('listitem').at(-1)!.querySelectorAll<HTMLElement>('[aria-hidden] > span');
+    await expect(last[0]).toBeVisible();
+    await expect(last[1]).not.toBeVisible();
+  }
+};
