@@ -59,6 +59,11 @@ export const NavBarLinks = ({ onClick }: NavBarLinksProps): ReactElement =>
           <span className={styles.navText}>Home</span>
         </li>
       </Link>
+      <Link to={'/work'}>
+        <li onClick={onClick}>
+          <span className={styles.navText}>Work</span>
+        </li>
+      </Link>
       <Link to={'/cv.pdf'} target={'_blank'} rel={'noreferrer'}>
         <li onClick={onClick}>
           <span className={styles.navText}>CV</span>

@@ -1,122 +1,132 @@
 import React from 'react';
 import { Company } from './companies';
 
-export type ProjectProps = {
+type ProjectBase = {
   title: string;
   thumbnail: string;
-  company: Company;
-  current_status: 'Completed' | 'In development' | 'In progress';
-  started: string;
-  ended: string;
-  awards: string;
-  technologies: string;
   alt: string;
   headline: string;
-  content_detailed: Array<React.ReactElement | string | never>;
+  started: string;
+  ended?: string;
+  technologies: string[];
+  awards?: string[];
+  content_detailed: Array<React.ReactElement | string>;
   git_url?: string;
   website?: string;
 };
 
-export const projects: Record<string, ProjectProps> = {
+export type ProfessionalProject = ProjectBase & {
+  kind: 'professional';
+  company: Company;
+  featured?: boolean;
+};
+
+export type AcademicProject = ProjectBase & {
+  kind: 'academic';
+  grade?: string;
+};
+
+export type HackathonProject = ProjectBase & {
+  kind: 'hackathon';
+  event: string;
+};
+
+export type PersonalProject = ProjectBase & {
+  kind: 'personal';
+};
+
+export type Project = ProfessionalProject | AcademicProject | HackathonProject | PersonalProject;
+
+export const projects: Record<string, Project> = {
   wise: {
-    title: 'Wise - Business Account Management',
+    kind: 'professional',
+    title: 'Wise – Business Account Management',
     thumbnail: 'wise',
     company: Company.Wise,
-    current_status: 'In progress',
-    started: '4 September 2023',
-    ended: 'n/a',
-    awards: 'n/a',
-    technologies: 'Next.js, Java Spring, Kafka',
+    featured: true,
+    started: '2023-09',
+    technologies: ['Next.js', 'Java Spring', 'Kafka'],
     alt: 'wise screenshot',
-    headline: 'Working as a full-stack engineer to improve the Wise Business product.',
-    content_detailed: ['To be added.']
+    headline: 'Permissions, money movement and cards for Wise Business customers.',
+    content_detailed: []
   },
   hpc: {
+    kind: 'academic',
     title: 'LBM Optimisation',
     thumbnail: 'hpc',
-    company: Company.UniversityOfBristol,
-    current_status: 'Completed',
-    started: '27 February 2023',
-    ended: '5 May 2023',
-    awards: 'n/a',
-    technologies: 'C, OpenMP, MPI',
+    started: '2023-02',
+    ended: '2023-05',
+    technologies: ['C', 'OpenMP', 'MPI'],
     alt: 'hpc screenshot',
-    headline: 'Parallelising a serial program for simulating fluid dyanmics using OpenMP and MPI.',
+    headline: 'Parallelising a serial program for simulating fluid dynamics using OpenMP and MPI.',
     content_detailed: [],
     git_url: 'https://github.com/mitchLui/hpc-coursework'
   },
   'cornell-box': {
+    kind: 'academic',
     title: 'C++ Graphics Renderer',
     thumbnail: 'cornell_box',
-    company: Company.UniversityOfBristol,
-    current_status: 'Completed',
-    started: '18 October 2022',
-    ended: '16 December 2022',
-    awards: '70% (First class)',
-    technologies: 'C++',
+    started: '2022-10',
+    ended: '2022-12',
+    grade: '70% (First class)',
+    technologies: ['C++'],
     alt: 'cornell box screenshot',
-    headline: 'A C++ program that renders a Cornell Box scene using various techniques, including wireframing, rasterisations and ray tracing.',
+    headline: 'A C++ program that renders a Cornell Box scene using various techniques, including wireframing, rasterisation and ray tracing.',
     content_detailed: [],
     git_url: 'https://github.com/mitchLui/rednoise'
   },
   'wise-internship': {
-    title: 'Wise - Spend Business Experience',
+    kind: 'professional',
+    title: 'Wise – Spend Business Experience',
     thumbnail: 'wise_internship',
     company: Company.Wise,
-    current_status: 'Completed',
-    started: '27 June 2022',
-    ended: '16 September 2022',
-    awards: 'n/a',
-    technologies: 'React.js, Java Spring, Kafka',
+    featured: true,
+    started: '2022-06',
+    ended: '2022-09',
+    technologies: ['React.js', 'Java Spring', 'Kafka'],
     alt: 'wise internship screenshot',
-    headline: `A 12-week full-time internship working across the full stack to 
-        improve the user experience of the Wise Business debit card product.`,
+    headline: 'A 12-week full-stack internship improving the Wise Business debit card.',
     content_detailed: [],
     website: 'https://wise.com'
   },
   'mitchlui-dev': {
+    kind: 'personal',
     title: 'mitchlui.dev',
     thumbnail: 'mitchlui_dev',
-    company: Company.Me,
-    current_status: 'In development',
-    started: '1 March 2022',
-    ended: 'n/a',
-    awards: 'n/a',
-    technologies: 'React, TypeScipt',
+    started: '2022-03',
+    technologies: ['React', 'TypeScript'],
     alt: 'mitchlui.dev screenshot',
     headline: `Personal website built on React and TypeScript
-        for showcasing frontend skills and projects 
+        for showcasing frontend skills and projects
         I've worked on to serve as a digital portfolio.`,
     content_detailed: [],
     git_url: 'https://github.com/mitchLui/website',
     website: 'https://mitchlui.dev'
   },
   greenmap: {
+    kind: 'hackathon',
     title: 'GreenMap',
     thumbnail: 'greenmap',
-    company: Company.UniversityOfBristol,
-    current_status: 'In development',
-    started: '26 Feb 2022',
-    ended: 'n/a',
-    awards: 'CSS x Boeing Hackathon 2022 - Honourable Mention',
-    technologies: 'React.js, FastAPI, Docker, Heroku',
+    event: 'CSS x Boeing Hackathon 2022',
+    started: '2022-02',
+    awards: ['Honourable Mention'],
+    technologies: ['React.js', 'FastAPI', 'Docker', 'Heroku'],
     alt: 'greenmap screenshot',
-    headline: `A navigation platform that aggregates data from 3rd party APIs and 
-        provides real-time information about nearby shared vehicles. 
-        University of Bristol CSS x Boeing Hackathon 2022 Submission.`,
+    headline: `A navigation platform that aggregates data from third-party APIs and
+        provides real-time information about nearby shared vehicles.
+        University of Bristol CSS x Boeing Hackathon 2022 submission.`,
     content_detailed: [],
     git_url: 'https://github.com/mitchLui/greenmap',
     website: 'https://greenmap.mitchlui.dev'
   },
   'ai-workflow': {
+    kind: 'academic',
     title: 'IBM AI Workflow',
     thumbnail: 'ai_workflow',
-    company: Company.UniversityOfBristol,
-    current_status: 'Completed',
-    started: '8 October 2021',
-    ended: '6 May 2022',
-    awards: '75% (First class)',
-    technologies: 'React.js, FastAPI, mongoDB, Kubernetes, IBM Carbon Design',
+    started: '2021-10',
+    ended: '2022-05',
+    grade: '75% (First class)',
+    technologies: ['React.js', 'FastAPI', 'mongoDB', 'Kubernetes', 'IBM Carbon Design'],
     alt: 'ai-workflow screenshot',
     headline: `An event-triggered automation tool with a web interface for workflow customisation.
         Coursework for Software Engineering Project at University of Bristol.`,
@@ -127,62 +137,60 @@ export const projects: Record<string, ProjectProps> = {
     website: 'https://ai-workflow.mitchlui.dev'
   },
   gol: {
+    kind: 'academic',
     title: 'Game of Life',
     thumbnail: 'gol',
-    company: Company.UniversityOfBristol,
-    current_status: 'Completed',
-    started: '1 November 2021',
-    ended: '27 December 2021',
-    awards: '74% (First class)',
-    technologies: 'Golang, AWS',
+    started: '2021-11',
+    ended: '2021-12',
+    grade: '74% (First class)',
+    technologies: ['Golang', 'AWS'],
     alt: 'game of life screenshot',
-    headline: `Parallel and Distributed implementation of Conway's Game of Life using Golang. 
+    headline: `Parallel and distributed implementation of Conway's Game of Life using Golang.
         Coursework for Computer Systems A at University of Bristol.`,
     content_detailed: [],
     git_url: 'https://github.com/mitchLui/game-of-life'
   },
   'mask-detector': {
+    kind: 'hackathon',
     title: 'Mask Detector',
     thumbnail: 'mask_detector',
-    company: Company.UniversityOfBristol,
-    current_status: 'Completed',
-    started: '24 April 2021',
-    ended: '25 April 2021',
-    awards: 'BEEES Make-a-thon 2021 - Overall best prize / Most verified / Most gamified',
-    technologies: 'Python, TensorFlow, Arduino',
+    event: 'BEEES Make-a-thon 2021',
+    started: '2021-04',
+    ended: '2021-04',
+    awards: ['Overall best prize', 'Most verified', 'Most gamified'],
+    technologies: ['Python', 'TensorFlow', 'Arduino'],
     alt: 'mask detector screenshot',
-    headline: `Real-time face covering detection application to encourage good mask-wearing practises. 
-        University of Bristol BEEES Make-a-thon 2021 Submission.`,
+    headline: `Real-time face covering detection application to encourage good mask-wearing practices.
+        University of Bristol BEEES Make-a-thon 2021 submission.`,
     content_detailed: [],
     git_url: 'https://github.com/mitchLui/mask-detector'
   },
   'marine-vessel-tracker': {
+    kind: 'hackathon',
     title: 'Marine Vessel Tracker',
     thumbnail: 'marine_vessel',
-    company: Company.UniversityOfBristol,
-    current_status: 'Completed',
-    started: '20 March 2021',
-    ended: '21 March 2021',
-    awards: 'CSS x Boeing Hackathon 2021 - 2nd place in category',
-    technologies: 'FastAPI, Google Maps API, Docker',
+    event: 'CSS x Boeing Hackathon 2021',
+    started: '2021-03',
+    ended: '2021-03',
+    awards: ['2nd place in category'],
+    technologies: ['FastAPI', 'Google Maps API', 'Docker'],
     alt: 'marine vessel tracker screenshot',
-    headline: `A real-time marine vessel tracker that shows the position, 
-        type and cargo of every marine vessel and ports in the world. 
-        University of Bristol CSS x Boeing Hackathon 2021 Submission.`,
+    headline: `A real-time marine vessel tracker that shows the position,
+        type and cargo of every marine vessel and ports in the world.
+        University of Bristol CSS x Boeing Hackathon 2021 submission.`,
     content_detailed: [],
     git_url: 'https://github.com/mitchLui/marine-vessel-tracker'
   },
   'scotland-yard': {
+    kind: 'academic',
     title: 'Scotland Yard',
     thumbnail: 'scotland_yard',
-    company: Company.UniversityOfBristol,
-    current_status: 'Completed',
-    started: '1 March 2021',
-    ended: '12 May 2021',
-    awards: '72% (First class)',
-    technologies: 'Java, Guava',
+    started: '2021-03',
+    ended: '2021-05',
+    grade: '72% (First class)',
+    technologies: ['Java', 'Guava'],
     alt: 'scotland yard screenshot',
-    headline: `Modelled game mechanics of Scotland Yard given a skeleton using Java and wrote an AI 
+    headline: `Modelled game mechanics of Scotland Yard given a skeleton using Java and wrote an AI
         that uses a backtracking algorithm and scoring method to find the best path for
         Mr X to escape from the detectives.
         Coursework for OOP at University of Bristol.`,
@@ -190,33 +198,39 @@ export const projects: Record<string, ProjectProps> = {
     git_url: 'https://github.com/mitchLui/scotland-yard'
   },
   'flat-finder': {
+    kind: 'personal',
     title: 'Flat Finder',
     thumbnail: 'flat_finder',
-    company: Company.Me,
-    current_status: 'Completed',
-    started: '21 Jan 2021',
-    ended: '10 Feb 2021',
-    awards: 'n/a',
-    technologies: 'Python, Selenium',
+    started: '2021-01',
+    ended: '2021-02',
+    technologies: ['Python', 'Selenium'],
     alt: 'flat finder screenshot',
-    headline: `A script that searches for flats 
+    headline: `A script that searches for flats
         on Rightmove and Zoopla based on certain criteria.`,
     content_detailed: [],
     git_url: 'https://github.com/mitchLui/flat-finder'
   },
   asiabots: {
-    title: 'Internship at Asiabots',
+    kind: 'professional',
+    title: 'Asiabots – Conversational AI',
     thumbnail: 'asiabots',
     company: Company.Asiabots,
-    current_status: 'Completed',
-    started: '1 June 2020',
-    ended: '21 September 2020',
-    awards: 'n/a',
-    technologies: 'Python, Docker, AWS, Twilio',
+    started: '2020-06',
+    ended: '2020-09',
+    technologies: ['Python', 'Docker', 'AWS', 'Twilio'],
     alt: 'asiabots screenshot',
-    headline: `A 3-month full-time internship writing API-first microservices 
-        for omni-channel conversational AIs in Python.`,
+    headline: 'A 3-month internship building API-first Python microservices for omni-channel chatbots and voicebots.',
     content_detailed: [],
     website: 'https://www.asiabots.com/'
   }
 };
+
+const entries = Object.entries(projects);
+
+export const featuredProjects = entries.filter(
+  (entry): entry is [string, ProfessionalProject] => entry[1].kind === 'professional' && Boolean(entry[1].featured)
+);
+
+export const professionalProjects = entries.filter(([, project]) => project.kind === 'professional');
+
+export const archivedProjects = entries.filter(([, project]) => project.kind !== 'professional');

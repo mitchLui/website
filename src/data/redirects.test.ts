@@ -1,10 +1,10 @@
 import { expect, test } from 'vitest';
 import { redirectFor } from './redirects';
 
-test.each(['/github', '/github/'])('%s resolves to its target', path => {
+test.each(['/github', '/github/'])('resolves %s to the GitHub profile', path => {
   expect(redirectFor(path)).toBe('https://github.com/mitchlui');
 });
 
-test('unknown paths have no target', () => {
+test('returns no target for an unknown path', () => {
   expect(redirectFor('/nope')).toBeUndefined();
 });
