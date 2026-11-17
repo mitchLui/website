@@ -21,8 +21,7 @@
     "motion": "^14.14.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
-    "react-router": "^7.18.5",
-    "sass": "^1.108.2"
+    "react-router": "^7.18.5"
   },
   "devDependencies": {
     "@eslint-react/eslint-plugin": "^5.30.3",

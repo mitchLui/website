@@ -1,4 +1,4 @@
-.intro{
+.intro {
   margin: 10%;
   font-weight: 400;
   font-size: 32px;
@@ -9,15 +9,14 @@
 .link {
   font-weight: 600;
   text-decoration: none;
+}
 
-  &.wise{
-    color: #9FE870;
-  }
+.link.wise {
+  color: #9FE870;
+}
 
-  
-  &.asiabots{
-    color: #ec253b;
-  }
+.link.asiabots {
+  color: #ec253b;
 }
 
 @media screen and (max-width: 768px) {

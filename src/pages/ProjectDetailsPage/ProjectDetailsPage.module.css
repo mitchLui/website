@@ -1,0 +1,62 @@
+.project-content {
+  background-color: #000000;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 2.5%;
+}
+
+.project-content h1 {
+  font-size: 2.5rem;
+}
+
+.project-content h2 {
+  font-size: 1.5rem;
+}
+
+.project-content .text {
+  color: white;
+  background-color: inherit;
+}
+
+.project-thumbnail {
+  width: 100%;
+  height: auto;
+}
+
+.project-thumbnail img {
+  width: 100%;
+}
+
+.project-container {
+  color: #ffffff;
+  background-color: #000000;
+}
+
+.project-status {
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.project-text {
+  padding-top: 1.2rem;
+  line-height: 1.3;
+  font-size: 1.3rem;
+}
+
+.project-buttons {
+  padding-bottom: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .project-buttons {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .project-thumbnail img {
+    display: flex;
+    margin: auto;
+    width: 512px;
+  }
+}

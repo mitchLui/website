@@ -1,0 +1,46 @@
+.card {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  border-radius: 30px;
+  padding: 1rem 1.3rem 1rem 1.3rem;
+  transition: transform ease-in-out 0.275s;
+  color: #ffffff;
+  background-color: #111111;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.card footer {
+  min-height: 30px;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+.card footer a:nth-child(1) {
+  margin: 0;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.thumbnail {
+  text-align: center;
+}
+
+.thumbnail img {
+  width: 100%;
+}
+
+.card-content {
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}

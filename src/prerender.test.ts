@@ -31,7 +31,7 @@ describe('prerendered HTML', () => {
   test.each(Object.entries(projects))('project page %s contains its title and meta', (id, project) => {
     const html = readPage(`/${project.company}/projects/${id}`);
     expect(html).toContain(`<title>${project.title} | Mitch Lui</title>`);
-    expect(html).toContain(`<h1 class="text">${project.title}</h1>`);
+    expect(html).toContain(`>${project.title}</h1>`);
   });
 
   test.each(Object.entries(redirects))('%s redirects without JavaScript', (route, target) => {

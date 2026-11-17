@@ -3,4 +3,7 @@ export const redirects: Record<string, string> = {
   '/github': 'https://github.com/mitchlui'
 };
 
-export const redirectFor = (pathname: string): string | undefined => redirects[pathname.replace(/\/$/, '')];
+const withoutTrailingSlash = (pathname: string) =>
+  pathname.endsWith('/') ? pathname.slice(0, -1) : pathname;
+
+export const redirectFor = (pathname: string): string | undefined => redirects[withoutTrailingSlash(pathname)];

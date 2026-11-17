@@ -18,6 +18,11 @@ const browser = {
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
   plugins: [process.env.VITEST || process.env.STORYBOOK ? react() : reactRouter()],
+  css: {
+    modules: {
+      localsConvention: 'camelCaseOnly'
+    }
+  },
   server: {
     open: true,
     port: 3000

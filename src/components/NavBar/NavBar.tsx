@@ -1,7 +1,8 @@
 import { ReactElement, useState, useSyncExternalStore } from 'react';
 import { Link } from 'react-router';
 import { HamburgerMenu } from '../Hamburger/Hamburger';
-import './NavBar.scss';
+import clsx from 'clsx';
+import styles from './NavBar.module.css';
 
 const MOBILE: number = 768;
 
@@ -24,7 +25,7 @@ type NavBarProps = {
 };
 
 const DesktopNavBar = (): ReactElement =>
-  <header className="navbar desktop">
+  <header className={clsx(styles.navbar, styles.desktop)}>
     <Logo setIsOpen={() => {}}/>
     <NavBarLinks/>
   </header>;
@@ -32,14 +33,14 @@ const DesktopNavBar = (): ReactElement =>
 const MobileNavBar = (): ReactElement => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <header className="navbar mobile">
-      <div className={'mainnav'}>
+    <header className={clsx(styles.navbar, styles.mobile)}>
+      <div className={styles.mainnav}>
         <Logo setIsOpen={setIsOpen}/>
-        <div className="hamburger-menu-container" >
+        <div className={styles.hamburgerMenuContainer}>
           <HamburgerMenu onClick={() => setIsOpen(!isOpen)} isOpen={isOpen}/>
         </div>
       </div>
-      <div className={`mobile-menu ${isOpen ? 'mobile-nav-open' : 'mobile-nav-close'}`}>
+      <div className={clsx(!isOpen && styles.mobileNavClose)}>
         <NavBarLinks onClick={() => setIsOpen(!isOpen)}/>
       </div>
     </header>
@@ -55,25 +56,25 @@ export const NavBarLinks = ({ onClick }: NavBarLinksProps): ReactElement =>
     <ul>
       <Link to={'/'}>
         <li onClick={onClick}>
-          <span className={'nav-text'}>Home</span>
+          <span className={styles.navText}>Home</span>
         </li>
       </Link>
       <Link to={'/cv.pdf'} target={'_blank'} rel={'noreferrer'}>
         <li onClick={onClick}>
-          <span className={'nav-text'}>CV</span>
+          <span className={styles.navText}>CV</span>
         </li>
       </Link>
       <Link to={'/linkedin'} onClick={onClick}>
         <li>
-          <span className={'nav-text'}>LinkedIn</span>
+          <span className={styles.navText}>LinkedIn</span>
         </li>
       </Link>
     </ul>
   </nav>;
 
 export const Logo = ({ setIsOpen }: NavBarProps): ReactElement =>
-  <div className={'logo-container'}>
-    <Link onClick={() => setIsOpen(false)} to={'/'} className="logo-link">
-      <h1 className={'logo'}><img className={'logo-graphic'} src={'/logo.svg'} alt={'logo'}/>mitch<span className={'bold'}>Lui</span></h1>
+  <div className={styles.logoContainer}>
+    <Link onClick={() => setIsOpen(false)} to={'/'} className={styles.logoLink}>
+      <h1 className={styles.logo}><img className={styles.logoGraphic} src={'/logo.svg'} alt={'logo'}/>mitch<span className={styles.bold}>Lui</span></h1>
     </Link>
   </div>;

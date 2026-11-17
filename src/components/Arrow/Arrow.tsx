@@ -1,4 +1,4 @@
-import './Arrow.scss';
+import styles from './Arrow.module.css';
 import { ReactElement } from 'react';
 
 type ArrowProps = {
@@ -6,7 +6,7 @@ type ArrowProps = {
 };
 
 export const Arrow = ({ text }: ArrowProps): ReactElement =>
-  <div className={'arrow-container'}>
-    <div className={'arrow'}/>
-    <span className={'arrow-text'}>{text}</span>
+  <div className={styles.arrowContainer}>
+    <div className={styles.arrow}/>
+    <span className={styles.arrowText}>{text}</span>
   </div>;

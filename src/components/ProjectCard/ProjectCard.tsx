@@ -1,6 +1,6 @@
 import { Button } from '../Button/Button';
 import { ReactElement } from 'react';
-import './ProjectCard.scss';
+import styles from './ProjectCard.module.css';
 
 type ProjectCardProps = {
   key: number | string;
@@ -13,8 +13,8 @@ type ProjectCardProps = {
 };
 
 export const ProjectCard = ({ key, name, title, thumbnail, alt, headline, gitUrl }: ProjectCardProps): ReactElement =>
-  <article key={key} className={'card project ' + name}>
-    <picture className={'thumbnail'}>
+  <article key={key} className={styles.card}>
+    <picture className={styles.thumbnail}>
       <source srcSet={'/project-assets/webp/' + thumbnail + '.webp'} type="image/webp" />
       <img
         src={'/project-assets/png/' + thumbnail + '.png'}
@@ -22,7 +22,7 @@ export const ProjectCard = ({ key, name, title, thumbnail, alt, headline, gitUrl
       />
     </picture>
     <h2>{title}</h2>
-    <div className={'card-content'}>{headline}</div>
+    <div className={styles.cardContent}>{headline}</div>
     <footer>
       <Button as="a" to={'/projects/' + name}>Learn more</Button>
       {
