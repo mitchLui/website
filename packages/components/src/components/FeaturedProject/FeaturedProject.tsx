@@ -36,7 +36,7 @@ export const FeaturedProject = ({ title, headline, href, image, period, highligh
         )}
       </dl>
       <footer className={styles.footer}>
-        <Button as="a" to={href}>Learn more</Button>
+        <Button as="a" variant="secondary" className={styles.cardLink} to={href}>Learn more</Button>
         <span className={styles.period}>{period}</span>
       </footer>
     </div>

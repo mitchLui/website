@@ -46,7 +46,7 @@ export const ProjectDetailsPage = () => {
           <h2>{project.headline}</h2>
         </div>
         <div className={styles.projectButtons}>
-          {project.git_url && <Button as="a" to={project.git_url} target={'_blank'}>GitHub</Button>}
+          {project.git_url && <Button as="a" variant="secondary" to={project.git_url} target={'_blank'}>GitHub</Button>}
           {project.website && <Button as="a" to={project.website} target={'_blank'}>Website</Button>}
         </div>
         {project.kind === 'professional' && <Impact projectId={projectId as string}/>}

@@ -14,7 +14,7 @@ const expectRoundSquare = async (image: HTMLImageElement, size: number) => {
   await waitFor(() => expect(image.complete && image.naturalWidth > 0).toBe(true));
   await expect(image.naturalWidth).toBe(image.naturalHeight);
   await expect([image.clientWidth, image.clientHeight]).toEqual([size, size]);
-  await expect(image).toHaveStyle({ borderRadius: '50%' });
+  await expect(image).toHaveStyle({ borderRadius: '50%', boxShadow: 'none' });
 };
 
 export const Default: Story = {

@@ -7,7 +7,7 @@ const meta = {
   parameters: { layout: 'padded' },
   args: {
     entries: [
-      { title: 'Ray Tracer', href: '/work/ray-tracer', meta: 'Oct 2022', tag: { label: 'Academic', color: 'violet' } },
+      { title: 'Ray Tracer', href: '/work/ray-tracer', meta: 'Oct 2022', tag: { label: 'Academic', color: 'blue' } },
       { title: 'Route Planner', href: '/work/route-planner', meta: 'Feb 2022 · Winner', tag: { label: 'Hackathon', color: 'orange' } },
       { title: 'Notes App', href: '/work/notes-app', meta: 'Jan 2021' }
     ]

@@ -1,0 +1,68 @@
+.page {
+  display: grid;
+  gap: var(--space-12);
+  padding: var(--space-8) var(--gutter);
+}
+
+.section {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.section h2 {
+  margin: 0;
+  font-size: var(--font-size-title-1);
+  letter-spacing: var(--tracking-title);
+}
+
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: var(--space-3);
+}
+
+.swatch {
+  display: grid;
+  gap: var(--space-2);
+  font-size: var(--font-size-small);
+}
+
+.chip {
+  height: 4rem;
+  border-radius: var(--radius-md);
+  box-shadow: inset 0 0 0 1px var(--color-border);
+}
+
+.pair {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.scale {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.sample {
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: var(--space-4);
+}
+
+.box {
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--color-brand-tint);
+}
+
+.bar {
+  height: var(--space-4);
+  border-radius: var(--radius-full);
+  background-color: var(--color-brand);
+}

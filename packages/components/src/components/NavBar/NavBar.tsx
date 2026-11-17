@@ -1,5 +1,5 @@
 import { ReactElement, useState, useSyncExternalStore } from 'react';
-import { Link } from 'react-router';
+import { Link, NavLink as RouterNavLink } from 'react-router';
 import { HamburgerMenu } from '../Hamburger/Hamburger';
 import clsx from 'clsx';
 import { Avatar } from '../Avatar/Avatar';
@@ -32,23 +32,23 @@ export const NavBar = ({ links }: NavBarProps): ReactElement =>
   useIsMobile() ? <MobileNavBar links={links}/> : <DesktopNavBar links={links}/>;
 
 const DesktopNavBar = ({ links }: NavBarProps): ReactElement =>
-  <header className={clsx(styles.navbar, styles.desktop)}>
-    <Logo onClick={() => {}}/>
-    <NavBarLinks links={links}/>
+  <header className={styles.header}>
+    <div className={clsx(styles.navbar, styles.desktop)}>
+      <Logo onClick={() => {}}/>
+      <NavBarLinks links={links}/>
+    </div>
   </header>;
 
 const MobileNavBar = ({ links }: NavBarProps): ReactElement => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <header className={clsx(styles.navbar, styles.mobile)}>
-      <div className={styles.mainnav}>
+    <header className={styles.header}>
+      <div className={styles.navbar}>
         <Logo onClick={() => setIsOpen(false)}/>
-        <div className={styles.hamburgerMenuContainer}>
-          <HamburgerMenu onClick={() => setIsOpen(!isOpen)} isOpen={isOpen}/>
-        </div>
+        <HamburgerMenu onClick={() => setIsOpen(!isOpen)} isOpen={isOpen}/>
       </div>
-      <div className={clsx(!isOpen && styles.mobileNavClose)}>
-        <NavBarLinks links={links} onClick={() => setIsOpen(!isOpen)}/>
+      <div className={clsx(styles.sheet, !isOpen && styles.sheetClosed)}>
+        <NavBarLinks links={links} onClick={() => setIsOpen(false)}/>
       </div>
     </header>
   );
@@ -59,14 +59,9 @@ const NavBarLinks = ({ links, onClick }: NavBarProps & { onClick?: () => void })
     <ul>
       {links.map(link =>
         <li key={link.href}>
-          <Link
-            to={link.href}
-            onClick={onClick}
-            className={styles.navText}
-            {...(link.external && { target: '_blank', rel: 'noreferrer' })}
-          >
-            {link.label}
-          </Link>
+          {link.external
+            ? <Link to={link.href} onClick={onClick} className={styles.navText} target="_blank" rel="noreferrer">{link.label}</Link>
+            : <RouterNavLink to={link.href} end={link.href === '/'} onClick={onClick} className={styles.navText}>{link.label}</RouterNavLink>}
         </li>
       )}
     </ul>

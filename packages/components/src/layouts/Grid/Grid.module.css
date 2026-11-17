@@ -1,12 +1,12 @@
-.grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 1.5rem;
-    padding: 0.5rem 0.5rem;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-6);
+  padding-block: var(--space-2);
 }
 
 @media screen and (max-width: 1000px) {
-    .grid{
-        grid-auto-rows: 1fr;
-    }
+  .grid {
+    grid-auto-rows: 1fr;
+  }
 }

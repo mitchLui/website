@@ -1,15 +1,18 @@
 .project-content {
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-bottom: 2.5%;
+  padding-bottom: var(--space-12);
 }
 
 .project-content h1 {
-  font-size: 2.5rem;
+  font-size: var(--font-size-display);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--tracking-display);
+  font-weight: var(--font-weight-heavy);
 }
 
 .project-content h2 {
-  font-size: 1.5rem;
+  font-size: var(--font-size-title-2);
+  letter-spacing: var(--tracking-title);
+  font-weight: var(--font-weight-bold);
 }
 
 .project-thumbnail {
@@ -19,28 +22,26 @@
 
 .project-thumbnail img {
   width: 100%;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
 }
 
 .project-status {
-  font-size: 1.25rem;
-  line-height: 1.5;
+  font-size: var(--font-size-lead);
+  color: var(--color-text-secondary);
 }
 
 .project-text {
-  padding-top: 1.2rem;
-  line-height: 1.3;
-  font-size: 1.3rem;
+  max-width: 42rem;
+  padding-top: var(--space-5);
+  font-size: var(--font-size-lead);
+  line-height: var(--line-height-body);
 }
 
 .project-buttons {
-  padding-bottom: 1rem;
-}
-
-@media screen and (max-width: 768px) {
-  .project-buttons {
-    text-align: center;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding-bottom: var(--space-4);
 }
 
 @media screen and (min-width: 768px) {
@@ -52,6 +53,6 @@
 }
 
 .impact {
-  font-size: 1.25rem;
-  line-height: 1.5;
+  max-width: 42rem;
+  font-size: var(--font-size-lead);
 }

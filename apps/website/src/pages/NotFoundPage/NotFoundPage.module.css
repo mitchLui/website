@@ -1,15 +1,16 @@
 .header-text {
+  padding-bottom: var(--space-8);
   text-align: center;
 }
 
 .header-text h1 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-align: center;
+  font-size: var(--font-size-title-1);
+  letter-spacing: var(--tracking-title);
+  font-weight: var(--font-weight-bold);
 }
 
 .header-text h2 {
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-align: center;
+  font-size: var(--font-size-lead);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
 }

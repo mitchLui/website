@@ -1,39 +1,38 @@
 .container {
-    display: block;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-bottom: 2.5%;
+  display: block;
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+  padding-bottom: var(--space-12);
 }
 
-.container-header h1{
-    font-size: 3rem;
+.container-header {
+  margin-block: var(--space-12) var(--space-6);
 }
 
-.container-header h2{
-    font-size: 1.75rem;
+.container-header h1,
+.container-header h2 {
+  margin: 0;
 }
 
-.container-header h2::after{
-    content: '';
-    display: block;
-    width: 2.5rem;
-    height: 4px;
-    margin-top: 0.5rem;
-    border-radius: 2px;
-    background-color: var(--color-accent);
+.eyebrow {
+  margin: 0 0 var(--space-2);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-label);
+  color: var(--color-brand-text);
 }
 
-@media screen and (max-width: 768px) {
-    .container {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
+.container-header h1 {
+  font-size: var(--font-size-display);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--tracking-display);
+  font-weight: var(--font-weight-heavy);
+}
 
-    .container-header h1{
-        font-size: 2.5rem;
-    }
-    
-    .container-header h2{
-        font-size: 1.5rem;
-    }
+.container-header h2 {
+  font-size: var(--font-size-title-1);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--tracking-title);
+  font-weight: var(--font-weight-bold);
 }

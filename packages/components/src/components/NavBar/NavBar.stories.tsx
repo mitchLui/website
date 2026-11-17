@@ -25,6 +25,14 @@ export const Desktop: Story = {
   }
 };
 
+export const ActivePage: Story = {
+  parameters: { route: { path: '/work/*', url: '/work/acme' } },
+  play: async ({ canvas }) => {
+    await expect(canvas.getByRole('link', { name: 'Work' })).toHaveAttribute('aria-current', 'page');
+    await expect(canvas.getByRole('link', { name: 'Home' })).not.toHaveAttribute('aria-current');
+  }
+};
+
 export const ExternalLink: Story = {
   play: async ({ canvas }) => {
     const cv = canvas.getByRole('link', { name: 'CV' });
@@ -49,6 +57,11 @@ export const Mobile: Story = {
     await step('closes the menu again', async () => {
       await userEvent.click(canvas.getByRole('button', { name: 'Close menu' }));
       await expect(canvas.getByRole('link', { name: 'Work', hidden: true })).not.toBeVisible();
+    });
+    await step('navigates when a link is chosen', async () => {
+      await userEvent.click(canvas.getByRole('button', { name: 'Open menu' }));
+      await userEvent.click(canvas.getByRole('link', { name: 'Work' }));
+      await expect(canvas.getByTestId('navigated-to')).toHaveTextContent('/work');
     });
   }
 };

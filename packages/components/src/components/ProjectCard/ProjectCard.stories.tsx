@@ -36,3 +36,17 @@ export const WithCode: Story = {
     await expect(canvas.getByRole('link', { name: 'Code' })).toHaveAttribute('href', args.codeUrl);
   }
 };
+
+const linkAt = (element: HTMLElement) => {
+  const { x, y, width, height } = element.getBoundingClientRect();
+  return document.elementFromPoint(x + width / 2, y + height / 2)?.closest('a');
+};
+
+export const WholeCardLinks: Story = {
+  args: { codeUrl: 'https://github.com/example/acme' },
+  play: async ({ canvas, args }) => {
+    await expect(linkAt(canvas.getByRole('heading', { name: args.title }))).toBe(canvas.getByRole('link', { name: 'Learn more' }));
+    await expect(linkAt(canvas.getByText(args.headline))).toBe(canvas.getByRole('link', { name: 'Learn more' }));
+    await expect(linkAt(canvas.getByRole('link', { name: 'Code' }))).toBe(canvas.getByRole('link', { name: 'Code' }));
+  }
+};

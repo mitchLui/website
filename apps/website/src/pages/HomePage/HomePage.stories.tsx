@@ -17,6 +17,7 @@ export const Default: Story = {
     await expect(canvas.getByText(/Born and raised in Hong Kong, now based in London\. I'm a Senior Software Engineer on/)).toBeVisible();
     await expect(canvas.getByRole('link', { name: 'Wise\'s' })).toHaveAttribute('href', 'https://www.wise.com');
     await expect(canvas.getByRole('heading', { name: 'Recent work' })).toBeVisible();
+    await expect(canvas.getByText('At Wise')).toBeVisible();
     featuredProjects.forEach(([, project]) =>
       expect(canvas.getByRole('heading', { name: project.title })).toBeVisible()
     );

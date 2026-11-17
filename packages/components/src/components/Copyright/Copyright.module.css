@@ -1,7 +1,6 @@
-.copyright{
-    position: relative;
-    font-size: 0.75rem;
-    color: var(--color-muted);
-    text-align: center;
+.copyright {
+  position: relative;
+  font-size: var(--font-size-caption);
+  color: var(--color-text-secondary);
+  text-align: center;
 }
-

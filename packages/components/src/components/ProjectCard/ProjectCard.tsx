@@ -24,7 +24,7 @@ export const ProjectCard = ({ title, headline, href, image, highlights = [], cod
         </ul>}
     </div>
     <footer>
-      <Button as="a" to={href}>Learn more</Button>
-      {codeUrl && <Button as="a" to={codeUrl} target={'_blank'}>Code</Button>}
+      <Button as="a" variant="secondary" className={styles.cardLink} to={href}>Learn more</Button>
+      {codeUrl && <Button as="a" variant="tertiary" className={styles.aboveCardLink} to={codeUrl} target={'_blank'}>Code</Button>}
     </footer>
   </article>;
