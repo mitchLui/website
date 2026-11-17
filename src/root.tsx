@@ -3,7 +3,7 @@ import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
 import { NavBar } from './components/NavBar/NavBar';
 import { Container } from './layouts/Container/Container';
 import './index.css';
-import './App.scss';
+import './App.css';
 
 export const Layout = ({ children }: PropsWithChildren) =>
   <html lang="en">
@@ -18,7 +18,7 @@ export const Layout = ({ children }: PropsWithChildren) =>
       <Links />
     </head>
     <body>
-      <div className={'App'}>{children}</div>
+      {children}
       <ScrollRestoration />
       <Scripts />
     </body>

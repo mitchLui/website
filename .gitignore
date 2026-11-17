@@ -40,3 +40,6 @@ next-env.d.ts
 
 # react router
 /.react-router
+
+# vitest
+/.vitest

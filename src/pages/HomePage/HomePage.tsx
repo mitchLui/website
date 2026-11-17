@@ -7,7 +7,7 @@ import { companies } from '../../data/companies';
 
 export const HomePage = () => {
   return (
-    <div className={'fade-in'}>
+    <div>
       <div style={{ marginBottom: '64px' }}>
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
           <Intro/>

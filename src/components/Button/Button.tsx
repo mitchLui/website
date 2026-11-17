@@ -1,7 +1,7 @@
 import { Link, LinkProps } from 'react-router';
 import { Arrow } from '../Arrow/Arrow';
 import { ButtonHTMLAttributes, ReactElement, ReactNode } from 'react';
-import './Button.scss';
+import styles from './Button.module.css';
 import clsx from 'clsx';
 
 type AnchorProps = {
@@ -20,10 +20,10 @@ type Props = {
 
 export const Button = ({ as = 'button', className, ...props }: Props): ReactElement => {
   if (as === 'a') {
-    return <Link className={clsx('button', className)} {...(props as AnchorProps)}>{props.children}</Link>;
+    return <Link className={clsx(styles.button, className)} {...(props as AnchorProps)}>{props.children}</Link>;
   }
-  return <button className={clsx('button', className)} {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}>{props.children}</button>;
+  return <button className={clsx(styles.button, className)} {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}>{props.children}</button>;
 };
 
 export const BackButton = ({ to, text }: { to: string, text: string }): ReactElement =>
-  <Link to={to} className={'modal'}><Arrow text={text}/></Link>;
+  <Link to={to} className={styles.modal}><Arrow text={text}/></Link>;

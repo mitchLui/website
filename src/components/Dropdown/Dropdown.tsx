@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import './Dropdown.scss';
+import styles from './Dropdown.module.css';
 
 type DropdownProps = {
   className: string;
@@ -13,8 +13,8 @@ type DropdownProps = {
 
 export const Dropdown = ({ className, onChange, label, options }: DropdownProps): ReactElement =>
   <>
-    <label className={'dropdown-label'} htmlFor={className}>{label}</label>
-    <select className={'dropdown-menu'} onChange={(e) => onChange(e.target.value)} name={'Sort by:'} id={className} defaultValue={'none'}>
+    <label className={styles.dropdownLabel} htmlFor={className}>{label}</label>
+    <select className={styles.dropdownMenu} onChange={(e) => onChange(e.target.value)} name={'Sort by:'} id={className} defaultValue={'none'}>
       {Object.keys(options).map((key) =>
         <optgroup key={key} label={key}>
           {options[key].map((option) =>
