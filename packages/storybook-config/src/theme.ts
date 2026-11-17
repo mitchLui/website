@@ -4,7 +4,7 @@ const brand = {
   brandTitle: '<img src="avatar.png" alt="" style="height:1.75rem;width:1.75rem;border-radius:50%;vertical-align:middle;margin-right:0.5rem"/>mitch<b>Lui</b>',
   brandUrl: 'https://mitchlui.dev',
   brandTarget: '_blank',
-  fontBase: '\'Inter Variable\', Inter, -apple-system, BlinkMacSystemFont, sans-serif',
+  fontBase: '\'Familjen Grotesk Variable\', \'Familjen Grotesk\', -apple-system, BlinkMacSystemFont, sans-serif',
   appBorderRadius: 16,
   inputBorderRadius: 16
 };

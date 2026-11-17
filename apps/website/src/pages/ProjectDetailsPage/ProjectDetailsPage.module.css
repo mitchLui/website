@@ -117,7 +117,7 @@
 
 .role h3 {
   margin: 0;
-  font-size: var(--font-size-title-2);
+  font-size: var(--font-size-title-3);
   letter-spacing: var(--tracking-title);
   font-weight: var(--font-weight-bold);
 }

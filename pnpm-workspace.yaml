@@ -15,7 +15,7 @@ catalog:
   '@vitest/browser': ^5.1.0
   '@vitest/browser-playwright': ^5.1.0
   '@vitest/coverage-v8': ^5.1.0
-  '@fontsource-variable/inter': ^5.2.8
+  '@fontsource-variable/familjen-grotesk': ^5.2.8
   clsx: ^2.1.1
   isbot: ^5
   motion: ^14.14.0

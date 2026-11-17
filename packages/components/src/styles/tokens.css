@@ -53,12 +53,21 @@
   --color-tag-blue: light-dark(#2B5C8A, #8DB8E0);
   --color-tag-orange: light-dark(#9A4A12, #F0A86A);
 
-  --font-sans: 'Inter Variable', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --color-line-wise: var(--color-brand);
+  --color-line-education: var(--color-tag-blue);
+  --color-line-early: var(--color-tag-orange);
+  --color-station-fill: light-dark(var(--neutral-0), var(--neutral-paper));
+  --color-station-ring: light-dark(var(--neutral-ink), var(--neutral-750));
+  --color-stamp: var(--color-brand);
+  --color-on-stamp: var(--color-on-brand);
+
+  --font-sans: 'Familjen Grotesk Variable', 'Familjen Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 
-  --font-size-display: clamp(2.5rem, 1.75rem + 3vw, 4rem);
-  --font-size-title-1: clamp(1.75rem, 1.45rem + 1.2vw, 2.25rem);
-  --font-size-title-2: 1.375rem;
+  --font-size-display: clamp(2.875rem, 1.95rem + 3.9vw, 5.125rem);
+  --font-size-title-1: clamp(1.8125rem, 1.55rem + 1.1vw, 2.375rem);
+  --font-size-title-2: clamp(1.6875rem, 1.45rem + 0.95vw, 2.125rem);
+  --font-size-title-3: clamp(1.375rem, 1.24rem + 0.55vw, 1.6875rem);
   --font-size-lead: 1.25rem;
   --font-size-body: 1.0625rem;
   --font-size-small: 0.9375rem;
@@ -69,8 +78,8 @@
   --line-height-snug: 1.3;
   --line-height-body: 1.5;
 
-  --tracking-display: -0.035em;
-  --tracking-title: -0.02em;
+  --tracking-display: -0.03em;
+  --tracking-title: -0.025em;
   --tracking-body: -0.006em;
   --tracking-label: 0.01em;
 
@@ -78,7 +87,7 @@
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
-  --font-weight-heavy: 760;
+  --font-weight-heavy: 700;
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;

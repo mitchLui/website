@@ -15,7 +15,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@fontsource-variable/inter": "catalog:",
+    "@fontsource-variable/familjen-grotesk": "catalog:",
     "clsx": "catalog:"
   },
   "peerDependencies": {

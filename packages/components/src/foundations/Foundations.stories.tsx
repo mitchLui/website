@@ -15,7 +15,8 @@ type Story = StoryObj<typeof meta>;
 const colours = [
   'bg', 'surface', 'surface-hover', 'surface-sunken', 'text', 'text-secondary', 'border', 'border-strong',
   'brand', 'brand-hover', 'brand-pressed', 'on-brand', 'brand-text', 'brand-tint', 'brand-tint-hover', 'on-brand-tint',
-  'tag-green', 'tag-olive', 'tag-blue', 'tag-orange'
+  'tag-green', 'tag-olive', 'tag-blue', 'tag-orange',
+  'line-wise', 'line-education', 'line-early', 'station-fill', 'station-ring', 'stamp', 'on-stamp'
 ];
 
 type Pair = { text: string; on: string; tint?: boolean; min: number };
@@ -31,6 +32,9 @@ const pairs: Pair[] = [
   { text: 'on-brand-tint', on: 'brand-tint-hover', min: 4.5 },
   { text: 'brand-text', on: 'brand-tint', min: 4.5 },
   { text: 'brand', on: 'bg', min: 3 },
+  ...['line-wise', 'line-education', 'line-early'].map(text => ({ text, on: 'bg', min: 3 })),
+  { text: 'station-ring', on: 'station-fill', min: 3 },
+  { text: 'on-stamp', on: 'stamp', min: 4.5 },
   ...['tag-green', 'tag-olive', 'tag-blue', 'tag-orange'].flatMap(text => ['bg', 'surface'].map(on => ({ text, on, tint: true, min: 4.5 })))
 ];
 
@@ -114,6 +118,7 @@ const typeScale = [
   ['display', 'heavy', 'display', 'tight'],
   ['title-1', 'bold', 'title', 'tight'],
   ['title-2', 'bold', 'title', 'snug'],
+  ['title-3', 'bold', 'title', 'snug'],
   ['lead', 'regular', 'body', 'body'],
   ['body', 'regular', 'body', 'body'],
   ['small', 'regular', 'body', 'body'],
@@ -146,8 +151,8 @@ export const Type: Story = {
     </div>,
   play: async ({ canvas }) => {
     await document.fonts.ready;
-    await expect(getComputedStyle(canvas.getByText(/^body ·/)).fontFamily).toMatch(/^"Inter Variable"/);
-    await expect(document.fonts.check('16px "Inter Variable"')).toBe(true);
+    await expect(getComputedStyle(canvas.getByText(/^body ·/)).fontFamily).toMatch(/^"Familjen Grotesk Variable"/);
+    await expect(document.fonts.check('16px "Familjen Grotesk Variable"')).toBe(true);
     const sizes = typeScale.map(([size]) => parseFloat(getComputedStyle(canvas.getByText(new RegExp(`^${size} ·`))).fontSize));
     await expect(sizes).toEqual([...sizes].sort((a, b) => b - a));
   }

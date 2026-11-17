@@ -17,7 +17,7 @@
 
 .card h2 {
   margin: var(--space-5) var(--space-2) var(--space-3);
-  font-size: var(--font-size-title-2);
+  font-size: var(--font-size-title-3);
   line-height: var(--line-height-snug);
   letter-spacing: var(--tracking-title);
   font-weight: var(--font-weight-bold);
