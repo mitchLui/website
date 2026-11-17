@@ -1,6 +1,9 @@
 {
   "$schema": "https://turborepo.com/schema.json",
   "tasks": {
+    "transit": {
+      "dependsOn": ["^transit"]
+    },
     "dev": {
       "cache": false,
       "persistent": true
@@ -10,16 +13,19 @@
       "persistent": true
     },
     "build": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["^build", "^transit"],
       "outputs": ["build/**"]
     },
     "build-storybook": {
+      "dependsOn": ["^transit"],
       "outputs": ["storybook-static/**"]
     },
     "lint": {},
-    "typecheck": {},
+    "typecheck": {
+      "dependsOn": ["^transit"]
+    },
     "test": {
-      "dependsOn": ["build"]
+      "dependsOn": ["build", "^transit"]
     }
   }
 }
