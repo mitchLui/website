@@ -4,9 +4,9 @@ import { Button } from '../../components/Button/Button';
 export const NotFoundPage = () => {
   return (
     <div className={styles.headerText}>
-      <h1>404 Not Found!</h1>
-      <h2>You might want to go back...</h2>
-      <Button as="a" style={{ marginBottom: '1rem' }} to={'/'}>Go back</Button>
+      <h1>Page not found</h1>
+      <h2>This page doesn&apos;t exist or has moved.</h2>
+      <Button as="a" style={{ marginBottom: '1rem' }} to={'/'}>Go home</Button>
     </div>
   );
 };

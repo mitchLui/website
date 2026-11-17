@@ -1,33 +1,31 @@
 import { Button } from '../Button/Button';
 import { ReactElement } from 'react';
+import { Project } from '../../data/projects';
+import { rolesFor } from '../../data/roles';
+import { ThumbnailPicture } from '../Thumbnail/Thumbnail';
 import styles from './ProjectCard.module.css';
 
 type ProjectCardProps = {
-  key: number | string;
-  name: string;
-  title: string;
-  thumbnail: string;
-  alt: string;
-  headline: string;
-  gitUrl?: string;
+  id: string;
+  project: Project;
 };
 
-export const ProjectCard = ({ key, name, title, thumbnail, alt, headline, gitUrl }: ProjectCardProps): ReactElement =>
-  <article key={key} className={styles.card}>
-    <picture className={styles.thumbnail}>
-      <source srcSet={'/project-assets/webp/' + thumbnail + '.webp'} type="image/webp" />
-      <img
-        src={'/project-assets/png/' + thumbnail + '.png'}
-        alt={alt}
-      />
-    </picture>
-    <h2>{title}</h2>
-    <div className={styles.cardContent}>{headline}</div>
+export const ProjectCard = ({ id, project }: ProjectCardProps): ReactElement =>
+  <article className={styles.card}>
+    <ThumbnailPicture className={styles.thumbnail} name={project.thumbnail} alt={project.alt}/>
+    <h2>{project.title}</h2>
+    <div className={styles.cardContent}>
+      {project.headline}
+      {project.kind === 'professional' &&
+        <ul className={styles.impact}>
+          {rolesFor(id)[0].impact.map(item => <li key={item}>{item}</li>)}
+        </ul>}
+    </div>
     <footer>
-      <Button as="a" to={'/projects/' + name}>Learn more</Button>
+      <Button as="a" to={'/work/' + id}>Learn more</Button>
       {
-        gitUrl &&
-                <Button as="a" to={gitUrl} target={'_blank'}>Code</Button>
+        project.git_url &&
+                <Button as="a" to={project.git_url} target={'_blank'}>Code</Button>
       }
     </footer>
   </article>;

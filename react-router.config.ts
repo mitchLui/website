@@ -1,5 +1,4 @@
 import type { Config } from '@react-router/dev/config';
-import { companies } from './src/data/companies';
 import { projects } from './src/data/projects';
 import { redirects } from './src/data/redirects';
 
@@ -9,10 +8,10 @@ export default {
   ssr: false,
   prerender: [
     '/',
+    '/work',
     '/sitemap',
     '/not-found',
     ...Object.keys(redirects),
-    ...Object.keys(companies).map(company => `/${company}`),
-    ...Object.entries(projects).map(([id, project]) => `/${project.company}/projects/${id}`)
+    ...Object.keys(projects).map(id => `/work/${id}`)
   ]
 } satisfies Config;

@@ -7,6 +7,6 @@ function getCurrentYear(): number {
 
 export const Copyright = () =>
   <section className={styles.copyright}>
-    Copyright © {getCurrentYear()} Mitch Lui. All rights reserved.
+    © {getCurrentYear()} Mitch Lui
     <p><Link to={'/sitemap'}>Sitemap</Link></p>
   </section>;

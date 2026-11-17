@@ -1,9 +1,9 @@
 import { motion } from 'motion/react';
 import { Intro } from '../../components/Intro/Intro';
-// import { Projects } from '../../components/Projects/Projects';
-// import { projects } from '../../data/projects';
-import { Companies } from '../../components/Companies/Companies';
-import { companies } from '../../data/companies';
+import { FeaturedProject } from '../../components/FeaturedProject/FeaturedProject';
+import { Button } from '../../components/Button/Button';
+import { ContainerHeader } from '../../layouts/Container/Container';
+import { featuredProjects } from '../../data/projects';
 
 export const HomePage = () => {
   return (
@@ -11,8 +11,11 @@ export const HomePage = () => {
       <div style={{ marginBottom: '64px' }}>
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
           <Intro/>
-          {/* <Projects projects={projects} /> */}
-          <Companies companies={companies} />
+          <section>
+            <ContainerHeader><h2>Recent work</h2></ContainerHeader>
+            {featuredProjects.map(([id, project]) => <FeaturedProject key={id} id={id} project={project}/>)}
+            <Button as="a" to="/work">See all work</Button>
+          </section>
         </motion.div>
       </div>
     </div>
