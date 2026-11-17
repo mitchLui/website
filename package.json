@@ -11,7 +11,7 @@
     "prepare": "husky",
     "storybook": "STORYBOOK=true storybook dev -p 6006",
     "build-storybook": "STORYBOOK=true storybook build",
-    "test": "react-router build && vitest run --project unit --project node",
+    "test": "react-router build && vitest run --project node --project storybook",
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
@@ -46,8 +46,7 @@
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.73.0",
     "vite": "^8.3.8",
-    "vitest": "^5.1.0",
-    "vitest-browser-react": "^2.3.0"
+    "vitest": "^5.1.0"
   },
   "nano-staged": {
     "*.{ts,tsx}": "eslint --fix"

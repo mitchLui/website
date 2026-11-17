@@ -31,13 +31,6 @@ export default defineConfig({
     projects: [{
       extends: true,
       test: {
-        name: 'unit',
-        include: ['src/**/*.test.tsx'],
-        browser
-      }
-    }, {
-      extends: true,
-      test: {
         name: 'node',
         include: ['src/**/*.test.ts'],
         environment: 'node'
