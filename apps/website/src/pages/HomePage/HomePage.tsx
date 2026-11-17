@@ -49,10 +49,10 @@ export const HomePage = () =>
             {educationTiles.map(tile => <li key={tile.href + tile.title}><ProjectTile {...tile}/></li>)}
           </ul>
         </Station>
-        {internships.map(([id, project]) => {
+        {internships.map(([id, project], index) => {
           const [role] = rolesFor(id);
           return (
-            <Station key={id} line="early">
+            <Station key={id} line={index === 0 ? 'education' : 'early'} continuesAs="early">
               <div className={styles.stop}>
                 <p className={styles.period}>{formatPeriod(project.started, project.ended)}</p>
                 <h3 className={styles.title}><Link to={`/work/${id}`} className={styles.titleLink}>Intern · {project.title.split(' – ')[0]}</Link></h3>
