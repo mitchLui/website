@@ -54,26 +54,10 @@ type NavBarLinksProps = {
 export const NavBarLinks = ({ onClick }: NavBarLinksProps): ReactElement =>
   <nav>
     <ul>
-      <Link to={'/'}>
-        <li onClick={onClick}>
-          <span className={styles.navText}>Home</span>
-        </li>
-      </Link>
-      <Link to={'/work'}>
-        <li onClick={onClick}>
-          <span className={styles.navText}>Work</span>
-        </li>
-      </Link>
-      <Link to={'/cv.pdf'} target={'_blank'} rel={'noreferrer'}>
-        <li onClick={onClick}>
-          <span className={styles.navText}>CV</span>
-        </li>
-      </Link>
-      <Link to={'/linkedin'} onClick={onClick}>
-        <li>
-          <span className={styles.navText}>LinkedIn</span>
-        </li>
-      </Link>
+      <li><Link to={'/'} onClick={onClick} className={styles.navText}>Home</Link></li>
+      <li><Link to={'/work'} onClick={onClick} className={styles.navText}>Work</Link></li>
+      <li><Link to={'/cv.pdf'} onClick={onClick} className={styles.navText} target={'_blank'} rel={'noreferrer'}>CV</Link></li>
+      <li><Link to={'/linkedin'} onClick={onClick} className={styles.navText}>LinkedIn</Link></li>
     </ul>
   </nav>;
 

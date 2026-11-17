@@ -81,15 +81,15 @@
   list-style: none;
 }
 
-.mobile nav ul a:nth-child(1) li {
+.mobile nav li:nth-child(1) {
   animation-delay: 0s;
 }
 
-.mobile nav ul a:nth-child(2) li {
+.mobile nav li:nth-child(2) {
   animation-delay: 0.08s;
 }
 
-.mobile nav ul a:nth-child(3) li {
+.mobile nav li:nth-child(3) {
   animation-delay: 0.13s;
 }
 
@@ -99,13 +99,16 @@
 }
 
 .mobile nav li {
-  cursor: pointer;
   display: flex;
-  padding: 0.75rem;
   border-bottom: 0.06rem solid #777777;
   opacity: 0;
   animation: fadein 0.25s;
   animation-fill-mode: forwards;
+}
+
+.mobile nav li a {
+  flex: 1;
+  padding: 0.75rem;
 }
 
 .mainnav {
