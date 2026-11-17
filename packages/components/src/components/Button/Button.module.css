@@ -18,6 +18,12 @@
     transform var(--duration-fast) var(--ease-standard);
 }
 
+/* Labels are mostly lowercase, so centre icons on the x-height, not the cap height. */
+.button > svg {
+  flex: none;
+  translate: 0 0.075em;
+}
+
 .button:active {
   transform: scale(0.97);
 }

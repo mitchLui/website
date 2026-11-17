@@ -60,3 +60,27 @@ export const Back: Story = {
     await expect(canvas.getByRole('link', { name: 'All work' })).toHaveAttribute('href', '/work');
   }
 };
+
+const xHeightCentre = (element: HTMLElement) => {
+  const style = getComputedStyle(element);
+  const context = document.createElement('canvas').getContext('2d')!;
+  context.font = `${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
+  const metrics = context.measureText('x');
+  const range = document.createRange();
+  range.selectNodeContents([...element.childNodes].find(node => node.nodeType === Node.TEXT_NODE)!);
+  const line = range.getBoundingClientRect();
+  const baseline = line.top + (line.height - metrics.fontBoundingBoxAscent - metrics.fontBoundingBoxDescent) / 2 + metrics.fontBoundingBoxAscent;
+  return baseline - metrics.actualBoundingBoxAscent / 2;
+};
+
+export const WithIcon: Story = {
+  args: { as: 'a', to: '/work', variant: 'outline', children: 'Read more' },
+  render: args =>
+    <Button {...args}>Read more<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></Button>,
+  play: async ({ canvas }) => {
+    await document.fonts.ready;
+    const link = canvas.getByRole('link', { name: 'Read more' });
+    const icon = link.querySelector('svg')!.getBoundingClientRect();
+    await expect(Math.abs(icon.top + icon.height / 2 - xHeightCentre(link))).toBeLessThan(0.5);
+  }
+};
