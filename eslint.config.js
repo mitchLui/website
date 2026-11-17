@@ -3,7 +3,7 @@ import eslintReact from '@eslint-react/eslint-plugin';
 import storybook from 'eslint-plugin-storybook';
 
 export default [
-  { ignores: ['build', 'storybook-static', 'coverage', '.react-router'] },
+  { ignores: ['**/build', '**/storybook-static', '**/coverage', '**/.react-router', '**/.turbo'] },
   ...neostandard({ ts: true }),
   {
     files: ['**/*.{ts,tsx}'],

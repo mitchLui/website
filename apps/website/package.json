@@ -1,0 +1,56 @@
+{
+  "name": "@mitchlui/website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "react-router dev",
+    "build": "react-router build",
+    "preview": "vite preview --outDir build/client",
+    "storybook": "STORYBOOK=true storybook dev -p 6006 --no-open",
+    "build-storybook": "STORYBOOK=true storybook build",
+    "lint": "eslint .",
+    "typecheck": "react-router typegen && tsc",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@mitchlui/components": "workspace:*",
+    "@react-router/node": "catalog:",
+    "clsx": "catalog:",
+    "isbot": "catalog:",
+    "motion": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-router": "catalog:"
+  },
+  "devDependencies": {
+    "@mitchlui/storybook-config": "workspace:*",
+    "@react-router/dev": "catalog:",
+    "@storybook/addon-a11y": "catalog:",
+    "@storybook/addon-vitest": "catalog:",
+    "@storybook/react-vite": "catalog:",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "@vitejs/plugin-react": "catalog:",
+    "@vitest/browser": "catalog:",
+    "@vitest/browser-playwright": "catalog:",
+    "@vitest/coverage-v8": "catalog:",
+    "playwright": "catalog:",
+    "storybook": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vitest": "catalog:"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

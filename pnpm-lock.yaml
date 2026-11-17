@@ -4,68 +4,85 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+catalogs:
+  default:
+    '@react-router/dev':
+      specifier: ^7.18.5
+      version: 7.18.5
+    '@react-router/node':
+      specifier: ^7.18.5
+      version: 7.18.5
+    '@storybook/addon-a11y':
+      specifier: ^10.6.7
+      version: 10.6.7
+    '@storybook/addon-vitest':
+      specifier: ^10.6.7
+      version: 10.6.7
+    '@storybook/react-vite':
+      specifier: ^10.6.7
+      version: 10.6.7
+    '@types/node':
+      specifier: ^24.19.2
+      version: 24.19.2
+    '@types/react':
+      specifier: ^19.3.0
+      version: 19.3.0
+    '@types/react-dom':
+      specifier: ^19.3.0
+      version: 19.3.0
+    '@vitejs/plugin-react':
+      specifier: ^6.3.0
+      version: 6.3.0
+    '@vitest/browser':
+      specifier: ^5.1.0
+      version: 5.1.0
+    '@vitest/browser-playwright':
+      specifier: ^5.1.0
+      version: 5.1.0
+    '@vitest/coverage-v8':
+      specifier: ^5.1.0
+      version: 5.1.0
+    clsx:
+      specifier: ^2.1.1
+      version: 2.1.1
+    isbot:
+      specifier: ^5
+      version: 5.2.3
+    motion:
+      specifier: ^14.14.0
+      version: 14.14.0
+    playwright:
+      specifier: ^1.65.1
+      version: 1.65.1
+    react:
+      specifier: ^19.3.1
+      version: 19.3.1
+    react-dom:
+      specifier: ^19.3.1
+      version: 19.3.1
+    react-router:
+      specifier: ^7.18.5
+      version: 7.18.5
+    storybook:
+      specifier: ^10.6.7
+      version: 10.6.7
+    typescript:
+      specifier: ~5.9.3
+      version: 5.9.3
+    vite:
+      specifier: ^8.3.8
+      version: 8.3.8
+    vitest:
+      specifier: ^5.1.0
+      version: 5.1.0
+
 importers:
 
   .:
-    dependencies:
-      '@react-router/node':
-        specifier: ^7.18.5
-        version: 7.18.5(react-router@7.18.5(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(typescript@5.9.3)
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
-      isbot:
-        specifier: ^5
-        version: 5.2.3
-      motion:
-        specifier: ^14.14.0
-        version: 14.14.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      react:
-        specifier: ^19.3.1
-        version: 19.3.1
-      react-dom:
-        specifier: ^19.3.1
-        version: 19.3.1(react@19.3.1)
-      react-router:
-        specifier: ^7.18.5
-        version: 7.18.5(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
     devDependencies:
       '@eslint-react/eslint-plugin':
         specifier: ^5.30.3
         version: 5.30.3(eslint@10.15.0)(typescript@5.9.3)
-      '@react-router/dev':
-        specifier: ^7.18.5
-        version: 7.18.5(@types/node@24.19.2)(lightningcss@1.33.0)(react-router@7.18.5(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(sass@1.108.2)(typescript@5.9.3)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(sass@1.108.2))
-      '@storybook/addon-a11y':
-        specifier: ^10.6.7
-        version: 10.6.7(storybook@10.6.7(@types/react@19.3.0)(prettier@3.10.1)(react@19.3.1))
-      '@storybook/addon-vitest':
-        specifier: ^10.6.7
-        version: 10.6.7(@vitest/browser-playwright@5.1.0)(@vitest/browser@5.1.0)(react@19.3.1)(storybook@10.6.7(@types/react@19.3.0)(prettier@3.10.1)(react@19.3.1))(vitest@5.1.0)
-      '@storybook/react-vite':
-        specifier: ^10.6.7
-        version: 10.6.7(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rollup@4.68.4)(storybook@10.6.7(@types/react@19.3.0)(prettier@3.10.1)(react@19.3.1))(typescript@5.9.3)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(sass@1.108.2))
-      '@types/node':
-        specifier: ^24.19.2
-        version: 24.19.2
-      '@types/react':
-        specifier: ^19.3.0
-        version: 19.3.0
-      '@types/react-dom':
-        specifier: ^19.3.0
-        version: 19.3.0(@types/react@19.3.0)
-      '@vitejs/plugin-react':
-        specifier: ^6.3.0
-        version: 6.3.0(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(sass@1.108.2))
-      '@vitest/browser':
-        specifier: ^5.1.0
-        version: 5.1.0(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(sass@1.108.2))(vitest@5.1.0)
-      '@vitest/browser-playwright':
-        specifier: ^5.1.0
-        version: 5.1.0(playwright@1.65.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(sass@1.108.2))(vitest@5.1.0)
-      '@vitest/coverage-v8':
-        specifier: ^5.1.0
-        version: 5.1.0(@vitest/browser@5.1.0)(vitest@5.1.0)
       eslint:
         specifier: ^10.15.0
         version: 10.15.0
@@ -81,24 +98,176 @@ importers:
       neostandard:
         specifier: ^0.14.1
         version: 0.14.1(eslint@10.15.0)(typescript@5.9.3)
-      playwright:
-        specifier: ^1.65.1
-        version: 1.65.1
-      storybook:
-        specifier: ^10.6.7
-        version: 10.6.7(@types/react@19.3.0)(prettier@3.10.1)(react@19.3.1)
+      turbo:
+        specifier: ^2.11.11
+        version: 2.11.11
       typescript:
-        specifier: ~5.9.3
+        specifier: 'catalog:'
         version: 5.9.3
       typescript-eslint:
         specifier: ^8.73.0
         version: 8.73.0(eslint@10.15.0)(typescript@5.9.3)
+
+  apps/website:
+    dependencies:
+      '@mitchlui/components':
+        specifier: workspace:*
+        version: link:../../packages/components
+      '@react-router/node':
+        specifier: 'catalog:'
+        version: 7.18.5(react-router@7.18.5(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(typescript@5.9.3)
+      clsx:
+        specifier: 'catalog:'
+        version: 2.1.1
+      isbot:
+        specifier: 'catalog:'
+        version: 5.2.3
+      motion:
+        specifier: 'catalog:'
+        version: 14.14.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+      react:
+        specifier: 'catalog:'
+        version: 19.3.1
+      react-dom:
+        specifier: 'catalog:'
+        version: 19.3.1(react@19.3.1)
+      react-router:
+        specifier: 'catalog:'
+        version: 7.18.5(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+    devDependencies:
+      '@mitchlui/storybook-config':
+        specifier: workspace:*
+        version: link:../../packages/storybook-config
+      '@react-router/dev':
+        specifier: 'catalog:'
+        version: 7.18.5(@types/node@24.19.2)(lightningcss@1.33.0)(react-router@7.18.5(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(sass@1.108.2)(typescript@5.9.3)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(sass@1.108.2))
+      '@storybook/addon-a11y':
+        specifier: 'catalog:'
+        version: 10.6.7(storybook@10.6.7(@types/react@19.3.0)(prettier@3.10.1)(react@19.3.1))
+      '@storybook/addon-vitest':
+        specifier: 'catalog:'
+        version: 10.6.7(@vitest/browser-playwright@5.1.0)(@vitest/browser@5.1.0)(react@19.3.1)(storybook@10.6.7(@types/react@19.3.0)(prettier@3.10.1)(react@19.3.1))(vitest@5.1.0)
+      '@storybook/react-vite':
+        specifier: 'catalog:'
+        version: 10.6.7(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rollup@4.68.4)(storybook@10.6.7(@types/react@19.3.0)(prettier@3.10.1)(react@19.3.1))(typescript@5.9.3)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(sass@1.108.2))
+      '@types/node':
+        specifier: 'catalog:'
+        version: 24.19.2
+      '@types/react':
+        specifier: 'catalog:'
+        version: 19.3.0
+      '@types/react-dom':
+        specifier: 'catalog:'
+        version: 19.3.0(@types/react@19.3.0)
+      '@vitejs/plugin-react':
+        specifier: 'catalog:'
+        version: 6.3.0(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(sass@1.108.2))
+      '@vitest/browser':
+        specifier: 'catalog:'
+        version: 5.1.0(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(sass@1.108.2))(vitest@5.1.0)
+      '@vitest/browser-playwright':
+        specifier: 'catalog:'
+        version: 5.1.0(playwright@1.65.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(sass@1.108.2))(vitest@5.1.0)
+      '@vitest/coverage-v8':
+        specifier: 'catalog:'
+        version: 5.1.0(@vitest/browser@5.1.0)(vitest@5.1.0)
+      playwright:
+        specifier: 'catalog:'
+        version: 1.65.1
+      storybook:
+        specifier: 'catalog:'
+        version: 10.6.7(@types/react@19.3.0)(prettier@3.10.1)(react@19.3.1)
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
       vite:
-        specifier: ^8.3.8
+        specifier: 'catalog:'
         version: 8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(sass@1.108.2)
       vitest:
-        specifier: ^5.1.0
+        specifier: 'catalog:'
         version: 5.1.0(@types/node@24.19.2)(@vitest/browser-playwright@5.1.0)(@vitest/coverage-v8@5.1.0)(@vitest/ui@5.1.0)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(sass@1.108.2))
+
+  packages/components:
+    dependencies:
+      clsx:
+        specifier: 'catalog:'
+        version: 2.1.1
+    devDependencies:
+      '@mitchlui/storybook-config':
+        specifier: workspace:*
+        version: link:../storybook-config
+      '@storybook/addon-a11y':
+        specifier: 'catalog:'
+        version: 10.6.7(storybook@10.6.7(@types/react@19.3.0)(prettier@3.10.1)(react@19.3.1))
+      '@storybook/addon-vitest':
+        specifier: 'catalog:'
+        version: 10.6.7(@vitest/browser-playwright@5.1.0)(@vitest/browser@5.1.0)(react@19.3.1)(storybook@10.6.7(@types/react@19.3.0)(prettier@3.10.1)(react@19.3.1))(vitest@5.1.0)
+      '@storybook/react-vite':
+        specifier: 'catalog:'
+        version: 10.6.7(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rollup@4.68.4)(storybook@10.6.7(@types/react@19.3.0)(prettier@3.10.1)(react@19.3.1))(typescript@5.9.3)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(sass@1.108.2))
+      '@types/react':
+        specifier: 'catalog:'
+        version: 19.3.0
+      '@types/react-dom':
+        specifier: 'catalog:'
+        version: 19.3.0(@types/react@19.3.0)
+      '@vitejs/plugin-react':
+        specifier: 'catalog:'
+        version: 6.3.0(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(sass@1.108.2))
+      '@vitest/browser':
+        specifier: 'catalog:'
+        version: 5.1.0(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(sass@1.108.2))(vitest@5.1.0)
+      '@vitest/browser-playwright':
+        specifier: 'catalog:'
+        version: 5.1.0(playwright@1.65.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(sass@1.108.2))(vitest@5.1.0)
+      playwright:
+        specifier: 'catalog:'
+        version: 1.65.1
+      react:
+        specifier: 'catalog:'
+        version: 19.3.1
+      react-dom:
+        specifier: 'catalog:'
+        version: 19.3.1(react@19.3.1)
+      react-router:
+        specifier: 'catalog:'
+        version: 7.18.5(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+      storybook:
+        specifier: 'catalog:'
+        version: 10.6.7(@types/react@19.3.0)(prettier@3.10.1)(react@19.3.1)
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
+      vite:
+        specifier: 'catalog:'
+        version: 8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(sass@1.108.2)
+      vitest:
+        specifier: 'catalog:'
+        version: 5.1.0(@types/node@24.19.2)(@vitest/browser-playwright@5.1.0)(@vitest/coverage-v8@5.1.0)(@vitest/ui@5.1.0)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(sass@1.108.2))
+
+  packages/storybook-config:
+    devDependencies:
+      '@storybook/react-vite':
+        specifier: 'catalog:'
+        version: 10.6.7(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(rollup@4.68.4)(storybook@10.6.7(@types/react@19.3.0)(prettier@3.10.1)(react@19.3.1))(typescript@5.9.3)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(sass@1.108.2))
+      '@types/node':
+        specifier: 'catalog:'
+        version: 24.19.2
+      '@types/react':
+        specifier: 'catalog:'
+        version: 19.3.0
+      react:
+        specifier: 'catalog:'
+        version: 19.3.1
+      react-router:
+        specifier: 'catalog:'
+        version: 7.18.5(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+      storybook:
+        specifier: 'catalog:'
+        version: 10.6.7(@types/react@19.3.0)(prettier@3.10.1)(react@19.3.1)
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
 
 packages:
 
@@ -1280,6 +1449,36 @@ packages:
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
       '@testing-library/dom': '>=7.21.4'
+
+  '@turbo/darwin-64@2.11.11':
+    resolution: {integrity: sha512-HMMeUIEAsmyIbSYn1ySvF/4gGMa0joiTMq4dQDuloIAnOpbtFT3JEiVsYnASdTWDXvplbRbZlqjU1EBeSR9G1A==}
+    cpu: [x64]
+    os: [darwin]
+
+  '@turbo/darwin-arm64@2.11.11':
+    resolution: {integrity: sha512-+8iySNgqYWY6PZYUQzYu6zn0C04z2OEq1vQ6oMGsJ9sxN6wOpg1gzi1AJ5VKDHviWvMUjhqng51hTEQZOuiqYQ==}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@turbo/linux-64@2.11.11':
+    resolution: {integrity: sha512-uImTKFYCFKsoFxjaXeJXlMPv4uU3OIIDjyzoIwYVqOtu9LnCZ/5/fzu/WP6+G9YfwGAPRplTHkKFfcI5t97RGw==}
+    cpu: [x64]
+    os: [android, linux]
+
+  '@turbo/linux-arm64@2.11.11':
+    resolution: {integrity: sha512-Y7xffSVfyyYRGzNy6PLdrFL4xXN6iTuR3W0SyJvH/yd3d4defA6dansZwJpPDVnIpD8a2Qn256DwY/Qin4Ip4g==}
+    cpu: [arm64]
+    os: [android, linux]
+
+  '@turbo/windows-64@2.11.11':
+    resolution: {integrity: sha512-e2WqNtkPGo3QDwNNwwBo89Dx3PtSJ9Wp9QuRNzn80rrRnSHB+1mfBMZTpdHjA8/G/sG9rl76TdWdpgVsimjRdg==}
+    cpu: [x64]
+    os: [win32]
+
+  '@turbo/windows-arm64@2.11.11':
+    resolution: {integrity: sha512-LURivfmgv34Osm8NR1gZGx4vdlux9KAgRM+FoooXNG0838ff0+akWZ76iPSke0NS2rsf7Z4Gw+YSaygzNTZuRA==}
+    cpu: [arm64]
+    os: [win32]
 
   '@tybys/wasm-util@0.10.5':
     resolution: {integrity: sha512-dOGOPxlaNV+G046mZzN+9C0dAcQZeSKcXiVaM0TYy/LM4ttTmgSBDxYfovcYI8Em3+eAbiAYpvWLOv8+ZVRJKA==}
@@ -2562,6 +2761,10 @@ packages:
   tslib@2.9.1:
     resolution: {integrity: sha512-a4Ux9VKuIMHsOS7ENbEq6hK2ZGYIT27Rtl0E4eD9KqwxhKiQeMZE/9xb3IdYwWaSOyIBQLExhQgXDTYoiCxnWA==}
 
+  turbo@2.11.11:
+    resolution: {integrity: sha512-AI4UJbUE/2cVZdoXJ4PODc8qvrjhQQX9Fa93eKGOI6Ims/w7+kUIb9T1jhlgSnZcf+gtUruci/ohSwqtNNC5Yw==}
+    hasBin: true
+
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
     engines: {node: '>= 0.8.0'}
@@ -3822,6 +4025,24 @@ snapshots:
   '@testing-library/user-event@14.6.12(@testing-library/dom@10.4.2)':
     dependencies:
       '@testing-library/dom': 10.4.2
+
+  '@turbo/darwin-64@2.11.11':
+    optional: true
+
+  '@turbo/darwin-arm64@2.11.11':
+    optional: true
+
+  '@turbo/linux-64@2.11.11':
+    optional: true
+
+  '@turbo/linux-arm64@2.11.11':
+    optional: true
+
+  '@turbo/windows-64@2.11.11':
+    optional: true
+
+  '@turbo/windows-arm64@2.11.11':
+    optional: true
 
   '@tybys/wasm-util@0.10.5':
     dependencies:
@@ -5185,6 +5406,15 @@ snapshots:
       strip-bom: 3.0.0
 
   tslib@2.9.1: {}
+
+  turbo@2.11.11:
+    optionalDependencies:
+      '@turbo/darwin-64': 2.11.11
+      '@turbo/darwin-arm64': 2.11.11
+      '@turbo/linux-64': 2.11.11
+      '@turbo/linux-arm64': 2.11.11
+      '@turbo/windows-64': 2.11.11
+      '@turbo/windows-arm64': 2.11.11
 
   type-check@0.4.0:
     dependencies:
