@@ -1,60 +1,50 @@
-import { ReactElement, useEffect, useState } from 'react';
+import { ReactElement, useState, useSyncExternalStore } from 'react';
 import { Link } from 'react-router';
 import { HamburgerMenu } from '../Hamburger/Hamburger';
 import './NavBar.scss';
 
 const MOBILE: number = 768;
 
-export const NavBar = (): ReactElement => {
-  const [isMobileMenu, setIsMobileMenu] = useState(window.innerWidth < MOBILE);
-  const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < MOBILE) {
-        setIsMobileMenu(true);
-      } else {
-        setIsMobileMenu(false);
-        setIsOpen(false);
-      }
-    };
-    window.onresize = handleResize;
-  });
-
-  return (
-    <>
-      {!isMobileMenu && <DesktopNavBar setIsOpen={setIsOpen} />}
-      {isMobileMenu && <MobileNavBar isOpen={isOpen} setIsOpen={setIsOpen}/>}
-    </>
-  );
+const subscribeToResize = (onResize: () => void) => {
+  window.addEventListener('resize', onResize);
+  return () => window.removeEventListener('resize', onResize);
 };
+
+const useIsMobile = () => useSyncExternalStore(
+  subscribeToResize,
+  () => window.innerWidth < MOBILE,
+  () => false
+);
+
+export const NavBar = (): ReactElement =>
+  useIsMobile() ? <MobileNavBar/> : <DesktopNavBar/>;
 
 type NavBarProps = {
   setIsOpen: (isOpen: boolean) => void;
 };
 
-const DesktopNavBar = ({ setIsOpen }: NavBarProps): ReactElement =>
+const DesktopNavBar = (): ReactElement =>
   <header className="navbar desktop">
-    <Logo setIsOpen={setIsOpen}/>
+    <Logo setIsOpen={() => {}}/>
     <NavBarLinks/>
   </header>;
 
-type MobileNavBarProps = NavBarProps & {
-  isOpen: boolean;
-};
-
-const MobileNavBar = ({ isOpen, setIsOpen }: MobileNavBarProps): ReactElement =>
-  <header className="navbar mobile">
-    <div className={'mainnav'}>
-      <Logo setIsOpen={setIsOpen}/>
-      <div className="hamburger-menu-container" >
-        <HamburgerMenu onClick={() => setIsOpen(!isOpen)} isOpen={isOpen}/>
+const MobileNavBar = (): ReactElement => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <header className="navbar mobile">
+      <div className={'mainnav'}>
+        <Logo setIsOpen={setIsOpen}/>
+        <div className="hamburger-menu-container" >
+          <HamburgerMenu onClick={() => setIsOpen(!isOpen)} isOpen={isOpen}/>
+        </div>
       </div>
-    </div>
-    <div className={`mobile-menu ${isOpen ? 'mobile-nav-open' : 'mobile-nav-close'}`}>
-      <NavBarLinks onClick={() => setIsOpen(!isOpen)}/>
-    </div>
-  </header>;
+      <div className={`mobile-menu ${isOpen ? 'mobile-nav-open' : 'mobile-nav-close'}`}>
+        <NavBarLinks onClick={() => setIsOpen(!isOpen)}/>
+      </div>
+    </header>
+  );
+};
 
 type NavBarLinksProps = {
   onClick ?: () => void;

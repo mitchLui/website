@@ -1,22 +1,12 @@
-import { useEffect } from 'react';
-import { useParams, Navigate } from 'react-router';
+import { useParams } from 'react-router';
+import { NotFoundPage } from '../NotFoundPage/NotFoundPage';
 import { BackButton, Button } from '../../components/Button/Button';
 import { projects } from '../../data/projects';
-import { setPageProperties } from '../../meta/meta';
 import './ProjectDetailsPage.scss';
 
 export const ProjectDetailsPage = () => {
   const { projectId } = useParams();
   const project = projects[projectId as string];
-
-  useEffect(() => {
-    if (projectId && project !== undefined) {
-      setPageProperties({
-        title: project.title + ' | Mitch Lui',
-        description: project.title
-      });
-    }
-  }, [projectId]);
 
   if (projectId && project !== undefined) {
     const demoUrl = project.website ? project.website : null;
@@ -63,6 +53,6 @@ export const ProjectDetailsPage = () => {
       </>
     );
   } else {
-    return <Navigate to={'/not-found'}/>;
+    return <NotFoundPage/>;
   }
 };
