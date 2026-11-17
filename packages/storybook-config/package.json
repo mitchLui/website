@@ -1,0 +1,29 @@
+{
+  "name": "@mitchlui/storybook-config",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./main": "./src/main.ts",
+    "./manager": "./src/manager.ts",
+    "./preview": "./src/preview.tsx",
+    "./theme": "./src/theme.ts"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc"
+  },
+  "peerDependencies": {
+    "react": "catalog:",
+    "react-router": "catalog:",
+    "storybook": "catalog:"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "catalog:",
+    "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "react": "catalog:",
+    "react-router": "catalog:",
+    "storybook": "catalog:",
+    "typescript": "catalog:"
+  }
+}
