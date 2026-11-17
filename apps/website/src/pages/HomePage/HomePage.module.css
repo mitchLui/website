@@ -1,3 +1,14 @@
+.page {
+  animation: page-in var(--duration-slow) var(--ease-enter) both;
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
 .experience {
   display: grid;
   gap: var(--space-8);

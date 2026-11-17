@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { expect, waitFor } from 'storybook/test';
+import { expect } from 'storybook/test';
 import { HomePage } from './HomePage';
 import { archivedProjects } from '../../data/projects';
 
@@ -11,7 +11,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const waitForFadeIn = (canvasElement: HTMLElement) =>
-  waitFor(() => expect(canvasElement.querySelector<HTMLElement>('[style*="opacity"]')).toHaveStyle({ opacity: '1' }));
+  Promise.all(canvasElement.ownerDocument.getAnimations().map(animation => animation.finished));
 
 export const Default: Story = {
   play: async ({ canvas, canvasElement, step }) => {

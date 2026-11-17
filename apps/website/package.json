@@ -17,7 +17,6 @@
     "@react-router/node": "catalog:",
     "clsx": "catalog:",
     "isbot": "catalog:",
-    "motion": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-router": "catalog:"
