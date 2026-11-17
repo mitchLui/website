@@ -58,6 +58,8 @@
   --color-line-early: var(--color-tag-orange);
   --color-station-fill: light-dark(var(--neutral-0), var(--neutral-paper));
   --color-station-ring: light-dark(var(--neutral-ink), var(--neutral-750));
+  --station-ring: 6px;
+  --station-ring-current: 8px;
   --color-stamp: var(--color-brand);
   --color-on-stamp: var(--color-on-brand);
 
@@ -131,6 +133,15 @@
 
 :root[data-theme='dark'] {
   color-scheme: dark;
+  --station-ring: 4px;
+  --station-ring-current: 6px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --station-ring: 4px;
+    --station-ring-current: 6px;
+  }
 }
 
 @media (max-width: 767px) {

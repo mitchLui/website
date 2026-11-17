@@ -1,0 +1,42 @@
+.tile {
+  display: grid;
+  align-content: start;
+  gap: var(--space-1);
+  min-height: 44px;
+  padding: var(--space-4);
+  border: 2px solid var(--color-text);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  text-decoration: none;
+  transition: background-color var(--duration-base) var(--ease-standard);
+}
+
+.more {
+  border-style: dashed;
+  background-color: transparent;
+}
+
+.tile:active {
+  background-color: var(--color-surface-sunken);
+}
+
+@media (hover: hover) {
+  .tile:hover {
+    background-color: var(--color-surface-sunken);
+  }
+}
+
+.eyebrow {
+  font-size: var(--font-size-small);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-secondary);
+}
+
+.title {
+  font-weight: var(--font-weight-bold);
+}
+
+.detail {
+  font-size: var(--font-size-small);
+}

@@ -54,6 +54,22 @@
   }
 }
 
+.outline {
+  color: var(--color-text);
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px currentColor;
+}
+
+@media (hover: hover) {
+  .outline:hover:not(:disabled) {
+    background-color: var(--color-surface-sunken);
+  }
+}
+
+.outline:active:not(:disabled) {
+  background-color: var(--color-surface-sunken);
+}
+
 .tertiary {
   color: var(--color-brand-text);
   background-color: transparent;
