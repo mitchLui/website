@@ -1,4 +1,3 @@
-import { motion } from 'motion/react';
 import { Link } from 'react-router';
 import { Button, ProjectTile, RouteLine, Station, Terminus, Thumbnail } from '@mitchlui/components';
 import { Intro } from '../../components/Intro/Intro';
@@ -16,7 +15,7 @@ const ReadMore = () =>
   <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>;
 
 export const HomePage = () =>
-  <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+  <div className={styles.page}>
     <Intro/>
     <section aria-labelledby="experience" className={styles.experience}>
       <h2 id="experience" className={styles.heading}>Experience</h2>
@@ -65,4 +64,4 @@ export const HomePage = () =>
         <Terminus><h3 className={styles.title}>Hong Kong</h3></Terminus>
       </RouteLine>
     </section>
-  </motion.div>;
+  </div>;

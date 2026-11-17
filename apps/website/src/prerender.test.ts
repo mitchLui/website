@@ -53,6 +53,10 @@ test.each(pages)('prerenders the content of $route into the HTML', ({ route, con
   content.forEach(fragment => expect(html).toContain(fragment));
 });
 
+test.each(pages)('prerenders $route visible without JavaScript', ({ route }) => {
+  expect(readPage(route)).not.toMatch(/style="[^"]*opacity:\s*0/);
+});
+
 test.each(Object.entries(redirects))('prerenders %s as a meta refresh to its target', (route, target) => {
   expect(readPage(route)).toContain(`<meta http-equiv="refresh" content="0; url=${target}"/>`);
 });
