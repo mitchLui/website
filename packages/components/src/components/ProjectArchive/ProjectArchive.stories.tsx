@@ -7,8 +7,9 @@ const meta = {
   parameters: { layout: 'padded' },
   args: {
     entries: [
-      { title: 'Ray Tracer', href: '/work/ray-tracer', meta: 'Academic · Oct 2022' },
-      { title: 'Route Planner', href: '/work/route-planner', meta: 'Hackathon · Feb 2022 · Winner' }
+      { title: 'Ray Tracer', href: '/work/ray-tracer', meta: 'Oct 2022', tag: { label: 'Academic', color: 'violet' } },
+      { title: 'Route Planner', href: '/work/route-planner', meta: 'Feb 2022 · Winner', tag: { label: 'Hackathon', color: 'orange' } },
+      { title: 'Notes App', href: '/work/notes-app', meta: 'Jan 2021' }
     ]
   }
 } satisfies Meta<typeof ProjectArchive>;
@@ -25,8 +26,13 @@ export const Default: Story = {
     await step('renders the metadata of each row', async () => {
       args.entries.forEach(entry => expect(canvas.getByText(entry.meta)).toBeVisible());
     });
+    await step('renders a tag only for entries that have one', async () => {
+      await expect(canvas.getByText('Academic')).toBeVisible();
+      await expect(canvas.getByText('Hackathon')).toBeVisible();
+      await expect(canvas.getByText('Notes App').closest('a')?.querySelectorAll('span span')).toHaveLength(1);
+    });
     await step('navigates to the entry when the row metadata is clicked', async () => {
-      await userEvent.click(canvas.getByText('Hackathon · Feb 2022 · Winner'));
+      await userEvent.click(canvas.getByText('Feb 2022 · Winner'));
       await expect(canvas.getByTestId('navigated-to')).toHaveTextContent('/work/route-planner');
     });
   }

@@ -7,13 +7,19 @@ html, body {
   height: 100%;
   justify-content: center;
 
-  color: #ffffff;
-  background-color: #000000;
+  color: var(--color-text);
+  background-color: var(--color-bg);
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
 }
 
 .code {

@@ -3,11 +3,11 @@ import { Project, ProfessionalProject } from './projects';
 import { rolesFor } from './roles';
 import { formatMonth, formatPeriod } from './dates';
 
-const kindLabels: Record<Project['kind'], string> = {
-  professional: 'Professional',
-  academic: 'Academic',
-  hackathon: 'Hackathon',
-  personal: 'Personal'
+const kindTags: Record<Project['kind'], NonNullable<ArchiveEntry['tag']>> = {
+  professional: { label: 'Professional', color: 'blue' },
+  academic: { label: 'Academic', color: 'violet' },
+  hackathon: { label: 'Hackathon', color: 'orange' },
+  personal: { label: 'Personal', color: 'green' }
 };
 
 export const imageFor = (project: Project): Image => ({
@@ -45,5 +45,6 @@ export const toProjectCard = (id: string, project: Project): ProjectCardProps =>
 export const toArchiveEntry = (id: string, project: Project): ArchiveEntry => ({
   title: project.title,
   href: `/work/${id}`,
-  meta: [kindLabels[project.kind], formatMonth(project.started), ...(project.awards ?? [])].join(' · ')
+  meta: [formatMonth(project.started), ...(project.awards ?? [])].join(' · '),
+  tag: kindTags[project.kind]
 });

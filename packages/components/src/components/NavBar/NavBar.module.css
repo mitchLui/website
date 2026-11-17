@@ -33,8 +33,7 @@
 }
 
 .logo-graphic {
-  margin: auto;
-  padding-right: 0.5rem;
+  margin: auto 0.6rem auto 0;
 }
 
 .mobile .logo-container {
@@ -44,15 +43,13 @@
 .nav-text {
   width: 100%;
   text-align: left;
-  color: inherit;
+  color: var(--color-muted);
   text-decoration: none;
-  opacity: 70%;
-  transition: all 0.2s ease-out;
+  transition: color 0.2s ease-out;
 }
 
 .nav-text:hover {
-  opacity: 100%;
-  transition: all 0.2s ease;
+  color: var(--color-accent);
 }
 
 .desktop nav ul {
@@ -100,7 +97,7 @@
 
 .mobile nav li {
   display: flex;
-  border-bottom: 0.06rem solid #777777;
+  border-bottom: 0.06rem solid var(--color-border);
   opacity: 0;
   animation: fadein 0.25s;
   animation-fill-mode: forwards;

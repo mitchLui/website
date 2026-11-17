@@ -10,7 +10,7 @@
   justify-content: space-between;
   gap: 0.5rem;
   padding: 0.75rem 0;
-  border-bottom: 1px solid #333333;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .title {
@@ -18,9 +18,31 @@
 }
 
 .entry:hover .title {
+  color: var(--color-accent);
   text-decoration: underline;
 }
 
-.meta {
-  color: #aaaaaa;
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
 }
+
+.meta {
+  color: var(--color-muted);
+}
+
+.tag {
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  color: var(--tag-color);
+  background-color: color-mix(in srgb, var(--tag-color) 12%, transparent);
+}
+
+.blue { --tag-color: var(--color-tag-blue); }
+.orange { --tag-color: var(--color-tag-orange); }
+.green { --tag-color: var(--color-tag-green); }
+.violet { --tag-color: var(--color-tag-violet); }

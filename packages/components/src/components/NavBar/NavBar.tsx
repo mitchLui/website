@@ -2,7 +2,7 @@ import { ReactElement, useState, useSyncExternalStore } from 'react';
 import { Link } from 'react-router';
 import { HamburgerMenu } from '../Hamburger/Hamburger';
 import clsx from 'clsx';
-import logo from '../../assets/logo.svg';
+import { Avatar } from '../Avatar/Avatar';
 import styles from './NavBar.module.css';
 
 export type NavLink = {
@@ -75,6 +75,6 @@ const NavBarLinks = ({ links, onClick }: NavBarProps & { onClick?: () => void })
 const Logo = ({ onClick }: { onClick: () => void }): ReactElement =>
   <div className={styles.logoContainer}>
     <Link onClick={onClick} to={'/'} className={styles.logoLink}>
-      <h1 className={styles.logo}><img className={styles.logoGraphic} src={logo} alt={'logo'}/>mitch<span className={styles.bold}>Lui</span></h1>
+      <h1 className={styles.logo}><Avatar alt="" className={styles.logoGraphic}/>mitch<span className={styles.bold}>Lui</span></h1>
     </Link>
   </div>;

@@ -12,15 +12,39 @@ const withRouter: Decorator = (Story, { parameters }) => {
   return <Stub initialEntries={[url]}/>;
 };
 
+const applyTheme = (theme: string) => {
+  if (theme === 'system') {
+    delete document.documentElement.dataset.theme;
+  } else {
+    document.documentElement.dataset.theme = theme;
+  }
+};
+
+const withTheme: Decorator = (Story, { globals }) => {
+  applyTheme(globals.theme ?? 'system');
+  return <Story/>;
+};
+
 export const preview: Preview = {
-  decorators: [withRouter],
+  decorators: [withRouter, withTheme],
+  globalTypes: {
+    theme: {
+      description: 'Colour theme',
+      toolbar: {
+        title: 'Theme',
+        icon: 'mirror',
+        items: [
+          { value: 'system', title: 'System' },
+          { value: 'light', title: 'Light', icon: 'sun' },
+          { value: 'dark', title: 'Dark', icon: 'moon' }
+        ],
+        dynamicTitle: true
+      }
+    }
+  },
   parameters: {
     layout: 'fullscreen',
-    backgrounds: {
-      options: {
-        site: { name: 'Site', value: '#000000' }
-      }
-    },
+    backgrounds: { disabled: true },
     viewport: {
       options: {
         mobile: { name: 'Mobile', styles: { width: '375px', height: '800px' } },
@@ -32,7 +56,7 @@ export const preview: Preview = {
     }
   },
   initialGlobals: {
-    backgrounds: { value: 'site' },
+    theme: 'system',
     viewport: { value: 'desktop', isRotated: false }
   }
 };

@@ -1,4 +1,5 @@
 export { Arrow } from './components/Arrow/Arrow';
+export { Avatar } from './components/Avatar/Avatar';
 export { BackButton, Button } from './components/Button/Button';
 export { Copyright } from './components/Copyright/Copyright';
 export { FeaturedProject } from './components/FeaturedProject/FeaturedProject';
@@ -7,7 +8,7 @@ export { HamburgerMenu } from './components/Hamburger/Hamburger';
 export { NavBar } from './components/NavBar/NavBar';
 export type { NavLink } from './components/NavBar/NavBar';
 export { ProjectArchive } from './components/ProjectArchive/ProjectArchive';
-export type { ArchiveEntry } from './components/ProjectArchive/ProjectArchive';
+export type { ArchiveEntry, TagColor } from './components/ProjectArchive/ProjectArchive';
 export { ProjectCard } from './components/ProjectCard/ProjectCard';
 export type { ProjectCardProps } from './components/ProjectCard/ProjectCard';
 export { Thumbnail } from './components/Thumbnail/Thumbnail';

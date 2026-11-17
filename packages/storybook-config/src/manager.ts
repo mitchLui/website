@@ -1,4 +1,9 @@
 import { addons } from 'storybook/manager-api';
-import { theme } from './theme';
+import { darkTheme, lightTheme } from './theme';
 
-addons.setConfig({ theme });
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+const applyTheme = () => addons.setConfig({ theme: prefersDark.matches ? darkTheme : lightTheme });
+
+applyTheme();
+prefersDark.addEventListener('change', applyTheme);

@@ -1,5 +1,7 @@
-.hamburger{
+.hamburger {
     cursor: pointer;
-    filter:  invert(100%);
-    -webkit-filter: invert(100%);
+    padding: 0.25rem;
+    border: none;
+    background: none;
+    color: var(--color-text);
 }

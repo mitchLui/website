@@ -10,9 +10,11 @@ const browser = {
   enabled: true,
   headless: true,
   provider: playwright(),
-  instances: [{
-    browser: 'chromium'
-  }]
+  instances: ['light', 'dark'].map(colorScheme => ({
+    browser: 'chromium',
+    name: colorScheme,
+    provider: playwright({ contextOptions: { colorScheme } })
+  }))
 };
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon

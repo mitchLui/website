@@ -1,5 +1,4 @@
 .project-content {
-  background-color: #000000;
   padding-left: 5%;
   padding-right: 5%;
   padding-bottom: 2.5%;
@@ -13,11 +12,6 @@
   font-size: 1.5rem;
 }
 
-.project-content .text {
-  color: white;
-  background-color: inherit;
-}
-
 .project-thumbnail {
   width: 100%;
   height: auto;
@@ -25,11 +19,7 @@
 
 .project-thumbnail img {
   width: 100%;
-}
-
-.project-container {
-  color: #ffffff;
-  background-color: #000000;
+  border-radius: var(--radius-md);
 }
 
 .project-status {
