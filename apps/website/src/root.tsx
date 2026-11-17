@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react';
-import { Link, Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
-import { Container, Copyright, NavBar, NavLink } from '@mitchlui/components';
+import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
+import { Container, Footer, NavBar, NavLink } from '@mitchlui/components';
 import '@mitchlui/components/styles.css';
 
 const navLinks: NavLink[] = [
@@ -8,6 +8,14 @@ const navLinks: NavLink[] = [
   { label: 'Work', href: '/work' },
   { label: 'CV', href: '/cv.pdf', external: true },
   { label: 'LinkedIn', href: '/linkedin' }
+];
+
+const footerLinks: NavLink[] = [
+  { label: 'Work', href: '/work' },
+  { label: 'CV', href: '/cv.pdf', external: true },
+  { label: 'LinkedIn', href: '/linkedin' },
+  { label: 'GitHub', href: '/github' },
+  { label: 'Sitemap', href: '/sitemap' }
 ];
 
 export const Layout = ({ children }: PropsWithChildren) =>
@@ -38,7 +46,7 @@ export default function Root() {
       <NavBar links={navLinks}/>
       <Container>
         <Outlet/>
-        <Copyright owner="Mitch Lui"><Link to="/sitemap">Sitemap</Link></Copyright>
+        <Footer owner="Mitch Lui" place="Hong Kong ↔ London" stamp="呂家天" links={footerLinks}/>
       </Container>
     </>
   );

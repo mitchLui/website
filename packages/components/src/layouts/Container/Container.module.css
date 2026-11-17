@@ -10,6 +10,10 @@
   margin-block: var(--space-12) var(--space-6);
 }
 
+.container-header:has(h1) {
+  margin-top: var(--page-top);
+}
+
 .container-header h1,
 .container-header h2 {
   margin: 0;

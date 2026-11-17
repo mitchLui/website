@@ -33,3 +33,18 @@ export const SectionHeader: Story = {
     await expect(eyebrow).toHaveStyle({ color: resolved('color', 'var(--color-brand-text)') });
   }
 };
+
+export const PhoneGutter: Story = {
+  globals: { viewport: { value: 'mobile', isRotated: false } },
+  args: { children: <p>Page content</p> },
+  play: async ({ canvas }) => {
+    await expect(canvas.getByText('Page content').parentElement).toHaveStyle({ paddingLeft: '24px', paddingRight: '24px' });
+  }
+};
+
+export const PageTitleSpacing: Story = {
+  render: () => <ContainerHeader><h1>Work</h1></ContainerHeader>,
+  play: async ({ canvas }) => {
+    await expect(canvas.getByRole('heading', { name: 'Work' }).parentElement).toHaveStyle({ marginTop: '48px' });
+  }
+};

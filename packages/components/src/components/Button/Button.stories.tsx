@@ -33,12 +33,15 @@ export const Variants: Story = {
       <Button as="button">Primary</Button>
       <Button as="button" variant="secondary">Secondary</Button>
       <Button as="button" variant="tertiary">Tertiary</Button>
+      <Button as="button" variant="outline">Outline</Button>
     </div>,
   play: async ({ canvas }) => {
     const fill = (name: string) => getComputedStyle(canvas.getByRole('button', { name })).backgroundColor;
     await expect(fill('Primary')).toBe(resolved('backgroundColor', 'var(--color-brand)'));
     await expect(fill('Secondary')).toBe(resolved('backgroundColor', 'var(--color-brand-tint)'));
     await expect(fill('Tertiary')).toBe('rgba(0, 0, 0, 0)');
+    await expect(fill('Outline')).toBe('rgba(0, 0, 0, 0)');
+    await expect(getComputedStyle(canvas.getByRole('button', { name: 'Outline' })).boxShadow).toContain(resolved('color', 'var(--color-text)'));
   }
 };
 

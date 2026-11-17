@@ -5,7 +5,7 @@ import styles from './Sitemap.module.css';
 
 export const Sitemap = ({ projects }: { projects: Record<string, Project> }) =>
   <>
-    <ContainerHeader><h1><code>Sitemap</code></h1></ContainerHeader>
+    <ContainerHeader><h1>Sitemap</h1></ContainerHeader>
     <ul className={styles.sitemap}>
       <li>
         <Link to={'/'}>index</Link>

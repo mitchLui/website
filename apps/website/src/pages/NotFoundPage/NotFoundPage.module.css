@@ -1,16 +1,21 @@
-.header-text {
-  padding-bottom: var(--space-8);
+.not-found {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-4);
+  padding-block: var(--page-top) var(--space-24);
   text-align: center;
 }
 
-.header-text h1 {
-  font-size: var(--font-size-title-1);
-  letter-spacing: var(--tracking-title);
-  font-weight: var(--font-weight-bold);
+.not-found h1 {
+  margin: 0;
+  font-size: var(--font-size-display);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--tracking-display);
+  font-weight: var(--font-weight-heavy);
 }
 
-.header-text h2 {
+.not-found p {
+  margin: 0 0 var(--space-4);
   font-size: var(--font-size-lead);
-  font-weight: var(--font-weight-semibold);
   color: var(--color-text-secondary);
 }

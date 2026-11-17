@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect, waitFor } from 'storybook/test';
 import { HomePage } from './HomePage';
-import { featuredProjects } from '../../data/projects';
+import { archivedProjects } from '../../data/projects';
 
 const meta = {
   component: HomePage
@@ -11,16 +11,34 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  play: async ({ canvas, canvasElement }) => {
+  play: async ({ canvas, canvasElement, step }) => {
     const fadeIn = canvasElement.querySelector<HTMLElement>('[style*="opacity"]');
     await waitFor(() => expect(fadeIn).toHaveStyle({ opacity: '1' }));
-    await expect(canvas.getByText(/Born and raised in Hong Kong, now based in London\. I'm a Senior Software Engineer on/)).toBeVisible();
-    await expect(canvas.getByRole('link', { name: 'Wise\'s' })).toHaveAttribute('href', 'https://www.wise.com');
-    await expect(canvas.getByRole('heading', { name: 'Recent work' })).toBeVisible();
-    await expect(canvas.getByText('At Wise')).toBeVisible();
-    featuredProjects.forEach(([, project]) =>
-      expect(canvas.getByRole('heading', { name: project.title })).toBeVisible()
-    );
-    await expect(canvas.getByRole('link', { name: 'See all work' })).toHaveAttribute('href', '/work');
+    await step('opens with the headline and who I am', async () => {
+      await expect(canvas.getByRole('heading', { level: 1, name: 'Building the one account for businesses to thrive everywhere.' })).toBeVisible();
+      await expect(canvas.getByText(/^Born and raised in Hong Kong, now based in London\. I'm a Senior Software Engineer on/)).toBeVisible();
+      await expect(canvas.getByRole('link', { name: 'Wise\'s' })).toHaveAttribute('href', 'https://www.wise.com');
+    });
+    await step('walks the experience line from now back to Hong Kong', async () => {
+      await expect(canvas.getByRole('heading', { level: 2, name: 'Experience' })).toBeVisible();
+      await expect(canvas.getAllByRole('heading', { level: 3 }).map(heading => heading.textContent)).toEqual([
+        'Senior Software Engineer', 'Software Engineer', 'Graduate Software Engineer', 'University of Bristol', 'Intern · Wise', 'Intern · Asiabots', 'Hong Kong'
+      ]);
+      await expect(canvas.getAllByRole('listitem')[0]).toHaveAttribute('aria-current', 'step');
+    });
+    await step('links to the Wise story, the highlighted projects, all projects and each internship', async () => {
+      await expect(canvas.getByRole('link', { name: 'Read more' })).toHaveAttribute('href', '/work/wise');
+      await expect(canvas.getByRole('link', { name: /Mask Detector/ })).toHaveAttribute('href', '/work/mask-detector');
+      await expect(canvas.getByRole('link', { name: /All projects/ })).toHaveTextContent(`And ${archivedProjects.length - 3} more`);
+      await expect(canvas.getByRole('link', { name: 'Intern · Asiabots' })).toHaveAttribute('href', '/work/asiabots');
+    });
+  }
+};
+
+export const PhoneSpacing: Story = {
+  globals: { viewport: { value: 'mobile', isRotated: false } },
+  play: async ({ canvas }) => {
+    await expect(canvas.getByRole('heading', { level: 1 }).parentElement).toHaveStyle({ paddingTop: '32px' });
+    await expect(canvas.getByRole('heading', { level: 1 })).toHaveStyle({ fontSize: '46px' });
   }
 };

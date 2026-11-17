@@ -50,3 +50,12 @@ export const WholeCardLinks: Story = {
     await expect(linkAt(canvas.getByRole('link', { name: 'Code' }))).toBe(canvas.getByRole('link', { name: 'Code' }));
   }
 };
+
+export const KeyboardFocusRingsTheCard: Story = {
+  play: async ({ canvas, canvasElement, userEvent }) => {
+    await userEvent.tab();
+    await expect(canvas.getByRole('link', { name: 'Learn more' })).toHaveFocus();
+    await expect(canvasElement.querySelector('article')).toHaveStyle({ outlineStyle: 'solid' });
+    await expect(canvas.getByRole('link', { name: 'Learn more' })).toHaveStyle({ outlineStyle: 'none' });
+  }
+};

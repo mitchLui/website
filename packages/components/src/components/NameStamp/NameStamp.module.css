@@ -1,0 +1,15 @@
+.stamp {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-xs);
+  font-family: 'PingFang HK', 'Noto Serif TC', 'Noto Sans TC', 'Microsoft JhengHei', serif;
+  font-size: 13px;
+  line-height: 1.05;
+  letter-spacing: 0.05em;
+  writing-mode: vertical-rl;
+  color: var(--color-on-stamp);
+  background-color: var(--color-stamp);
+}

@@ -1,4 +1,4 @@
-import { ReactElement, useState, useSyncExternalStore } from 'react';
+import { ReactElement, useEffect, useState, useSyncExternalStore } from 'react';
 import { Link, NavLink as RouterNavLink } from 'react-router';
 import { HamburgerMenu } from '../Hamburger/Hamburger';
 import clsx from 'clsx';
@@ -39,10 +39,24 @@ const DesktopNavBar = ({ links }: NavBarProps): ReactElement =>
     </div>
   </header>;
 
+const useMenuLock = (isOpen: boolean, setIsOpen: (isOpen: boolean) => void) => useEffect(() => {
+  if (!isOpen) {
+    return;
+  }
+  const closeOnEscape = (event: KeyboardEvent) => event.key === 'Escape' && setIsOpen(false);
+  document.body.style.overflow = 'hidden';
+  window.addEventListener('keydown', closeOnEscape);
+  return () => {
+    document.body.style.overflow = '';
+    window.removeEventListener('keydown', closeOnEscape);
+  };
+}, [isOpen, setIsOpen]);
+
 const MobileNavBar = ({ links }: NavBarProps): ReactElement => {
   const [isOpen, setIsOpen] = useState(false);
+  useMenuLock(isOpen, setIsOpen);
   return (
-    <header className={styles.header}>
+    <header className={clsx(styles.header, isOpen && styles.headerOpen)}>
       <div className={styles.navbar}>
         <Logo onClick={() => setIsOpen(false)}/>
         <HamburgerMenu onClick={() => setIsOpen(!isOpen)} isOpen={isOpen}/>
@@ -70,6 +84,6 @@ const NavBarLinks = ({ links, onClick }: NavBarProps & { onClick?: () => void })
 const Logo = ({ onClick }: { onClick: () => void }): ReactElement =>
   <div className={styles.logoContainer}>
     <Link onClick={onClick} to={'/'} className={styles.logoLink}>
-      <h1 className={styles.logo}><Avatar alt="" className={styles.logoGraphic}/>mitch<span className={styles.bold}>Lui</span></h1>
+      <span className={styles.logo}><Avatar alt="" className={styles.logoGraphic}/>mitch<span className={styles.bold}>Lui</span></span>
     </Link>
   </div>;

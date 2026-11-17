@@ -4,7 +4,7 @@ import { ButtonHTMLAttributes, ReactElement, ReactNode } from 'react';
 import styles from './Button.module.css';
 import clsx from 'clsx';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'tertiary';
+export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'outline';
 
 type AnchorProps = {
   as: 'a';

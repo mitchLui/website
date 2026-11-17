@@ -33,8 +33,10 @@
   background-color: var(--color-brand);
 }
 
-.primary:hover:not(:disabled) {
-  background-color: var(--color-brand-hover);
+@media (hover: hover) {
+  .primary:hover:not(:disabled) {
+    background-color: var(--color-brand-hover);
+  }
 }
 
 .primary:active:not(:disabled) {
@@ -46,8 +48,26 @@
   background-color: var(--color-brand-tint);
 }
 
-.secondary:hover:not(:disabled) {
-  background-color: var(--color-brand-tint-hover);
+@media (hover: hover) {
+  .secondary:hover:not(:disabled) {
+    background-color: var(--color-brand-tint-hover);
+  }
+}
+
+.outline {
+  color: var(--color-text);
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px currentColor;
+}
+
+@media (hover: hover) {
+  .outline:hover:not(:disabled) {
+    background-color: var(--color-surface-sunken);
+  }
+}
+
+.outline:active:not(:disabled) {
+  background-color: var(--color-surface-sunken);
 }
 
 .tertiary {
@@ -55,10 +75,14 @@
   background-color: transparent;
 }
 
-.tertiary:hover:not(:disabled) {
-  background-color: var(--color-brand-tint);
+@media (hover: hover) {
+  .tertiary:hover:not(:disabled) {
+    background-color: var(--color-brand-tint);
+  }
 }
 
 .modal {
-  z-index: 1;
+  justify-self: start;
+  width: fit-content;
+  border-radius: var(--radius-full);
 }
