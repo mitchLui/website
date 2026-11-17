@@ -1,8 +1,43 @@
 .hamburger {
-  cursor: pointer;
-  padding: var(--space-1);
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin-right: -11px;
+  padding: 0;
   border: none;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-full);
   background: none;
   color: var(--color-text);
+  cursor: pointer;
+  transition: background-color var(--duration-base) var(--ease-standard);
+}
+
+.hamburger:active {
+  background-color: var(--color-surface-sunken);
+}
+
+.line {
+  position: absolute;
+  left: 11px;
+  width: 18px;
+  height: 2px;
+  border-radius: var(--radius-full);
+  background-color: currentColor;
+  transition: transform var(--duration-slow) var(--ease-enter);
+}
+
+.line:first-child {
+  top: 15px;
+}
+
+.line:last-child {
+  top: 23px;
+}
+
+.open .line:first-child {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.open .line:last-child {
+  transform: translateY(-4px) rotate(-45deg);
 }

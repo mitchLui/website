@@ -3,7 +3,7 @@ import { Project, ProfessionalProject } from './projects';
 import { rolesFor } from './roles';
 import { formatMonth, formatPeriod } from './dates';
 
-const kindTags: Record<Project['kind'], NonNullable<ArchiveEntry['tag']>> = {
+export const kindTags: Record<Project['kind'], NonNullable<ArchiveEntry['tag']>> = {
   professional: { label: 'Professional', color: 'green' },
   academic: { label: 'Academic', color: 'blue' },
   hackathon: { label: 'Hackathon', color: 'orange' },

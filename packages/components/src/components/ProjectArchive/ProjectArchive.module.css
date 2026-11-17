@@ -24,9 +24,11 @@
     text-decoration-color var(--duration-base) var(--ease-standard);
 }
 
-.entry:hover .title {
-  color: var(--color-brand-text);
-  text-decoration-color: currentColor;
+@media (hover: hover) {
+  .entry:hover .title {
+    color: var(--color-brand-text);
+    text-decoration-color: currentColor;
+  }
 }
 
 .details {
@@ -39,4 +41,8 @@
 .meta {
   font-size: var(--font-size-body);
   color: var(--color-text-secondary);
+}
+
+.entry:active .title {
+  color: var(--color-brand-text);
 }

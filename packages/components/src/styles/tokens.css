@@ -94,7 +94,8 @@
   --space-24: 6rem;
 
   --content-max: 75rem;
-  --gutter: clamp(1rem, 5vw, 3rem);
+  --gutter: clamp(1.5rem, 6vw, 3rem);
+  --page-top: var(--space-12);
 
   --radius-xs: 6px;
   --radius-sm: 10px;
@@ -121,6 +122,12 @@
 
 :root[data-theme='dark'] {
   color-scheme: dark;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --page-top: var(--space-8);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

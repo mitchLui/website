@@ -24,3 +24,11 @@ export const Default: Story = {
     await expect(canvas.getByRole('link', { name: 'See all work' })).toHaveAttribute('href', '/work');
   }
 };
+
+export const PhoneSpacing: Story = {
+  globals: { viewport: { value: 'mobile', isRotated: false } },
+  play: async ({ canvas }) => {
+    const intro = canvas.getByText(/^Born and raised in Hong Kong/);
+    await expect(intro).toHaveStyle({ marginTop: '32px', fontSize: '24px' });
+  }
+};

@@ -9,8 +9,10 @@
   transition: background-color var(--duration-base) var(--ease-standard);
 }
 
-.card:hover {
-  background-color: var(--color-surface-hover);
+@media (hover: hover) {
+  .card:hover {
+    background-color: var(--color-surface-hover);
+  }
 }
 
 .card h2 {
@@ -52,8 +54,10 @@
   transition: transform var(--duration-slow) var(--ease-enter);
 }
 
-.card:hover .thumbnail img {
-  transform: scale(1.02);
+@media (hover: hover) {
+  .card:hover .thumbnail img {
+    transform: scale(1.02);
+  }
 }
 
 .card-content {
@@ -71,4 +75,17 @@
 
 .card .card-link:active {
   transform: none;
+}
+
+.card:active {
+  background-color: var(--color-surface-hover);
+}
+
+.card:has(.card-link:focus-visible) {
+  outline: var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.card .card-link:focus-visible {
+  outline: none;
 }

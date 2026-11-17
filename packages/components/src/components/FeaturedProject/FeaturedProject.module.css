@@ -11,8 +11,10 @@
   transition: background-color var(--duration-base) var(--ease-standard);
 }
 
-.feature:hover {
-  background-color: var(--color-surface-hover);
+@media (hover: hover) {
+  .feature:hover {
+    background-color: var(--color-surface-hover);
+  }
 }
 
 .card-link::after {
@@ -43,8 +45,10 @@
   background-color: var(--color-surface-sunken);
 }
 
-.feature:hover .image img {
-  transform: scale(1.02);
+@media (hover: hover) {
+  .feature:hover .image img {
+    transform: scale(1.02);
+  }
 }
 
 .content {
@@ -119,4 +123,17 @@
   .content {
     padding: 0 var(--space-2) var(--space-2);
   }
+}
+
+.feature:active {
+  background-color: var(--color-surface-hover);
+}
+
+.feature:has(.card-link:focus-visible) {
+  outline: var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.feature .card-link:focus-visible {
+  outline: none;
 }

@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect } from 'storybook/test';
 import styles from './Foundations.module.css';
+import { ungatedHoverSelectors } from '../testing/hover';
+import '../index';
 
 const meta = {
   title: 'Foundations',
@@ -146,6 +148,8 @@ export const Type: Story = {
     await document.fonts.ready;
     await expect(getComputedStyle(canvas.getByText(/^body ·/)).fontFamily).toMatch(/^"Inter Variable"/);
     await expect(document.fonts.check('16px "Inter Variable"')).toBe(true);
+    const sizes = typeScale.map(([size]) => parseFloat(getComputedStyle(canvas.getByText(new RegExp(`^${size} ·`))).fontSize));
+    await expect(sizes).toEqual([...sizes].sort((a, b) => b - a));
   }
 };
 
@@ -182,5 +186,13 @@ export const ShapeAndSpace: Story = {
   play: async ({ canvas }) => {
     const widths = spaces.map(space => canvas.getByTestId(`space-${space}`).getBoundingClientRect().width);
     await expect(widths).toEqual(spaces.map(space => space * 4));
+  }
+};
+
+export const HoverOnlyOnPointers: Story = {
+  name: 'Hover only on pointers',
+  render: () => <p>Every hover style sits inside <code>@media (hover: hover)</code>, so a tap never leaves one stuck.</p>,
+  play: async () => {
+    await expect(ungatedHoverSelectors()).toEqual([]);
   }
 };

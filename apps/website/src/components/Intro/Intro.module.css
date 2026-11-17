@@ -1,6 +1,6 @@
 .intro {
   max-width: 48rem;
-  margin: var(--space-24) auto;
+  margin: var(--page-top) auto var(--space-24);
   font-size: var(--font-size-title-1);
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-snug);
@@ -23,12 +23,15 @@
   transition: text-decoration-color var(--duration-base) var(--ease-standard);
 }
 
-.link:hover {
-  text-decoration-color: currentColor;
+@media (hover: hover) {
+  .link:hover {
+    text-decoration-color: currentColor;
+  }
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 767px) {
   .intro {
-    margin: var(--space-16) 0;
+    margin-bottom: var(--space-16);
+    font-size: 1.5rem;
   }
 }
