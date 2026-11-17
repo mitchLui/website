@@ -1,46 +1,14 @@
-type setElemAttributeProps = {
-  element: string,
-  attribute: string,
-  value: string
+import type { MetaDescriptor } from 'react-router';
+
+type PageMeta = {
+  title: string;
+  description: string;
 };
 
-const setElemAttribute = ({ element, attribute, value }: setElemAttributeProps) => {
-  const elem = document.querySelector(element);
-  if (elem) {
-    elem.setAttribute(attribute, value);
-  }
-};
-
-const setTitle = (title: string) => {
-  document.title = title;
-};
-
-const setDescription = (desc: string) => {
-  setElemAttribute({
-    element: 'meta[name="description"]',
-    attribute: 'content',
-    value: desc
-  });
-};
-
-type OgProps = {
-  [key: string]: string
-};
-
-export const setPageProperties = (props: OgProps) => {
-  Object.keys(props).forEach(key => {
-    if (props.title) {
-      setTitle(props.title);
-    }
-
-    if (props.description) {
-      setDescription(props.description);
-    }
-
-    setElemAttribute({
-      element: `meta[property="og:${key}"]`,
-      attribute: 'content',
-      value: props[key]
-    });
-  });
-};
+export const pageMeta = ({ title, description }: PageMeta): MetaDescriptor[] => [
+  { title },
+  { name: 'description', content: description },
+  { property: 'og:title', content: title },
+  { property: 'og:description', content: description },
+  { property: 'og:image', content: '/og-image.jpg' }
+];

@@ -13,7 +13,7 @@ export const Sitemap = ({ projects }: { projects: Record<string, ProjectProps> }
           {
             Object.keys(projects).map(function (key, index) {
               return (
-                <li key={index}><Link to={'/projects/' + key}>{key}</Link></li>
+                <li key={index}><Link to={`/${projects[key].company}/projects/${key}`}>{key}</Link></li>
               );
             })
           }
