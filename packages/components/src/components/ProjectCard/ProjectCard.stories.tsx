@@ -24,7 +24,7 @@ export const WithHighlights: Story = {
     await expect(canvas.getByRole('heading', { name: args.title })).toBeVisible();
     await expect(canvas.getByText(args.headline)).toBeVisible();
     await expect(canvas.getAllByRole('listitem').map(item => item.textContent)).toEqual(args.highlights);
-    await expect(canvas.getByRole('link', { name: 'Learn more' })).toHaveAttribute('href', args.href);
+    await expect(canvas.getByRole('link', { name: 'Read more' })).toHaveAttribute('href', args.href);
     await expect(canvas.queryByRole('link', { name: 'Code' })).not.toBeInTheDocument();
   }
 };
@@ -45,8 +45,8 @@ const linkAt = (element: HTMLElement) => {
 export const WholeCardLinks: Story = {
   args: { codeUrl: 'https://github.com/example/acme' },
   play: async ({ canvas, args }) => {
-    await expect(linkAt(canvas.getByRole('heading', { name: args.title }))).toBe(canvas.getByRole('link', { name: 'Learn more' }));
-    await expect(linkAt(canvas.getByText(args.headline))).toBe(canvas.getByRole('link', { name: 'Learn more' }));
+    await expect(linkAt(canvas.getByRole('heading', { name: args.title }))).toBe(canvas.getByRole('link', { name: 'Read more' }));
+    await expect(linkAt(canvas.getByText(args.headline))).toBe(canvas.getByRole('link', { name: 'Read more' }));
     await expect(linkAt(canvas.getByRole('link', { name: 'Code' }))).toBe(canvas.getByRole('link', { name: 'Code' }));
   }
 };
@@ -54,8 +54,8 @@ export const WholeCardLinks: Story = {
 export const KeyboardFocusRingsTheCard: Story = {
   play: async ({ canvas, canvasElement, userEvent }) => {
     await userEvent.tab();
-    await expect(canvas.getByRole('link', { name: 'Learn more' })).toHaveFocus();
+    await expect(canvas.getByRole('link', { name: 'Read more' })).toHaveFocus();
     await expect(canvasElement.querySelector('article')).toHaveStyle({ outlineStyle: 'solid' });
-    await expect(canvas.getByRole('link', { name: 'Learn more' })).toHaveStyle({ outlineStyle: 'none' });
+    await expect(canvas.getByRole('link', { name: 'Read more' })).toHaveStyle({ outlineStyle: 'none' });
   }
 };

@@ -11,9 +11,6 @@ import styles from './HomePage.module.css';
 const wiseRoles = rolesFor('wise');
 const wiseTeam = projects.wise.kind === 'professional' ? projects.wise.team : undefined;
 
-const ReadMore = () =>
-  <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>;
-
 export const HomePage = () =>
   <div className={styles.page}>
     <Intro/>
@@ -33,7 +30,7 @@ export const HomePage = () =>
                 <h3 className={index === 0 ? styles.titleCurrent : styles.title}>{role.title}</h3>
                 {index === 0 && <p className={styles.team}>Wise · {wiseTeam}</p>}
                 <p className={styles.summary}>{role.impact[0]}</p>
-                {index === 0 && <Button as="a" variant="outline" to="/work/wise">Read more<ReadMore/></Button>}
+                {index === 0 && <Button as="a" variant="outline" arrow to="/work/wise">Read more</Button>}
               </div>
               {index === 0 && <Thumbnail className={styles.screenshot} image={imageFor(projects.wise)}/>}
             </div>

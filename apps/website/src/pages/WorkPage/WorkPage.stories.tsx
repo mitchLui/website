@@ -21,10 +21,15 @@ export const Default: Story = {
     });
     await step('lists every other project under Earlier projects', async () => {
       await expect(canvas.getByRole('heading', { name: 'Earlier projects' })).toBeVisible();
-      await expect(canvas.getByText('University, hackathons and personal')).toBeVisible();
       archivedProjects.forEach(([id, project]) =>
         expect(canvas.getByText(project.title, { selector: 'a span' }).closest('a')).toHaveAttribute('href', `/work/${id}`)
       );
+    });
+    await step('lines up the card titles and screenshots across the row', async () => {
+      const titles = professionalProjects.map(([, project]) => Math.round(canvas.getByRole('heading', { name: project.title }).getBoundingClientRect().top));
+      await expect(new Set(titles).size).toBe(1);
+      const ratios = canvas.getAllByRole('img').map(image => (image.clientWidth / image.clientHeight).toFixed(2));
+      await expect(new Set(ratios)).toEqual(new Set(['1.60']));
     });
     await step('shows awards but not grades', async () => {
       await expect(canvas.getByText(/Overall best prize/)).toBeVisible();

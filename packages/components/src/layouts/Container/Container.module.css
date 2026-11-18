@@ -19,19 +19,17 @@
   margin: 0;
 }
 
-.eyebrow {
-  margin: 0 0 var(--space-2);
-  font-size: var(--font-size-small);
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: var(--tracking-label);
-  color: var(--color-brand-text);
-}
-
 .container-header h1 {
   font-size: var(--font-size-display);
   line-height: var(--line-height-tight);
   letter-spacing: var(--tracking-display);
   font-weight: var(--font-weight-heavy);
+}
+
+.container-header:has(h2) {
+  margin-block: var(--space-16) var(--space-8);
+  padding-top: var(--space-4);
+  border-top: 3px solid var(--color-text);
 }
 
 .container-header h2 {

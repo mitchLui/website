@@ -2,8 +2,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: var(--space-4);
-  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
   color: var(--color-text);
   background-color: var(--color-surface);
   transition: background-color var(--duration-base) var(--ease-standard);
@@ -16,7 +16,7 @@
 }
 
 .card h2 {
-  margin: var(--space-5) var(--space-2) var(--space-3);
+  margin: var(--space-5) 0 var(--space-2);
   font-size: var(--font-size-title-3);
   line-height: var(--line-height-snug);
   letter-spacing: var(--tracking-title);
@@ -27,7 +27,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
-  padding: var(--space-4) var(--space-2) var(--space-2);
+  padding-top: var(--space-5);
 }
 
 .card-link::after {
@@ -45,12 +45,17 @@
 .thumbnail {
   display: block;
   overflow: hidden;
-  border-radius: var(--radius-md);
+  border: 2px solid var(--color-text);
+  border-radius: var(--radius-sm);
+  background-color: var(--neutral-0);
 }
 
 .thumbnail img {
   display: block;
   width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top left;
   transition: transform var(--duration-slow) var(--ease-enter);
 }
 
@@ -63,12 +68,15 @@
 .card-content {
   display: flex;
   flex-direction: column;
+  gap: var(--space-3);
   flex: 1;
-  padding-inline: var(--space-2);
   color: var(--color-text-secondary);
 }
 
 .impact {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
   padding-left: var(--space-5);
   color: var(--color-text);
 }

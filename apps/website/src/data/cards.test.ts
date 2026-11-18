@@ -20,7 +20,8 @@ test('describes an archive entry by start month and awards, tagged with its kind
   expect(toArchiveEntry('mask-detector', projects['mask-detector'])).toEqual({
     title: 'Mask Detector',
     href: '/work/mask-detector',
-    meta: 'Apr 2021 · Overall best prize · Most verified · Most gamified',
+    date: 'Apr 2021',
+    note: 'Overall best prize · Most verified · Most gamified',
     tag: { label: 'Hackathon', color: 'orange' }
   });
 });
@@ -31,4 +32,8 @@ test.each([
   ['flat-finder', 'Personal', 'olive']
 ])('tags the %s archive entry as %s in %s', (id, label, color) => {
   expect(toArchiveEntry(id, projects[id]).tag).toEqual({ label, color });
+});
+
+test('leaves the note off archive entries without awards', () => {
+  expect(toArchiveEntry('hpc', projects.hpc)).not.toHaveProperty('note');
 });
