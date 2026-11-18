@@ -59,3 +59,11 @@ export const KeyboardFocusRingsTheCard: Story = {
     await expect(canvas.getByRole('link', { name: 'Read more' })).toHaveStyle({ outlineStyle: 'none' });
   }
 };
+
+export const ScreenshotFrame: Story = {
+  play: async ({ canvas, args }) => {
+    const frame = canvas.getByRole('img', { name: args.image.alt }).parentElement!;
+    await expect(frame).toHaveStyle({ borderTopWidth: '0px', borderTopLeftRadius: '16px' });
+    await expect(getComputedStyle(frame).boxShadow).not.toBe('none');
+  }
+};

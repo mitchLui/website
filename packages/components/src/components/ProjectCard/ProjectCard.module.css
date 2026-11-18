@@ -45,9 +45,9 @@
 .thumbnail {
   display: block;
   overflow: hidden;
-  border: 2px solid var(--color-text);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   background-color: var(--neutral-0);
+  box-shadow: var(--shadow-screenshot);
 }
 
 .thumbnail img {

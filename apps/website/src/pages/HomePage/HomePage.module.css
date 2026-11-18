@@ -89,6 +89,10 @@
 
 .screenshot {
   display: block;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background-color: var(--neutral-0);
+  box-shadow: var(--shadow-screenshot);
 }
 
 .screenshot img {
@@ -97,9 +101,6 @@
   aspect-ratio: 16 / 10;
   object-fit: cover;
   object-position: top left;
-  border: 2px solid var(--color-text);
-  border-radius: var(--radius-sm);
-  background-color: var(--neutral-0);
 }
 
 .tiles {
