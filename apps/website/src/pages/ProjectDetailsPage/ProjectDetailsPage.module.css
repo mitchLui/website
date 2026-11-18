@@ -42,22 +42,6 @@
   align-items: start;
 }
 
-.hero {
-  display: block;
-  overflow: hidden;
-  border-radius: var(--radius-md);
-  background-color: var(--neutral-0);
-  box-shadow: var(--shadow-screenshot);
-}
-
-.hero img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  object-position: top left;
-}
-
 .aside {
   display: grid;
   gap: var(--space-6);

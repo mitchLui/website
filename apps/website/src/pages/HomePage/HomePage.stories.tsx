@@ -20,7 +20,9 @@ const lineColour = (token: string) => {
 };
 
 const waitForFadeIn = (canvasElement: HTMLElement) =>
-  Promise.all(canvasElement.ownerDocument.getAnimations().map(animation => animation.finished));
+  Promise.all(canvasElement.ownerDocument.getAnimations()
+    .filter(animation => animation instanceof CSSAnimation && animation.animationName.includes('page-in'))
+    .map(animation => animation.finished));
 
 export const Default: Story = {
   play: async ({ canvas, canvasElement, step }) => {

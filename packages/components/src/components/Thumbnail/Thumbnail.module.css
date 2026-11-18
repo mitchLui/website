@@ -1,0 +1,22 @@
+.frame {
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface-sunken);
+  box-shadow: var(--shadow-screenshot);
+  animation: loading 1.4s var(--ease-standard) infinite alternate;
+}
+
+.frame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top left;
+}
+
+@keyframes loading {
+  to {
+    background-color: var(--color-border);
+  }
+}

@@ -42,20 +42,7 @@
   z-index: 1;
 }
 
-.thumbnail {
-  display: block;
-  overflow: hidden;
-  border-radius: var(--radius-md);
-  background-color: var(--neutral-0);
-  box-shadow: var(--shadow-screenshot);
-}
-
 .thumbnail img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  object-position: top left;
   transition: transform var(--duration-slow) var(--ease-enter);
 }
 

@@ -32,7 +32,7 @@ export const HomePage = () =>
                 <p className={styles.summary}>{role.impact[0]}</p>
                 {index === 0 && <Button as="a" variant="outline" arrow to="/work/wise">Read more</Button>}
               </div>
-              {index === 0 && <Thumbnail className={styles.screenshot} image={imageFor(projects.wise)}/>}
+              {index === 0 && <Thumbnail image={imageFor(projects.wise)}/>}
             </div>
           </Station>
         )}

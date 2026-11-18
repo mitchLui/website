@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect } from 'storybook/test';
 import { Thumbnail } from './Thumbnail';
+import { resolved } from '../../testing/resolve';
 import { wideImage } from '../../fixtures';
 
 const meta = {
@@ -23,5 +24,19 @@ export const WithWebp: Story = {
   args: { image: { ...wideImage, webpSrc: '/image.webp' } },
   play: async ({ canvasElement }) => {
     await expect(canvasElement.querySelector('source')).toHaveAttribute('srcset', '/image.webp');
+  }
+};
+
+export const LoadingPlaceholder: Story = {
+  args: { image: { src: '/never-loads.png', alt: 'loading screenshot' } },
+  decorators: [Story => <div style={{ width: '320px' }}><Story/></div>],
+  play: async ({ canvas }) => {
+    const frame = canvas.getByRole('img', { name: 'loading screenshot' }).parentElement!;
+    await expect(frame.getBoundingClientRect().height).toBeCloseTo(200, 0);
+    await expect(getComputedStyle(frame).animationName).not.toBe('none');
+    await expect(getComputedStyle(frame).backgroundColor).not.toBe('rgb(255, 255, 255)');
+    frame.getAnimations().forEach(animation => animation.pause());
+    frame.getAnimations().forEach(animation => { animation.currentTime = 0; });
+    await expect(frame).toHaveStyle({ backgroundColor: resolved('backgroundColor', 'var(--color-surface-sunken)') });
   }
 };
