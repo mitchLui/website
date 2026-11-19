@@ -4,7 +4,7 @@ import styles from './RouteLine.module.css';
 
 export type LineColor = 'wise' | 'education' | 'early';
 
-export type StationProps = PropsWithChildren<{
+type StationProps = PropsWithChildren<{
   line: LineColor;
   continuesAs?: LineColor;
   kind?: 'stop' | 'current' | 'interchange';

@@ -1,7 +1,5 @@
-export { Arrow } from './components/Arrow/Arrow';
 export { Avatar } from './components/Avatar/Avatar';
 export { BackButton, Button } from './components/Button/Button';
-export type { ButtonVariant } from './components/Button/Button';
 export { PageTitle, SectionTitle } from './components/Heading/Heading';
 export { Footer } from './components/Footer/Footer';
 export { HamburgerMenu } from './components/Hamburger/Hamburger';
@@ -15,7 +13,7 @@ export type { ProjectTileProps } from './components/ProjectTile/ProjectTile';
 export { ProjectCard } from './components/ProjectCard/ProjectCard';
 export type { ProjectCardProps } from './components/ProjectCard/ProjectCard';
 export { LineMarker, RouteLine, Station, Terminus } from './components/RouteLine/RouteLine';
-export type { LineColor, StationProps } from './components/RouteLine/RouteLine';
+export type { LineColor } from './components/RouteLine/RouteLine';
 export { Tag } from './components/Tag/Tag';
 export type { TagColor } from './components/Tag/Tag';
 export { Thumbnail } from './components/Thumbnail/Thumbnail';

@@ -34,15 +34,19 @@ const Fact = ({ term, children }: PropsWithChildren<{ term: string }>) =>
     <dd>{children}</dd>
   </div>;
 
-const Facts = ({ projectId, project }: { projectId: string; project: Project }) =>
-  <dl className={styles.facts}>
-    {project.kind === 'professional' && project.team && <Fact term="Team">{project.team}</Fact>}
-    <Fact term="Built with">{project.technologies.join(', ')}</Fact>
-    {project.kind === 'hackathon' && <Fact term="Event">{project.event}</Fact>}
-    {project.awards && <Fact term="Awards">{project.awards.join(' · ')}</Fact>}
-    {project.kind === 'academic' && project.grade && <Fact term="Grade">{project.grade}</Fact>}
-    {rolesFor(projectId).length > 1 && <Fact term="Roles">{rolesFor(projectId).map(role => role.title).reverse().join(', ')}</Fact>}
-  </dl>;
+const Facts = ({ projectId, project }: { projectId: string; project: Project }) => {
+  const roles = rolesFor(projectId);
+  return (
+    <dl className={styles.facts}>
+      {project.kind === 'professional' && project.team && <Fact term="Team">{project.team}</Fact>}
+      <Fact term="Built with">{project.technologies.join(', ')}</Fact>
+      {project.kind === 'hackathon' && <Fact term="Event">{project.event}</Fact>}
+      {project.awards && <Fact term="Awards">{project.awards.join(' · ')}</Fact>}
+      {project.kind === 'academic' && project.grade && <Fact term="Grade">{project.grade}</Fact>}
+      {roles.length > 1 && <Fact term="Roles">{roles.map(role => role.title).reverse().join(', ')}</Fact>}
+    </dl>
+  );
+};
 
 const Previously = ({ projectId }: { projectId: string }) => {
   const previous = previousProject(projectId);
@@ -58,14 +62,14 @@ const Previously = ({ projectId }: { projectId: string }) => {
 };
 
 export const ProjectDetailsPage = () => {
-  const { projectId } = useParams();
-  const project = projects[projectId as string];
+  const { projectId = '' } = useParams();
+  const project = projects[projectId];
 
   if (!project) {
     return <NotFoundPage/>;
   }
 
-  const line = lineFor(projectId as string, project);
+  const line = lineFor(projectId, project);
 
   return (
     <article className={styles.page}>
@@ -81,7 +85,7 @@ export const ProjectDetailsPage = () => {
       <div className={styles.overview}>
         <Thumbnail image={imageFor(project)}/>
         <aside className={styles.aside}>
-          <Facts projectId={projectId as string} project={project}/>
+          <Facts projectId={projectId} project={project}/>
           {(project.website || project.git_url) &&
             <div className={styles.actions}>
               {project.website && <Button as="a" to={project.website} {...externalLink}>Website</Button>}
@@ -89,13 +93,13 @@ export const ProjectDetailsPage = () => {
             </div>}
         </aside>
       </div>
-      {project.kind === 'professional' && <Impact projectId={projectId as string} line={line}/>}
-      {project.content_detailed.length > 0 &&
+      {project.kind === 'professional' && <Impact projectId={projectId} line={line}/>}
+      {project.content_detailed &&
         <section className={styles.section}>
           <SectionTitle>About</SectionTitle>
           {project.content_detailed.map((paragraph, index) => <p key={index} className={styles.paragraph}>{paragraph}</p>)}
         </section>}
-      <Previously projectId={projectId as string}/>
+      <Previously projectId={projectId}/>
     </article>
   );
 };

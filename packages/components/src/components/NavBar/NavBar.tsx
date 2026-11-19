@@ -35,7 +35,7 @@ export const NavBar = ({ links }: NavBarProps): ReactElement =>
 const DesktopNavBar = ({ links }: NavBarProps): ReactElement =>
   <header className={styles.header}>
     <div className={clsx(styles.navbar, styles.desktop)}>
-      <Logo onClick={() => {}}/>
+      <Logo/>
       <NavBarLinks links={links}/>
     </div>
   </header>;
@@ -82,9 +82,7 @@ const NavBarLinks = ({ links, onClick }: NavBarProps & { onClick?: () => void })
     </ul>
   </nav>;
 
-const Logo = ({ onClick }: { onClick: () => void }): ReactElement =>
-  <div className={styles.logoContainer}>
-    <Link onClick={onClick} to={'/'} className={styles.logoLink}>
-      <span className={styles.logo}><Avatar alt="" className={styles.logoGraphic}/>mitch<span className={styles.bold}>Lui</span></span>
-    </Link>
-  </div>;
+const Logo = ({ onClick }: { onClick?: () => void }): ReactElement =>
+  <Link onClick={onClick} to="/">
+    <span className={styles.logo}><Avatar alt="" className={styles.logoGraphic}/>mitch<span className={styles.bold}>Lui</span></span>
+  </Link>;

@@ -16,6 +16,7 @@ export const AsButton: Story = {
   play: async ({ canvas, args, userEvent }) => {
     await userEvent.click(canvas.getByRole('button', { name: 'Submit' }));
     await expect(args.onClick).toHaveBeenCalledOnce();
+    await expect(canvas.getByRole('button', { name: 'Submit' })).not.toHaveAttribute('as');
   }
 };
 
@@ -23,6 +24,7 @@ export const AsLink: Story = {
   args: { as: 'a', to: '/work', children: 'See all work' },
   play: async ({ canvas }) => {
     await expect(canvas.getByRole('link', { name: 'See all work' })).toHaveAttribute('href', '/work');
+    await expect(canvas.getByRole('link', { name: 'See all work' })).not.toHaveAttribute('as');
   }
 };
 

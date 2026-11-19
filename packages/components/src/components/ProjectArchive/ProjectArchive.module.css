@@ -22,7 +22,6 @@
   padding: var(--space-3);
   border-radius: var(--radius-sm);
   color: var(--color-text);
-  text-decoration: none;
   transition: background-color var(--duration-base) var(--ease-standard);
 }
 

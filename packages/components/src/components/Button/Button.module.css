@@ -9,7 +9,6 @@
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-snug);
-  text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
   transition:
@@ -87,7 +86,7 @@
   }
 }
 
-.modal {
+.back {
   justify-self: start;
   width: fit-content;
   border-radius: var(--radius-full);
