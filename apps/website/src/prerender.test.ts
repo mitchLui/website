@@ -143,3 +143,11 @@ test.each([['/work/', 'wise'], ...Object.keys(projects).map(id => [projectHref(i
   expect(first).toContain('fetchPriority="high"');
   rest.forEach(tag => expect(tag).toContain('loading="lazy"'));
 });
+
+test('ships server rules that force HTTPS, serve real 404s and cache hashed assets for a year', () => {
+  const rules = readFileSync(path.join(import.meta.dirname, '../build/client/.htaccess'), 'utf8');
+  expect(rules).toContain('RewriteRule ^(.*)$ "https://%{HTTP_HOST}%{REQUEST_URI}" [R=301,L]');
+  expect(rules).toContain('ErrorDocument 404 /not-found/index.html');
+  expect(rules).not.toContain('/index.html [QSA,L]');
+  expect(readFileSync(path.join(import.meta.dirname, '../build/client/assets/.htaccess'), 'utf8')).toContain('max-age=31536000, immutable');
+});
