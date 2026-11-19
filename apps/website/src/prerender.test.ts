@@ -135,3 +135,11 @@ test.each(Object.entries(projects))('describes the %s screenshot', (_id, project
   expect(project.alt).not.toMatch(/screenshot$/);
   expect(project.alt.length).toBeGreaterThan(30);
 });
+
+test.each([['/work/', 'wise'], ...Object.keys(projects).map(id => [projectHref(id), projects[id].thumbnail])])('loads the main screenshot on %s first and every other image lazily', (route, thumbnail) => {
+  const images = [...readPage(route).matchAll(/<img [^>]*src="\/project-assets\/[^"]*"[^>]*>/g)].map(([tag]) => tag);
+  const [first, ...rest] = images;
+  expect(first).toContain(`/${thumbnail}.png`);
+  expect(first).toContain('fetchPriority="high"');
+  rest.forEach(tag => expect(tag).toContain('loading="lazy"'));
+});

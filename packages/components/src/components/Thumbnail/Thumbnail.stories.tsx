@@ -49,3 +49,21 @@ export const DarkModeEdge: Story = {
     await expect(edge).toContain(dark ? 'rgb(52, 65, 59)' : 'rgba(20, 32, 27, 0)');
   }
 };
+
+export const LazyByDefault: Story = {
+  play: async ({ canvas, args }) => {
+    const image = canvas.getByRole('img', { name: args.image.alt });
+    await expect(image).toHaveAttribute('loading', 'lazy');
+    await expect(image).toHaveAttribute('decoding', 'async');
+    await expect(image).not.toHaveAttribute('fetchpriority');
+  }
+};
+
+export const Priority: Story = {
+  args: { priority: true },
+  play: async ({ canvas, args }) => {
+    const image = canvas.getByRole('img', { name: args.image.alt });
+    await expect(image).toHaveAttribute('fetchpriority', 'high');
+    await expect(image).not.toHaveAttribute('loading');
+  }
+};

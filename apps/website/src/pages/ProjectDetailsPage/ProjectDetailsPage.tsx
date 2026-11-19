@@ -84,7 +84,7 @@ export const ProjectDetailsPage = () => {
         <p className={styles.headline}>{project.headline}</p>
       </header>
       <div className={styles.overview}>
-        <Thumbnail image={imageFor(project)}/>
+        <Thumbnail image={imageFor(project)} priority/>
         <aside className={styles.aside}>
           <Facts projectId={projectId} project={project}/>
           {(project.website || project.git_url) &&
