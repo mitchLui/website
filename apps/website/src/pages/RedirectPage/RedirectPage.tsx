@@ -1,9 +1,5 @@
-import { useEffect } from 'react';
-
-export const RedirectPage = ({ redirect } : { redirect: string }) => {
-  useEffect(() => {
-    window.location.assign(redirect);
-  }, [redirect]);
-
-  return <h1>Redirecting...</h1>;
-};
+export const RedirectPage = ({ redirect } : { redirect: string }) =>
+  <>
+    <h1>Redirecting...</h1>
+    <p><a href={redirect}>Continue to {redirect}</a></p>
+  </>;
