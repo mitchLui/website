@@ -22,17 +22,17 @@ export type ProfessionalProject = ProjectBase & {
   featured?: boolean;
 };
 
-export type AcademicProject = ProjectBase & {
+type AcademicProject = ProjectBase & {
   kind: 'academic';
   grade?: string;
 };
 
-export type HackathonProject = ProjectBase & {
+type HackathonProject = ProjectBase & {
   kind: 'hackathon';
   event: string;
 };
 
-export type PersonalProject = ProjectBase & {
+type PersonalProject = ProjectBase & {
   kind: 'personal';
 };
 
