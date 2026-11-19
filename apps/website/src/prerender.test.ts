@@ -72,3 +72,9 @@ test.each([...navLinks, ...footerLinks, ...sitemap.pages])('links $label to a pa
   const built = path.join(import.meta.dirname, '../build/client', href);
   expect(existsSync(path.join(built, 'index.html')) || existsSync(built)).toBe(true);
 });
+
+test('prerenders both the desktop links and the phone menu button so neither swaps in after load', () => {
+  const home = readPage('/');
+  expect(home).toContain('aria-label="Open menu"');
+  expect(home).toContain('href="/work"');
+});

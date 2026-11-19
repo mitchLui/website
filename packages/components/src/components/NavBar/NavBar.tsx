@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useState, useSyncExternalStore } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import { Link, NavLink as RouterNavLink } from 'react-router';
 import { HamburgerMenu } from '../Hamburger/Hamburger';
 import clsx from 'clsx';
@@ -16,54 +16,38 @@ type NavBarProps = {
   links: NavLink[];
 };
 
-const MOBILE: number = 768;
-
-const subscribeToResize = (onResize: () => void) => {
-  window.addEventListener('resize', onResize);
-  return () => window.removeEventListener('resize', onResize);
-};
-
-const useIsMobile = () => useSyncExternalStore(
-  subscribeToResize,
-  () => window.innerWidth < MOBILE,
-  () => false
-);
-
-export const NavBar = ({ links }: NavBarProps): ReactElement =>
-  useIsMobile() ? <MobileNavBar links={links}/> : <DesktopNavBar links={links}/>;
-
-const DesktopNavBar = ({ links }: NavBarProps): ReactElement =>
-  <header className={styles.header}>
-    <div className={clsx(styles.navbar, styles.desktop)}>
-      <Logo/>
-      <NavBarLinks links={links}/>
-    </div>
-  </header>;
+const desktop = '(min-width: 768px)';
 
 const useMenuLock = (isOpen: boolean, setIsOpen: (isOpen: boolean) => void) => useEffect(() => {
   if (!isOpen) {
     return;
   }
   const closeOnEscape = (event: KeyboardEvent) => event.key === 'Escape' && setIsOpen(false);
+  const closeOnDesktop = (event: MediaQueryListEvent) => event.matches && setIsOpen(false);
+  const desktopQuery = window.matchMedia(desktop);
   document.body.style.overflow = 'hidden';
   window.addEventListener('keydown', closeOnEscape);
+  desktopQuery.addEventListener('change', closeOnDesktop);
   return () => {
     document.body.style.overflow = '';
     window.removeEventListener('keydown', closeOnEscape);
+    desktopQuery.removeEventListener('change', closeOnDesktop);
   };
 }, [isOpen, setIsOpen]);
 
-const MobileNavBar = ({ links }: NavBarProps): ReactElement => {
+export const NavBar = ({ links }: NavBarProps): ReactElement => {
   const [isOpen, setIsOpen] = useState(false);
+  const close = () => setIsOpen(false);
   useMenuLock(isOpen, setIsOpen);
   return (
     <header className={clsx(styles.header, isOpen && styles.headerOpen)}>
       <div className={styles.navbar}>
-        <Logo onClick={() => setIsOpen(false)}/>
-        <HamburgerMenu onClick={() => setIsOpen(!isOpen)} isOpen={isOpen}/>
+        <Logo onClick={close}/>
+        <div className={styles.desktop}><NavBarLinks links={links}/></div>
+        <div className={styles.phone}><HamburgerMenu onClick={() => setIsOpen(!isOpen)} isOpen={isOpen}/></div>
       </div>
       <div className={clsx(styles.sheet, !isOpen && styles.sheetClosed)}>
-        <NavBarLinks links={links} onClick={() => setIsOpen(false)}/>
+        <NavBarLinks links={links} onClick={close}/>
       </div>
     </header>
   );

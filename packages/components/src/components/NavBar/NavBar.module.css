@@ -87,6 +87,23 @@
   background-color: var(--color-surface-sunken);
 }
 
+.phone {
+  display: contents;
+}
+
+@media (min-width: 768px) {
+  .phone,
+  .sheet {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .desktop {
+    display: none;
+  }
+}
+
 .header-open {
   background-color: var(--color-bg);
   backdrop-filter: none;
