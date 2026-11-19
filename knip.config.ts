@@ -5,7 +5,9 @@ const config: KnipConfig = {
   compilers: {
     css: (text: string) => [...text.matchAll(/@import\s+['"]([^'"]+)['"]/g)].map(([, source]) => `import '${source}';`).join('\n')
   },
-  ignoreDependencies: ['@vitest/browser-playwright']
+  ignoreDependencies: ['@vitest/browser-playwright'],
+  // React Router generates route types during typecheck, which runs after knip in CI.
+  ignoreUnresolved: [/\/\+types\//]
 };
 
 export default config;
