@@ -1,48 +1,81 @@
 .archive {
-  list-style: none;
+  margin: 0;
   padding: 0;
-  font-size: var(--font-size-lead);
+  list-style: none;
 }
 
-.entry {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: var(--space-2);
-  padding: var(--space-4) 0;
+.archive li {
+  padding-block: var(--space-1);
   border-bottom: 1px solid var(--color-border);
 }
 
-.title {
-  font-weight: var(--font-weight-semibold);
-  text-decoration-line: underline;
-  text-decoration-color: transparent;
-  text-underline-offset: 0.2em;
-  text-decoration-thickness: 1.5px;
-  transition:
-    color var(--duration-base) var(--ease-standard),
-    text-decoration-color var(--duration-base) var(--ease-standard);
+.entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 7.5rem 5.5rem;
+  grid-template-areas:
+    'title tag date'
+    'note tag date';
+  align-items: center;
+  column-gap: var(--space-4);
+  row-gap: var(--space-1);
+  margin-inline: calc(-1 * var(--space-3));
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: background-color var(--duration-base) var(--ease-standard);
+}
+
+.entry:active {
+  background-color: var(--color-surface-sunken);
 }
 
 @media (hover: hover) {
-  .entry:hover .title {
-    color: var(--color-brand-text);
-    text-decoration-color: currentColor;
+  .entry:hover {
+    background-color: var(--color-surface-sunken);
   }
 }
 
-.details {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-3);
+.title {
+  grid-area: title;
+  font-size: var(--font-size-lead);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-title);
 }
 
-.meta {
-  font-size: var(--font-size-body);
+.note {
+  grid-area: note;
+  font-size: var(--font-size-small);
   color: var(--color-text-secondary);
 }
 
-.entry:active .title {
-  color: var(--color-brand-text);
+.tag {
+  grid-area: tag;
+  justify-self: end;
+}
+
+.date {
+  grid-area: date;
+  justify-self: end;
+  font-size: var(--font-size-small);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 767px) {
+  .entry {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      'title title date'
+      'tag note note';
+    column-gap: var(--space-2);
+  }
+
+  .tag {
+    justify-self: start;
+  }
+
+  .tag:empty {
+    display: none;
+  }
 }

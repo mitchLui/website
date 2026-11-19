@@ -53,6 +53,12 @@ test.each(pages)('prerenders the content of $route into the HTML', ({ route, con
   content.forEach(fragment => expect(html).toContain(fragment));
 });
 
+test.each(pages)('paints $route with the theme background before the stylesheet loads', ({ route }) => {
+  const head = readPage(route).split('<link rel="stylesheet"')[0];
+  expect(head).toContain('html{background:#F7F5EF');
+  expect(head).toContain('@media (prefers-color-scheme:dark){html{background:#0C1210');
+});
+
 test.each(pages)('prerenders $route visible without JavaScript', ({ route }) => {
   expect(readPage(route)).not.toMatch(/style="[^"]*opacity:\s*0/);
 });

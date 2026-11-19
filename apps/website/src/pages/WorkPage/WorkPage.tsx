@@ -9,7 +9,7 @@ export const WorkPage = () =>
       {professionalProjects.map(([id, project]) => <ProjectCard key={id} {...toProjectCard(id, project)}/>)}
     </Grid>
     <section>
-      <ContainerHeader eyebrow="University, hackathons and personal"><h2>Earlier projects</h2></ContainerHeader>
+      <ContainerHeader><h2>Earlier projects</h2></ContainerHeader>
       <ProjectArchive entries={archivedProjects.map(([id, project]) => toArchiveEntry(id, project))}/>
     </section>
   </>;

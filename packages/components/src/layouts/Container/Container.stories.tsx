@@ -25,12 +25,10 @@ export const Header: Story = {
 };
 
 export const SectionHeader: Story = {
-  render: () => <ContainerHeader eyebrow="At Wise"><h2>Recent work</h2></ContainerHeader>,
+  render: () => <ContainerHeader><h2>Earlier projects</h2></ContainerHeader>,
   play: async ({ canvas }) => {
-    const eyebrow = canvas.getByText('At Wise');
-    const heading = canvas.getByRole('heading', { name: 'Recent work' });
-    await expect(eyebrow.compareDocumentPosition(heading) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
-    await expect(eyebrow).toHaveStyle({ color: resolved('color', 'var(--color-brand-text)') });
+    const header = canvas.getByRole('heading', { name: 'Earlier projects' }).parentElement!;
+    await expect(header).toHaveStyle({ borderTopWidth: '3px', borderTopStyle: 'solid', borderTopColor: resolved('color', 'var(--color-text)') });
   }
 };
 

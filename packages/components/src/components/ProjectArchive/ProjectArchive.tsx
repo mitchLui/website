@@ -6,7 +6,8 @@ import styles from './ProjectArchive.module.css';
 export type ArchiveEntry = {
   title: string;
   href: string;
-  meta: string;
+  date: string;
+  note?: string;
   tag?: { label: string; color: TagColor };
 };
 
@@ -16,10 +17,9 @@ export const ProjectArchive = ({ entries }: { entries: ArchiveEntry[] }): ReactE
       <li key={entry.href}>
         <Link to={entry.href} className={styles.entry}>
           <span className={styles.title}>{entry.title}</span>
-          <span className={styles.details}>
-            {entry.tag && <Tag color={entry.tag.color}>{entry.tag.label}</Tag>}
-            <span className={styles.meta}>{entry.meta}</span>
-          </span>
+          {entry.note && <span className={styles.note}>{entry.note}</span>}
+          <span className={styles.tag}>{entry.tag && <Tag color={entry.tag.color}>{entry.tag.label}</Tag>}</span>
+          <span className={styles.date}>{entry.date}</span>
         </Link>
       </li>
     )}

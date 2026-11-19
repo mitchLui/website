@@ -28,6 +28,7 @@ export const toProjectCard = (id: string, project: Project): ProjectCardProps =>
 export const toArchiveEntry = (id: string, project: Project): ArchiveEntry => ({
   title: project.title,
   href: `/work/${id}`,
-  meta: [formatMonth(project.started), ...(project.awards ?? [])].join(' · '),
+  date: formatMonth(project.started),
+  ...(project.awards && { note: project.awards.join(' · ') }),
   tag: kindTags[project.kind]
 });

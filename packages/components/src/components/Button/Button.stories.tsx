@@ -74,12 +74,11 @@ const xHeightCentre = (element: HTMLElement) => {
 };
 
 export const WithIcon: Story = {
-  args: { as: 'a', to: '/work', variant: 'outline', children: 'Read more' },
-  render: args =>
-    <Button {...args}>Read more<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></Button>,
+  args: { as: 'a', to: '/work', variant: 'outline', arrow: true, children: 'Read more' },
   play: async ({ canvas }) => {
     await document.fonts.ready;
     const link = canvas.getByRole('link', { name: 'Read more' });
+    await expect(link.lastElementChild).toHaveAttribute('aria-hidden', 'true');
     const icon = link.querySelector('svg')!.getBoundingClientRect();
     await expect(Math.abs(icon.top + icon.height / 2 - xHeightCentre(link))).toBeLessThan(0.5);
   }

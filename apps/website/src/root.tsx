@@ -25,6 +25,8 @@ export const Layout = ({ children }: PropsWithChildren) =>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F7F5EF" />
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0C1210" />
+      <meta name="color-scheme" content="light dark" />
+      <style>{'html{background:#F7F5EF;color:#14201B}@media (prefers-color-scheme:dark){html{background:#0C1210;color:#EEF2EF}}'}</style>
       <link rel="icon" href="/favicon.ico" sizes="48x48" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />

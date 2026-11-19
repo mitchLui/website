@@ -87,21 +87,6 @@
   text-wrap: pretty;
 }
 
-.screenshot {
-  display: block;
-}
-
-.screenshot img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  object-position: top left;
-  border: 2px solid var(--color-text);
-  border-radius: var(--radius-sm);
-  background-color: var(--neutral-0);
-}
-
 .tiles {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
