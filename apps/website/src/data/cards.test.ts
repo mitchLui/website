@@ -7,7 +7,7 @@ test('maps a project thumbnail to its png and webp assets', () => {
   expect(imageFor(projects.hpc)).toEqual({
     src: '/project-assets/png/hpc.png',
     webpSrc: '/project-assets/webp/hpc.webp',
-    alt: 'hpc screenshot'
+    alt: projects.hpc.alt
   });
 });
 

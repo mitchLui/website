@@ -1,14 +1,16 @@
-import { ReactElement } from 'react';
+import { ReactElement, Ref } from 'react';
 import clsx from 'clsx';
 import styles from './Hamburger.module.css';
 
 type HamburgerMenuProps = {
   isOpen: boolean;
   onClick: () => void;
+  ref?: Ref<HTMLButtonElement>;
 };
 
-export const HamburgerMenu = ({ onClick, isOpen }: HamburgerMenuProps): ReactElement =>
+export const HamburgerMenu = ({ onClick, isOpen, ref }: HamburgerMenuProps): ReactElement =>
   <button
+    ref={ref}
     type="button"
     className={clsx(styles.hamburger, isOpen && styles.open)}
     onClick={onClick}

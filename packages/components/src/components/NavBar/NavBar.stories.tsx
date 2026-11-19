@@ -59,6 +59,7 @@ export const ExternalLink: Story = {
 
 export const Mobile: Story = {
   globals: { viewport: { value: 'mobile', isRotated: false } },
+  decorators: [Story => <><Story/><main><a href="#behind">Page behind the menu</a></main></>],
   play: async ({ canvas, canvasElement, userEvent, step }) => {
     await step('fits the logo and menu button inside matching gutters', async () => {
       const avatar = canvasElement.querySelector('header img')!.getBoundingClientRect();
@@ -78,10 +79,16 @@ export const Mobile: Story = {
       const sheet = canvas.getByRole('navigation').parentElement!;
       await expect(Math.round(sheet.getBoundingClientRect().bottom)).toBe(window.innerHeight);
       await expect(document.body.style.overflow).toBe('hidden');
+      await expect(canvasElement.querySelector('main')!.inert).toBe(true);
+      const behind = canvas.getByRole('link', { name: 'Page behind the menu' });
+      behind.focus();
+      await expect(behind).not.toHaveFocus();
     });
     await step('closes the menu with Escape and lets the page scroll', async () => {
       await userEvent.keyboard('{Escape}');
       await expect(canvas.getByRole('button', { name: 'Open menu' })).toHaveAttribute('aria-expanded', 'false');
+      await expect(canvas.getByRole('button', { name: 'Open menu' })).toHaveFocus();
+      await expect(canvas.getByRole('link', { name: 'Page behind the menu' })).toBeVisible();
       await expect(document.body.style.overflow).toBe('');
       await userEvent.click(canvas.getByRole('button', { name: 'Open menu' }));
     });

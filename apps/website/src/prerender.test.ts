@@ -123,3 +123,15 @@ test.each(indexed.filter(({ route }) => route === '/' || route.startsWith('/work
   const section = route.startsWith('/work/') ? '/work/' : '/';
   expect(readPage(route)).toMatch(new RegExp(`<a [^>]*aria-current="page" href="${section}"`));
 });
+
+test.each(pages)('wraps $route in one main landmark that the skip link targets', ({ route }) => {
+  const html = readPage(route);
+  expect(html.match(/<main\b/g)).toHaveLength(1);
+  expect(html).toContain('<main id="content" tabindex="-1">');
+  expect(html.indexOf('href="#content"')).toBeLessThan(html.indexOf('<header'));
+});
+
+test.each(Object.entries(projects))('describes the %s screenshot', (_id, project) => {
+  expect(project.alt).not.toMatch(/screenshot$/);
+  expect(project.alt.length).toBeGreaterThan(30);
+});
