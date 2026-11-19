@@ -92,8 +92,7 @@
 }
 
 @media (min-width: 768px) {
-  .phone,
-  .sheet {
+  .phone {
     display: none;
   }
 }
@@ -104,24 +103,36 @@
   }
 }
 
-.header-open {
+.sheet {
+  --nav-height: 4rem;
+  position: fixed;
+  inset: 0;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow-y: auto;
+  color: var(--color-text);
   background-color: var(--color-bg);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  box-shadow: none;
 }
 
-.sheet {
-  position: fixed;
-  inset: var(--nav-height) 0 0;
-  overflow-y: auto;
-  padding: var(--space-6) var(--gutter) var(--space-12);
-  background-color: var(--color-bg);
+.sheet[open] {
   animation: fadein var(--duration-base) var(--ease-standard);
 }
 
-.sheet-closed {
-  display: none;
+.sheet::backdrop {
+  background: none;
+}
+
+:root:has(.sheet[open]) {
+  overflow: hidden;
+}
+
+.sheet-links {
+  padding: var(--space-6) var(--gutter) var(--space-12);
 }
 
 .sheet ul {

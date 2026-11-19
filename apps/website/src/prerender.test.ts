@@ -151,3 +151,18 @@ test('ships server rules that force HTTPS, serve real 404s and cache hashed asse
   expect(rules).not.toContain('/index.html [QSA,L]');
   expect(readFileSync(path.join(import.meta.dirname, '../build/client/assets/.htaccess'), 'utf8')).toContain('max-age=31536000, immutable');
 });
+
+const allPages = [...pages.map(({ route }) => route), ...Object.keys(redirects)];
+
+test.each(allPages)('ships %s without any client JavaScript', route => {
+  const html = readPage(route);
+  expect(html.match(/<script\b(?![^>]*type="application\/ld\+json")[^>]*>/g)).toBeNull();
+  expect(html).not.toContain('modulepreload');
+});
+
+test('opens the phone menu with HTML alone', () => {
+  const home = readPage('/');
+  expect(home).toMatch(/<dialog id="site-menu"[^>]*aria-label="Menu"/);
+  expect(home).toMatch(/commandfor="site-menu" command="show-modal"/);
+  expect(home).toMatch(/commandfor="site-menu" command="close"/);
+});
