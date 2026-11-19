@@ -22,7 +22,7 @@ export const Default: Story = {
     await step('lists every other project under Earlier projects', async () => {
       await expect(canvas.getByRole('heading', { name: 'Earlier projects' })).toBeVisible();
       archivedProjects.forEach(([id, project]) =>
-        expect(canvas.getByText(project.title, { selector: 'a span' }).closest('a')).toHaveAttribute('href', `/work/${id}`)
+        expect(canvas.getByText(project.title, { selector: 'a span' }).closest('a')).toHaveAttribute('href', `/work/${id}/`)
       );
     });
     await step('lines up the card titles and screenshots across the row', async () => {

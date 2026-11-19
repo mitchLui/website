@@ -31,7 +31,7 @@ export const SeveralRoles: Story = {
     await expect(fact(canvas, 'Team')).toBe('Business Account Management');
     await expect(fact(canvas, 'Built with')).toBe('Next.js, Java Spring, Kafka');
     await expect(fact(canvas, 'Roles')).toBe('Graduate Software Engineer, Software Engineer, Senior Software Engineer');
-    await expect(canvas.getByRole('link', { name: 'All work' })).toHaveAttribute('href', '/work');
+    await expect(canvas.getByRole('link', { name: 'All work' })).toHaveAttribute('href', '/work/');
     await expect(canvas.getByRole('heading', { level: 2, name: 'Impact' })).toBeVisible();
     await expect(roleHeadings(canvas)).toEqual(['Senior Software Engineer', 'Software Engineer', 'Graduate Software Engineer']);
     await expect(canvas.getByText('Jun 2025 – Jun 2026')).toBeVisible();
@@ -39,7 +39,7 @@ export const SeveralRoles: Story = {
     const stations = canvas.getByRole('heading', { level: 2, name: 'Impact' }).parentElement!.querySelectorAll('ol > li');
     await expect([...stations].map(station => station.getAttribute('aria-current'))).toEqual(['step', null, null]);
     await expect(canvas.getByRole('navigation', { name: 'Previous project' })).toHaveTextContent('Previously · Feb 2023 – May 2023LBM Optimisation');
-    await expect(canvas.getByRole('link', { name: /LBM Optimisation/ })).toHaveAttribute('href', '/work/hpc');
+    await expect(canvas.getByRole('link', { name: /LBM Optimisation/ })).toHaveAttribute('href', '/work/hpc/');
   }
 };
 

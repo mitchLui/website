@@ -8,6 +8,7 @@ import { formatPeriod } from '../../data/dates';
 import { rolesFor } from '../../data/roles';
 import { imageFor, kindTags } from '../../data/cards';
 import { lineFor, previousProject } from '../../data/line';
+import { projectHref } from '../../data/links';
 import styles from './ProjectDetailsPage.module.css';
 
 const Impact = ({ projectId, line }: { projectId: string; line: LineColor }) =>
@@ -56,7 +57,7 @@ const Previously = ({ projectId }: { projectId: string }) => {
   const [id, project] = previous;
   return (
     <nav aria-label="Previous project" className={styles.previously}>
-      <ProjectTile href={`/work/${id}`} eyebrow={`Previously · ${formatPeriod(project.started, project.ended)}`} title={project.title}/>
+      <ProjectTile href={projectHref(id)} eyebrow={`Previously · ${formatPeriod(project.started, project.ended)}`} title={project.title}/>
     </nav>
   );
 };
@@ -73,7 +74,7 @@ export const ProjectDetailsPage = () => {
 
   return (
     <article className={styles.page}>
-      <BackButton to="/work" text="All work"/>
+      <BackButton to="/work/" text="All work"/>
       <header className={styles.header}>
         <p className={styles.eyebrow}>
           <LineMarker line={line}/>

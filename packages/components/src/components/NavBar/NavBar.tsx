@@ -1,5 +1,5 @@
 import { ReactElement, useEffect, useState } from 'react';
-import { Link, NavLink as RouterNavLink } from 'react-router';
+import { Link, useLocation } from 'react-router';
 import { HamburgerMenu } from '../Hamburger/Hamburger';
 import clsx from 'clsx';
 import { Avatar } from '../Avatar/Avatar';
@@ -60,11 +60,24 @@ const NavBarLinks = ({ links, onClick }: NavBarProps & { onClick?: () => void })
         <li key={link.href}>
           {link.external
             ? <Link to={link.href} onClick={onClick} className={styles.navText} {...externalLink}>{link.label}</Link>
-            : <RouterNavLink to={link.href} end={link.href === '/'} onClick={onClick} className={styles.navText}>{link.label}</RouterNavLink>}
+            : <SectionLink link={link} onClick={onClick}/>}
         </li>
       )}
     </ul>
   </nav>;
+
+const withoutTrailingSlash = (path: string) => path.length > 1 ? path.replace(/\/$/, '') : path;
+
+// Pages are prerendered at /work but linked as /work/, so compare paths without the trailing slash.
+const isCurrentSection = (pathname: string, href: string) => {
+  const [here, section] = [withoutTrailingSlash(pathname), withoutTrailingSlash(href)];
+  return here === section || (section !== '/' && here.startsWith(section + '/'));
+};
+
+const SectionLink = ({ link, onClick }: { link: NavLink; onClick?: () => void }): ReactElement => {
+  const isCurrent = isCurrentSection(useLocation().pathname, link.href);
+  return <Link to={link.href} onClick={onClick} className={styles.navText} aria-current={isCurrent ? 'page' : undefined}>{link.label}</Link>;
+};
 
 const Logo = ({ onClick }: { onClick?: () => void }): ReactElement =>
   <Link onClick={onClick} to="/">

@@ -8,6 +8,7 @@ import { Role, rolesFor } from '../../data/roles';
 import { formatPeriod } from '../../data/dates';
 import { imageFor } from '../../data/cards';
 import { educationTiles, internships } from '../../data/line';
+import { projectHref } from '../../data/links';
 import styles from './HomePage.module.css';
 
 const [currentRole, ...earlierRoles] = rolesFor('wise');
@@ -30,7 +31,7 @@ const CurrentRole = ({ role }: { role: Role }) =>
       <h3 className={styles.titleCurrent}>{role.title}</h3>
       <p className={styles.team}>Wise · {wiseTeam}</p>
       <p className={styles.summary}>{role.impact[0]}</p>
-      <Button as="a" variant="outline" arrow to="/work/wise">Read more</Button>
+      <Button as="a" variant="outline" arrow to={projectHref('wise')}>Read more</Button>
     </div>
     <Thumbnail image={imageFor(projects.wise)}/>
   </div>;
@@ -59,7 +60,7 @@ export const HomePage = () =>
           <Station key={id} line={index === 0 ? 'education' : 'early'} continuesAs="early">
             <Stop
               period={formatPeriod(project.started, project.ended)}
-              title={<Link to={`/work/${id}`} className={styles.titleLink}>Intern · {project.company}</Link>}
+              title={<Link to={projectHref(id)} className={styles.titleLink}>Intern · {project.company}</Link>}
               summary={rolesFor(id)[0].impact[0]}
             />
           </Station>

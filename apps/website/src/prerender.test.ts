@@ -3,7 +3,8 @@ import path from 'node:path';
 import { expect, test } from 'vitest';
 import { featuredProjects, projects } from './data/projects';
 import { redirects } from './data/redirects';
-import { footerLinks, navLinks, sitemap } from './data/links';
+import { footerLinks, indexedPaths, navLinks, projectHref, sitemap } from './data/links';
+import { siteUrl } from './meta/meta';
 
 const readPage = (route: string) =>
   readFileSync(path.join(import.meta.dirname, '../build/client', route, 'index.html'), 'utf8');
@@ -15,19 +16,19 @@ const pages = [
     route: '/',
     title: 'Mitch Lui | Senior Software Engineer',
     description: 'Mitch Lui, Senior Software Engineer at Wise in London.',
-    content: featuredProjects.map(([id]) => `href="/work/${id}"`)
+    content: featuredProjects.map(([id]) => `href="${projectHref(id)}"`)
   },
   {
-    route: '/work',
+    route: '/work/',
     title: 'Work | Mitch Lui',
     description: 'Work at Wise and Asiabots, plus earlier university, hackathon and personal projects.',
-    content: Object.keys(projects).map(id => `href="/work/${id}"`)
+    content: Object.keys(projects).map(id => `href="${projectHref(id)}"`)
   },
   {
-    route: '/sitemap',
+    route: '/sitemap/',
     title: 'Sitemap | Mitch Lui',
-    description: 'Sitemap.',
-    content: Object.keys(projects).map(id => `href="/work/${id}"`)
+    description: 'Every page on mitchlui.dev.',
+    content: Object.keys(projects).map(id => `href="${projectHref(id)}"`)
   },
   {
     route: '/not-found',
@@ -36,7 +37,7 @@ const pages = [
     content: ['>Page not found</h1>']
   },
   ...Object.entries(projects).map(([id, project]) => ({
-    route: `/work/${id}`,
+    route: projectHref(id),
     title: `${project.title} | Mitch Lui`,
     description: escapeHtml(project.headline),
     content: [`>${project.title}</h1>`]
@@ -76,5 +77,49 @@ test.each([...navLinks, ...footerLinks, ...sitemap.pages])('links $label to a pa
 test('prerenders both the desktop links and the phone menu button so neither swaps in after load', () => {
   const home = readPage('/');
   expect(home).toContain('aria-label="Open menu"');
-  expect(home).toContain('href="/work"');
+  expect(home).toContain('href="/work/"');
+});
+
+const indexed = pages.filter(({ route }) => route !== '/not-found');
+
+test.each(indexed)('gives $route an absolute canonical URL and share tags', ({ route }) => {
+  const html = readPage(route);
+  expect(html).toContain(`<link rel="canonical" href="${siteUrl}${route}"/>`);
+  expect(html).toContain(`<meta property="og:url" content="${siteUrl}${route}"/>`);
+  expect(html).toContain(`<meta property="og:image" content="${siteUrl}/og-image.jpg"/>`);
+  expect(html).toContain('<meta name="twitter:card" content="summary_large_image"/>');
+  expect(html).not.toContain('name="robots"');
+});
+
+test.each(['/not-found', ...Object.keys(redirects)])('keeps %s out of search results', route => {
+  const html = readPage(route);
+  expect(html).toContain('<meta name="robots" content="noindex"/>');
+  expect(html).not.toContain('rel="canonical"');
+});
+
+test('lists every indexed page, and only those, in sitemap.xml', () => {
+  const xml = readFileSync(path.join(import.meta.dirname, '../build/client/sitemap.xml'), 'utf8');
+  const listed = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, url]) => url);
+  expect(listed).toEqual(indexedPaths.map(route => siteUrl + route));
+  expect(listed.map(url => url.replace(siteUrl, ''))).toEqual(expect.arrayContaining(indexed.map(({ route }) => route)));
+});
+
+test('points crawlers at the sitemap', () => {
+  expect(readFileSync(path.join(import.meta.dirname, '../build/client/robots.txt'), 'utf8')).toContain(`Sitemap: ${siteUrl}/sitemap.xml`);
+});
+
+test('describes Mitch as a person on the home page', () => {
+  const [, json] = readPage('/').match(/<script type="application\/ld\+json">(.+?)<\/script>/)!;
+  expect(JSON.parse(json)).toMatchObject({ '@type': 'Person', name: 'Mitch Lui', url: `${siteUrl}/`, sameAs: Object.values(redirects) });
+});
+
+test.each(indexed)('links from $route to pages with a trailing slash so the server never redirects', ({ route }) => {
+  const internal = [...readPage(route).matchAll(/href="(\/[^"]*)"/g)].map(([, href]) => href)
+    .filter(href => !/\.[a-z0-9]+$/i.test(href));
+  internal.forEach(href => expect(href).toMatch(/\/$/));
+});
+
+test.each(indexed.filter(({ route }) => route === '/' || route.startsWith('/work/')))('marks the current section in the nav on $route', ({ route }) => {
+  const section = route.startsWith('/work/') ? '/work/' : '/';
+  expect(readPage(route)).toMatch(new RegExp(`<a [^>]*aria-current="page" href="${section}"`));
 });

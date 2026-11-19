@@ -3,7 +3,8 @@ import { pageMeta } from '../meta/meta';
 
 export const meta = () => pageMeta({
   title: 'Sitemap | Mitch Lui',
-  description: 'Sitemap.'
+  description: 'Every page on mitchlui.dev.',
+  path: '/sitemap/'
 });
 
 export default SitemapPage;

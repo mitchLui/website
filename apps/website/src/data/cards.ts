@@ -2,6 +2,7 @@ import type { ArchiveEntry, Image, ProjectCardProps } from '@mitchlui/components
 import { Project } from './projects';
 import { rolesFor } from './roles';
 import { formatMonth } from './dates';
+import { projectHref } from './links';
 
 export const kindTags: Record<Project['kind'], NonNullable<ArchiveEntry['tag']>> = {
   professional: { label: 'Professional', color: 'green' },
@@ -19,7 +20,7 @@ export const imageFor = (project: Project): Image => ({
 export const toProjectCard = (id: string, project: Project): ProjectCardProps => ({
   title: project.title,
   headline: project.headline,
-  href: `/work/${id}`,
+  href: projectHref(id),
   image: imageFor(project),
   highlights: project.kind === 'professional' ? rolesFor(id)[0]?.impact : undefined,
   codeUrl: project.git_url
@@ -27,7 +28,7 @@ export const toProjectCard = (id: string, project: Project): ProjectCardProps =>
 
 export const toArchiveEntry = (id: string, project: Project): ArchiveEntry => ({
   title: project.title,
-  href: `/work/${id}`,
+  href: projectHref(id),
   date: formatMonth(project.started),
   ...(project.awards && { note: project.awards.join(' · ') }),
   tag: kindTags[project.kind]

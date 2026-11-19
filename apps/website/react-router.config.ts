@@ -10,6 +10,7 @@ export default {
     '/',
     '/work',
     '/sitemap',
+    '/sitemap.xml',
     '/not-found',
     ...Object.keys(redirects),
     ...Object.keys(projects).map(id => `/work/${id}`)

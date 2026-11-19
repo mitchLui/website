@@ -39,6 +39,15 @@ export const ActivePage: Story = {
   }
 };
 
+export const TrailingSlashLinks: Story = {
+  args: { links: [{ label: 'Home', href: '/' }, { label: 'Work', href: '/work/' }] },
+  parameters: { route: { path: '/work/*', url: '/work/acme' } },
+  play: async ({ canvas }) => {
+    await expect(canvas.getByRole('link', { name: 'Work' })).toHaveAttribute('aria-current', 'page');
+    await expect(canvas.getByRole('link', { name: 'Home' })).not.toHaveAttribute('aria-current');
+  }
+};
+
 export const ExternalLink: Story = {
   play: async ({ canvas }) => {
     const cv = canvas.getByRole('link', { name: 'CV' });
