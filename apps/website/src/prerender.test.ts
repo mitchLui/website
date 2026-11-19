@@ -1,8 +1,9 @@
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { expect, test } from 'vitest';
 import { featuredProjects, projects } from './data/projects';
 import { redirects } from './data/redirects';
+import { footerLinks, navLinks, sitemap } from './data/links';
 
 const readPage = (route: string) =>
   readFileSync(path.join(import.meta.dirname, '../build/client', route, 'index.html'), 'utf8');
@@ -65,4 +66,15 @@ test.each(pages)('prerenders $route visible without JavaScript', ({ route }) => 
 
 test.each(Object.entries(redirects))('prerenders %s as a meta refresh to its target', (route, target) => {
   expect(readPage(route)).toContain(`<meta http-equiv="refresh" content="0; url=${target}"/>`);
+});
+
+test.each([...navLinks, ...footerLinks, ...sitemap.pages])('links $label to a page that ships', ({ href }) => {
+  const built = path.join(import.meta.dirname, '../build/client', href);
+  expect(existsSync(path.join(built, 'index.html')) || existsSync(built)).toBe(true);
+});
+
+test('prerenders both the desktop links and the phone menu button so neither swaps in after load', () => {
+  const home = readPage('/');
+  expect(home).toContain('aria-label="Open menu"');
+  expect(home).toContain('href="/work"');
 });

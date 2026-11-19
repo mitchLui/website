@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect } from 'storybook/test';
-import { RouteLine, Station, Terminus } from './RouteLine';
+import { LineMarker, RouteLine, Station, Terminus } from './RouteLine';
 import { resolved } from '../../testing/resolve';
 
 const meta = {
@@ -84,5 +84,14 @@ export const EndsAtLastStation: Story = {
     const last = canvas.getAllByRole('listitem').at(-1)!.querySelectorAll<HTMLElement>('[aria-hidden] > span');
     await expect(last[0]).toBeVisible();
     await expect(last[1]).not.toBeVisible();
+  }
+};
+
+export const Marker: Story = {
+  render: () => <p><LineMarker line="education"/></p>,
+  play: async ({ canvasElement }) => {
+    const marker = canvasElement.querySelector('span')!;
+    await expect(marker).toHaveAttribute('aria-hidden', 'true');
+    await expect(marker).toHaveStyle({ width: '32px', height: '10px', backgroundColor: resolved('backgroundColor', 'var(--color-line-education)') });
   }
 };

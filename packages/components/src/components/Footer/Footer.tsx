@@ -2,6 +2,7 @@ import { ReactElement } from 'react';
 import { Link } from 'react-router';
 import type { NavLink } from '../NavBar/NavBar';
 import { NameStamp } from '../NameStamp/NameStamp';
+import { externalLink } from '../../links';
 import styles from './Footer.module.css';
 
 type FooterProps = {
@@ -23,7 +24,7 @@ export const Footer = ({ owner, place, stamp, links }: FooterProps): ReactElemen
       <ul className={styles.links}>
         {links.map(link =>
           <li key={link.href}>
-            <Link to={link.href} className={styles.link} {...(link.external && { target: '_blank', rel: 'noreferrer' })}>{link.label}</Link>
+            <Link to={link.href} className={styles.link} {...(link.external && externalLink)}>{link.label}</Link>
           </li>
         )}
       </ul>

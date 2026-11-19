@@ -22,7 +22,6 @@
   padding: var(--space-3);
   border-radius: var(--radius-sm);
   color: var(--color-text);
-  text-decoration: none;
   transition: background-color var(--duration-base) var(--ease-standard);
 }
 
@@ -57,9 +56,6 @@
 .date {
   grid-area: date;
   justify-self: end;
-  font-size: var(--font-size-small);
-  font-variant-numeric: tabular-nums;
-  color: var(--color-text-secondary);
 }
 
 @media (max-width: 767px) {

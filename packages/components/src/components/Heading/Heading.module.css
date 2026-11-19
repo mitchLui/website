@@ -1,0 +1,17 @@
+.page-title {
+  margin: 0;
+  font-size: var(--font-size-display);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--tracking-display);
+  font-weight: var(--font-weight-bold);
+}
+
+.section-title {
+  margin: 0;
+  padding-top: var(--space-4);
+  border-top: 3px solid var(--color-text);
+  font-size: var(--font-size-title-1);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--tracking-title);
+  font-weight: var(--font-weight-bold);
+}

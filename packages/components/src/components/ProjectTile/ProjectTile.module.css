@@ -8,7 +8,6 @@
   border-radius: var(--radius-sm);
   color: var(--color-text);
   background-color: var(--color-surface);
-  text-decoration: none;
   transition: background-color var(--duration-base) var(--ease-standard);
 }
 
@@ -25,12 +24,6 @@
   .tile:hover {
     background-color: var(--color-surface-sunken);
   }
-}
-
-.eyebrow {
-  font-size: var(--font-size-small);
-  font-variant-numeric: tabular-nums;
-  color: var(--color-text-secondary);
 }
 
 .title {

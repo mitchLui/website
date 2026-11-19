@@ -1,4 +1,5 @@
 import { AnchorHTMLAttributes, ReactElement } from 'react';
+import { externalLink } from '@mitchlui/components';
 import styles from './Intro.module.css';
 
 export const Intro = (): ReactElement =>
@@ -11,4 +12,4 @@ export const Intro = (): ReactElement =>
   </section>;
 
 const CompanyLink = ({ href, children }: AnchorHTMLAttributes<HTMLAnchorElement>): ReactElement =>
-  <a className={styles.link} target={'_blank'} rel={'noreferrer'} href={href}>{children}</a>;
+  <a className={styles.link} href={href} {...externalLink}>{children}</a>;

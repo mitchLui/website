@@ -12,3 +12,5 @@ export const pageMeta = ({ title, description }: PageMeta): MetaDescriptor[] => 
   { property: 'og:description', content: description },
   { property: 'og:image', content: '/og-image.jpg' }
 ];
+
+export const notFoundMeta = () => pageMeta({ title: 'Not found | Mitch Lui', description: 'Page not found' });

@@ -1,5 +1,5 @@
 import type { LineColor, ProjectTileProps } from '@mitchlui/components';
-import { Project, archivedProjects, projects } from './projects';
+import { ProfessionalProject, Project, archivedProjects, projects } from './projects';
 import { kindTags } from './cards';
 import { formatMonth } from './dates';
 
@@ -15,7 +15,8 @@ const newestFirst = Object.entries(projects).sort(([, a], [, b]) => b.started.lo
 export const previousProject = (id: string): [string, Project] | undefined =>
   newestFirst[newestFirst.findIndex(([entryId]) => entryId === id) + 1];
 
-export const internships = newestFirst.filter(([id, project]) => project.kind === 'professional' && id !== 'wise');
+export const internships = newestFirst.filter((entry): entry is [string, ProfessionalProject] =>
+  entry[1].kind === 'professional' && entry[0] !== 'wise');
 
 const highlighted = newestFirst.filter(([, project]) => project.highlight);
 

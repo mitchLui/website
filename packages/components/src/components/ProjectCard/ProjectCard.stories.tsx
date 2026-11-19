@@ -34,6 +34,8 @@ export const WithCode: Story = {
   play: async ({ canvas, args }) => {
     await expect(canvas.queryByRole('list')).not.toBeInTheDocument();
     await expect(canvas.getByRole('link', { name: 'Code' })).toHaveAttribute('href', args.codeUrl);
+    await expect(canvas.getByRole('link', { name: 'Code' })).toHaveAttribute('target', '_blank');
+    await expect(canvas.getByRole('link', { name: 'Code' })).toHaveAttribute('rel', 'noreferrer');
   }
 };
 

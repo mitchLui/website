@@ -4,7 +4,7 @@ import styles from './RouteLine.module.css';
 
 export type LineColor = 'wise' | 'education' | 'early';
 
-export type StationProps = PropsWithChildren<{
+type StationProps = PropsWithChildren<{
   line: LineColor;
   continuesAs?: LineColor;
   kind?: 'stop' | 'current' | 'interchange';
@@ -22,6 +22,9 @@ export const Station = ({ line, continuesAs = line, kind = 'stop', children }: S
     </div>
     <div className={styles.content}>{children}</div>
   </li>;
+
+export const LineMarker = ({ line }: { line: LineColor }): ReactElement =>
+  <span className={clsx(styles.marker, styles[line])} aria-hidden="true"/>;
 
 export const Terminus = ({ children }: PropsWithChildren): ReactElement =>
   <li className={clsx(styles.station, styles.terminus)}>

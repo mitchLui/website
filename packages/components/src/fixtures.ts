@@ -6,5 +6,3 @@ const placeholder = (width: number, height: number, fill: string): string =>
   );
 
 export const wideImage: Image = { src: placeholder(1600, 900, '#9FE870'), alt: 'wide placeholder' };
-
-export const tallImage: Image = { src: placeholder(800, 1000, '#FFFFFF'), alt: 'tall placeholder' };

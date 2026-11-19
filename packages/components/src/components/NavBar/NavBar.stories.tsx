@@ -25,6 +25,7 @@ export const Desktop: Story = {
     await expect(canvas.getByRole('link', { name: 'Home' })).toHaveAttribute('href', '/');
     await expect(canvas.getByRole('link', { name: 'Work' })).toHaveAttribute('href', '/work');
     await expect(canvas.queryByRole('button', { name: 'Open menu' })).not.toBeInTheDocument();
+    await expect(canvas.getAllByRole('navigation')).toHaveLength(1);
   }
 };
 
@@ -58,7 +59,7 @@ export const Mobile: Story = {
     });
     await step('renders a closed hamburger menu', async () => {
       await expect(canvas.getByRole('button', { name: 'Open menu' })).toHaveAttribute('aria-expanded', 'false');
-      await expect(canvas.getByRole('link', { name: 'Work', hidden: true })).not.toBeVisible();
+      await expect(canvas.queryByRole('link', { name: 'Work' })).not.toBeInTheDocument();
     });
     await step('opens the menu to reveal the links', async () => {
       await userEvent.click(canvas.getByRole('button', { name: 'Open menu' }));
@@ -77,7 +78,7 @@ export const Mobile: Story = {
     });
     await step('closes the menu again', async () => {
       await userEvent.click(canvas.getByRole('button', { name: 'Close menu' }));
-      await expect(canvas.getByRole('link', { name: 'Work', hidden: true })).not.toBeVisible();
+      await expect(canvas.queryByRole('link', { name: 'Work' })).not.toBeInTheDocument();
     });
     await step('navigates when a link is chosen', async () => {
       await userEvent.click(canvas.getByRole('button', { name: 'Open menu' }));

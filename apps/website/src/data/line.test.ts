@@ -26,3 +26,7 @@ test('shows the highlighted projects newest first, then one tile for the rest', 
   expect(educationTiles[1]).toEqual({ href: '/work/greenmap', eyebrow: 'Hackathon · Feb 2022', title: 'GreenMap', detail: 'Honourable Mention' });
   expect(educationTiles.at(-1)).toEqual({ href: '/work', eyebrow: `And ${archivedProjects.length - 3} more`, title: 'All projects', more: true });
 });
+
+test('lists internships newest first with their company names', () => {
+  expect(internships.map(([id, project]) => [id, project.company])).toEqual([['wise-internship', 'Wise'], ['asiabots', 'Asiabots']]);
+});
