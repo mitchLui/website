@@ -117,7 +117,7 @@
 
   --shadow-overlay: 0 12px 32px var(--color-shadow);
   --shadow-screenshot:
-    0 0 0 1px light-dark(rgb(20 32 27 / 0%), rgb(238 242 239 / 18%)),
+    0 0 0 1px light-dark(rgb(20 32 27 / 0%), var(--neutral-750)),
     0 1px 2px light-dark(rgb(20 32 27 / 12%), rgb(0 0 0 / 40%)),
     0 8px 24px light-dark(rgb(20 32 27 / 10%), rgb(0 0 0 / 50%));
 

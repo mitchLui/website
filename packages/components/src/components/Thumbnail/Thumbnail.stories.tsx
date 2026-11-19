@@ -40,3 +40,12 @@ export const LoadingPlaceholder: Story = {
     await expect(frame).toHaveStyle({ backgroundColor: resolved('backgroundColor', 'var(--color-surface-sunken)') });
   }
 };
+
+export const DarkModeEdge: Story = {
+  play: async ({ canvas, args }) => {
+    const frame = canvas.getByRole('img', { name: args.image.alt }).parentElement!;
+    const edge = getComputedStyle(frame).boxShadow.split(/,(?![^(]*\))/)[0];
+    const dark = matchMedia('(prefers-color-scheme: dark)').matches;
+    await expect(edge).toContain(dark ? 'rgb(52, 65, 59)' : 'rgba(20, 32, 27, 0)');
+  }
+};
