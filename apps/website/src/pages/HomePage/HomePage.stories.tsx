@@ -45,10 +45,10 @@ export const Default: Story = {
       await expect(internship[1]).toHaveStyle({ backgroundColor: lineColour('early') });
     });
     await step('links to the Wise story, the highlighted projects, all projects and each internship', async () => {
-      await expect(canvas.getByRole('link', { name: 'Read more' })).toHaveAttribute('href', '/work/wise');
-      await expect(canvas.getByRole('link', { name: /Mask Detector/ })).toHaveAttribute('href', '/work/mask-detector');
+      await expect(canvas.getByRole('link', { name: 'Read more' })).toHaveAttribute('href', '/work/wise/');
+      await expect(canvas.getByRole('link', { name: /Mask Detector/ })).toHaveAttribute('href', '/work/mask-detector/');
       await expect(canvas.getByRole('link', { name: /All projects/ })).toHaveTextContent(`And ${archivedProjects.length - 3} more`);
-      await expect(canvas.getByRole('link', { name: 'Intern · Asiabots' })).toHaveAttribute('href', '/work/asiabots');
+      await expect(canvas.getByRole('link', { name: 'Intern · Asiabots' })).toHaveAttribute('href', '/work/asiabots/');
     });
   }
 };

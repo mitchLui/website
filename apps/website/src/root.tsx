@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react';
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
-import { Container, Footer, NavBar } from '@mitchlui/components';
+import { Container, Footer, NavBar, SkipLink } from '@mitchlui/components';
 import { footerLinks, navLinks } from './data/links';
 import '@mitchlui/components/styles.css';
 
@@ -31,9 +31,12 @@ export const Layout = ({ children }: PropsWithChildren) =>
 export default function Root() {
   return (
     <>
+      <SkipLink target="content"/>
       <NavBar links={navLinks}/>
       <Container>
-        <Outlet/>
+        <main id="content" tabIndex={-1}>
+          <Outlet/>
+        </main>
         <Footer owner="Mitch Lui" place="Hong Kong ↔ London" stamp="呂家天" links={footerLinks}/>
       </Container>
     </>

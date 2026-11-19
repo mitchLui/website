@@ -11,11 +11,12 @@ export type ProjectCardProps = {
   image: Image;
   highlights?: string[];
   codeUrl?: string;
+  priority?: boolean;
 };
 
-export const ProjectCard = ({ title, headline, href, image, highlights = [], codeUrl }: ProjectCardProps): ReactElement =>
+export const ProjectCard = ({ title, headline, href, image, highlights = [], codeUrl, priority }: ProjectCardProps): ReactElement =>
   <article className={styles.card}>
-    <Thumbnail className={styles.thumbnail} image={image}/>
+    <Thumbnail className={styles.thumbnail} image={image} priority={priority}/>
     <h2>{title}</h2>
     <div className={styles.cardContent}>
       {headline}

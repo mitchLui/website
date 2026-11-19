@@ -6,6 +6,7 @@ export default [
   route('work', 'routes/work.tsx'),
   route('work/:projectId', 'routes/project.tsx'),
   route('sitemap', 'routes/sitemap.tsx'),
+  route('sitemap.xml', 'routes/sitemap-xml.ts'),
   route('not-found', 'routes/not-found.tsx', { id: 'not-found' }),
   ...Object.keys(redirects).map(path => route(path.slice(1), 'routes/redirect.tsx', { id: path })),
   route('*', 'routes/not-found.tsx', { id: 'catch-all' })

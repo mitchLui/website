@@ -2,6 +2,7 @@ import type { LineColor, ProjectTileProps } from '@mitchlui/components';
 import { ProfessionalProject, Project, archivedProjects, projects } from './projects';
 import { kindTags } from './cards';
 import { formatMonth } from './dates';
+import { projectHref } from './links';
 
 export const lineFor = (id: string, project: Project): LineColor => {
   if (id === 'wise') {
@@ -22,10 +23,10 @@ const highlighted = newestFirst.filter(([, project]) => project.highlight);
 
 export const educationTiles: ProjectTileProps[] = [
   ...highlighted.map(([id, project]) => ({
-    href: `/work/${id}`,
+    href: projectHref(id),
     eyebrow: `${kindTags[project.kind].label} · ${formatMonth(project.started)}`,
     title: project.title,
     detail: project.awards?.[0] ?? project.technologies.join(', ')
   })),
-  { href: '/work', eyebrow: `And ${archivedProjects.length - highlighted.length} more`, title: 'All projects', more: true }
+  { href: '/work/', eyebrow: `And ${archivedProjects.length - highlighted.length} more`, title: 'All projects', more: true }
 ];

@@ -14,6 +14,7 @@ export { ProjectCard } from './components/ProjectCard/ProjectCard';
 export type { ProjectCardProps } from './components/ProjectCard/ProjectCard';
 export { LineMarker, RouteLine, Station, Terminus } from './components/RouteLine/RouteLine';
 export type { LineColor } from './components/RouteLine/RouteLine';
+export { SkipLink } from './components/SkipLink/SkipLink';
 export { Tag } from './components/Tag/Tag';
 export type { TagColor } from './components/Tag/Tag';
 export { Thumbnail } from './components/Thumbnail/Thumbnail';

@@ -8,8 +8,18 @@ export type Image = {
   alt: string;
 };
 
-export const Thumbnail = ({ image, className }: { image: Image; className?: string }): ReactElement =>
+type ThumbnailProps = {
+  image: Image;
+  priority?: boolean;
+  className?: string;
+};
+
+export const Thumbnail = ({ image, priority = false, className }: ThumbnailProps): ReactElement =>
   <picture className={clsx(styles.frame, className)}>
     {image.webpSrc && <source srcSet={image.webpSrc} type="image/webp" />}
-    <img src={image.src} alt={image.alt} />
+    <img
+      src={image.src}
+      alt={image.alt}
+      {...(priority ? { fetchPriority: 'high' } : { loading: 'lazy', decoding: 'async' })}
+    />
   </picture>;

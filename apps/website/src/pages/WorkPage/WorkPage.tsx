@@ -6,7 +6,7 @@ export const WorkPage = () =>
   <>
     <ContainerHeader><PageTitle>Work</PageTitle></ContainerHeader>
     <Grid>
-      {professionalProjects.map(([id, project]) => <ProjectCard key={id} {...toProjectCard(id, project)}/>)}
+      {professionalProjects.map(([id, project], index) => <ProjectCard key={id} {...toProjectCard(id, project)} priority={index === 0}/>)}
     </Grid>
     <section>
       <ContainerHeader><SectionTitle>Earlier projects</SectionTitle></ContainerHeader>

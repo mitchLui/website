@@ -7,7 +7,7 @@ test('maps a project thumbnail to its png and webp assets', () => {
   expect(imageFor(projects.hpc)).toEqual({
     src: '/project-assets/png/hpc.png',
     webpSrc: '/project-assets/webp/hpc.webp',
-    alt: 'hpc screenshot'
+    alt: projects.hpc.alt
   });
 });
 
@@ -19,7 +19,7 @@ test('gives professional project cards the current role impact and others none',
 test('describes an archive entry by start month and awards, tagged with its kind', () => {
   expect(toArchiveEntry('mask-detector', projects['mask-detector'])).toEqual({
     title: 'Mask Detector',
-    href: '/work/mask-detector',
+    href: '/work/mask-detector/',
     date: 'Apr 2021',
     note: 'Overall best prize · Most verified · Most gamified',
     tag: { label: 'Hackathon', color: 'orange' }

@@ -1,0 +1,16 @@
+.skip-link {
+  position: fixed;
+  top: var(--space-2);
+  left: var(--gutter);
+  z-index: 20;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-on-brand);
+  background-color: var(--color-brand);
+  transform: translateY(calc(-100% - var(--space-4)));
+}
+
+.skip-link:focus {
+  transform: none;
+}
