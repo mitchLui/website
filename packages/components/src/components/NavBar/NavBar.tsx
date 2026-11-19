@@ -3,6 +3,7 @@ import { Link, NavLink as RouterNavLink } from 'react-router';
 import { HamburgerMenu } from '../Hamburger/Hamburger';
 import clsx from 'clsx';
 import { Avatar } from '../Avatar/Avatar';
+import { externalLink } from '../../links';
 import styles from './NavBar.module.css';
 
 export type NavLink = {
@@ -74,7 +75,7 @@ const NavBarLinks = ({ links, onClick }: NavBarProps & { onClick?: () => void })
       {links.map(link =>
         <li key={link.href}>
           {link.external
-            ? <Link to={link.href} onClick={onClick} className={styles.navText} target="_blank" rel="noreferrer">{link.label}</Link>
+            ? <Link to={link.href} onClick={onClick} className={styles.navText} {...externalLink}>{link.label}</Link>
             : <RouterNavLink to={link.href} end={link.href === '/'} onClick={onClick} className={styles.navText}>{link.label}</RouterNavLink>}
         </li>
       )}

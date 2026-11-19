@@ -68,6 +68,7 @@ export const Hackathon: Story = {
     await expect(fact(canvas, 'Event')).toBe('BEEES Make-a-thon 2021');
     await expect(fact(canvas, 'Awards')).toBe('Overall best prize · Most verified · Most gamified');
     await expect(canvas.getByRole('link', { name: 'GitHub' })).toHaveAttribute('href', 'https://github.com/mitchLui/mask-detector');
+    await expect(canvas.getByRole('link', { name: 'GitHub' })).toHaveAttribute('rel', 'noreferrer');
     await expect(canvas.queryByRole('heading', { name: 'Impact' })).not.toBeInTheDocument();
   }
 };

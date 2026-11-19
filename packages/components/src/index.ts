@@ -20,6 +20,7 @@ export { Tag } from './components/Tag/Tag';
 export type { TagColor } from './components/Tag/Tag';
 export { Thumbnail } from './components/Thumbnail/Thumbnail';
 export type { Image } from './components/Thumbnail/Thumbnail';
+export { externalLink } from './links';
 export { default as text } from './styles/text.module.css';
 export { Container, ContainerHeader } from './layouts/Container/Container';
 export { Grid } from './layouts/Grid/Grid';

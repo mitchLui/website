@@ -1,6 +1,7 @@
 import { Link } from 'react-router';
 import { Project } from '../../data/projects';
 import { ContainerHeader, PageTitle } from '@mitchlui/components';
+import { sitemap } from '../../data/links';
 import styles from './Sitemap.module.css';
 
 export const Sitemap = ({ projects }: { projects: Record<string, Project> }) =>
@@ -8,10 +9,10 @@ export const Sitemap = ({ projects }: { projects: Record<string, Project> }) =>
     <ContainerHeader><PageTitle>Sitemap</PageTitle></ContainerHeader>
     <ul className={styles.sitemap}>
       <li>
-        <Link to={'/'}>index</Link>
+        <Link to={sitemap.home.href}>index</Link>
         <ul className={styles.list}>
           <li>
-            <Link to={'/work'}>work</Link>
+            <Link to={sitemap.work.href}>work</Link>
             <ul className={styles.projects}>
               {
                 Object.keys(projects).map(id =>
@@ -20,10 +21,7 @@ export const Sitemap = ({ projects }: { projects: Record<string, Project> }) =>
               }
             </ul>
           </li>
-          <li><Link to={'/cv.pdf'}>cv.pdf</Link></li>
-          <li><Link to={'/sitemap'}>sitemap</Link></li>
-          <li><Link to={'/linkedin'}>linkedin</Link></li>
-          <li><Link to={'/github'}>github</Link></li>
+          {sitemap.pages.map(link => <li key={link.href}><Link to={link.href}>{link.href.slice(1)}</Link></li>)}
         </ul>
       </li>
     </ul>

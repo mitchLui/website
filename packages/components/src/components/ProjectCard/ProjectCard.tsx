@@ -1,6 +1,7 @@
 import { ReactElement } from 'react';
 import { Button } from '../Button/Button';
 import { Image, Thumbnail } from '../Thumbnail/Thumbnail';
+import { externalLink } from '../../links';
 import styles from './ProjectCard.module.css';
 
 export type ProjectCardProps = {
@@ -25,6 +26,6 @@ export const ProjectCard = ({ title, headline, href, image, highlights = [], cod
     </div>
     <footer>
       <Button as="a" variant="outline" arrow className={styles.cardLink} to={href}>Read more</Button>
-      {codeUrl && <Button as="a" variant="tertiary" className={styles.aboveCardLink} to={codeUrl} target={'_blank'}>Code</Button>}
+      {codeUrl && <Button as="a" variant="tertiary" className={styles.aboveCardLink} to={codeUrl} {...externalLink}>Code</Button>}
     </footer>
   </article>;
