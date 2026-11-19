@@ -27,12 +27,6 @@
   }
 }
 
-.eyebrow {
-  font-size: var(--font-size-small);
-  font-variant-numeric: tabular-nums;
-  color: var(--color-text-secondary);
-}
-
 .title {
   font-weight: var(--font-weight-bold);
 }

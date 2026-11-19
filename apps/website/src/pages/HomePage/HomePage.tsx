@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
-import { Button, ProjectTile, RouteLine, Station, Terminus, Thumbnail } from '@mitchlui/components';
+import { Button, ProjectTile, RouteLine, SectionTitle, Station, Terminus, Thumbnail, text } from '@mitchlui/components';
+import clsx from 'clsx';
 import { Intro } from '../../components/Intro/Intro';
 import { projects } from '../../data/projects';
 import { rolesFor } from '../../data/roles';
@@ -15,7 +16,7 @@ export const HomePage = () =>
   <div className={styles.page}>
     <Intro/>
     <section aria-labelledby="experience" className={styles.experience}>
-      <h2 id="experience" className={styles.heading}>Experience</h2>
+      <SectionTitle id="experience">Experience</SectionTitle>
       <RouteLine>
         {wiseRoles.map((role, index) =>
           <Station
@@ -26,7 +27,7 @@ export const HomePage = () =>
           >
             <div className={index === 0 ? styles.current : styles.stop}>
               <div className={styles.copy}>
-                <p className={styles.period}>{formatPeriod(role.started, role.ended)}</p>
+                <p className={clsx(text.meta, styles.period)}>{formatPeriod(role.started, role.ended)}</p>
                 <h3 className={index === 0 ? styles.titleCurrent : styles.title}>{role.title}</h3>
                 {index === 0 && <p className={styles.team}>Wise · {wiseTeam}</p>}
                 <p className={styles.summary}>{role.impact[0]}</p>
@@ -38,7 +39,7 @@ export const HomePage = () =>
         )}
         <Station line="education" kind="interchange">
           <div className={styles.stop}>
-            <p className={styles.period}>Graduated 2023</p>
+            <p className={clsx(text.meta, styles.period)}>Graduated 2023</p>
             <h3 className={styles.title}>University of Bristol</h3>
             <p className={styles.summary}>Coursework, hackathons and side projects.</p>
           </div>
@@ -51,7 +52,7 @@ export const HomePage = () =>
           return (
             <Station key={id} line={index === 0 ? 'education' : 'early'} continuesAs="early">
               <div className={styles.stop}>
-                <p className={styles.period}>{formatPeriod(project.started, project.ended)}</p>
+                <p className={clsx(text.meta, styles.period)}>{formatPeriod(project.started, project.ended)}</p>
                 <h3 className={styles.title}><Link to={`/work/${id}`} className={styles.titleLink}>Intern · {project.title.split(' – ')[0]}</Link></h3>
                 <p className={styles.summary}>{role.impact[0]}</p>
               </div>

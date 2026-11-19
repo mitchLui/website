@@ -54,6 +54,12 @@
 .education { background-color: var(--color-line-education); }
 .early { background-color: var(--color-line-early); }
 
+.marker {
+  width: 32px;
+  height: 10px;
+  border-radius: var(--radius-full);
+}
+
 .dot {
   position: absolute;
   top: var(--dot-top);

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { expect } from 'storybook/test';
 import { Container, ContainerHeader } from './Container';
-import { resolved } from '../../testing/resolve';
+import { PageTitle, SectionTitle } from '../../components/Heading/Heading';
 
 const meta = {
   component: Container
@@ -17,18 +17,10 @@ export const Default: Story = {
   }
 };
 
-export const Header: Story = {
-  render: () => <ContainerHeader><h1>Sitemap</h1></ContainerHeader>,
-  play: async ({ canvas }) => {
-    await expect(canvas.getByRole('heading', { name: 'Sitemap' })).toHaveStyle({ fontSize: resolved('fontSize', 'var(--font-size-display)') });
-  }
-};
-
 export const SectionHeader: Story = {
-  render: () => <ContainerHeader><h2>Earlier projects</h2></ContainerHeader>,
+  render: () => <ContainerHeader><SectionTitle>Earlier projects</SectionTitle></ContainerHeader>,
   play: async ({ canvas }) => {
-    const header = canvas.getByRole('heading', { name: 'Earlier projects' }).parentElement!;
-    await expect(header).toHaveStyle({ borderTopWidth: '3px', borderTopStyle: 'solid', borderTopColor: resolved('color', 'var(--color-text)') });
+    await expect(canvas.getByRole('heading', { name: 'Earlier projects' }).parentElement).toHaveStyle({ marginTop: '64px', marginBottom: '32px' });
   }
 };
 
@@ -41,7 +33,7 @@ export const PhoneGutter: Story = {
 };
 
 export const PageTitleSpacing: Story = {
-  render: () => <ContainerHeader><h1>Work</h1></ContainerHeader>,
+  render: () => <ContainerHeader><PageTitle>Work</PageTitle></ContainerHeader>,
   play: async ({ canvas }) => {
     await expect(canvas.getByRole('heading', { name: 'Work' }).parentElement).toHaveStyle({ marginTop: '48px' });
   }

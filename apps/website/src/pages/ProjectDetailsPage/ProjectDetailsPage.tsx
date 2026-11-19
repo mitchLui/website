@@ -1,7 +1,8 @@
 import { PropsWithChildren } from 'react';
 import { useParams } from 'react-router';
 import { NotFoundPage } from '../NotFoundPage/NotFoundPage';
-import { BackButton, Button, LineColor, ProjectTile, RouteLine, Station, Thumbnail } from '@mitchlui/components';
+import { BackButton, Button, LineColor, LineMarker, PageTitle, ProjectTile, RouteLine, SectionTitle, Station, Thumbnail, text } from '@mitchlui/components';
+import clsx from 'clsx';
 import { Project, projects } from '../../data/projects';
 import { formatPeriod } from '../../data/dates';
 import { rolesFor } from '../../data/roles';
@@ -11,12 +12,12 @@ import styles from './ProjectDetailsPage.module.css';
 
 const Impact = ({ projectId, line }: { projectId: string; line: LineColor }) =>
   <section className={styles.section}>
-    <h2>Impact</h2>
+    <SectionTitle>Impact</SectionTitle>
     <RouteLine>
       {rolesFor(projectId).map(role =>
         <Station key={role.title + role.started} line={line} kind={role.ended ? 'stop' : 'current'}>
           <div className={styles.role}>
-            <p className={styles.rolePeriod}>{formatPeriod(role.started, role.ended)}</p>
+            <p className={clsx(text.meta, styles.rolePeriod)}>{formatPeriod(role.started, role.ended)}</p>
             <h3>{role.title}</h3>
             <ul className={styles.impact}>
               {role.impact.map(item => <li key={item}>{item}</li>)}
@@ -71,10 +72,10 @@ export const ProjectDetailsPage = () => {
       <BackButton to="/work" text="All work"/>
       <header className={styles.header}>
         <p className={styles.eyebrow}>
-          <span className={styles.marker} data-line={line} aria-hidden="true"/>
+          <LineMarker line={line}/>
           <span>{project.kind === 'professional' ? '' : `${kindTags[project.kind].label} · `}{formatPeriod(project.started, project.ended)}</span>
         </p>
-        <h1>{project.title}</h1>
+        <PageTitle>{project.title}</PageTitle>
         <p className={styles.headline}>{project.headline}</p>
       </header>
       <div className={styles.overview}>
@@ -91,7 +92,7 @@ export const ProjectDetailsPage = () => {
       {project.kind === 'professional' && <Impact projectId={projectId as string} line={line}/>}
       {project.content_detailed.length > 0 &&
         <section className={styles.section}>
-          <h2>About</h2>
+          <SectionTitle>About</SectionTitle>
           {project.content_detailed.map((paragraph, index) => <p key={index} className={styles.paragraph}>{paragraph}</p>)}
         </section>}
       <Previously projectId={projectId as string}/>

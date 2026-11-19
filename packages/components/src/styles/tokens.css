@@ -89,7 +89,6 @@
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
-  --font-weight-heavy: 700;
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -151,13 +150,5 @@
 @media (max-width: 767px) {
   :root {
     --page-top: var(--space-8);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  :root {
-    --duration-fast: 0ms;
-    --duration-base: 0ms;
-    --duration-slow: 0ms;
   }
 }

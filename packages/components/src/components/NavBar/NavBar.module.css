@@ -34,7 +34,7 @@
 }
 
 .logo .bold {
-  font-weight: var(--font-weight-heavy);
+  font-weight: var(--font-weight-bold);
 }
 
 .logo-link {

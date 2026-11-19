@@ -14,27 +14,6 @@
   margin-top: var(--page-top);
 }
 
-.container-header h1,
-.container-header h2 {
-  margin: 0;
-}
-
-.container-header h1 {
-  font-size: var(--font-size-display);
-  line-height: var(--line-height-tight);
-  letter-spacing: var(--tracking-display);
-  font-weight: var(--font-weight-heavy);
-}
-
 .container-header:has(h2) {
   margin-block: var(--space-16) var(--space-8);
-  padding-top: var(--space-4);
-  border-top: 3px solid var(--color-text);
-}
-
-.container-header h2 {
-  font-size: var(--font-size-title-1);
-  line-height: var(--line-height-tight);
-  letter-spacing: var(--tracking-title);
-  font-weight: var(--font-weight-bold);
 }
