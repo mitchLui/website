@@ -113,9 +113,6 @@ importers:
       '@react-router/node':
         specifier: 'catalog:'
         version: 7.18.5(react-router@7.18.5(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(typescript@5.9.3)
-      clsx:
-        specifier: 'catalog:'
-        version: 2.1.1
       isbot:
         specifier: 'catalog:'
         version: 5.2.3

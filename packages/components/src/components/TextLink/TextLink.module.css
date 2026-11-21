@@ -1,0 +1,25 @@
+.inline,
+.quiet {
+  text-decoration-line: underline;
+  transition: text-decoration-color var(--duration-base) var(--ease-standard);
+}
+
+.inline {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-brand-text);
+  text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.18em;
+}
+
+.quiet {
+  text-decoration-color: transparent;
+  text-underline-offset: 0.15em;
+}
+
+@media (hover: hover) {
+  .inline:hover,
+  .quiet:hover {
+    text-decoration-color: currentColor;
+  }
+}

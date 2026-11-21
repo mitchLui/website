@@ -60,6 +60,10 @@
   border-radius: var(--radius-full);
 }
 
+.marker-dot {
+  width: 10px;
+}
+
 .dot {
   position: absolute;
   top: var(--dot-top);

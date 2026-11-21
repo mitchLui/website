@@ -23,8 +23,8 @@ export const Station = ({ line, continuesAs = line, kind = 'stop', children }: S
     <div className={styles.content}>{children}</div>
   </li>;
 
-export const LineMarker = ({ line }: { line: LineColor }): ReactElement =>
-  <span className={clsx(styles.marker, styles[line])} aria-hidden="true"/>;
+export const LineMarker = ({ line, shape = 'bar' }: { line: LineColor; shape?: 'bar' | 'dot' }): ReactElement =>
+  <span className={clsx(styles.marker, shape === 'dot' && styles.markerDot, styles[line])} aria-hidden="true"/>;
 
 export const Terminus = ({ children }: PropsWithChildren): ReactElement =>
   <li className={clsx(styles.station, styles.terminus)}>

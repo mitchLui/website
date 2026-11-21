@@ -1,0 +1,30 @@
+.stop {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.period {
+  margin: 0;
+}
+
+.title {
+  margin: 0;
+  font-size: var(--font-size-title-3);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--tracking-title);
+}
+
+.current {
+  font-size: var(--font-size-title-2);
+}
+
+.stop > p:not(.period) {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.stop > a {
+  justify-self: start;
+  margin-top: var(--space-2);
+}
