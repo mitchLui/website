@@ -3,6 +3,7 @@ export { BackButton, Button } from './components/Button/Button';
 export { PageTitle, SectionTitle } from './components/Heading/Heading';
 export { Footer } from './components/Footer/Footer';
 export { HamburgerMenu } from './components/Hamburger/Hamburger';
+export { NewTabHint } from './components/NewTabHint/NewTabHint';
 export { NameStamp } from './components/NameStamp/NameStamp';
 export { NavBar } from './components/NavBar/NavBar';
 export type { NavLink } from './components/NavBar/NavBar';

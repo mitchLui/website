@@ -50,7 +50,7 @@ export const TrailingSlashLinks: Story = {
 
 export const ExternalLink: Story = {
   play: async ({ canvas }) => {
-    const cv = canvas.getByRole('link', { name: 'CV' });
+    const cv = canvas.getByRole('link', { name: 'CV (opens in a new tab)' });
     await expect(cv).toHaveAttribute('target', '_blank');
     await expect(cv).toHaveAttribute('rel', 'noreferrer');
     await expect(canvas.getByRole('link', { name: 'Work' })).not.toHaveAttribute('target');

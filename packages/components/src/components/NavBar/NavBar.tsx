@@ -4,12 +4,14 @@ import { HamburgerMenu } from '../Hamburger/Hamburger';
 import clsx from 'clsx';
 import { Avatar } from '../Avatar/Avatar';
 import { externalLink } from '../../links';
+import { NewTabHint } from '../NewTabHint/NewTabHint';
 import styles from './NavBar.module.css';
 
 export type NavLink = {
   label: string;
   href: string;
   external?: boolean;
+  format?: string;
 };
 
 type NavBarProps = {
@@ -69,7 +71,7 @@ const NavBarLinks = ({ links, onClick }: NavBarProps & { onClick?: () => void })
       {links.map(link =>
         <li key={link.href}>
           {link.external
-            ? <Link to={link.href} onClick={onClick} className={styles.navText} {...externalLink}>{link.label}</Link>
+            ? <Link to={link.href} onClick={onClick} className={styles.navText} {...externalLink}>{link.label}<NewTabHint format={link.format}/></Link>
             : <SectionLink link={link} onClick={onClick}/>}
         </li>
       )}

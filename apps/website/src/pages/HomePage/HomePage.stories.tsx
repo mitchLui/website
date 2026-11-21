@@ -30,7 +30,7 @@ export const Default: Story = {
     await step('opens with the headline and who I am', async () => {
       await expect(canvas.getByRole('heading', { level: 1, name: 'Building the one account for businesses to thrive everywhere.' })).toBeVisible();
       await expect(canvas.getByText(/^Born and raised in Hong Kong, now based in London\. I'm a Senior Software Engineer on/)).toBeVisible();
-      await expect(canvas.getByRole('link', { name: 'Wise\'s' })).toHaveAttribute('href', 'https://www.wise.com');
+      await expect(canvas.getByRole('link', { name: 'Wise\'s (opens in a new tab)' })).toHaveAttribute('href', 'https://www.wise.com');
     });
     await step('walks the experience line from now back to Hong Kong', async () => {
       await expect(canvas.getByRole('heading', { level: 2, name: 'Experience' })).toBeVisible();

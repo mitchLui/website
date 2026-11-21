@@ -69,7 +69,7 @@ test.each(Object.entries(redirects))('prerenders %s as a meta refresh to its tar
   expect(readPage(route)).toContain(`<meta http-equiv="refresh" content="0; url=${target}"/>`);
 });
 
-test.each([...navLinks, ...footerLinks, ...sitemap.pages])('links $label to a page that ships', ({ href }) => {
+test.each([...navLinks, ...footerLinks, ...sitemap.pages].filter(({ href }) => href.startsWith('/')))('links $label to a page that ships', ({ href }) => {
   const built = path.join(import.meta.dirname, '../build/client', href);
   expect(existsSync(path.join(built, 'index.html')) || existsSync(built)).toBe(true);
 });
@@ -150,4 +150,15 @@ test('ships server rules that force HTTPS, serve real 404s and cache hashed asse
   expect(rules).toContain('ErrorDocument 404 /not-found/index.html');
   expect(rules).not.toContain('/index.html [QSA,L]');
   expect(readFileSync(path.join(import.meta.dirname, '../build/client/assets/.htaccess'), 'utf8')).toContain('max-age=31536000, immutable');
+});
+
+test.each([...navLinks, ...footerLinks].filter(({ href }) => !href.startsWith('/')))('links $label straight to its profile without a redirect hop', ({ href }) => {
+  expect(Object.values(redirects)).toContain(href);
+  expect(readPage('/')).toContain(`href="${href}"`);
+});
+
+test('tells screen readers which links open a new tab', () => {
+  const home = readPage('/');
+  expect(home).toMatch(/href="\/cv\.pdf"[^>]*>CV<span[^>]*> \(PDF, opens in a new tab\)<\/span>/);
+  [...home.matchAll(/<a [^>]*target="_blank"[^>]*>(.*?)<\/a>/g)].forEach(([, content]) => expect(content).toContain('opens in a new tab)'));
 });
