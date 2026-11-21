@@ -1,4 +1,5 @@
 export { Avatar } from './components/Avatar/Avatar';
+export { Icon } from './components/Icon/Icon';
 export { BackButton, Button } from './components/Button/Button';
 export { PageTitle, SectionTitle } from './components/Heading/Heading';
 export { Footer } from './components/Footer/Footer';

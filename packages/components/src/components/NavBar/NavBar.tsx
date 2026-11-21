@@ -48,17 +48,17 @@ const useMenuLock = (isOpen: boolean, close: () => void, header: RefObject<HTMLE
 export const NavBar = ({ links }: NavBarProps): ReactElement => {
   const [menu, setMenu] = useState<'closed' | 'open' | 'closing'>('closed');
   const isOpen = menu === 'open';
-  const header = useRef<HTMLElement>(null);
-  const button = useRef<HTMLButtonElement>(null);
+  const headerRef = useRef<HTMLElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const close = useCallback(() => setMenu(current => current === 'open' ? 'closing' : current), []);
   const hideOnceFaded = (event: AnimationEvent) => event.target === event.currentTarget && menu === 'closing' && setMenu('closed');
-  useMenuLock(isOpen, close, header, button);
+  useMenuLock(isOpen, close, headerRef, buttonRef);
   return (
-    <header ref={header} className={clsx(styles.header, menu !== 'closed' && styles.headerOpen)}>
+    <header ref={headerRef} className={clsx(styles.header, menu !== 'closed' && styles.headerOpen)}>
       <div className={styles.navbar}>
         <Logo onClick={close}/>
         <div className={styles.desktop}><NavBarLinks links={links}/></div>
-        <div className={styles.phone}><HamburgerMenu ref={button} onClick={() => isOpen ? close() : setMenu('open')} isOpen={isOpen}/></div>
+        <div className={styles.phone}><HamburgerMenu ref={buttonRef} onClick={() => isOpen ? close() : setMenu('open')} isOpen={isOpen}/></div>
       </div>
       <div className={clsx(styles.sheet, menu === 'closed' && styles.sheetClosed, menu === 'closing' && styles.sheetClosing)} onAnimationEnd={hideOnceFaded}>
         <NavBarLinks links={links} onClick={close}/>

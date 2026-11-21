@@ -1,5 +1,5 @@
 import { Link, LinkProps } from 'react-router';
-import { Arrow } from '../Arrow/Arrow';
+import { Icon } from '../Icon/Icon';
 import { ButtonHTMLAttributes, ReactElement } from 'react';
 import styles from './Button.module.css';
 import clsx from 'clsx';
@@ -11,12 +11,9 @@ type Props = {
   arrow?: boolean;
 } & (({ as: 'a' } & LinkProps) | ({ as?: 'button' } & ButtonHTMLAttributes<HTMLButtonElement>));
 
-const ArrowIcon = () =>
-  <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>;
-
 export const Button = ({ variant = 'primary', arrow = false, className, children, ...props }: Props): ReactElement => {
   const classes = clsx(styles.button, styles[variant], className);
-  const content = <>{children}{arrow && <ArrowIcon/>}</>;
+  const content = <>{children}{arrow && <Icon name="arrow-right"/>}</>;
   if (props.as === 'a') {
     const { as: _as, ...link } = props;
     return <Link className={classes} {...link}>{content}</Link>;
@@ -26,4 +23,4 @@ export const Button = ({ variant = 'primary', arrow = false, className, children
 };
 
 export const BackButton = ({ to, text }: { to: string, text: string }): ReactElement =>
-  <Link to={to} className={styles.back}><Arrow text={text}/></Link>;
+  <Link to={to} className={styles.back}><Icon name="chevron-left" size={18}/>{text}</Link>;
