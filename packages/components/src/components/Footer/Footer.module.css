@@ -6,7 +6,7 @@
   gap: var(--space-4) var(--space-8);
   margin-top: var(--space-16);
   padding-block: var(--space-6) var(--space-10);
-  border-top: 2px solid var(--color-border);
+  border-top: var(--rule-medium) solid var(--color-border);
   font-size: var(--font-size-small);
   color: var(--color-text-secondary);
 }

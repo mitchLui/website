@@ -4,7 +4,7 @@
   gap: var(--space-1);
   min-height: 44px;
   padding: var(--space-4);
-  border: 2px solid var(--color-text);
+  border: var(--rule-medium) solid var(--color-text);
   border-radius: var(--radius-sm);
   color: var(--color-text);
   background-color: var(--color-surface);

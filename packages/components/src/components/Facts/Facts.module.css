@@ -7,11 +7,11 @@
   display: grid;
   gap: var(--space-1);
   padding-block: var(--space-4);
-  border-top: 1px solid var(--color-border);
+  border-top: var(--rule-hairline) solid var(--color-border);
 }
 
 .fact:last-child {
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: var(--rule-hairline) solid var(--color-border);
 }
 
 .fact dt {

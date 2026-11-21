@@ -6,7 +6,7 @@
   height: 44px;
   border-radius: var(--radius-xs);
   font-family: 'PingFang HK', 'Noto Serif TC', 'Noto Sans TC', 'Microsoft JhengHei', serif;
-  font-size: 13px;
+  font-size: var(--font-size-label);
   line-height: 1.05;
   letter-spacing: 0.05em;
   writing-mode: vertical-rl;

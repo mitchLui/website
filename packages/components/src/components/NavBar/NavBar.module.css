@@ -23,7 +23,7 @@
 .logo {
   display: flex;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: var(--font-size-wordmark);
   font-weight: var(--font-weight-regular);
   letter-spacing: var(--tracking-title);
 }
@@ -37,10 +37,6 @@
 }
 
 @media (max-width: 767px) {
-  .logo {
-    font-size: 1.25rem;
-  }
-
   .logo-graphic {
     width: 32px;
     height: 32px;
