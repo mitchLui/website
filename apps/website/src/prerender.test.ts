@@ -162,3 +162,22 @@ test('tells screen readers which links open a new tab', () => {
   expect(home).toMatch(/href="\/cv\.pdf"[^>]*>CV<span[^>]*> \(PDF, opens in a new tab\)<\/span>/);
   [...home.matchAll(/<a [^>]*target="_blank"[^>]*>(.*?)<\/a>/g)].forEach(([, content]) => expect(content).toContain('opens in a new tab)'));
 });
+
+const jpegSize = (bytes: Buffer) => {
+  for (let offset = 2; offset < bytes.length;) {
+    const marker = bytes[offset + 1];
+    if (marker >= 0xC0 && marker <= 0xC2) {
+      return { width: bytes.readUInt16BE(offset + 7), height: bytes.readUInt16BE(offset + 5) };
+    }
+    offset += 2 + bytes.readUInt16BE(offset + 2);
+  }
+};
+
+test('shares a 1200 by 630 card, the size link previews show without cropping', () => {
+  expect(jpegSize(readFileSync(path.join(import.meta.dirname, '../build/client/og-image.jpg')))).toEqual({ width: 1200, height: 630 });
+});
+
+test('names the site Mitch Lui with the ivory theme colour in the web app manifest', () => {
+  const manifest = JSON.parse(readFileSync(path.join(import.meta.dirname, '../build/client/manifest.json'), 'utf8'));
+  expect(manifest).toMatchObject({ name: 'Mitch Lui', short_name: 'Mitch Lui', start_url: '/', theme_color: '#F7F5EF' });
+});
