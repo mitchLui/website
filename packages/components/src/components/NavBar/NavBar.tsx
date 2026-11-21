@@ -1,7 +1,6 @@
-import { ReactElement, RefObject, useEffect, useRef, useState } from 'react';
+import { ReactElement } from 'react';
 import { Link, useLocation } from 'react-router';
 import { HamburgerMenu } from '../Hamburger/Hamburger';
-import clsx from 'clsx';
 import { Avatar } from '../Avatar/Avatar';
 import { externalLink } from '../../links';
 import styles from './NavBar.module.css';
@@ -16,61 +15,32 @@ type NavBarProps = {
   links: NavLink[];
 };
 
-const desktop = '(min-width: 768px)';
+const menu = 'site-menu';
 
-const useMenuLock = (isOpen: boolean, setIsOpen: (isOpen: boolean) => void, header: RefObject<HTMLElement | null>, button: RefObject<HTMLButtonElement | null>) => useEffect(() => {
-  if (!isOpen || !header.current) {
-    return;
-  }
-  const page = [...header.current.parentElement!.children].filter(element => element !== header.current) as HTMLElement[];
-  const closeOnEscape = (event: KeyboardEvent) => {
-    if (event.key === 'Escape') {
-      setIsOpen(false);
-      button.current?.focus();
-    }
-  };
-  const closeOnDesktop = (event: MediaQueryListEvent) => event.matches && setIsOpen(false);
-  const desktopQuery = window.matchMedia(desktop);
-  document.body.style.overflow = 'hidden';
-  page.forEach(element => { element.inert = true; });
-  window.addEventListener('keydown', closeOnEscape);
-  desktopQuery.addEventListener('change', closeOnDesktop);
-  return () => {
-    document.body.style.overflow = '';
-    page.forEach(element => { element.inert = false; });
-    window.removeEventListener('keydown', closeOnEscape);
-    desktopQuery.removeEventListener('change', closeOnDesktop);
-  };
-}, [isOpen, setIsOpen, header, button]);
-
-export const NavBar = ({ links }: NavBarProps): ReactElement => {
-  const [isOpen, setIsOpen] = useState(false);
-  const header = useRef<HTMLElement>(null);
-  const button = useRef<HTMLButtonElement>(null);
-  const close = () => setIsOpen(false);
-  useMenuLock(isOpen, setIsOpen, header, button);
-  return (
-    <header ref={header} className={clsx(styles.header, isOpen && styles.headerOpen)}>
+export const NavBar = ({ links }: NavBarProps): ReactElement =>
+  <header className={styles.header}>
+    <div className={styles.navbar}>
+      <Logo/>
+      <div className={styles.desktop}><NavBarLinks links={links}/></div>
+      <div className={styles.phone}><HamburgerMenu menu={menu}/></div>
+    </div>
+    <dialog id={menu} className={styles.sheet} aria-label="Menu">
       <div className={styles.navbar}>
-        <Logo onClick={close}/>
-        <div className={styles.desktop}><NavBarLinks links={links}/></div>
-        <div className={styles.phone}><HamburgerMenu ref={button} onClick={() => setIsOpen(!isOpen)} isOpen={isOpen}/></div>
+        <Logo/>
+        <HamburgerMenu menu={menu} isOpen/>
       </div>
-      <div className={clsx(styles.sheet, !isOpen && styles.sheetClosed)}>
-        <NavBarLinks links={links} onClick={close}/>
-      </div>
-    </header>
-  );
-};
+      <div className={styles.sheetLinks}><NavBarLinks links={links}/></div>
+    </dialog>
+  </header>;
 
-const NavBarLinks = ({ links, onClick }: NavBarProps & { onClick?: () => void }): ReactElement =>
+const NavBarLinks = ({ links }: NavBarProps): ReactElement =>
   <nav>
     <ul>
       {links.map(link =>
         <li key={link.href}>
           {link.external
-            ? <Link to={link.href} onClick={onClick} className={styles.navText} {...externalLink}>{link.label}</Link>
-            : <SectionLink link={link} onClick={onClick}/>}
+            ? <Link to={link.href} className={styles.navText} {...externalLink}>{link.label}</Link>
+            : <SectionLink link={link}/>}
         </li>
       )}
     </ul>
@@ -84,12 +54,12 @@ const isCurrentSection = (pathname: string, href: string) => {
   return here === section || (section !== '/' && here.startsWith(section + '/'));
 };
 
-const SectionLink = ({ link, onClick }: { link: NavLink; onClick?: () => void }): ReactElement => {
+const SectionLink = ({ link }: { link: NavLink }): ReactElement => {
   const isCurrent = isCurrentSection(useLocation().pathname, link.href);
-  return <Link to={link.href} onClick={onClick} className={styles.navText} aria-current={isCurrent ? 'page' : undefined}>{link.label}</Link>;
+  return <Link to={link.href} className={styles.navText} aria-current={isCurrent ? 'page' : undefined}>{link.label}</Link>;
 };
 
-const Logo = ({ onClick }: { onClick?: () => void }): ReactElement =>
-  <Link onClick={onClick} to="/">
+const Logo = (): ReactElement =>
+  <Link to="/">
     <span className={styles.logo}><Avatar alt="" className={styles.logoGraphic}/>mitch<span className={styles.bold}>Lui</span></span>
   </Link>;
