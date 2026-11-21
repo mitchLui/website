@@ -4,6 +4,10 @@ import { Container, Footer, NavBar, SkipLink } from '@mitchlui/components';
 import { footerLinks, navLinks } from './data/links';
 import '@mitchlui/components/styles.css';
 
+const speculationRules = {
+  prefetch: [{ where: { href_matches: '/*' }, eagerness: 'moderate' }]
+};
+
 export const Layout = ({ children }: PropsWithChildren) =>
   <html lang="en">
     <head>
@@ -18,6 +22,7 @@ export const Layout = ({ children }: PropsWithChildren) =>
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
       <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       <link rel="manifest" href="/manifest.json" />
+      <script type="speculationrules" dangerouslySetInnerHTML={{ __html: JSON.stringify(speculationRules) }} />
       <Meta />
       <Links />
     </head>

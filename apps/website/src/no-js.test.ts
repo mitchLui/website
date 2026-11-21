@@ -72,3 +72,17 @@ test('closes the phone menu with its close button and follows its links without 
   await expect(page.title()).resolves.toBe('Work | Mitch Lui');
   await page.close();
 }, 30_000);
+
+test('prefetches a same-site page when its link is hovered', async () => {
+  const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
+  const prefetched: string[] = [];
+  page.on('request', request => {
+    if (request.headers()['sec-purpose']?.includes('prefetch')) {
+      prefetched.push(new URL(request.url()).pathname);
+    }
+  });
+  await page.goto(origin + '/', { waitUntil: 'networkidle' });
+  await page.locator('header').getByRole('link', { name: 'Work' }).hover();
+  await expect.poll(() => prefetched, { timeout: 5_000 }).toContain('/work/');
+  await page.close();
+}, 30_000);

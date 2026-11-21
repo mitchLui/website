@@ -156,7 +156,7 @@ const allPages = [...pages.map(({ route }) => route), ...Object.keys(redirects)]
 
 test.each(allPages)('ships %s without any client JavaScript', route => {
   const html = readPage(route);
-  expect(html.match(/<script\b(?![^>]*type="application\/ld\+json")[^>]*>/g)).toBeNull();
+  expect(html.match(/<script\b(?![^>]*type="(application\/ld\+json|speculationrules)")[^>]*>/g)).toBeNull();
   expect(html).not.toContain('modulepreload');
 });
 
@@ -165,4 +165,9 @@ test('opens the phone menu with HTML alone', () => {
   expect(home).toMatch(/<dialog id="site-menu"[^>]*aria-label="Menu"/);
   expect(home).toMatch(/commandfor="site-menu" command="show-modal"/);
   expect(home).toMatch(/commandfor="site-menu" command="close"/);
+});
+
+test.each(allPages)('prefetches same-site pages on hover from %s', route => {
+  const [, rules] = readPage(route).match(/<script type="speculationrules">(.+?)<\/script>/)!;
+  expect(JSON.parse(rules)).toEqual({ prefetch: [{ where: { href_matches: '/*' }, eagerness: 'moderate' }] });
 });

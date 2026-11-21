@@ -56,3 +56,9 @@ a {
     transition-duration: 0ms !important;
   }
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+}
