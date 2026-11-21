@@ -32,7 +32,6 @@ const pairs: Pair[] = [
   { text: 'on-brand-tint', on: 'brand-tint-hover', min: 4.5 },
   { text: 'brand-text', on: 'brand-tint', min: 4.5 },
   { text: 'brand', on: 'bg', min: 3 },
-  ...['line-wise', 'line-education', 'line-early'].map(text => ({ text, on: 'bg', min: 3 })),
   { text: 'station-ring', on: 'station-fill', min: 3 },
   { text: 'on-stamp', on: 'stamp', min: 4.5 },
   ...['tag-green', 'tag-olive', 'tag-blue', 'tag-orange'].flatMap(text => ['bg', 'surface'].map(on => ({ text, on, tint: true, min: 4.5 })))

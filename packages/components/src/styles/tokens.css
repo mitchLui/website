@@ -12,6 +12,9 @@
   --green-800: #003D28;
   --green-900: #002A1C;
 
+  --blue-700: #2B5C8A;
+  --orange-700: #9A4A12;
+
   --neutral-0: #FFFFFF;
   --neutral-50: #F7F5EF;
   --neutral-100: #EFEDE5;
@@ -50,12 +53,12 @@
 
   --color-tag-green: light-dark(var(--green-600), #6CCFA3);
   --color-tag-olive: light-dark(#4A5A23, #C3CF8C);
-  --color-tag-blue: light-dark(#2B5C8A, #8DB8E0);
-  --color-tag-orange: light-dark(#9A4A12, #F0A86A);
+  --color-tag-blue: light-dark(var(--blue-700), #8DB8E0);
+  --color-tag-orange: light-dark(var(--orange-700), #F0A86A);
 
-  --color-line-wise: var(--color-brand);
-  --color-line-education: var(--color-tag-blue);
-  --color-line-early: var(--color-tag-orange);
+  --color-line-wise: var(--green-500);
+  --color-line-education: var(--blue-700);
+  --color-line-early: var(--orange-700);
   --color-station-fill: light-dark(var(--neutral-0), var(--neutral-paper));
   --color-station-ring: light-dark(var(--neutral-ink), var(--neutral-750));
   --station-ring: 6px;
