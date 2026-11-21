@@ -105,7 +105,8 @@ describe('crawling the built site', () => {
       expect(metaContent(html, 'name="description"'), route).toMatch(/\.$/);
       expect(html, route).toContain(`<link rel="canonical" href="${siteUrl}${route}"/>`);
       expect(metaContent(html, 'property="og:url"'), route).toBe(siteUrl + route);
-      expect(metaContent(html, 'property="og:image"'), route).toBe(`${siteUrl}/og-image.jpg`);
+      const card = route.startsWith('/work/') && route !== '/work/' ? `/share/${route.split('/')[2]}.jpg` : '/og-image.jpg';
+      expect(metaContent(html, 'property="og:image"'), route).toBe(siteUrl + card);
       return html.match(/<title>([^<]+)<\/title>/)![1];
     });
     expect(new Set(titles).size).toBe(titles.length);
@@ -125,10 +126,16 @@ describe('crawling the built site', () => {
     expect(JSON.parse(json)).toMatchObject({ '@type': 'Person', name: 'Mitch Lui', url: `${siteUrl}/`, sameAs: Object.values(redirects) });
   });
 
-  test('shares a 1200 by 630 card and names the web app Mitch Lui', async () => {
-    const card = Buffer.from(await (await fetch(`${origin}/og-image.jpg`)).arrayBuffer());
-    const frame = card.indexOf(Buffer.from([0xFF, 0xC0]));
-    expect({ width: card.readUInt16BE(frame + 7), height: card.readUInt16BE(frame + 5) }).toEqual({ width: 1200, height: 630 });
+  test('shares a 1200 by 630 card from every indexed page and names the web app Mitch Lui', async () => {
+    const cards = new Set(indexedPages().map(([, html]) => metaContent(html, 'property="og:image"')!.replace(siteUrl, '')));
+    expect(cards.size).toBeGreaterThan(10);
+    for (const card of cards) {
+      const response = await fetch(origin + card);
+      expect(response.status, card).toBe(200);
+      const image = Buffer.from(await response.arrayBuffer());
+      const frame = image.indexOf(Buffer.from([0xFF, 0xC0]));
+      expect({ card, width: image.readUInt16BE(frame + 7), height: image.readUInt16BE(frame + 5) }).toEqual({ card, width: 1200, height: 630 });
+    }
     expect(await (await fetch(`${origin}/manifest.json`)).json()).toMatchObject({ name: 'Mitch Lui', theme_color: '#F7F5EF' });
   });
 

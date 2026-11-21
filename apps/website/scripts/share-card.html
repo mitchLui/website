@@ -1,0 +1,31 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+/* tokens */
+@font-face { font-family: 'Familjen Grotesk Variable'; src: url({{font}}) format('woff2'); font-weight: 400 700; }
+* { box-sizing: border-box; }
+body { margin: 0; width: 1200px; height: 630px; overflow: hidden; background: var(--color-bg); color: var(--color-text); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+.card { position: relative; height: 100%; padding: 64px 72px; }
+.logo { display: flex; align-items: center; gap: 18px; font-size: 40px; letter-spacing: var(--tracking-title); }
+.logo img { width: 64px; height: 64px; border-radius: 50%; }
+.logo b { font-weight: 700; }
+.copy { position: absolute; left: 72px; top: 196px; width: 560px; }
+.eyebrow { display: flex; align-items: center; gap: 16px; margin: 0; font-size: 28px; color: var(--color-text-secondary); font-variant-numeric: tabular-nums; }
+.marker { width: 48px; height: 14px; border-radius: 999px; background: var(--color-line-{{line}}); }
+h1 { margin: 20px 0 0; font-size: 64px; line-height: 1.04; letter-spacing: var(--tracking-display); font-weight: 700; text-wrap: balance; }
+.screenshot { position: absolute; right: 72px; top: 150px; width: 460px; aspect-ratio: 16 / 10; border-radius: var(--radius-md); object-fit: cover; object-position: top left; box-shadow: var(--shadow-screenshot); }
+.route { position: absolute; left: 72px; right: 72px; bottom: 76px; height: 14px; border-radius: 999px; background: var(--color-line-{{line}}); }
+.stop { position: absolute; left: 0; top: 50%; width: 52px; height: 52px; border: 9px solid var(--color-station-ring); border-radius: 50%; background: var(--color-station-fill); transform: translate(-50%, -50%); }
+.terminus { position: absolute; right: -6px; top: 50%; width: 14px; height: 56px; border-radius: 999px; background: var(--color-text); transform: translateY(-50%); }
+.url { position: absolute; right: 72px; bottom: 112px; font-size: 26px; font-weight: 600; color: var(--color-text-secondary); }
+</style>
+<div class="card">
+  <div class="logo"><img src="{{avatar}}" alt=""><span>mitch<b>Lui</b></span></div>
+  <div class="copy">
+    <p class="eyebrow"><span class="marker"></span>{{eyebrow}}</p>
+    <h1>{{title}}</h1>
+  </div>
+  <img class="screenshot" src="{{screenshot}}" alt="">
+  <div class="url">mitchlui.dev</div>
+  <div class="route"><i class="stop"></i><i class="terminus"></i></div>
+</div>

@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "react-router dev",
-    "build": "react-router build",
+    "build": "react-router build && node scripts/share-cards.mjs",
     "preview": "vite preview --outDir build/client",
     "storybook": "STORYBOOK=true storybook dev -p 6006 --no-open",
     "build-storybook": "STORYBOOK=true storybook build",

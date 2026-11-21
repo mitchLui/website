@@ -2,12 +2,13 @@ import { ProjectDetailsPage } from '../pages/ProjectDetailsPage/ProjectDetailsPa
 import { projects } from '../data/projects';
 import { notFoundMeta, pageMeta } from '../meta/meta';
 import { projectHref } from '../data/links';
+import { shareCardPath } from '../data/shareCards';
 import type { Route } from './+types/project';
 
 export const meta = ({ params }: Route.MetaArgs) => {
   const project = projects[params.projectId];
   return project
-    ? pageMeta({ title: project.title + ' | Mitch Lui', description: project.headline, path: projectHref(params.projectId) })
+    ? pageMeta({ title: project.title + ' | Mitch Lui', description: project.headline, path: projectHref(params.projectId), image: shareCardPath(params.projectId) })
     : notFoundMeta();
 };
 
