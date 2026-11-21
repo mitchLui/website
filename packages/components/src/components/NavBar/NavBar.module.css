@@ -117,10 +117,22 @@
   overflow-y: auto;
   color: var(--color-text);
   background-color: var(--color-bg);
+  opacity: 0;
+  transition:
+    opacity var(--duration-base) var(--ease-exit),
+    display var(--duration-base) allow-discrete,
+    overlay var(--duration-base) allow-discrete;
 }
 
 .sheet[open] {
-  animation: fadein var(--duration-base) var(--ease-standard);
+  opacity: 1;
+  transition-timing-function: var(--ease-standard);
+}
+
+@starting-style {
+  .sheet[open] {
+    opacity: 0;
+  }
 }
 
 .sheet::backdrop {
@@ -172,12 +184,17 @@
   color: var(--color-brand-text);
 }
 
+.sheet:not([open]) li {
+  animation: sheet-out var(--duration-fast) var(--ease-exit) forwards;
+  animation-delay: 0ms;
+}
+
 @keyframes sheet-in {
   from { opacity: 0; transform: translateY(-6px); }
   to { opacity: 1; transform: none; }
 }
 
-@keyframes fadein {
-  from { opacity: 0; }
-  to { opacity: 1; }
+@keyframes sheet-out {
+  from { opacity: 1; transform: none; }
+  to { opacity: 0; transform: translateY(-6px); }
 }

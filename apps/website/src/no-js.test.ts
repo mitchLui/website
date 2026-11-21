@@ -55,7 +55,7 @@ test('opens the phone menu, keeps Tab inside it and closes it with Escape, all w
   }
 
   await page.keyboard.press('Escape');
-  await expect(menu.isVisible()).resolves.toBe(false);
+  await expect.poll(() => menu.isVisible()).toBe(false);
   await expect(page.evaluate(() => document.activeElement?.getAttribute('aria-label'))).resolves.toBe('Open menu');
   await page.close();
 }, 30_000);
@@ -64,7 +64,8 @@ test('closes the phone menu with its close button and follows its links without 
   const page = await openPhonePage('/');
   await page.getByRole('button', { name: 'Open menu' }).click();
   await page.getByRole('button', { name: 'Close menu' }).click();
-  await expect(page.getByRole('dialog', { name: 'Menu' }).isVisible()).resolves.toBe(false);
+  await expect(page.getByRole('dialog', { name: 'Menu' }).isVisible()).resolves.toBe(true);
+  await expect.poll(() => page.getByRole('dialog', { name: 'Menu' }).isVisible()).toBe(false);
 
   await page.getByRole('button', { name: 'Open menu' }).click();
   await page.getByRole('dialog', { name: 'Menu' }).getByRole('link', { name: 'Work' }).click();
