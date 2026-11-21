@@ -9,7 +9,7 @@ type PageMeta = {
   description: string;
 };
 
-export const pageMeta = ({ title, description, path }: PageMeta & { path: string }): MetaDescriptor[] => [
+export const pageMeta = ({ title, description, path, image = '/og-image.jpg' }: PageMeta & { path: string; image?: string }): MetaDescriptor[] => [
   { title },
   { name: 'description', content: description },
   { tagName: 'link', rel: 'canonical', href: siteUrl + path },
@@ -18,7 +18,7 @@ export const pageMeta = ({ title, description, path }: PageMeta & { path: string
   { property: 'og:url', content: siteUrl + path },
   { property: 'og:title', content: title },
   { property: 'og:description', content: description },
-  { property: 'og:image', content: `${siteUrl}/og-image.jpg` },
+  { property: 'og:image', content: siteUrl + image },
   { name: 'twitter:card', content: 'summary_large_image' }
 ];
 
