@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react';
 import { useParams } from 'react-router';
 import { NotFoundPage } from '../NotFoundPage/NotFoundPage';
-import { BackButton, Button, LineColor, LineMarker, PageTitle, ProjectTile, RouteLine, SectionTitle, Station, Thumbnail, externalLink, text } from '@mitchlui/components';
+import { BackButton, Button, LineColor, LineMarker, NewTabHint, PageTitle, ProjectTile, RouteLine, SectionTitle, Station, Thumbnail, externalLink, text } from '@mitchlui/components';
 import clsx from 'clsx';
 import { Project, projects } from '../../data/projects';
 import { formatPeriod } from '../../data/dates';
@@ -89,8 +89,8 @@ export const ProjectDetailsPage = () => {
           <Facts projectId={projectId} project={project}/>
           {(project.website || project.git_url) &&
             <div className={styles.actions}>
-              {project.website && <Button as="a" to={project.website} {...externalLink}>Website</Button>}
-              {project.git_url && <Button as="a" variant="secondary" to={project.git_url} {...externalLink}>GitHub</Button>}
+              {project.website && <Button as="a" to={project.website} {...externalLink}>Website<NewTabHint/></Button>}
+              {project.git_url && <Button as="a" variant="secondary" to={project.git_url} {...externalLink}>GitHub<NewTabHint/></Button>}
             </div>}
         </aside>
       </div>

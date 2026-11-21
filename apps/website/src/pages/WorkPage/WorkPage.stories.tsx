@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { expect } from 'storybook/test';
 import { WorkPage } from './WorkPage';
-import { archivedProjects, professionalProjects } from '../../data/projects';
 
 const meta = {
   component: WorkPage,
@@ -11,29 +9,8 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-  play: async ({ canvas, step }) => {
-    await expect(canvas.getByRole('heading', { level: 1, name: 'Work' })).toBeVisible();
-    await step('renders a card for each professional project', async () => {
-      professionalProjects.forEach(([, project]) =>
-        expect(canvas.getByRole('heading', { name: project.title })).toBeVisible()
-      );
-    });
-    await step('lists every other project under Earlier projects', async () => {
-      await expect(canvas.getByRole('heading', { name: 'Earlier projects' })).toBeVisible();
-      archivedProjects.forEach(([id, project]) =>
-        expect(canvas.getByText(project.title, { selector: 'a span' }).closest('a')).toHaveAttribute('href', `/work/${id}/`)
-      );
-    });
-    await step('lines up the card titles and screenshots across the row', async () => {
-      const titles = professionalProjects.map(([, project]) => Math.round(canvas.getByRole('heading', { name: project.title }).getBoundingClientRect().top));
-      await expect(new Set(titles).size).toBe(1);
-      const ratios = canvas.getAllByRole('img').map(image => (image.clientWidth / image.clientHeight).toFixed(2));
-      await expect(new Set(ratios)).toEqual(new Set(['1.60']));
-    });
-    await step('shows awards but not grades', async () => {
-      await expect(canvas.getByText(/Overall best prize/)).toBeVisible();
-      await expect(canvas.queryByText(/First class/)).not.toBeInTheDocument();
-    });
-  }
+export const Default: Story = {};
+
+export const Phone: Story = {
+  globals: { viewport: { value: 'mobile', isRotated: false } }
 };

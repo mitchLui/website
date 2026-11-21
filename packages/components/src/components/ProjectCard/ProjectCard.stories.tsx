@@ -25,7 +25,7 @@ export const WithHighlights: Story = {
     await expect(canvas.getByText(args.headline)).toBeVisible();
     await expect(canvas.getAllByRole('listitem').map(item => item.textContent)).toEqual(args.highlights);
     await expect(canvas.getByRole('link', { name: 'Read more' })).toHaveAttribute('href', args.href);
-    await expect(canvas.queryByRole('link', { name: 'Code' })).not.toBeInTheDocument();
+    await expect(canvas.queryByRole('link', { name: 'Code (opens in a new tab)' })).not.toBeInTheDocument();
   }
 };
 
@@ -33,9 +33,9 @@ export const WithCode: Story = {
   args: { codeUrl: 'https://github.com/example/acme' },
   play: async ({ canvas, args }) => {
     await expect(canvas.queryByRole('list')).not.toBeInTheDocument();
-    await expect(canvas.getByRole('link', { name: 'Code' })).toHaveAttribute('href', args.codeUrl);
-    await expect(canvas.getByRole('link', { name: 'Code' })).toHaveAttribute('target', '_blank');
-    await expect(canvas.getByRole('link', { name: 'Code' })).toHaveAttribute('rel', 'noreferrer');
+    await expect(canvas.getByRole('link', { name: 'Code (opens in a new tab)' })).toHaveAttribute('href', args.codeUrl);
+    await expect(canvas.getByRole('link', { name: 'Code (opens in a new tab)' })).toHaveAttribute('target', '_blank');
+    await expect(canvas.getByRole('link', { name: 'Code (opens in a new tab)' })).toHaveAttribute('rel', 'noreferrer');
   }
 };
 
@@ -49,7 +49,7 @@ export const WholeCardLinks: Story = {
   play: async ({ canvas, args }) => {
     await expect(linkAt(canvas.getByRole('heading', { name: args.title }))).toBe(canvas.getByRole('link', { name: 'Read more' }));
     await expect(linkAt(canvas.getByText(args.headline))).toBe(canvas.getByRole('link', { name: 'Read more' }));
-    await expect(linkAt(canvas.getByRole('link', { name: 'Code' }))).toBe(canvas.getByRole('link', { name: 'Code' }));
+    await expect(linkAt(canvas.getByRole('link', { name: 'Code (opens in a new tab)' }))).toBe(canvas.getByRole('link', { name: 'Code (opens in a new tab)' }));
   }
 };
 

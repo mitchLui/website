@@ -95,3 +95,16 @@ export const Marker: Story = {
     await expect(marker).toHaveStyle({ width: '32px', height: '10px', backgroundColor: resolved('backgroundColor', 'var(--color-line-education)') });
   }
 };
+
+export const SameLineColoursInBothThemes: Story = {
+  render: () =>
+    <RouteLine>
+      <Station line="wise" continuesAs="education">Wise</Station>
+      <Station line="early">Early</Station>
+    </RouteLine>,
+  play: async ({ canvasElement }) => {
+    const [first, second] = [...canvasElement.querySelectorAll('li')].map(station => [...station.querySelectorAll<HTMLElement>('[aria-hidden] > span')]);
+    const colour = (segment: HTMLElement) => getComputedStyle(segment).backgroundColor;
+    await expect([colour(first[0]), colour(first[1]), colour(second[0])]).toEqual(['rgb(0, 119, 75)', 'rgb(43, 92, 138)', 'rgb(154, 74, 18)']);
+  }
+};

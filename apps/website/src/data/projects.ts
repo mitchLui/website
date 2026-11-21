@@ -19,7 +19,6 @@ export type ProfessionalProject = ProjectBase & {
   kind: 'professional';
   company: string;
   team?: string;
-  featured?: boolean;
 };
 
 type AcademicProject = ProjectBase & {
@@ -45,7 +44,6 @@ export const projects: Record<string, Project> = {
     thumbnail: 'wise',
     company: 'Wise',
     team: 'Business Account Management',
-    featured: true,
     started: '2023-09',
     technologies: ['Next.js', 'Java Spring', 'Kafka'],
     alt: 'Wise Business team member screen listing a role’s permissions for transfers, cards, payment approvals and recipients',
@@ -81,7 +79,6 @@ export const projects: Record<string, Project> = {
     thumbnail: 'wise_internship',
     company: 'Wise',
     team: 'Spend Business Experience',
-    featured: true,
     started: '2022-06',
     ended: '2022-09',
     technologies: ['React.js', 'Java Spring', 'Kafka'],
@@ -220,10 +217,6 @@ export const projects: Record<string, Project> = {
 };
 
 const entries = Object.entries(projects);
-
-export const featuredProjects = entries.filter(
-  (entry): entry is [string, ProfessionalProject] => entry[1].kind === 'professional' && Boolean(entry[1].featured)
-);
 
 export const professionalProjects = entries.filter(([, project]) => project.kind === 'professional');
 

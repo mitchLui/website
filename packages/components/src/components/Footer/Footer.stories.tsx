@@ -26,9 +26,9 @@ export const Default: Story = {
     await expect(canvas.getByText('呂家天')).toHaveAttribute('lang', 'zh-Hant');
     const nav = canvas.getByRole('navigation', { name: 'Footer' });
     await expect([...nav.querySelectorAll('a')].map(link => [link.textContent, link.getAttribute('href')])).toEqual([
-      ['Work', '/work'], ['CV', '/cv.pdf'], ['Sitemap', '/sitemap']
+      ['Work', '/work'], ['CV (opens in a new tab)', '/cv.pdf'], ['Sitemap', '/sitemap']
     ]);
-    await expect(canvas.getByRole('link', { name: 'CV' })).toHaveAttribute('target', '_blank');
+    await expect(canvas.getByRole('link', { name: 'CV (opens in a new tab)' })).toHaveAttribute('target', '_blank');
   }
 };
 
