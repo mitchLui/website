@@ -14,10 +14,11 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   play: async ({ canvas }) => {
     await expect(canvas.getByRole('heading', { name: 'Sitemap' })).toBeVisible();
-    await expect(canvas.getByRole('link', { name: 'work' })).toHaveAttribute('href', '/work/');
-    Object.keys(projects).forEach(id =>
-      expect(canvas.getByRole('link', { name: id })).toHaveAttribute('href', `/work/${id}/`)
+    await expect(canvas.getByRole('link', { name: 'Work' })).toHaveAttribute('href', '/work/');
+    Object.entries(projects).forEach(([id, project]) =>
+      expect(canvas.getByRole('link', { name: project.title })).toHaveAttribute('href', `/work/${id}/`)
     );
-    await expect(canvas.getByRole('link', { name: 'cv.pdf' })).toHaveAttribute('href', '/cv.pdf');
+    await expect(canvas.getByRole('link', { name: 'CV' })).toHaveAttribute('href', '/cv.pdf');
+    await expect(canvas.getByRole('link', { name: 'LinkedIn' })).toHaveAttribute('href', '/linkedin/');
   }
 };

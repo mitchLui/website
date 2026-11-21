@@ -9,19 +9,19 @@ export const SitemapPage = () =>
     <ContainerHeader><PageTitle>Sitemap</PageTitle></ContainerHeader>
     <ul className={styles.sitemap}>
       <li>
-        <Link to={sitemap.home.href}>index</Link>
+        <Link to={sitemap.home.href}>{sitemap.home.label}</Link>
         <ul className={styles.list}>
           <li>
-            <Link to={sitemap.work.href}>work</Link>
+            <Link to={sitemap.work.href}>{sitemap.work.label}</Link>
             <ul className={styles.projects}>
               {
-                Object.keys(projects).map(id =>
-                  <li key={id}><Link to={projectHref(id)}>{id}</Link></li>
+                Object.entries(projects).map(([id, project]) =>
+                  <li key={id}><Link to={projectHref(id)}>{project.title}</Link></li>
                 )
               }
             </ul>
           </li>
-          {sitemap.pages.map(link => <li key={link.href}><Link to={link.href}>{link.href.replaceAll('/', '')}</Link></li>)}
+          {sitemap.pages.map(link => <li key={link.href}><Link to={link.href}>{link.label}</Link></li>)}
         </ul>
       </li>
     </ul>
