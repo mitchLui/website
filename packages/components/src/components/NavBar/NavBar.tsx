@@ -1,4 +1,4 @@
-import { ReactElement, RefObject, useEffect, useRef, useState } from 'react';
+import { AnimationEvent, ReactElement, RefObject, useCallback, useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router';
 import { HamburgerMenu } from '../Hamburger/Hamburger';
 import clsx from 'clsx';
@@ -20,18 +20,18 @@ type NavBarProps = {
 
 const desktop = '(min-width: 768px)';
 
-const useMenuLock = (isOpen: boolean, setIsOpen: (isOpen: boolean) => void, header: RefObject<HTMLElement | null>, button: RefObject<HTMLButtonElement | null>) => useEffect(() => {
+const useMenuLock = (isOpen: boolean, close: () => void, header: RefObject<HTMLElement | null>, button: RefObject<HTMLButtonElement | null>) => useEffect(() => {
   if (!isOpen || !header.current) {
     return;
   }
   const page = [...header.current.parentElement!.children].filter(element => element !== header.current) as HTMLElement[];
   const closeOnEscape = (event: KeyboardEvent) => {
     if (event.key === 'Escape') {
-      setIsOpen(false);
+      close();
       button.current?.focus();
     }
   };
-  const closeOnDesktop = (event: MediaQueryListEvent) => event.matches && setIsOpen(false);
+  const closeOnDesktop = (event: MediaQueryListEvent) => event.matches && close();
   const desktopQuery = window.matchMedia(desktop);
   document.body.style.overflow = 'hidden';
   page.forEach(element => { element.inert = true; });
@@ -43,22 +43,24 @@ const useMenuLock = (isOpen: boolean, setIsOpen: (isOpen: boolean) => void, head
     window.removeEventListener('keydown', closeOnEscape);
     desktopQuery.removeEventListener('change', closeOnDesktop);
   };
-}, [isOpen, setIsOpen, header, button]);
+}, [isOpen, close, header, button]);
 
 export const NavBar = ({ links }: NavBarProps): ReactElement => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [menu, setMenu] = useState<'closed' | 'open' | 'closing'>('closed');
+  const isOpen = menu === 'open';
   const header = useRef<HTMLElement>(null);
   const button = useRef<HTMLButtonElement>(null);
-  const close = () => setIsOpen(false);
-  useMenuLock(isOpen, setIsOpen, header, button);
+  const close = useCallback(() => setMenu(current => current === 'open' ? 'closing' : current), []);
+  const hideOnceFaded = (event: AnimationEvent) => event.target === event.currentTarget && menu === 'closing' && setMenu('closed');
+  useMenuLock(isOpen, close, header, button);
   return (
-    <header ref={header} className={clsx(styles.header, isOpen && styles.headerOpen)}>
+    <header ref={header} className={clsx(styles.header, menu !== 'closed' && styles.headerOpen)}>
       <div className={styles.navbar}>
         <Logo onClick={close}/>
         <div className={styles.desktop}><NavBarLinks links={links}/></div>
-        <div className={styles.phone}><HamburgerMenu ref={button} onClick={() => setIsOpen(!isOpen)} isOpen={isOpen}/></div>
+        <div className={styles.phone}><HamburgerMenu ref={button} onClick={() => isOpen ? close() : setMenu('open')} isOpen={isOpen}/></div>
       </div>
-      <div className={clsx(styles.sheet, !isOpen && styles.sheetClosed)}>
+      <div className={clsx(styles.sheet, menu === 'closed' && styles.sheetClosed, menu === 'closing' && styles.sheetClosing)} onAnimationEnd={hideOnceFaded}>
         <NavBarLinks links={links} onClick={close}/>
       </div>
     </header>

@@ -92,9 +92,11 @@ export const Mobile: Story = {
       await expect(document.body.style.overflow).toBe('');
       await userEvent.click(canvas.getByRole('button', { name: 'Open menu' }));
     });
-    await step('closes the menu again', async () => {
+    await step('fades the menu out instead of hiding it at once', async () => {
       await userEvent.click(canvas.getByRole('button', { name: 'Close menu' }));
-      await expect(canvas.queryByRole('link', { name: 'Work' })).not.toBeInTheDocument();
+      await expect(canvas.getByRole('button', { name: 'Open menu' })).toHaveAttribute('aria-expanded', 'false');
+      await expect(canvas.getByRole('link', { name: 'Work' })).toBeVisible();
+      await waitFor(() => expect(canvas.queryByRole('link', { name: 'Work' })).not.toBeInTheDocument());
     });
     await step('navigates when a link is chosen', async () => {
       await userEvent.click(canvas.getByRole('button', { name: 'Open menu' }));

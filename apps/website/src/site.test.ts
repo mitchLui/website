@@ -232,7 +232,7 @@ describe('visiting the site in a browser', () => {
       await expect(page.evaluate(() => Boolean(document.activeElement?.closest('main, footer'))), `Tab ${press + 1}`).resolves.toBe(false);
     }
     await page.keyboard.press('Escape');
-    await expect(menuLink.isVisible()).resolves.toBe(false);
+    await expect.poll(() => menuLink.isVisible()).toBe(false);
     await expect(page.evaluate(() => document.activeElement?.getAttribute('aria-label'))).resolves.toBe('Open menu');
     await page.close();
   });
