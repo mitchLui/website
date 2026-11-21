@@ -6,7 +6,7 @@ export type Role = {
   impact: string[];
 };
 
-export const roles: Role[] = [
+const roles: Role[] = [
   {
     project: 'wise',
     title: 'Senior Software Engineer',

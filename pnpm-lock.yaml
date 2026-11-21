@@ -6,9 +6,72 @@ settings:
 
 catalogs:
   default:
+    '@fontsource-variable/familjen-grotesk':
+      specifier: ^5.2.8
+      version: 5.3.0
+    '@react-router/dev':
+      specifier: ^7.18.5
+      version: 7.18.5
+    '@react-router/node':
+      specifier: ^7.18.5
+      version: 7.18.5
+    '@storybook/addon-a11y':
+      specifier: ^10.6.7
+      version: 10.6.7
+    '@storybook/addon-vitest':
+      specifier: ^10.6.7
+      version: 10.6.7
+    '@storybook/react-vite':
+      specifier: ^10.6.7
+      version: 10.6.7
+    '@types/node':
+      specifier: ^24.19.2
+      version: 24.19.2
+    '@types/react':
+      specifier: ^19.3.0
+      version: 19.3.0
+    '@types/react-dom':
+      specifier: ^19.3.0
+      version: 19.3.0
+    '@vitejs/plugin-react':
+      specifier: ^6.3.0
+      version: 6.3.0
+    '@vitest/browser':
+      specifier: ^5.1.0
+      version: 5.1.0
+    '@vitest/browser-playwright':
+      specifier: ^5.1.0
+      version: 5.1.0
+    clsx:
+      specifier: ^2.1.1
+      version: 2.1.1
+    isbot:
+      specifier: ^5
+      version: 5.2.3
+    playwright:
+      specifier: ^1.65.1
+      version: 1.65.1
+    react:
+      specifier: ^19.3.1
+      version: 19.3.1
+    react-dom:
+      specifier: ^19.3.1
+      version: 19.3.1
+    react-router:
+      specifier: ^7.18.5
+      version: 7.18.5
+    storybook:
+      specifier: ^10.6.7
+      version: 10.6.7
     typescript:
       specifier: ~5.9.3
       version: 5.9.3
+    vite:
+      specifier: ^8.3.8
+      version: 8.3.8
+    vitest:
+      specifier: ^5.1.0
+      version: 5.1.0
 
 importers:
 
@@ -93,15 +156,9 @@ importers:
       '@vitejs/plugin-react':
         specifier: 'catalog:'
         version: 6.3.0(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.108.2)(yaml@2.9.1))
-      '@vitest/browser':
-        specifier: 'catalog:'
-        version: 5.1.0(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.108.2)(yaml@2.9.1))(vitest@5.1.0)
-      '@vitest/browser-playwright':
-        specifier: 'catalog:'
-        version: 5.1.0(playwright@1.65.1)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.108.2)(yaml@2.9.1))(vitest@5.1.0)
-      '@vitest/coverage-v8':
-        specifier: 'catalog:'
-        version: 5.1.0(@vitest/browser@5.1.0)(vitest@5.1.0)
+      axe-core:
+        specifier: ^4.14.1
+        version: 4.14.1
       playwright:
         specifier: 'catalog:'
         version: 1.65.1
@@ -3342,7 +3399,8 @@ snapshots:
       '@babel/helper-string-parser': 7.29.14
       '@babel/helper-validator-identifier': 7.29.7
 
-  '@bcoe/v8-coverage@1.0.2': {}
+  '@bcoe/v8-coverage@1.0.2':
+    optional: true
 
   '@blazediff/core@1.10.0': {}
 
@@ -4549,6 +4607,7 @@ snapshots:
       vitest: 5.1.0(@types/node@24.19.2)(@vitest/browser-playwright@5.1.0)(@vitest/coverage-v8@5.1.0)(@vitest/ui@5.1.0)(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.108.2)(yaml@2.9.1))
     optionalDependencies:
       '@vitest/browser': 5.1.0(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.108.2)(yaml@2.9.1))(vitest@5.1.0)
+    optional: true
 
   '@vitest/expect@3.2.4':
     dependencies:
@@ -4558,11 +4617,13 @@ snapshots:
       chai: 5.3.3
       tinyrainbow: 2.0.0
 
-  '@vitest/istanbul-lib-coverage@2.1.0': {}
+  '@vitest/istanbul-lib-coverage@2.1.0':
+    optional: true
 
   '@vitest/istanbul-lib-report@2.1.0':
     dependencies:
       '@vitest/istanbul-lib-coverage': 2.1.0
+    optional: true
 
   '@vitest/mocker@5.1.0(vite@8.3.8(@types/node@24.19.2)(esbuild@0.28.2)(jiti@2.7.0)(sass@1.108.2)(yaml@2.9.1))':
     dependencies:
@@ -4649,6 +4710,7 @@ snapshots:
       '@jridgewell/trace-mapping': 0.3.31
       estree-walker: 3.0.3
       js-tokens: 10.0.0
+    optional: true
 
   axe-core@4.14.1: {}
 
@@ -5172,7 +5234,8 @@ snapshots:
 
   jiti@2.7.0: {}
 
-  js-tokens@10.0.0: {}
+  js-tokens@10.0.0:
+    optional: true
 
   js-tokens@4.0.0: {}
 
@@ -5293,6 +5356,7 @@ snapshots:
       '@babel/parser': 7.29.14
       '@babel/types': 7.29.14
       source-map-js: 1.2.2
+    optional: true
 
   min-indent@1.0.1: {}
 
