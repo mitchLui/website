@@ -23,7 +23,7 @@
 .logo {
   display: flex;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: var(--font-size-wordmark);
   font-weight: var(--font-weight-regular);
   letter-spacing: var(--tracking-title);
 }
@@ -37,10 +37,6 @@
 }
 
 @media (max-width: 767px) {
-  .logo {
-    font-size: 1.25rem;
-  }
-
   .logo-graphic {
     width: 32px;
     height: 32px;
@@ -124,6 +120,10 @@
   display: none;
 }
 
+.sheet-closing {
+  animation: fadeout var(--duration-base) var(--ease-exit) forwards;
+}
+
 .sheet ul {
   display: grid;
   gap: var(--space-1);
@@ -161,9 +161,23 @@
   color: var(--color-brand-text);
 }
 
+.sheet.sheet-closing li {
+  animation: sheet-out var(--duration-fast) var(--ease-exit) forwards;
+}
+
 @keyframes sheet-in {
   from { opacity: 0; transform: translateY(-6px); }
   to { opacity: 1; transform: none; }
+}
+
+@keyframes sheet-out {
+  from { opacity: 1; transform: none; }
+  to { opacity: 0; transform: translateY(-6px); }
+}
+
+@keyframes fadeout {
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
 
 @keyframes fadein {

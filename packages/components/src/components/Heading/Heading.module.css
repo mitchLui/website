@@ -9,7 +9,7 @@
 .section-title {
   margin: 0;
   padding-top: var(--space-4);
-  border-top: 3px solid var(--color-text);
+  border-top: var(--rule-heavy) solid var(--color-text);
   font-size: var(--font-size-title-1);
   line-height: var(--line-height-tight);
   letter-spacing: var(--tracking-title);

@@ -158,6 +158,7 @@ export const Type: Story = {
 };
 
 const radii = ['xs', 'sm', 'md', 'lg', 'xl', 'full'];
+const rules = ['hairline', 'medium', 'heavy'];
 const spaces = [1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 20, 24];
 
 export const ShapeAndSpace: Story = {
@@ -171,6 +172,17 @@ export const ShapeAndSpace: Story = {
             <div key={radius} className={styles.swatch}>
               <div className={styles.box} style={{ borderRadius: `var(--radius-${radius})` }}/>
               <code>{radius}</code>
+            </div>
+          )}
+        </div>
+      </section>
+      <section className={styles.section}>
+        <h2>Rules</h2>
+        <div className={styles.scale}>
+          {rules.map(rule =>
+            <div key={rule} className={styles.swatch}>
+              <div style={{ width: 'var(--space-24)', borderTop: `var(--rule-${rule}) solid var(--color-text)` }} data-testid={`rule-${rule}`}/>
+              <code>rule-{rule}</code>
             </div>
           )}
         </div>
@@ -190,6 +202,7 @@ export const ShapeAndSpace: Story = {
   play: async ({ canvas }) => {
     const widths = spaces.map(space => canvas.getByTestId(`space-${space}`).getBoundingClientRect().width);
     await expect(widths).toEqual(spaces.map(space => space * 4));
+    await expect(rules.map(rule => getComputedStyle(canvas.getByTestId(`rule-${rule}`)).borderTopWidth)).toEqual(['1px', '2px', '3px']);
   }
 };
 

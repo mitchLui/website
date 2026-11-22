@@ -21,58 +21,20 @@
   align-items: start;
 }
 
-.copy,
-.stop {
-  display: grid;
-  gap: var(--space-2);
+.measure {
   max-width: 44rem;
 }
 
-.copy > a {
-  justify-self: start;
-  margin: var(--space-2) 0 0;
-}
-
-.period {
+.terminus {
   margin: 0;
-}
-
-.title-current,
-.title {
-  margin: 0;
+  font-size: var(--font-size-title-3);
   line-height: var(--line-height-tight);
   letter-spacing: var(--tracking-title);
-}
-
-.title-current {
-  font-size: var(--font-size-title-2);
-}
-
-.title {
-  font-size: var(--font-size-title-3);
-}
-
-.title-link {
-  text-decoration-line: underline;
-  text-decoration-color: transparent;
-  text-underline-offset: 0.15em;
-  transition: text-decoration-color var(--duration-base) var(--ease-standard);
-}
-
-@media (hover: hover) {
-  .title-link:hover {
-    text-decoration-color: currentColor;
-  }
 }
 
 .team {
   margin: 0;
   font-weight: var(--font-weight-semibold);
-}
-
-.summary {
-  margin: 0;
-  text-wrap: pretty;
 }
 
 .tiles {

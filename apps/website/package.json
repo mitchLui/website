@@ -15,7 +15,6 @@
   "dependencies": {
     "@mitchlui/components": "workspace:*",
     "@react-router/node": "catalog:",
-    "clsx": "catalog:",
     "isbot": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",

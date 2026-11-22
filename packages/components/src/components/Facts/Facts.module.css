@@ -1,0 +1,26 @@
+.facts {
+  display: grid;
+  margin: 0;
+}
+
+.fact {
+  display: grid;
+  gap: var(--space-1);
+  padding-block: var(--space-4);
+  border-top: var(--rule-hairline) solid var(--color-border);
+}
+
+.fact:last-child {
+  border-bottom: var(--rule-hairline) solid var(--color-border);
+}
+
+.fact dt {
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-label);
+  color: var(--color-text-secondary);
+}
+
+.fact dd {
+  margin: 0;
+}
